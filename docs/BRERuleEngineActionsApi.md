@@ -1,0 +1,63 @@
+# swagger.api.BRERuleEngineActionsApi
+
+## Load the API package
+```dart
+import 'package:swagger/api.dart';
+```
+
+All URIs are relative to *https://sandbox.knetikcloud.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getBREActions**](BRERuleEngineActionsApi.md#getBREActions) | **GET** /bre/actions | Get a list of available actions
+
+
+# **getBREActions**
+> List<ActionResource> getBREActions(filterCategory, filterName, filterTags, filterSearch)
+
+Get a list of available actions
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new BRERuleEngineActionsApi();
+var filterCategory = filterCategory_example; // String | Filter for actions that are within a specific category
+var filterName = filterName_example; // String | Filter for actions that have names containing the given string
+var filterTags = filterTags_example; // String | Filter for actions that have all of the given tags (comma separated list)
+var filterSearch = filterSearch_example; // String | Filter for actions containing the given words somewhere within name, description and tags
+
+try { 
+    var result = api_instance.getBREActions(filterCategory, filterName, filterTags, filterSearch);
+    print(result);
+} catch (e) {
+    print("Exception when calling BRERuleEngineActionsApi->getBREActions: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filterCategory** | **String**| Filter for actions that are within a specific category | [optional] 
+ **filterName** | **String**| Filter for actions that have names containing the given string | [optional] 
+ **filterTags** | **String**| Filter for actions that have all of the given tags (comma separated list) | [optional] 
+ **filterSearch** | **String**| Filter for actions containing the given words somewhere within name, description and tags | [optional] 
+
+### Return type
+
+[**List<ActionResource>**](ActionResource.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
