@@ -2,7 +2,7 @@ part of swagger.api;
 
 
 @Entity()
-class A request to reset a user&#39;s password by using a known user property {
+class PasswordResetRequest {
   /* The user's email address */
   @Property(name: 'email')
   String email = null;
@@ -15,11 +15,11 @@ class A request to reset a user&#39;s password by using a known user property {
   @Property(name: 'username')
   String username = null;
   
-  A request to reset a user&#39;s password by using a known user property();
+  PasswordResetRequest();
 
   @override
   String toString()  {
-    return 'A request to reset a user&#39;s password by using a known user property[email=$email, mobileNumber=$mobileNumber, username=$username, ]';
+    return 'PasswordResetRequest[email=$email, mobileNumber=$mobileNumber, username=$username, ]';
   }
 
 }

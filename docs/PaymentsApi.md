@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPaymentMethods**
-> List<PaymentMethodResource> getPaymentMethods(userId, size, page, order)
+> List<PaymentMethodResource> getPaymentMethods(userId, filterName, filterPaymentType, filterPaymentMethodTypeId, filterPaymentMethodTypeName, size, page, order)
 
 Get all payment methods for a user
 
@@ -165,12 +165,16 @@ import 'package:swagger/api.dart';
 
 var api_instance = new PaymentsApi();
 var userId = 56; // int | ID of the user for whom the payment methods are being retrieved
+var filterName = filterName_example; // String | Filter for payment methods whose name starts with a given string
+var filterPaymentType = filterPaymentType_example; // String | Filter for payment methods with a specific payment type
+var filterPaymentMethodTypeId = 56; // int | Filter for payment methods with a specific payment method type by id
+var filterPaymentMethodTypeName = filterPaymentMethodTypeName_example; // String | Filter for payment methods whose payment method type name starts with a given string
 var size = 56; // int | The number of objects returned per page
 var page = 56; // int | The number of the page returned, starting with 1
 var order = order_example; // String | a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 
 try { 
-    var result = api_instance.getPaymentMethods(userId, size, page, order);
+    var result = api_instance.getPaymentMethods(userId, filterName, filterPaymentType, filterPaymentMethodTypeId, filterPaymentMethodTypeName, size, page, order);
     print(result);
 } catch (e) {
     print("Exception when calling PaymentsApi->getPaymentMethods: $e\n");
@@ -182,6 +186,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int**| ID of the user for whom the payment methods are being retrieved | 
+ **filterName** | **String**| Filter for payment methods whose name starts with a given string | [optional] 
+ **filterPaymentType** | **String**| Filter for payment methods with a specific payment type | [optional] 
+ **filterPaymentMethodTypeId** | **int**| Filter for payment methods with a specific payment method type by id | [optional] 
+ **filterPaymentMethodTypeName** | **String**| Filter for payment methods whose payment method type name starts with a given string | [optional] 
  **size** | **int**| The number of objects returned per page | [optional] [default to 25]
  **page** | **int**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]

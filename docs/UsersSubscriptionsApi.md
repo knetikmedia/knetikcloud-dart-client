@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**setSubscriptionPaymentMethod**](UsersSubscriptionsApi.md#setSubscriptionPaymentMethod) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/payment-method | Set the payment method to use for a subscription
 [**setSubscriptionStatus**](UsersSubscriptionsApi.md#setSubscriptionStatus) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/status | Set the status of a subscription
 [**setUserSubscriptionPlan**](UsersSubscriptionsApi.md#setUserSubscriptionPlan) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/plan | Set a new subscription plan for a user
+[**setUserSubscriptionPrice**](UsersSubscriptionsApi.md#setUserSubscriptionPrice) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/price-override | Set a new subscription price for a user
 
 
 # **getUserSubscriptionDetails**
@@ -325,6 +326,54 @@ Name | Type | Description  | Notes
  **userId** | **int**| The id of the user | 
  **inventoryId** | **int**| The id of the user&#39;s inventory | 
  **planId** | **String**| The id of the new plan. Must be from the same subscription | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **setUserSubscriptionPrice**
+> setUserSubscriptionPrice(userId, inventoryId, the override details)
+
+Set a new subscription price for a user
+
+This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new UsersSubscriptionsApi();
+var userId = 56; // int | The id of the user
+var inventoryId = 56; // int | The id of the user's inventory
+var the override details = new SubscriptionPriceOverrideRequest(); // SubscriptionPriceOverrideRequest | override
+
+try { 
+    api_instance.setUserSubscriptionPrice(userId, inventoryId, the override details);
+} catch (e) {
+    print("Exception when calling UsersSubscriptionsApi->setUserSubscriptionPrice: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int**| The id of the user | 
+ **inventoryId** | **int**| The id of the user&#39;s inventory | 
+ **the override details** | [**SubscriptionPriceOverrideRequest**](SubscriptionPriceOverrideRequest.md)| override | [optional] 
 
 ### Return type
 

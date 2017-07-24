@@ -1,4 +1,4 @@
-# swagger.model.The definition of an activity parameters: ex: difficulty level
+# swagger.model.AvailableSettingResource
 
 ## Load the model package
 ```dart

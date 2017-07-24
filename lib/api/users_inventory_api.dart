@@ -73,7 +73,7 @@ class UsersInventoryApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/entitlements/{item_id}/check".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "itemId" + "}", itemId.toString());
+    String path = "/users/{user_id}/entitlements/{item_id}/check".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "item_id" + "}", itemId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -226,7 +226,7 @@ class UsersInventoryApi {
     }
 
     // create path and map variables
-    String path = "/entitlements/{entitlement_id}".replaceAll("{format}","json").replaceAll("{" + "entitlementId" + "}", entitlementId.toString());
+    String path = "/entitlements/{entitlement_id}".replaceAll("{format}","json").replaceAll("{" + "entitlement_id" + "}", entitlementId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -331,7 +331,7 @@ class UsersInventoryApi {
     }
 
     // create path and map variables
-    String path = "/entitlements/{entitlement_id}".replaceAll("{format}","json").replaceAll("{" + "entitlementId" + "}", entitlementId.toString());
+    String path = "/entitlements/{entitlement_id}".replaceAll("{format}","json").replaceAll("{" + "entitlement_id" + "}", entitlementId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -625,7 +625,7 @@ class UsersInventoryApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/inventory/{id}".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/users/{user_id}/inventory/{id}".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -679,7 +679,7 @@ class UsersInventoryApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/inventory/{id}/log".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/users/{user_id}/inventory/{id}/log".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -811,7 +811,7 @@ class UsersInventoryApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/entitlements".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/entitlements".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -862,7 +862,7 @@ class UsersInventoryApi {
     }
 
     // create path and map variables
-    String path = "/entitlements/{entitlement_id}".replaceAll("{format}","json").replaceAll("{" + "entitlementId" + "}", entitlementId.toString());
+    String path = "/entitlements/{entitlement_id}".replaceAll("{format}","json").replaceAll("{" + "entitlement_id" + "}", entitlementId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -970,7 +970,7 @@ class UsersInventoryApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/inventory/{id}/behavior-data".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/users/{user_id}/inventory/{id}/behavior-data".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -1024,7 +1024,7 @@ class UsersInventoryApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/inventory/{id}/expires".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/users/{user_id}/inventory/{id}/expires".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -1078,7 +1078,7 @@ class UsersInventoryApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/inventory/{id}/status".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/users/{user_id}/inventory/{id}/status".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -1132,7 +1132,7 @@ class UsersInventoryApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/entitlements/{item_id}/use".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "itemId" + "}", itemId.toString());
+    String path = "/users/{user_id}/entitlements/{item_id}/use".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "item_id" + "}", itemId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

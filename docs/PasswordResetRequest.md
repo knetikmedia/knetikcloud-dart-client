@@ -1,4 +1,4 @@
-# swagger.model.A request to reset a user&#39;s password by using a known user property
+# swagger.model.PasswordResetRequest
 
 ## Load the model package
 ```dart

@@ -121,7 +121,7 @@ class AuthRolesApi {
     }
 
     // create path and map variables
-    String path = "/auth/clients/{client_key}/roles".replaceAll("{format}","json").replaceAll("{" + "clientKey" + "}", clientKey.toString());
+    String path = "/auth/clients/{client_key}/roles".replaceAll("{format}","json").replaceAll("{" + "client_key" + "}", clientKey.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -280,7 +280,7 @@ class AuthRolesApi {
     }
 
     // create path and map variables
-    String path = "/auth/users/{user_id}/roles".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/auth/users/{user_id}/roles".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -331,7 +331,7 @@ class AuthRolesApi {
     }
 
     // create path and map variables
-    String path = "/auth/clients/{client_key}/roles".replaceAll("{format}","json").replaceAll("{" + "clientKey" + "}", clientKey.toString());
+    String path = "/auth/clients/{client_key}/roles".replaceAll("{format}","json").replaceAll("{" + "client_key" + "}", clientKey.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -433,7 +433,7 @@ class AuthRolesApi {
     }
 
     // create path and map variables
-    String path = "/auth/users/{user_id}/roles".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/auth/users/{user_id}/roles".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

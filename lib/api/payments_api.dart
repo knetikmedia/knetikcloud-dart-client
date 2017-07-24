@@ -19,7 +19,7 @@ class PaymentsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/payment-methods".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/payment-methods".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -73,7 +73,7 @@ class PaymentsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/payment-methods/{id}".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/users/{user_id}/payment-methods/{id}".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -127,7 +127,7 @@ class PaymentsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/payment-methods/{id}".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/users/{user_id}/payment-methods/{id}".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -169,7 +169,7 @@ class PaymentsApi {
   /// Get all payment methods for a user
   ///
   /// 
-  Future<List<PaymentMethodResource>> getPaymentMethods(int userId, { int size, int page, String order }) async {
+  Future<List<PaymentMethodResource>> getPaymentMethods(int userId, { String filterName, String filterPaymentType, int filterPaymentMethodTypeId, String filterPaymentMethodTypeName, int size, int page, String order }) async {
     Object postBody = null;
 
     // verify required params are set
@@ -178,12 +178,24 @@ class PaymentsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/payment-methods".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/payment-methods".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
+    if(filterName != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filter_name", filterName));
+    }
+    if(filterPaymentType != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filter_payment_type", filterPaymentType));
+    }
+    if(filterPaymentMethodTypeId != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filter_payment_method_type_id", filterPaymentMethodTypeId));
+    }
+    if(filterPaymentMethodTypeName != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filter_payment_method_type_name", filterPaymentMethodTypeName));
+    }
     if(size != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "size", size));
     }
@@ -340,7 +352,7 @@ class PaymentsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/payment-methods/{id}".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/users/{user_id}/payment-methods/{id}".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];

@@ -19,7 +19,7 @@ class GamificationTriviaApi {
     }
 
     // create path and map variables
-    String path = "/trivia/questions/{question_id}/answers".replaceAll("{format}","json").replaceAll("{" + "questionId" + "}", questionId.toString());
+    String path = "/trivia/questions/{question_id}/answers".replaceAll("{format}","json").replaceAll("{" + "question_id" + "}", questionId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -442,7 +442,7 @@ class GamificationTriviaApi {
     }
 
     // create path and map variables
-    String path = "/trivia/questions/{question_id}/answers/{id}".replaceAll("{format}","json").replaceAll("{" + "questionId" + "}", questionId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/trivia/questions/{question_id}/answers/{id}".replaceAll("{format}","json").replaceAll("{" + "question_id" + "}", questionId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -721,7 +721,7 @@ class GamificationTriviaApi {
     }
 
     // create path and map variables
-    String path = "/trivia/questions/{question_id}/answers/{id}".replaceAll("{format}","json").replaceAll("{" + "questionId" + "}", questionId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/trivia/questions/{question_id}/answers/{id}".replaceAll("{format}","json").replaceAll("{" + "question_id" + "}", questionId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -772,7 +772,7 @@ class GamificationTriviaApi {
     }
 
     // create path and map variables
-    String path = "/trivia/questions/{question_id}/answers".replaceAll("{format}","json").replaceAll("{" + "questionId" + "}", questionId.toString());
+    String path = "/trivia/questions/{question_id}/answers".replaceAll("{format}","json").replaceAll("{" + "question_id" + "}", questionId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -1529,7 +1529,7 @@ class GamificationTriviaApi {
     }
 
     // create path and map variables
-    String path = "/trivia/questions/{question_id}/answers/{id}".replaceAll("{format}","json").replaceAll("{" + "questionId" + "}", questionId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/trivia/questions/{question_id}/answers/{id}".replaceAll("{format}","json").replaceAll("{" + "question_id" + "}", questionId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];

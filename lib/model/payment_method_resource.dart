@@ -27,7 +27,7 @@ class PaymentMethodResource {
   @Property(name: 'expiration_year')
   int expirationYear = null;
   
-/* The unique ID for that resource */
+/* The unique ID of the resource */
   @Property(name: 'id')
   int id = null;
   
@@ -35,11 +35,7 @@ class PaymentMethodResource {
   @Property(name: 'last4')
   String last4 = null;
   
-/* The user friendly name of that resource. Defaults to blank string */
-  @Property(name: 'long_description')
-  String longDescription = null;
-  
-/* The user friendly name of that resource */
+/* The user friendly name of the resource */
   @Property(name: 'name')
   String name = null;
   
@@ -51,10 +47,6 @@ class PaymentMethodResource {
   @Property(name: 'payment_type')
   String paymentType = null;
   //enum paymentTypeEnum {  card,  bank_account,  };
-/* The user friendly name of that resource. Defaults to blank string */
-  @Property(name: 'short_description')
-  String shortDescription = null;
-  
 /* The sort value for the payment method */
   @Property(name: 'sort')
   int sort = null;
@@ -83,7 +75,7 @@ class PaymentMethodResource {
 
   @override
   String toString()  {
-    return 'PaymentMethodResource[createdDate=$createdDate, _default=$_default, disabled=$disabled, expirationDate=$expirationDate, expirationMonth=$expirationMonth, expirationYear=$expirationYear, id=$id, last4=$last4, longDescription=$longDescription, name=$name, paymentMethodType=$paymentMethodType, paymentType=$paymentType, shortDescription=$shortDescription, sort=$sort, token=$token, uniqueKey=$uniqueKey, updatedDate=$updatedDate, userId=$userId, verified=$verified, ]';
+    return 'PaymentMethodResource[createdDate=$createdDate, _default=$_default, disabled=$disabled, expirationDate=$expirationDate, expirationMonth=$expirationMonth, expirationYear=$expirationYear, id=$id, last4=$last4, name=$name, paymentMethodType=$paymentMethodType, paymentType=$paymentType, sort=$sort, token=$token, uniqueKey=$uniqueKey, updatedDate=$updatedDate, userId=$userId, verified=$verified, ]';
   }
 
 }

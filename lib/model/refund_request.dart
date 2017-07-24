@@ -7,6 +7,10 @@ class RefundRequest {
   @Property(name: 'amount')
   double amount = null;
   
+/* The SKU of a bundle item from the invoice that the target item is within. */
+  @Property(name: 'bundle_sku')
+  String bundleSku = null;
+  
 /* Notes about or reason for the refund */
   @Property(name: 'notes')
   String notes = null;
@@ -19,7 +23,7 @@ class RefundRequest {
 
   @override
   String toString()  {
-    return 'RefundRequest[amount=$amount, notes=$notes, sku=$sku, ]';
+    return 'RefundRequest[amount=$amount, bundleSku=$bundleSku, notes=$notes, sku=$sku, ]';
   }
 
 }

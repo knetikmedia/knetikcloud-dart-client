@@ -67,7 +67,7 @@ class CampaignsChallengesApi {
     }
 
     // create path and map variables
-    String path = "/challenges/{challenge_id}/activities".replaceAll("{format}","json").replaceAll("{" + "challengeId" + "}", challengeId.toString());
+    String path = "/challenges/{challenge_id}/activities".replaceAll("{format}","json").replaceAll("{" + "challenge_id" + "}", challengeId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -258,20 +258,20 @@ class CampaignsChallengesApi {
   }
   /// Delete a challenge activity
   ///
-  /// 
-  Future deleteChallengeActivity(int activityId, int challengeId) async {
+  /// A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+  Future deleteChallengeActivity(int id, int challengeId) async {
     Object postBody = null;
 
     // verify required params are set
-    if(activityId == null) {
-     throw new ApiException(400, "Missing required param: activityId");
+    if(id == null) {
+     throw new ApiException(400, "Missing required param: id");
     }
     if(challengeId == null) {
      throw new ApiException(400, "Missing required param: challengeId");
     }
 
     // create path and map variables
-    String path = "/challenges/{challenge_id}/activities/{activity_id}".replaceAll("{format}","json").replaceAll("{" + "activityId" + "}", activityId.toString()).replaceAll("{" + "challengeId" + "}", challengeId.toString());
+    String path = "/challenges/{challenge_id}/activities/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString()).replaceAll("{" + "challenge_id" + "}", challengeId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -532,7 +532,7 @@ class CampaignsChallengesApi {
     }
 
     // create path and map variables
-    String path = "/challenges/{challenge_id}/activities".replaceAll("{format}","json").replaceAll("{" + "challengeId" + "}", challengeId.toString());
+    String path = "/challenges/{challenge_id}/activities".replaceAll("{format}","json").replaceAll("{" + "challenge_id" + "}", challengeId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -582,17 +582,20 @@ class CampaignsChallengesApi {
   }
   /// Get a single challenge activity
   ///
-  /// 
-  Future<ChallengeActivityResource> getChallengeActivity(int activityId) async {
+  /// A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+  Future<ChallengeActivityResource> getChallengeActivity(int id, int challengeId) async {
     Object postBody = null;
 
     // verify required params are set
-    if(activityId == null) {
-     throw new ApiException(400, "Missing required param: activityId");
+    if(id == null) {
+     throw new ApiException(400, "Missing required param: id");
+    }
+    if(challengeId == null) {
+     throw new ApiException(400, "Missing required param: challengeId");
     }
 
     // create path and map variables
-    String path = "/challenges/{challenge_id}/activities/{activity_id}".replaceAll("{format}","json").replaceAll("{" + "activityId" + "}", activityId.toString());
+    String path = "/challenges/{challenge_id}/activities/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString()).replaceAll("{" + "challenge_id" + "}", challengeId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -1089,20 +1092,20 @@ class CampaignsChallengesApi {
   }
   /// Update a challenge activity
   ///
-  /// 
-  Future<ChallengeActivityResource> updateChallengeActivity(int activityId, int challengeId, { ChallengeActivityResource challengeActivityResource }) async {
+  /// A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+  Future<ChallengeActivityResource> updateChallengeActivity(int id, int challengeId, { ChallengeActivityResource challengeActivityResource }) async {
     Object postBody = challengeActivityResource;
 
     // verify required params are set
-    if(activityId == null) {
-     throw new ApiException(400, "Missing required param: activityId");
+    if(id == null) {
+     throw new ApiException(400, "Missing required param: id");
     }
     if(challengeId == null) {
      throw new ApiException(400, "Missing required param: challengeId");
     }
 
     // create path and map variables
-    String path = "/challenges/{challenge_id}/activities/{activity_id}".replaceAll("{format}","json").replaceAll("{" + "activityId" + "}", activityId.toString()).replaceAll("{" + "challengeId" + "}", challengeId.toString());
+    String path = "/challenges/{challenge_id}/activities/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString()).replaceAll("{" + "challenge_id" + "}", challengeId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

@@ -71,6 +71,10 @@ class UserResource {
   @Property(name: 'language_code')
   String languageCode = null;
   
+/* The date the user last interacted with the API (private) */
+  @Property(name: 'last_activity')
+  int lastActivity = null;
+  
 /* The user's last name (private) */
   @Property(name: 'last_name')
   String lastName = null;
@@ -123,7 +127,7 @@ class UserResource {
 
   @override
   String toString()  {
-    return 'UserResource[additionalProperties=$additionalProperties, address=$address, address2=$address2, avatarUrl=$avatarUrl, children=$children, city=$city, countryCode=$countryCode, currencyCode=$currencyCode, dateOfBirth=$dateOfBirth, description=$description, displayName=$displayName, email=$email, firstName=$firstName, fullname=$fullname, gender=$gender, id=$id, languageCode=$languageCode, lastName=$lastName, lastUpdated=$lastUpdated, memberSince=$memberSince, mobileNumber=$mobileNumber, parents=$parents, password=$password, postalCode=$postalCode, state=$state, tags=$tags, template=$template, timezoneCode=$timezoneCode, username=$username, ]';
+    return 'UserResource[additionalProperties=$additionalProperties, address=$address, address2=$address2, avatarUrl=$avatarUrl, children=$children, city=$city, countryCode=$countryCode, currencyCode=$currencyCode, dateOfBirth=$dateOfBirth, description=$description, displayName=$displayName, email=$email, firstName=$firstName, fullname=$fullname, gender=$gender, id=$id, languageCode=$languageCode, lastActivity=$lastActivity, lastName=$lastName, lastUpdated=$lastUpdated, memberSince=$memberSince, mobileNumber=$mobileNumber, parents=$parents, password=$password, postalCode=$postalCode, state=$state, tags=$tags, template=$template, timezoneCode=$timezoneCode, username=$username, ]';
   }
 
 }

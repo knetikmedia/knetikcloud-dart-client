@@ -178,7 +178,7 @@ class DevicesApi {
     }
 
     // create path and map variables
-    String path = "/devices/{id}/users/{user_id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString()).replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/devices/{id}/users/{user_id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString()).replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

@@ -2,7 +2,7 @@ part of swagger.api;
 
 
 @Entity()
-class A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings {
+class ActivityOccurrenceResource {
   /* The id of the activity */
   @Property(name: 'activity_id')
   int activityId = null;
@@ -55,11 +55,11 @@ class A occurrence of an activity (the actual game for example) Used to track sc
   @Property(name: 'users')
   List<ActivityUserResource> users = [];
   
-  A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings();
+  ActivityOccurrenceResource();
 
   @override
   String toString()  {
-    return 'A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings[activityId=$activityId, challengeActivityId=$challengeActivityId, createdDate=$createdDate, entitlement=$entitlement, eventId=$eventId, id=$id, rewardStatus=$rewardStatus, settings=$settings, simulated=$simulated, startDate=$startDate, status=$status, updatedDate=$updatedDate, users=$users, ]';
+    return 'ActivityOccurrenceResource[activityId=$activityId, challengeActivityId=$challengeActivityId, createdDate=$createdDate, entitlement=$entitlement, eventId=$eventId, id=$id, rewardStatus=$rewardStatus, settings=$settings, simulated=$simulated, startDate=$startDate, status=$status, updatedDate=$updatedDate, users=$users, ]';
   }
 
 }

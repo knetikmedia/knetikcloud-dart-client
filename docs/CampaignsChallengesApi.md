@@ -14,13 +14,13 @@ Method | HTTP request | Description
 [**createChallengeActivityTemplate**](CampaignsChallengesApi.md#createChallengeActivityTemplate) | **POST** /challenge-activities/templates | Create a challenge activity template
 [**createChallengeTemplate**](CampaignsChallengesApi.md#createChallengeTemplate) | **POST** /challenges/templates | Create a challenge template
 [**deleteChallenge**](CampaignsChallengesApi.md#deleteChallenge) | **DELETE** /challenges/{id} | Delete a challenge
-[**deleteChallengeActivity**](CampaignsChallengesApi.md#deleteChallengeActivity) | **DELETE** /challenges/{challenge_id}/activities/{activity_id} | Delete a challenge activity
+[**deleteChallengeActivity**](CampaignsChallengesApi.md#deleteChallengeActivity) | **DELETE** /challenges/{challenge_id}/activities/{id} | Delete a challenge activity
 [**deleteChallengeActivityTemplate**](CampaignsChallengesApi.md#deleteChallengeActivityTemplate) | **DELETE** /challenge-activities/templates/{id} | Delete a challenge activity template
 [**deleteChallengeEvent**](CampaignsChallengesApi.md#deleteChallengeEvent) | **DELETE** /challenges/events/{id} | Delete a challenge event
 [**deleteChallengeTemplate**](CampaignsChallengesApi.md#deleteChallengeTemplate) | **DELETE** /challenges/templates/{id} | Delete a challenge template
 [**getChallenge**](CampaignsChallengesApi.md#getChallenge) | **GET** /challenges/{id} | Retrieve a challenge
 [**getChallengeActivities**](CampaignsChallengesApi.md#getChallengeActivities) | **GET** /challenges/{challenge_id}/activities | List and search challenge activities
-[**getChallengeActivity**](CampaignsChallengesApi.md#getChallengeActivity) | **GET** /challenges/{challenge_id}/activities/{activity_id} | Get a single challenge activity
+[**getChallengeActivity**](CampaignsChallengesApi.md#getChallengeActivity) | **GET** /challenges/{challenge_id}/activities/{id} | Get a single challenge activity
 [**getChallengeActivityTemplate**](CampaignsChallengesApi.md#getChallengeActivityTemplate) | **GET** /challenge-activities/templates/{id} | Get a single challenge activity template
 [**getChallengeActivityTemplates**](CampaignsChallengesApi.md#getChallengeActivityTemplates) | **GET** /challenge-activities/templates | List and search challenge activity templates
 [**getChallengeEvent**](CampaignsChallengesApi.md#getChallengeEvent) | **GET** /challenges/events/{id} | Retrieve a single challenge event details
@@ -29,7 +29,7 @@ Method | HTTP request | Description
 [**getChallengeTemplates**](CampaignsChallengesApi.md#getChallengeTemplates) | **GET** /challenges/templates | List and search challenge templates
 [**getChallenges**](CampaignsChallengesApi.md#getChallenges) | **GET** /challenges | Retrieve a list of challenges
 [**updateChallenge**](CampaignsChallengesApi.md#updateChallenge) | **PUT** /challenges/{id} | Update a challenge
-[**updateChallengeActivity**](CampaignsChallengesApi.md#updateChallengeActivity) | **PUT** /challenges/{challenge_id}/activities/{activity_id} | Update a challenge activity
+[**updateChallengeActivity**](CampaignsChallengesApi.md#updateChallengeActivity) | **PUT** /challenges/{challenge_id}/activities/{id} | Update a challenge activity
 [**updateChallengeActivityTemplate**](CampaignsChallengesApi.md#updateChallengeActivityTemplate) | **PUT** /challenge-activities/templates/{id} | Update an challenge activity template
 [**updateChallengeTemplate**](CampaignsChallengesApi.md#updateChallengeTemplate) | **PUT** /challenges/templates/{id} | Update a challenge template
 
@@ -259,9 +259,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteChallengeActivity**
-> deleteChallengeActivity(activityId, challengeId)
+> deleteChallengeActivity(id, challengeId)
 
 Delete a challenge activity
+
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
 
 ### Example 
 ```dart
@@ -270,11 +272,11 @@ import 'package:swagger/api.dart';
 //swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new CampaignsChallengesApi();
-var activityId = 789; // int | The activity id
+var id = 789; // int | The challenge_activity id
 var challengeId = 789; // int | The challenge id
 
 try { 
-    api_instance.deleteChallengeActivity(activityId, challengeId);
+    api_instance.deleteChallengeActivity(id, challengeId);
 } catch (e) {
     print("Exception when calling CampaignsChallengesApi->deleteChallengeActivity: $e\n");
 }
@@ -284,7 +286,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activityId** | **int**| The activity id | 
+ **id** | **int**| The challenge_activity id | 
  **challengeId** | **int**| The challenge id | 
 
 ### Return type
@@ -525,19 +527,22 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getChallengeActivity**
-> ChallengeActivityResource getChallengeActivity(activityId)
+> ChallengeActivityResource getChallengeActivity(id, challengeId)
 
 Get a single challenge activity
+
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
 
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
 
 var api_instance = new CampaignsChallengesApi();
-var activityId = 789; // int | The activity id
+var id = 789; // int | The challenge_activity id
+var challengeId = 789; // int | The challenge id
 
 try { 
-    var result = api_instance.getChallengeActivity(activityId);
+    var result = api_instance.getChallengeActivity(id, challengeId);
     print(result);
 } catch (e) {
     print("Exception when calling CampaignsChallengesApi->getChallengeActivity: $e\n");
@@ -548,7 +553,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activityId** | **int**| The activity id | 
+ **id** | **int**| The challenge_activity id | 
+ **challengeId** | **int**| The challenge id | 
 
 ### Return type
 
@@ -940,9 +946,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateChallengeActivity**
-> ChallengeActivityResource updateChallengeActivity(activityId, challengeId, challengeActivityResource)
+> ChallengeActivityResource updateChallengeActivity(id, challengeId, challengeActivityResource)
 
 Update a challenge activity
+
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
 
 ### Example 
 ```dart
@@ -951,12 +959,12 @@ import 'package:swagger/api.dart';
 //swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new CampaignsChallengesApi();
-var activityId = 789; // int | The activity id
+var id = 789; // int | The challenge_activity id
 var challengeId = 789; // int | The challenge id
 var challengeActivityResource = new ChallengeActivityResource(); // ChallengeActivityResource | The challenge activity resource object
 
 try { 
-    var result = api_instance.updateChallengeActivity(activityId, challengeId, challengeActivityResource);
+    var result = api_instance.updateChallengeActivity(id, challengeId, challengeActivityResource);
     print(result);
 } catch (e) {
     print("Exception when calling CampaignsChallengesApi->updateChallengeActivity: $e\n");
@@ -967,7 +975,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activityId** | **int**| The activity id | 
+ **id** | **int**| The challenge_activity id | 
  **challengeId** | **int**| The challenge id | 
  **challengeActivityResource** | [**ChallengeActivityResource**](ChallengeActivityResource.md)| The challenge activity resource object | [optional] 
 

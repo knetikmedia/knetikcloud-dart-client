@@ -280,7 +280,7 @@ class GamificationLevelingApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/leveling/{name}".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "name" + "}", name.toString());
+    String path = "/users/{user_id}/leveling/{name}".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "name" + "}", name.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -331,7 +331,7 @@ class GamificationLevelingApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/leveling".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/leveling".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -397,7 +397,7 @@ class GamificationLevelingApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/leveling/{name}/progress".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "name" + "}", name.toString());
+    String path = "/users/{user_id}/leveling/{name}/progress".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "name" + "}", name.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -451,7 +451,7 @@ class GamificationLevelingApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/leveling/{name}/progress".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "name" + "}", name.toString());
+    String path = "/users/{user_id}/leveling/{name}/progress".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "name" + "}", name.toString());
 
     // query params
     List<QueryParam> queryParams = [];

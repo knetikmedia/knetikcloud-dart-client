@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getArticles**
-> PageResource«ArticleResource» getArticles(filterCategory, filterTagset, filterTitle, size, page, order)
+> PageResource«ArticleResource» getArticles(filterCategory, filterTagset, filterTagIntersection, filterTagExclusion, filterTitle, size, page, order)
 
 List and search articles
 
@@ -343,14 +343,16 @@ import 'package:swagger/api.dart';
 
 var api_instance = new ContentArticlesApi();
 var filterCategory = filterCategory_example; // String | Filter for articles from a specific category by id
-var filterTagset = filterTagset_example; // String | Filter for articles with specified tags (separated by comma)
+var filterTagset = filterTagset_example; // String | Filter for articles with at least one of a specified set of tags (separated by comma)
+var filterTagIntersection = filterTagIntersection_example; // String | Filter for articles with all of a specified set of tags (separated by comma)
+var filterTagExclusion = filterTagExclusion_example; // String | Filter for articles with none of a specified set of tags (separated by comma)
 var filterTitle = filterTitle_example; // String | Filter for articles whose title contains a string
 var size = 56; // int | The number of objects returned per page
 var page = 56; // int | The number of the page returned, starting with 1
 var order = order_example; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 
 try { 
-    var result = api_instance.getArticles(filterCategory, filterTagset, filterTitle, size, page, order);
+    var result = api_instance.getArticles(filterCategory, filterTagset, filterTagIntersection, filterTagExclusion, filterTitle, size, page, order);
     print(result);
 } catch (e) {
     print("Exception when calling ContentArticlesApi->getArticles: $e\n");
@@ -362,7 +364,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterCategory** | **String**| Filter for articles from a specific category by id | [optional] 
- **filterTagset** | **String**| Filter for articles with specified tags (separated by comma) | [optional] 
+ **filterTagset** | **String**| Filter for articles with at least one of a specified set of tags (separated by comma) | [optional] 
+ **filterTagIntersection** | **String**| Filter for articles with all of a specified set of tags (separated by comma) | [optional] 
+ **filterTagExclusion** | **String**| Filter for articles with none of a specified set of tags (separated by comma) | [optional] 
  **filterTitle** | **String**| Filter for articles whose title contains a string | [optional] 
  **size** | **int**| The number of objects returned per page | [optional] [default to 25]
  **page** | **int**| The number of the page returned, starting with 1 | [optional] [default to 1]

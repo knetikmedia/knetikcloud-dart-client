@@ -800,12 +800,12 @@ import 'package:swagger/api.dart';
 
 var api_instance = new MediaVideosApi();
 var excludeFlagged = true; // bool | Skip videos that have been flagged by the current user
-var filterVideosByUploader = ; // Object | Filter for videos by uploader id
+var filterVideosByUploader = 56; // int | Filter for videos by uploader id
 var filterCategory = filterCategory_example; // String | Filter for videos from a specific category by id
 var filterTagset = filterTagset_example; // String | Filter for videos with specified tags (separated by comma)
 var filterVideosByName = filterVideosByName_example; // String | Filter for videos which name *STARTS* with the given string
-var filterVideosByContributor = ; // Object | Filter for videos with contribution from the artist specified by ID
-var filterVideosByAuthor = ; // Object | Filter for videos with an artist as author specified by ID
+var filterVideosByContributor = 56; // int | Filter for videos with contribution from the artist specified by ID
+var filterVideosByAuthor = 56; // int | Filter for videos with an artist as author specified by ID
 var filterHasAuthor = true; // bool | Filter for videos that have an author set if true, or that have no author if false
 var filterHasUploader = true; // bool | Filter for videos that have an uploader set if true, or that have no uploader if false
 var filterRelatedTo = filterRelatedTo_example; // String | Filter for videos that have designated a particular video as the TO of a relationship. Pattern should match VIDEO_ID or VIDEO_ID:DETAILS to match with a specific details string as well
@@ -828,12 +828,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **excludeFlagged** | **bool**| Skip videos that have been flagged by the current user | [optional] [default to true]
- **filterVideosByUploader** | [**Object**](.md)| Filter for videos by uploader id | [optional] 
+ **filterVideosByUploader** | **int**| Filter for videos by uploader id | [optional] 
  **filterCategory** | **String**| Filter for videos from a specific category by id | [optional] 
  **filterTagset** | **String**| Filter for videos with specified tags (separated by comma) | [optional] 
  **filterVideosByName** | **String**| Filter for videos which name *STARTS* with the given string | [optional] 
- **filterVideosByContributor** | [**Object**](.md)| Filter for videos with contribution from the artist specified by ID | [optional] 
- **filterVideosByAuthor** | [**Object**](.md)| Filter for videos with an artist as author specified by ID | [optional] 
+ **filterVideosByContributor** | **int**| Filter for videos with contribution from the artist specified by ID | [optional] 
+ **filterVideosByAuthor** | **int**| Filter for videos with an artist as author specified by ID | [optional] 
  **filterHasAuthor** | **bool**| Filter for videos that have an author set if true, or that have no author if false | [optional] 
  **filterHasUploader** | **bool**| Filter for videos that have an uploader set if true, or that have no uploader if false | [optional] 
  **filterRelatedTo** | **String**| Filter for videos that have designated a particular video as the TO of a relationship. Pattern should match VIDEO_ID or VIDEO_ID:DETAILS to match with a specific details string as well | [optional] 

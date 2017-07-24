@@ -7,6 +7,10 @@ class BreTriggerParameterDefinition {
   @Property(name: 'name')
   String name = null;
   
+/* Whether this parameter can be left off when firing the event. Default false */
+  @Property(name: 'optional')
+  bool optional = null;
+  
 /* The variable type of this parameter. See Bre Variables endpoint for list */
   @Property(name: 'type')
   String type = null;
@@ -15,7 +19,7 @@ class BreTriggerParameterDefinition {
 
   @override
   String toString()  {
-    return 'BreTriggerParameterDefinition[name=$name, type=$type, ]';
+    return 'BreTriggerParameterDefinition[name=$name, optional=$optional, type=$type, ]';
   }
 
 }

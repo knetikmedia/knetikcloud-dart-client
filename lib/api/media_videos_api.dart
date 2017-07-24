@@ -118,7 +118,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/comments".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString());
+    String path = "/media/videos/{video_id}/comments".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -169,7 +169,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/contributors".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString());
+    String path = "/media/videos/{video_id}/contributors".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -220,7 +220,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/moderation".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString());
+    String path = "/media/videos/{video_id}/moderation".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -271,7 +271,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/related".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString());
+    String path = "/media/videos/{video_id}/related".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -322,7 +322,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/dispositions".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString());
+    String path = "/media/videos/{video_id}/dispositions".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -427,7 +427,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/comments/{id}".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/media/videos/{video_id}/comments/{id}".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -478,7 +478,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/dispositions/{disposition_id}".replaceAll("{format}","json").replaceAll("{" + "dispositionId" + "}", dispositionId.toString());
+    String path = "/media/videos/{video_id}/dispositions/{disposition_id}".replaceAll("{format}","json").replaceAll("{" + "disposition_id" + "}", dispositionId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -529,7 +529,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/moderation".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString());
+    String path = "/media/videos/{video_id}/moderation".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -583,7 +583,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/related/{id}".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/media/videos/{video_id}/related/{id}".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -634,7 +634,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/videos".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/videos".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -745,7 +745,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/comments".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString());
+    String path = "/media/videos/{video_id}/comments".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -802,7 +802,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/dispositions".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString());
+    String path = "/media/videos/{video_id}/dispositions".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -859,7 +859,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/related".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString());
+    String path = "/media/videos/{video_id}/related".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -907,7 +907,7 @@ class MediaVideosApi {
   /// Search videos using the documented filters
   ///
   /// 
-  Future<PageResource«VideoResource»> getVideos({ bool excludeFlagged, Object filterVideosByUploader, String filterCategory, String filterTagset, String filterVideosByName, Object filterVideosByContributor, Object filterVideosByAuthor, bool filterHasAuthor, bool filterHasUploader, String filterRelatedTo, bool filterFriends, String filterDisposition, int size, int page, String order }) async {
+  Future<PageResource«VideoResource»> getVideos({ bool excludeFlagged, int filterVideosByUploader, String filterCategory, String filterTagset, String filterVideosByName, int filterVideosByContributor, int filterVideosByAuthor, bool filterHasAuthor, bool filterHasUploader, String filterRelatedTo, bool filterFriends, String filterDisposition, int size, int page, String order }) async {
     Object postBody = null;
 
     // verify required params are set
@@ -1012,7 +1012,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/whitelist/{id}".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/media/videos/{video_id}/whitelist/{id}".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -1066,7 +1066,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/contributors/{id}".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/media/videos/{video_id}/contributors/{id}".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -1171,7 +1171,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/comments/{id}/content".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/media/videos/{video_id}/comments/{id}/content".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -1225,7 +1225,7 @@ class MediaVideosApi {
     }
 
     // create path and map variables
-    String path = "/media/videos/{video_id}/related/{id}/relationship_details".replaceAll("{format}","json").replaceAll("{" + "videoId" + "}", videoId.toString()).replaceAll("{" + "relationshipId" + "}", relationshipId.toString());
+    String path = "/media/videos/{video_id}/related/{id}/relationship_details".replaceAll("{format}","json").replaceAll("{" + "video_id" + "}", videoId.toString()).replaceAll("{" + "relationship_id" + "}", relationshipId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

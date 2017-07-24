@@ -118,7 +118,7 @@ class StoreSubscriptionsApi {
     }
 
     // create path and map variables
-    String path = "/subscriptions/{id}/plans/{plan_id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString()).replaceAll("{" + "planId" + "}", planId.toString());
+    String path = "/subscriptions/{id}/plans/{plan_id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString()).replaceAll("{" + "plan_id" + "}", planId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

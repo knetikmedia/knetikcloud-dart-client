@@ -22,7 +22,7 @@ class PaymentsWalletsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/wallets/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "currencyCode" + "}", currencyCode.toString());
+    String path = "/users/{user_id}/wallets/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "currency_code" + "}", currencyCode.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -76,7 +76,7 @@ class PaymentsWalletsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/wallets/{currency_code}/transactions".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "currencyCode" + "}", currencyCode.toString());
+    String path = "/users/{user_id}/wallets/{currency_code}/transactions".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "currency_code" + "}", currencyCode.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -148,7 +148,7 @@ class PaymentsWalletsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/wallets".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/wallets".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -388,7 +388,7 @@ class PaymentsWalletsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/wallets/{currency_code}/balance".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "currencyCode" + "}", currencyCode.toString());
+    String path = "/users/{user_id}/wallets/{currency_code}/balance".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "currency_code" + "}", currencyCode.toString());
 
     // query params
     List<QueryParam> queryParams = [];

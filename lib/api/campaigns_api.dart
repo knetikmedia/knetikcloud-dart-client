@@ -559,7 +559,7 @@ class CampaignsApi {
     }
 
     // create path and map variables
-    String path = "/campaigns/{campaign_id}/challenges/{id}".replaceAll("{format}","json").replaceAll("{" + "campaignId" + "}", campaignId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/campaigns/{campaign_id}/challenges/{id}".replaceAll("{format}","json").replaceAll("{" + "campaign_id" + "}", campaignId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];

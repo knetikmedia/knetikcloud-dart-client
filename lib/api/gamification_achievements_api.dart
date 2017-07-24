@@ -550,7 +550,7 @@ class GamificationAchievementsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/achievements/{achievement_name}".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "achievementName" + "}", achievementName.toString());
+    String path = "/users/{user_id}/achievements/{achievement_name}".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "achievement_name" + "}", achievementName.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -601,7 +601,7 @@ class GamificationAchievementsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/achievements".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/achievements".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -667,7 +667,7 @@ class GamificationAchievementsApi {
     }
 
     // create path and map variables
-    String path = "/users/achievements/{achievement_name}".replaceAll("{format}","json").replaceAll("{" + "achievementName" + "}", achievementName.toString());
+    String path = "/users/achievements/{achievement_name}".replaceAll("{format}","json").replaceAll("{" + "achievement_name" + "}", achievementName.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -799,7 +799,7 @@ class GamificationAchievementsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/achievements/{achievement_name}/progress".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "achievementName" + "}", achievementName.toString());
+    String path = "/users/{user_id}/achievements/{achievement_name}/progress".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "achievement_name" + "}", achievementName.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -853,7 +853,7 @@ class GamificationAchievementsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/achievements/{achievement_name}/progress".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "achievementName" + "}", achievementName.toString());
+    String path = "/users/{user_id}/achievements/{achievement_name}/progress".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "achievement_name" + "}", achievementName.toString());
 
     // query params
     List<QueryParam> queryParams = [];

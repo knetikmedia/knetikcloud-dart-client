@@ -13,7 +13,7 @@ class BehaviorDefinitionResource {
   
 /* Configurable properties of the behavior */
   @Property(name: 'properties')
-  List<PropertyDefinitionResource> properties = [];
+  List<PropertyFieldResource> properties = [];
   
 /* The behavior type */
   @Property(name: 'type_hint')

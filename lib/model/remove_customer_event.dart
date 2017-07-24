@@ -2,7 +2,7 @@ part of swagger.api;
 
 
 @Entity()
-class CacheClearEvent {
+class RemoveCustomerEvent {
   
   @Property(name: 'client')
   String client = null;
@@ -40,18 +40,14 @@ class CacheClearEvent {
   String type = null;
   
 
-  @Property(name: 'customer_setup')
-  bool customerSetup = null;
+  @Property(name: 'customer_config')
+  CustomerConfig customerConfig = null;
   
-
-  @Property(name: 'customer_teardown')
-  bool customerTeardown = null;
-  
-  CacheClearEvent();
+  RemoveCustomerEvent();
 
   @override
   String toString()  {
-    return 'CacheClearEvent[client=$client, customer=$customer, doNotBroadcast=$doNotBroadcast, section=$section, source=$source, specifics=$specifics, synchronous=$synchronous, timestamp=$timestamp, type=$type, customerSetup=$customerSetup, customerTeardown=$customerTeardown, ]';
+    return 'RemoveCustomerEvent[client=$client, customer=$customer, doNotBroadcast=$doNotBroadcast, section=$section, source=$source, specifics=$specifics, synchronous=$synchronous, timestamp=$timestamp, type=$type, customerConfig=$customerConfig, ]';
   }
 
 }

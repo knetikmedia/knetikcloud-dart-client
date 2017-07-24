@@ -22,7 +22,7 @@ class GamificationLeaderboardsApi {
     }
 
     // create path and map variables
-    String path = "/leaderboards/{context_type}/{context_id}".replaceAll("{format}","json").replaceAll("{" + "contextType" + "}", contextType.toString()).replaceAll("{" + "contextId" + "}", contextId.toString());
+    String path = "/leaderboards/{context_type}/{context_id}".replaceAll("{format}","json").replaceAll("{" + "context_type" + "}", contextType.toString()).replaceAll("{" + "context_id" + "}", contextId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -88,7 +88,7 @@ class GamificationLeaderboardsApi {
     }
 
     // create path and map variables
-    String path = "/leaderboards/{context_type}/{context_id}/users/{id}/rank".replaceAll("{format}","json").replaceAll("{" + "contextType" + "}", contextType.toString()).replaceAll("{" + "contextId" + "}", contextId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/leaderboards/{context_type}/{context_id}/users/{id}/rank".replaceAll("{format}","json").replaceAll("{" + "context_type" + "}", contextType.toString()).replaceAll("{" + "context_id" + "}", contextId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];

@@ -370,7 +370,7 @@ class ContentArticlesApi {
   /// List and search articles
   ///
   /// Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
-  Future<PageResource«ArticleResource»> getArticles({ String filterCategory, String filterTagset, String filterTitle, int size, int page, String order }) async {
+  Future<PageResource«ArticleResource»> getArticles({ String filterCategory, String filterTagset, String filterTagIntersection, String filterTagExclusion, String filterTitle, int size, int page, String order }) async {
     Object postBody = null;
 
     // verify required params are set
@@ -387,6 +387,12 @@ class ContentArticlesApi {
     }
     if(filterTagset != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_tagset", filterTagset));
+    }
+    if(filterTagIntersection != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filter_tag_intersection", filterTagIntersection));
+    }
+    if(filterTagExclusion != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filter_tag_exclusion", filterTagExclusion));
     }
     if(filterTitle != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_title", filterTitle));

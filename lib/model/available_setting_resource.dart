@@ -2,7 +2,7 @@ part of swagger.api;
 
 
 @Entity()
-class The definition of an activity parameters: ex: difficulty level {
+class AvailableSettingResource {
   /* Whether the setting is advanced. Default: false */
   @Property(name: 'advanced_option')
   bool advancedOption = null;
@@ -27,11 +27,11 @@ class The definition of an activity parameters: ex: difficulty level {
   @Property(name: 'options')
   List<SettingOption> options = [];
   
-  The definition of an activity parameters: ex: difficulty level();
+  AvailableSettingResource();
 
   @override
   String toString()  {
-    return 'The definition of an activity parameters: ex: difficulty level[advancedOption=$advancedOption, defaultValue=$defaultValue, description=$description, key=$key, name=$name, options=$options, ]';
+    return 'AvailableSettingResource[advancedOption=$advancedOption, defaultValue=$defaultValue, description=$description, key=$key, name=$name, options=$options, ]';
   }
 
 }

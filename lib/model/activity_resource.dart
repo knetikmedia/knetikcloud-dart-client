@@ -2,7 +2,7 @@ part of swagger.api;
 
 
 @Entity()
-class Represents an activity that can be parameterized and tracked through metrics (scores, etc) {
+class ActivityResource {
   /* A map of additional properties keyed on the property name. Used to further describe an activity. While settings will vary from one activity occurrence (a game) to another, additional properties are shared by all the occurrences of this activity. Ex: Activity Logo, Disclaimer, Greeting, etc. Validated against template if one exists for activities */
   @Property(name: 'additional_properties')
   Map<String, Property> additionalProperties = {};
@@ -37,7 +37,7 @@ class Represents an activity that can be parameterized and tracked through metri
   
 /* Define what parameters are required/available to start and run an activity. For example: Difficulty, Number of Questions, Character name, Avatar, Duration, etc. Not populated when getting listing */
   @Property(name: 'settings')
-  List<The definition of an activity parameters: ex: difficulty level> settings = [];
+  List<AvailableSettingResource> settings = [];
   
 /* The user friendly name of that resource. Defaults to blank string */
   @Property(name: 'short_description')
@@ -63,11 +63,11 @@ class Represents an activity that can be parameterized and tracked through metri
   @Property(name: 'updated_date')
   int updatedDate = null;
   
-  Represents an activity that can be parameterized and tracked through metrics (scores, etc)();
+  ActivityResource();
 
   @override
   String toString()  {
-    return 'Represents an activity that can be parameterized and tracked through metrics (scores, etc)[additionalProperties=$additionalProperties, createdDate=$createdDate, entitlements=$entitlements, id=$id, launch=$launch, longDescription=$longDescription, name=$name, rewardSet=$rewardSet, settings=$settings, shortDescription=$shortDescription, template=$template, templateId=$templateId, type=$type, uniqueKey=$uniqueKey, updatedDate=$updatedDate, ]';
+    return 'ActivityResource[additionalProperties=$additionalProperties, createdDate=$createdDate, entitlements=$entitlements, id=$id, launch=$launch, longDescription=$longDescription, name=$name, rewardSet=$rewardSet, settings=$settings, shortDescription=$shortDescription, template=$template, templateId=$templateId, type=$type, uniqueKey=$uniqueKey, updatedDate=$updatedDate, ]';
   }
 
 }

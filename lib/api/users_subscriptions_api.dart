@@ -22,7 +22,7 @@ class UsersSubscriptionsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/subscriptions/{inventory_id}".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "inventoryId" + "}", inventoryId.toString());
+    String path = "/users/{user_id}/subscriptions/{inventory_id}".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "inventory_id" + "}", inventoryId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -73,7 +73,7 @@ class UsersSubscriptionsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/subscriptions".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/subscriptions".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -127,7 +127,7 @@ class UsersSubscriptionsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/subscriptions/{inventory_id}/reactivate".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "inventoryId" + "}", inventoryId.toString());
+    String path = "/users/{user_id}/subscriptions/{inventory_id}/reactivate".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "inventory_id" + "}", inventoryId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -184,7 +184,7 @@ class UsersSubscriptionsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/subscriptions/{inventory_id}/bill-date".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "inventoryId" + "}", inventoryId.toString());
+    String path = "/users/{user_id}/subscriptions/{inventory_id}/bill-date".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "inventory_id" + "}", inventoryId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -238,7 +238,7 @@ class UsersSubscriptionsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/subscriptions/{inventory_id}/payment-method".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "inventoryId" + "}", inventoryId.toString());
+    String path = "/users/{user_id}/subscriptions/{inventory_id}/payment-method".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "inventory_id" + "}", inventoryId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -295,7 +295,7 @@ class UsersSubscriptionsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/subscriptions/{inventory_id}/status".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "inventoryId" + "}", inventoryId.toString());
+    String path = "/users/{user_id}/subscriptions/{inventory_id}/status".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "inventory_id" + "}", inventoryId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -349,7 +349,61 @@ class UsersSubscriptionsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/subscriptions/{inventory_id}/plan".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "inventoryId" + "}", inventoryId.toString());
+    String path = "/users/{user_id}/subscriptions/{inventory_id}/plan".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "inventory_id" + "}", inventoryId.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    
+    List<String> contentTypes = ["application/json"];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["OAuth2"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'PUT',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return ;
+    } else {
+      return ;
+    }
+  }
+  /// Set a new subscription price for a user
+  ///
+  /// This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+  Future setUserSubscriptionPrice(int userId, int inventoryId, { SubscriptionPriceOverrideRequest the override details }) async {
+    Object postBody = the override details;
+
+    // verify required params are set
+    if(userId == null) {
+     throw new ApiException(400, "Missing required param: userId");
+    }
+    if(inventoryId == null) {
+     throw new ApiException(400, "Missing required param: inventoryId");
+    }
+
+    // create path and map variables
+    String path = "/users/{user_id}/subscriptions/{inventory_id}/price-override".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "inventory_id" + "}", inventoryId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

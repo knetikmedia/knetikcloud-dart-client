@@ -19,7 +19,7 @@ class ReportingRevenueApi {
     }
 
     // create path and map variables
-    String path = "/reporting/revenue/item-sales/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "currencyCode" + "}", currencyCode.toString());
+    String path = "/reporting/revenue/item-sales/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "currency_code" + "}", currencyCode.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -76,7 +76,7 @@ class ReportingRevenueApi {
     }
 
     // create path and map variables
-    String path = "/reporting/revenue/refunds/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "currencyCode" + "}", currencyCode.toString());
+    String path = "/reporting/revenue/refunds/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "currency_code" + "}", currencyCode.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -133,7 +133,7 @@ class ReportingRevenueApi {
     }
 
     // create path and map variables
-    String path = "/reporting/revenue/countries/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "currencyCode" + "}", currencyCode.toString());
+    String path = "/reporting/revenue/countries/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "currency_code" + "}", currencyCode.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -196,7 +196,7 @@ class ReportingRevenueApi {
     }
 
     // create path and map variables
-    String path = "/reporting/revenue/products/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "currencyCode" + "}", currencyCode.toString());
+    String path = "/reporting/revenue/products/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "currency_code" + "}", currencyCode.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -259,7 +259,7 @@ class ReportingRevenueApi {
     }
 
     // create path and map variables
-    String path = "/reporting/revenue/subscription-sales/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "currencyCode" + "}", currencyCode.toString());
+    String path = "/reporting/revenue/subscription-sales/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "currency_code" + "}", currencyCode.toString());
 
     // query params
     List<QueryParam> queryParams = [];

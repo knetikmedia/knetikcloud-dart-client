@@ -67,7 +67,7 @@ class AuthClientsApi {
     }
 
     // create path and map variables
-    String path = "/auth/clients/{client_key}".replaceAll("{format}","json").replaceAll("{" + "clientKey" + "}", clientKey.toString());
+    String path = "/auth/clients/{client_key}".replaceAll("{format}","json").replaceAll("{" + "client_key" + "}", clientKey.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -118,7 +118,7 @@ class AuthClientsApi {
     }
 
     // create path and map variables
-    String path = "/auth/clients/{client_key}".replaceAll("{format}","json").replaceAll("{" + "clientKey" + "}", clientKey.toString());
+    String path = "/auth/clients/{client_key}".replaceAll("{format}","json").replaceAll("{" + "client_key" + "}", clientKey.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -274,7 +274,7 @@ class AuthClientsApi {
     }
 
     // create path and map variables
-    String path = "/auth/clients/{client_key}/grant-types".replaceAll("{format}","json").replaceAll("{" + "clientKey" + "}", clientKey.toString());
+    String path = "/auth/clients/{client_key}/grant-types".replaceAll("{format}","json").replaceAll("{" + "client_key" + "}", clientKey.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -325,7 +325,7 @@ class AuthClientsApi {
     }
 
     // create path and map variables
-    String path = "/auth/clients/{client_key}/redirect-uris".replaceAll("{format}","json").replaceAll("{" + "clientKey" + "}", clientKey.toString());
+    String path = "/auth/clients/{client_key}/redirect-uris".replaceAll("{format}","json").replaceAll("{" + "client_key" + "}", clientKey.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -376,7 +376,7 @@ class AuthClientsApi {
     }
 
     // create path and map variables
-    String path = "/auth/clients/{client_key}".replaceAll("{format}","json").replaceAll("{" + "clientKey" + "}", clientKey.toString());
+    String path = "/auth/clients/{client_key}".replaceAll("{format}","json").replaceAll("{" + "client_key" + "}", clientKey.toString());
 
     // query params
     List<QueryParam> queryParams = [];

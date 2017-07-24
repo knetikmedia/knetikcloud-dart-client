@@ -9,15 +9,15 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**linkAccounts1**](SocialGoogleApi.md#linkAccounts1) | **POST** /social/google/users | Link facebook account
+[**linkAccounts1**](SocialGoogleApi.md#linkAccounts1) | **POST** /social/google/users | Link google account
 
 
 # **linkAccounts1**
-> linkAccounts1(facebookToken)
+> linkAccounts1(googleToken)
 
-Link facebook account
+Link google account
 
-Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired.
+Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
 
 ### Example 
 ```dart
@@ -26,10 +26,10 @@ import 'package:swagger/api.dart';
 //swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new SocialGoogleApi();
-var facebookToken = new GoogleToken(); // GoogleToken | The token from facebook
+var googleToken = new GoogleToken(); // GoogleToken | The token from google
 
 try { 
-    api_instance.linkAccounts1(facebookToken);
+    api_instance.linkAccounts1(googleToken);
 } catch (e) {
     print("Exception when calling SocialGoogleApi->linkAccounts1: $e\n");
 }
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **facebookToken** | [**GoogleToken**](GoogleToken.md)| The token from facebook | [optional] 
+ **googleToken** | [**GoogleToken**](GoogleToken.md)| The token from google | [optional] 
 
 ### Return type
 

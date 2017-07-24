@@ -640,7 +640,7 @@ A reset code will be generated and a 'forgot_password' BRE event will be fired w
 import 'package:swagger/api.dart';
 
 var api_instance = new UsersApi();
-var passwordReset = new A request to reset a user&#39;s password by using a known user property(); // A request to reset a user's password by using a known user property | An object containing one of three methods to look up a user
+var passwordReset = new PasswordResetRequest(); // PasswordResetRequest | An object containing one of three methods to look up a user
 
 try { 
     api_instance.submitPasswordReset(passwordReset);
@@ -653,7 +653,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **passwordReset** | [**A request to reset a user&#39;s password by using a known user property**](A request to reset a user&#39;s password by using a known user property.md)| An object containing one of three methods to look up a user | [optional] 
+ **passwordReset** | [**PasswordResetRequest**](PasswordResetRequest.md)| An object containing one of three methods to look up a user | [optional] 
 
 ### Return type
 

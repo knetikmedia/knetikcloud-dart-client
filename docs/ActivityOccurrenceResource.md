@@ -1,4 +1,4 @@
-# swagger.model.A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings
+# swagger.model.ActivityOccurrenceResource
 
 ## Load the model package
 ```dart

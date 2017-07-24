@@ -41,10 +41,6 @@ class ApiClient {
           return value is bool ? value : '$value'.toLowerCase() == 'true';
         case 'double':
           return value is double ? value : double.parse('$value');
-        case 'A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings':
-          return dson.map(value, new A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings());
-        case 'A request to reset a user&#39;s password by using a known user property':
-          return dson.map(value, new A request to reset a user&#39;s password by using a known user property());
         case 'AchievementDefinitionResource':
           return dson.map(value, new AchievementDefinitionResource());
         case 'ActionResource':
@@ -57,8 +53,14 @@ class ApiClient {
           return dson.map(value, new ActivityOccurrenceCreationFailure());
         case 'ActivityOccurrenceJoinResult':
           return dson.map(value, new ActivityOccurrenceJoinResult());
+        case 'ActivityOccurrenceResource':
+          return dson.map(value, new ActivityOccurrenceResource());
         case 'ActivityOccurrenceResults':
           return dson.map(value, new ActivityOccurrenceResults());
+        case 'ActivityOccurrenceResultsResource':
+          return dson.map(value, new ActivityOccurrenceResultsResource());
+        case 'ActivityResource':
+          return dson.map(value, new ActivityResource());
         case 'ActivityUserResource':
           return dson.map(value, new ActivityUserResource());
         case 'AddressResource':
@@ -77,14 +79,8 @@ class ApiClient {
           return dson.map(value, new ArticleResource());
         case 'ArtistResource':
           return dson.map(value, new ArtistResource());
-        case 'AudioGroupProperty':
-          return dson.map(value, new AudioGroupProperty());
-        case 'AudioGroupPropertyDefinitionResource':
-          return dson.map(value, new AudioGroupPropertyDefinitionResource());
-        case 'AudioProperty':
-          return dson.map(value, new AudioProperty());
-        case 'AudioPropertyDefinitionResource':
-          return dson.map(value, new AudioPropertyDefinitionResource());
+        case 'AvailableSettingResource':
+          return dson.map(value, new AvailableSettingResource());
         case 'BareActivityResource':
           return dson.map(value, new BareActivityResource());
         case 'BareChallengeActivityResource':
@@ -103,10 +99,6 @@ class ApiClient {
           return dson.map(value, new BehaviorDefinitionResource());
         case 'BillingReport':
           return dson.map(value, new BillingReport());
-        case 'BooleanProperty':
-          return dson.map(value, new BooleanProperty());
-        case 'BooleanPropertyDefinitionResource':
-          return dson.map(value, new BooleanPropertyDefinitionResource());
         case 'BooleanResource':
           return dson.map(value, new BooleanResource());
         case 'BreCategoryResource':
@@ -129,12 +121,8 @@ class ApiClient {
           return dson.map(value, new BreTriggerResource());
         case 'BroadcastableEvent':
           return dson.map(value, new BroadcastableEvent());
-        case 'BundleItem':
-          return dson.map(value, new BundleItem());
         case 'BundledSku':
           return dson.map(value, new BundledSku());
-        case 'CacheClearEvent':
-          return dson.map(value, new CacheClearEvent());
         case 'CampaignResource':
           return dson.map(value, new CampaignResource());
         case 'Cart':
@@ -179,8 +167,6 @@ class ApiClient {
           return dson.map(value, new ConfigLookupResource());
         case 'ConstantResource':
           return dson.map(value, new ConstantResource());
-        case 'Consumable':
-          return dson.map(value, new Consumable());
         case 'ContributionResource':
           return dson.map(value, new ContributionResource());
         case 'Country':
@@ -191,8 +177,6 @@ class ApiClient {
           return dson.map(value, new CountryTaxResource());
         case 'CouponDefinition':
           return dson.map(value, new CouponDefinition());
-        case 'CouponItem':
-          return dson.map(value, new CouponItem());
         case 'CreateBillingAgreementRequest':
           return dson.map(value, new CreateBillingAgreementRequest());
         case 'CreatePayPalPaymentRequest':
@@ -205,10 +189,6 @@ class ApiClient {
           return dson.map(value, new DatabaseConfig());
         case 'DateOperationResource':
           return dson.map(value, new DateOperationResource());
-        case 'DateProperty':
-          return dson.map(value, new DateProperty());
-        case 'DatePropertyDefinitionResource':
-          return dson.map(value, new DatePropertyDefinitionResource());
         case 'DeltaResource':
           return dson.map(value, new DeltaResource());
         case 'DeviceResource':
@@ -221,34 +201,18 @@ class ApiClient {
           return dson.map(value, new DispositionResource());
         case 'DoubleOperationResource':
           return dson.map(value, new DoubleOperationResource());
-        case 'DoubleProperty':
-          return dson.map(value, new DoubleProperty());
-        case 'DoublePropertyDefinitionResource':
-          return dson.map(value, new DoublePropertyDefinitionResource());
         case 'EntitlementGrantRequest':
           return dson.map(value, new EntitlementGrantRequest());
-        case 'EntitlementItem':
-          return dson.map(value, new EntitlementItem());
         case 'ErrorResource':
           return dson.map(value, new ErrorResource());
         case 'EventContextResource':
           return dson.map(value, new EventContextResource());
-        case 'Expirable':
-          return dson.map(value, new Expirable());
         case 'ExpressionResource':
           return dson.map(value, new ExpressionResource());
         case 'Expression«object»':
           return dson.map(value, new Expression«object»());
         case 'FacebookToken':
           return dson.map(value, new FacebookToken());
-        case 'FileGroupProperty':
-          return dson.map(value, new FileGroupProperty());
-        case 'FileGroupPropertyDefinitionResource':
-          return dson.map(value, new FileGroupPropertyDefinitionResource());
-        case 'FileProperty':
-          return dson.map(value, new FileProperty());
-        case 'FilePropertyDefinitionResource':
-          return dson.map(value, new FilePropertyDefinitionResource());
         case 'FinalizeBillingAgreementRequest':
           return dson.map(value, new FinalizeBillingAgreementRequest());
         case 'FinalizePayPalPaymentRequest':
@@ -257,14 +221,8 @@ class ApiClient {
           return dson.map(value, new FlagReportResource());
         case 'FlagResource':
           return dson.map(value, new FlagResource());
-        case 'FormattedTextProperty':
-          return dson.map(value, new FormattedTextProperty());
-        case 'FormattedTextPropertyDefinitionResource':
-          return dson.map(value, new FormattedTextPropertyDefinitionResource());
         case 'ForwardLog':
           return dson.map(value, new ForwardLog());
-        case 'Fulfillable':
-          return dson.map(value, new Fulfillable());
         case 'FulfillmentType':
           return dson.map(value, new FulfillmentType());
         case 'GlobalCheckAndIncrementResource':
@@ -281,26 +239,14 @@ class ApiClient {
           return dson.map(value, new GroupMemberResource());
         case 'GroupResource':
           return dson.map(value, new GroupResource());
-        case 'GuestPlayable':
-          return dson.map(value, new GuestPlayable());
-        case 'ImageGroupProperty':
-          return dson.map(value, new ImageGroupProperty());
-        case 'ImageGroupPropertyDefinitionResource':
-          return dson.map(value, new ImageGroupPropertyDefinitionResource());
-        case 'ImageProperty':
-          return dson.map(value, new ImageProperty());
-        case 'ImagePropertyDefinitionResource':
-          return dson.map(value, new ImagePropertyDefinitionResource());
+        case 'IOConfig':
+          return dson.map(value, new IOConfig());
         case 'ImportJobOutputResource':
           return dson.map(value, new ImportJobOutputResource());
         case 'ImportJobResource':
           return dson.map(value, new ImportJobResource());
         case 'IntegerOperationResource':
           return dson.map(value, new IntegerOperationResource());
-        case 'IntegerProperty':
-          return dson.map(value, new IntegerProperty());
-        case 'IntegerPropertyDefinitionResource':
-          return dson.map(value, new IntegerPropertyDefinitionResource());
         case 'InventorySubscriptionResource':
           return dson.map(value, new InventorySubscriptionResource());
         case 'InvoiceCreateRequest':
@@ -327,18 +273,12 @@ class ApiClient {
           return dson.map(value, new LeaderboardResource());
         case 'LevelingResource':
           return dson.map(value, new LevelingResource());
-        case 'LimitedGettable':
-          return dson.map(value, new LimitedGettable());
         case 'LimitedGettableGroup':
           return dson.map(value, new LimitedGettableGroup());
         case 'Localizer':
           return dson.map(value, new Localizer());
         case 'LocationLogResource':
           return dson.map(value, new LocationLogResource());
-        case 'LongProperty':
-          return dson.map(value, new LongProperty());
-        case 'LongPropertyDefinitionResource':
-          return dson.map(value, new LongPropertyDefinitionResource());
         case 'LookupResource':
           return dson.map(value, new LookupResource());
         case 'LookupTypeResource':
@@ -357,8 +297,6 @@ class ApiClient {
           return dson.map(value, new MongoDatabaseConfig());
         case 'NestedCategory':
           return dson.map(value, new NestedCategory());
-        case 'NewCustomerEvent':
-          return dson.map(value, new NewCustomerEvent());
         case 'NewPasswordRequest':
           return dson.map(value, new NewPasswordRequest());
         case 'OAuth2Resource':
@@ -519,6 +457,8 @@ class ApiClient {
           return dson.map(value, new PageResource«string»());
         case 'ParameterResource':
           return dson.map(value, new ParameterResource());
+        case 'PasswordResetRequest':
+          return dson.map(value, new PasswordResetRequest());
         case 'PayBySavedMethodRequest':
           return dson.map(value, new PayBySavedMethodRequest());
         case 'PaymentAuthorizationResource':
@@ -535,14 +475,10 @@ class ApiClient {
           return dson.map(value, new PollResource());
         case 'PollResponseResource':
           return dson.map(value, new PollResponseResource());
-        case 'PreReqEntitlement':
-          return dson.map(value, new PreReqEntitlement());
         case 'PredicateOperation':
           return dson.map(value, new PredicateOperation());
         case 'PredicateResource':
           return dson.map(value, new PredicateResource());
-        case 'PriceOverridable':
-          return dson.map(value, new PriceOverridable());
         case 'Property':
           return dson.map(value, new Property());
         case 'PropertyDefinitionResource':
@@ -565,8 +501,6 @@ class ApiClient {
           return dson.map(value, new RefundRequest());
         case 'RefundResource':
           return dson.map(value, new RefundResource());
-        case 'Represents an activity that can be parameterized and tracked through metrics (scores, etc)':
-          return dson.map(value, new Represents an activity that can be parameterized and tracked through metrics (scores, etc)());
         case 'Result':
           return dson.map(value, new Result());
         case 'RevenueCountryReportResource':
@@ -597,8 +531,6 @@ class ApiClient {
           return dson.map(value, new SelectedSettingResource());
         case 'SettingOption':
           return dson.map(value, new SettingOption());
-        case 'ShippingItem':
-          return dson.map(value, new ShippingItem());
         case 'SimpleReferenceResource«int»':
           return dson.map(value, new SimpleReferenceResource«int»());
         case 'SimpleReferenceResource«long»':
@@ -615,16 +547,12 @@ class ApiClient {
           return dson.map(value, new Sku());
         case 'SkuRequest':
           return dson.map(value, new SkuRequest());
-        case 'Spendable':
-          return dson.map(value, new Spendable());
         case 'SqlDatabaseConfig':
           return dson.map(value, new SqlDatabaseConfig());
         case 'StateResource':
           return dson.map(value, new StateResource());
         case 'StateTaxResource':
           return dson.map(value, new StateTaxResource());
-        case 'StoreItem':
-          return dson.map(value, new StoreItem());
         case 'StoreItemTemplateResource':
           return dson.map(value, new StoreItemTemplateResource());
         case 'StringOperationResource':
@@ -633,14 +561,14 @@ class ApiClient {
           return dson.map(value, new StripeCreatePaymentMethod());
         case 'StripePaymentRequest':
           return dson.map(value, new StripePaymentRequest());
-        case 'Subscription':
-          return dson.map(value, new Subscription());
         case 'SubscriptionCreditResource':
           return dson.map(value, new SubscriptionCreditResource());
         case 'SubscriptionPlan':
           return dson.map(value, new SubscriptionPlan());
         case 'SubscriptionPlanResource':
           return dson.map(value, new SubscriptionPlanResource());
+        case 'SubscriptionPriceOverrideRequest':
+          return dson.map(value, new SubscriptionPriceOverrideRequest());
         case 'SubscriptionResource':
           return dson.map(value, new SubscriptionResource());
         case 'SubscriptionTemplateResource':
@@ -651,18 +579,8 @@ class ApiClient {
           return dson.map(value, new TemplateResource());
         case 'TemplateSMSResource':
           return dson.map(value, new TemplateSMSResource());
-        case 'TextProperty':
-          return dson.map(value, new TextProperty());
-        case 'TextPropertyDefinitionResource':
-          return dson.map(value, new TextPropertyDefinitionResource());
-        case 'The definition of an activity parameters: ex: difficulty level':
-          return dson.map(value, new The definition of an activity parameters: ex: difficulty level());
         case 'TierResource':
           return dson.map(value, new TierResource());
-        case 'TimePeriodGettable':
-          return dson.map(value, new TimePeriodGettable());
-        case 'TimePeriodUsable':
-          return dson.map(value, new TimePeriodUsable());
         case 'TokenDetailsResource':
           return dson.map(value, new TokenDetailsResource());
         case 'TransactionResource':
@@ -677,6 +595,8 @@ class ApiClient {
           return dson.map(value, new UserAchievementResource());
         case 'UserActionLog':
           return dson.map(value, new UserActionLog());
+        case 'UserActivityResults':
+          return dson.map(value, new UserActivityResults());
         case 'UserActivityResultsResource':
           return dson.map(value, new UserActivityResultsResource());
         case 'UserBaseResource':
@@ -705,14 +625,6 @@ class ApiClient {
           return dson.map(value, new VendorResource());
         case 'Version':
           return dson.map(value, new Version());
-        case 'VideoGroupProperty':
-          return dson.map(value, new VideoGroupProperty());
-        case 'VideoGroupPropertyDefinitionResource':
-          return dson.map(value, new VideoGroupPropertyDefinitionResource());
-        case 'VideoProperty':
-          return dson.map(value, new VideoProperty());
-        case 'VideoPropertyDefinitionResource':
-          return dson.map(value, new VideoPropertyDefinitionResource());
         case 'VideoRelationshipResource':
           return dson.map(value, new VideoRelationshipResource());
         case 'VideoResource':
@@ -725,6 +637,104 @@ class ApiClient {
           return dson.map(value, new WalletTransactionResource());
         case 'XsollaPaymentRequest':
           return dson.map(value, new XsollaPaymentRequest());
+        case 'AudioPropertyDefinitionResource':
+          return dson.map(value, new AudioPropertyDefinitionResource());
+        case 'BooleanProperty':
+          return dson.map(value, new BooleanProperty());
+        case 'BooleanPropertyDefinitionResource':
+          return dson.map(value, new BooleanPropertyDefinitionResource());
+        case 'CacheClearEvent':
+          return dson.map(value, new CacheClearEvent());
+        case 'Consumable':
+          return dson.map(value, new Consumable());
+        case 'DateProperty':
+          return dson.map(value, new DateProperty());
+        case 'DatePropertyDefinitionResource':
+          return dson.map(value, new DatePropertyDefinitionResource());
+        case 'DoubleProperty':
+          return dson.map(value, new DoubleProperty());
+        case 'DoublePropertyDefinitionResource':
+          return dson.map(value, new DoublePropertyDefinitionResource());
+        case 'EntitlementItem':
+          return dson.map(value, new EntitlementItem());
+        case 'Expirable':
+          return dson.map(value, new Expirable());
+        case 'FileGroupProperty':
+          return dson.map(value, new FileGroupProperty());
+        case 'FileGroupPropertyDefinitionResource':
+          return dson.map(value, new FileGroupPropertyDefinitionResource());
+        case 'FileProperty':
+          return dson.map(value, new FileProperty());
+        case 'FilePropertyDefinitionResource':
+          return dson.map(value, new FilePropertyDefinitionResource());
+        case 'FormattedTextProperty':
+          return dson.map(value, new FormattedTextProperty());
+        case 'FormattedTextPropertyDefinitionResource':
+          return dson.map(value, new FormattedTextPropertyDefinitionResource());
+        case 'Fulfillable':
+          return dson.map(value, new Fulfillable());
+        case 'GuestPlayable':
+          return dson.map(value, new GuestPlayable());
+        case 'ImagePropertyDefinitionResource':
+          return dson.map(value, new ImagePropertyDefinitionResource());
+        case 'IntegerProperty':
+          return dson.map(value, new IntegerProperty());
+        case 'IntegerPropertyDefinitionResource':
+          return dson.map(value, new IntegerPropertyDefinitionResource());
+        case 'LimitedGettable':
+          return dson.map(value, new LimitedGettable());
+        case 'LongProperty':
+          return dson.map(value, new LongProperty());
+        case 'LongPropertyDefinitionResource':
+          return dson.map(value, new LongPropertyDefinitionResource());
+        case 'NewCustomerEvent':
+          return dson.map(value, new NewCustomerEvent());
+        case 'PreReqEntitlement':
+          return dson.map(value, new PreReqEntitlement());
+        case 'PriceOverridable':
+          return dson.map(value, new PriceOverridable());
+        case 'RemoveCustomerEvent':
+          return dson.map(value, new RemoveCustomerEvent());
+        case 'Spendable':
+          return dson.map(value, new Spendable());
+        case 'StoreItem':
+          return dson.map(value, new StoreItem());
+        case 'TextProperty':
+          return dson.map(value, new TextProperty());
+        case 'TextPropertyDefinitionResource':
+          return dson.map(value, new TextPropertyDefinitionResource());
+        case 'TimePeriodGettable':
+          return dson.map(value, new TimePeriodGettable());
+        case 'TimePeriodUsable':
+          return dson.map(value, new TimePeriodUsable());
+        case 'VideoPropertyDefinitionResource':
+          return dson.map(value, new VideoPropertyDefinitionResource());
+        case 'AudioGroupProperty':
+          return dson.map(value, new AudioGroupProperty());
+        case 'AudioGroupPropertyDefinitionResource':
+          return dson.map(value, new AudioGroupPropertyDefinitionResource());
+        case 'AudioProperty':
+          return dson.map(value, new AudioProperty());
+        case 'BundleItem':
+          return dson.map(value, new BundleItem());
+        case 'CouponItem':
+          return dson.map(value, new CouponItem());
+        case 'ImageGroupProperty':
+          return dson.map(value, new ImageGroupProperty());
+        case 'ImageGroupPropertyDefinitionResource':
+          return dson.map(value, new ImageGroupPropertyDefinitionResource());
+        case 'ImageProperty':
+          return dson.map(value, new ImageProperty());
+        case 'ShippingItem':
+          return dson.map(value, new ShippingItem());
+        case 'Subscription':
+          return dson.map(value, new Subscription());
+        case 'VideoGroupProperty':
+          return dson.map(value, new VideoGroupProperty());
+        case 'VideoGroupPropertyDefinitionResource':
+          return dson.map(value, new VideoGroupPropertyDefinitionResource());
+        case 'VideoProperty':
+          return dson.map(value, new VideoProperty());
         default:
           {
             Match match;

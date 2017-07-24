@@ -35,11 +35,19 @@ class InventorySubscriptionResource {
   @Property(name: 'payment_method')
   PaymentMethodResource paymentMethod = null;
   
-/* The recurring price */
+/* The recurring price that has been set to override the base price. Null if not overriding */
+  @Property(name: 'price_override')
+  double priceOverride = null;
+  
+/* An explanation for the reason the price is being overridden */
+  @Property(name: 'price_override_reason')
+  String priceOverrideReason = null;
+  
+/* The default recurring price */
   @Property(name: 'recurring_price')
   double recurringPrice = null;
   
-/* The sku of the subscription */
+/* The recurring sku of the subscription */
   @Property(name: 'sku')
   String sku = null;
   
@@ -59,7 +67,7 @@ class InventorySubscriptionResource {
 
   @override
   String toString()  {
-    return 'InventorySubscriptionResource[billDate=$billDate, credit=$credit, creditLog=$creditLog, graceEnd=$graceEnd, inventoryId=$inventoryId, inventoryStatus=$inventoryStatus, itemId=$itemId, paymentMethod=$paymentMethod, recurringPrice=$recurringPrice, sku=$sku, startDate=$startDate, subscriptionStatus=$subscriptionStatus, user=$user, ]';
+    return 'InventorySubscriptionResource[billDate=$billDate, credit=$credit, creditLog=$creditLog, graceEnd=$graceEnd, inventoryId=$inventoryId, inventoryStatus=$inventoryStatus, itemId=$itemId, paymentMethod=$paymentMethod, priceOverride=$priceOverride, priceOverrideReason=$priceOverrideReason, recurringPrice=$recurringPrice, sku=$sku, startDate=$startDate, subscriptionStatus=$subscriptionStatus, user=$user, ]';
   }
 
 }

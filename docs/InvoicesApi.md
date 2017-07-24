@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**getInvoices**](InvoicesApi.md#getInvoices) | **GET** /invoices | Retrieve invoices
 [**getPaymentStatuses**](InvoicesApi.md#getPaymentStatuses) | **GET** /invoices/payment-statuses | Lists available payment statuses
 [**payInvoice**](InvoicesApi.md#payInvoice) | **POST** /invoices/{id}/payments | Trigger payment of an invoice
+[**setBundledInvoiceItemFulfillmentStatus**](InvoicesApi.md#setBundledInvoiceItemFulfillmentStatus) | **PUT** /invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status | Set the fulfillment status of a bundled invoice item
 [**setExternalRef**](InvoicesApi.md#setExternalRef) | **PUT** /invoices/{id}/external-ref | Set the external reference of an invoice
 [**setInvoiceItemFulfillmentStatus**](InvoicesApi.md#setInvoiceItemFulfillmentStatus) | **PUT** /invoices/{id}/items/{sku}/fulfillment-status | Set the fulfillment status of an invoice item
 [**setOrderNotes**](InvoicesApi.md#setOrderNotes) | **PUT** /invoices/{id}/order-notes | Set the order notes of an invoice
@@ -216,7 +217,7 @@ var filterPaymentStatus = filterPaymentStatus_example; // String | Filters invoi
 var filterItemName = filterItemName_example; // String | Filters invoices by item name containing the given string
 var filterExternalRef = filterExternalRef_example; // String | Filters invoices by external reference.
 var filterCreatedDate = filterCreatedDate_example; // String | Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date=OP,ts&... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date=GT,1452154258,LT,1554254874
-var filterVendorIds = ; // Object | Filters invoices for ones from one of the vendors whose id is in the given comma separated list
+var filterVendorIds = filterVendorIds_example; // String | Filters invoices for ones from one of the vendors whose id is in the given comma separated list
 var filterCurrency = filterCurrency_example; // String | Filters invoices by currency. ISO3 currency code
 var filterShippingStateName = filterShippingStateName_example; // String | Filters invoices by shipping address: Exact match state name
 var filterShippingCountryName = filterShippingCountryName_example; // String | Filters invoices by shipping address: Exact match country name
@@ -246,7 +247,7 @@ Name | Type | Description  | Notes
  **filterItemName** | **String**| Filters invoices by item name containing the given string | [optional] 
  **filterExternalRef** | **String**| Filters invoices by external reference. | [optional] 
  **filterCreatedDate** | **String**| Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874 | [optional] 
- **filterVendorIds** | [**Object**](.md)| Filters invoices for ones from one of the vendors whose id is in the given comma separated list | [optional] 
+ **filterVendorIds** | **String**| Filters invoices for ones from one of the vendors whose id is in the given comma separated list | [optional] 
  **filterCurrency** | **String**| Filters invoices by currency. ISO3 currency code | [optional] 
  **filterShippingStateName** | **String**| Filters invoices by shipping address: Exact match state name | [optional] 
  **filterShippingCountryName** | **String**| Filters invoices by shipping address: Exact match country name | [optional] 
@@ -337,6 +338,56 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The id of the invoice | 
  **request** | [**PayBySavedMethodRequest**](PayBySavedMethodRequest.md)| Payment info | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **setBundledInvoiceItemFulfillmentStatus**
+> setBundledInvoiceItemFulfillmentStatus(id, bundleSku, sku, status)
+
+Set the fulfillment status of a bundled invoice item
+
+This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new InvoicesApi();
+var id = 56; // int | The id of the invoice
+var bundleSku = bundleSku_example; // String | The sku of the bundle in the invoice that contains the given target
+var sku = sku_example; // String | The sku of an item in the bundle in the invoice
+var status = new String(); // String | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
+
+try { 
+    api_instance.setBundledInvoiceItemFulfillmentStatus(id, bundleSku, sku, status);
+} catch (e) {
+    print("Exception when calling InvoicesApi->setBundledInvoiceItemFulfillmentStatus: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The id of the invoice | 
+ **bundleSku** | **String**| The sku of the bundle in the invoice that contains the given target | 
+ **sku** | **String**| The sku of an item in the bundle in the invoice | 
+ **status** | **String**| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
 
 ### Return type
 

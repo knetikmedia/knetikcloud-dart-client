@@ -67,7 +67,7 @@ class TaxesApi {
     }
 
     // create path and map variables
-    String path = "/tax/countries/{country_code_iso3}/states".replaceAll("{format}","json").replaceAll("{" + "countryCodeIso3" + "}", countryCodeIso3.toString());
+    String path = "/tax/countries/{country_code_iso3}/states".replaceAll("{format}","json").replaceAll("{" + "country_code_iso3" + "}", countryCodeIso3.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -118,7 +118,7 @@ class TaxesApi {
     }
 
     // create path and map variables
-    String path = "/tax/countries/{country_code_iso3}".replaceAll("{format}","json").replaceAll("{" + "countryCodeIso3" + "}", countryCodeIso3.toString());
+    String path = "/tax/countries/{country_code_iso3}".replaceAll("{format}","json").replaceAll("{" + "country_code_iso3" + "}", countryCodeIso3.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -172,7 +172,7 @@ class TaxesApi {
     }
 
     // create path and map variables
-    String path = "/tax/countries/{country_code_iso3}/states/{state_code}".replaceAll("{format}","json").replaceAll("{" + "countryCodeIso3" + "}", countryCodeIso3.toString()).replaceAll("{" + "stateCode" + "}", stateCode.toString());
+    String path = "/tax/countries/{country_code_iso3}/states/{state_code}".replaceAll("{format}","json").replaceAll("{" + "country_code_iso3" + "}", countryCodeIso3.toString()).replaceAll("{" + "state_code" + "}", stateCode.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -223,7 +223,7 @@ class TaxesApi {
     }
 
     // create path and map variables
-    String path = "/tax/countries/{country_code_iso3}".replaceAll("{format}","json").replaceAll("{" + "countryCodeIso3" + "}", countryCodeIso3.toString());
+    String path = "/tax/countries/{country_code_iso3}".replaceAll("{format}","json").replaceAll("{" + "country_code_iso3" + "}", countryCodeIso3.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -334,7 +334,7 @@ class TaxesApi {
     }
 
     // create path and map variables
-    String path = "/tax/countries/{country_code_iso3}/states/{state_code}".replaceAll("{format}","json").replaceAll("{" + "countryCodeIso3" + "}", countryCodeIso3.toString()).replaceAll("{" + "stateCode" + "}", stateCode.toString());
+    String path = "/tax/countries/{country_code_iso3}/states/{state_code}".replaceAll("{format}","json").replaceAll("{" + "country_code_iso3" + "}", countryCodeIso3.toString()).replaceAll("{" + "state_code" + "}", stateCode.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -442,7 +442,7 @@ class TaxesApi {
     }
 
     // create path and map variables
-    String path = "/tax/countries/{country_code_iso3}/states".replaceAll("{format}","json").replaceAll("{" + "countryCodeIso3" + "}", countryCodeIso3.toString());
+    String path = "/tax/countries/{country_code_iso3}/states".replaceAll("{format}","json").replaceAll("{" + "country_code_iso3" + "}", countryCodeIso3.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -502,7 +502,7 @@ class TaxesApi {
     }
 
     // create path and map variables
-    String path = "/tax/countries/{country_code_iso3}".replaceAll("{format}","json").replaceAll("{" + "countryCodeIso3" + "}", countryCodeIso3.toString());
+    String path = "/tax/countries/{country_code_iso3}".replaceAll("{format}","json").replaceAll("{" + "country_code_iso3" + "}", countryCodeIso3.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -556,7 +556,7 @@ class TaxesApi {
     }
 
     // create path and map variables
-    String path = "/tax/countries/{country_code_iso3}/states/{state_code}".replaceAll("{format}","json").replaceAll("{" + "countryCodeIso3" + "}", countryCodeIso3.toString()).replaceAll("{" + "stateCode" + "}", stateCode.toString());
+    String path = "/tax/countries/{country_code_iso3}/states/{state_code}".replaceAll("{format}","json").replaceAll("{" + "country_code_iso3" + "}", countryCodeIso3.toString()).replaceAll("{" + "state_code" + "}", stateCode.toString());
 
     // query params
     List<QueryParam> queryParams = [];

@@ -115,7 +115,7 @@ class LocationsApi {
     }
 
     // create path and map variables
-    String path = "/location/countries/{country_code_iso3}/states".replaceAll("{format}","json").replaceAll("{" + "countryCodeIso3" + "}", countryCodeIso3.toString());
+    String path = "/location/countries/{country_code_iso3}/states".replaceAll("{format}","json").replaceAll("{" + "country_code_iso3" + "}", countryCodeIso3.toString());
 
     // query params
     List<QueryParam> queryParams = [];

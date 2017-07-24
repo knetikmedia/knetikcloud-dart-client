@@ -4,6 +4,10 @@ part of swagger.api;
 @Entity()
 class TokenDetailsResource {
   
+  @Property(name: 'client_id')
+  String clientId = null;
+  
+
   @Property(name: 'roles')
   List<String> roles = [];
   
@@ -15,7 +19,7 @@ class TokenDetailsResource {
 
   @override
   String toString()  {
-    return 'TokenDetailsResource[roles=$roles, userId=$userId, ]';
+    return 'TokenDetailsResource[clientId=$clientId, roles=$roles, userId=$userId, ]';
   }
 
 }

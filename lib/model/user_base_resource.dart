@@ -23,6 +23,10 @@ class UserBaseResource {
   @Property(name: 'id')
   int id = null;
   
+/* The date the user last interacted with the API (private) */
+  @Property(name: 'last_activity')
+  int lastActivity = null;
+  
 /* The date the user's info was last updated as a unix timestamp */
   @Property(name: 'last_updated')
   int lastUpdated = null;
@@ -39,7 +43,7 @@ class UserBaseResource {
 
   @override
   String toString()  {
-    return 'UserBaseResource[avatarUrl=$avatarUrl, displayName=$displayName, email=$email, fullname=$fullname, id=$id, lastUpdated=$lastUpdated, memberSince=$memberSince, username=$username, ]';
+    return 'UserBaseResource[avatarUrl=$avatarUrl, displayName=$displayName, email=$email, fullname=$fullname, id=$id, lastActivity=$lastActivity, lastUpdated=$lastUpdated, memberSince=$memberSince, username=$username, ]';
   }
 
 }

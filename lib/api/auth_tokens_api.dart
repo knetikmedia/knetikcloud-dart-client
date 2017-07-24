@@ -76,7 +76,7 @@ class AuthTokensApi {
     }
 
     // create path and map variables
-    String path = "/auth/tokens/{username}/{client_id}".replaceAll("{format}","json").replaceAll("{" + "username" + "}", username.toString()).replaceAll("{" + "clientId" + "}", clientId.toString());
+    String path = "/auth/tokens/{username}/{client_id}".replaceAll("{format}","json").replaceAll("{" + "username" + "}", username.toString()).replaceAll("{" + "client_id" + "}", clientId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

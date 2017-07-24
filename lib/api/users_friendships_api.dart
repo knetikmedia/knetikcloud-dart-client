@@ -22,7 +22,7 @@ class UsersFriendshipsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/friends/{id}".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/users/{user_id}/friends/{id}".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -73,7 +73,7 @@ class UsersFriendshipsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/friends".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/friends".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -130,7 +130,7 @@ class UsersFriendshipsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/invite-token".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/invite-token".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -181,7 +181,7 @@ class UsersFriendshipsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/invites".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/invites".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -238,7 +238,7 @@ class UsersFriendshipsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/friends/tokens".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/friends/tokens".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -292,7 +292,7 @@ class UsersFriendshipsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/friends/{id}".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
+    String path = "/users/{user_id}/friends/{id}".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];

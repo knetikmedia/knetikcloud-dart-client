@@ -19,7 +19,7 @@ class ReportingOrdersApi {
     }
 
     // create path and map variables
-    String path = "/reporting/orders/count/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "currencyCode" + "}", currencyCode.toString());
+    String path = "/reporting/orders/count/{currency_code}".replaceAll("{format}","json").replaceAll("{" + "currency_code" + "}", currencyCode.toString());
 
     // query params
     List<QueryParam> queryParams = [];

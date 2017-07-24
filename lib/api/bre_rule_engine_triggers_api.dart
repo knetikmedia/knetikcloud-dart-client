@@ -67,7 +67,7 @@ class BRERuleEngineTriggersApi {
     }
 
     // create path and map variables
-    String path = "/bre/triggers/{event_name}".replaceAll("{format}","json").replaceAll("{" + "eventName" + "}", eventName.toString());
+    String path = "/bre/triggers/{event_name}".replaceAll("{format}","json").replaceAll("{" + "event_name" + "}", eventName.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -118,7 +118,7 @@ class BRERuleEngineTriggersApi {
     }
 
     // create path and map variables
-    String path = "/bre/triggers/{event_name}".replaceAll("{format}","json").replaceAll("{" + "eventName" + "}", eventName.toString());
+    String path = "/bre/triggers/{event_name}".replaceAll("{format}","json").replaceAll("{" + "event_name" + "}", eventName.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -238,7 +238,7 @@ class BRERuleEngineTriggersApi {
     }
 
     // create path and map variables
-    String path = "/bre/triggers/{event_name}".replaceAll("{format}","json").replaceAll("{" + "eventName" + "}", eventName.toString());
+    String path = "/bre/triggers/{event_name}".replaceAll("{format}","json").replaceAll("{" + "event_name" + "}", eventName.toString());
 
     // query params
     List<QueryParam> queryParams = [];

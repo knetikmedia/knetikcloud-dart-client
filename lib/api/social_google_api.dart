@@ -7,11 +7,11 @@ class SocialGoogleApi {
 
   SocialGoogleApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// Link facebook account
+  /// Link google account
   ///
-  /// Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired.
-  Future linkAccounts1({ GoogleToken facebookToken }) async {
-    Object postBody = facebookToken;
+  /// Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
+  Future linkAccounts1({ GoogleToken googleToken }) async {
+    Object postBody = googleToken;
 
     // verify required params are set
 

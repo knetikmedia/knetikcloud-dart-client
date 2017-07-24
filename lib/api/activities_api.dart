@@ -10,7 +10,7 @@ class ActivitiesApi {
   /// Create an activity
   ///
   /// 
-  Future<Represents an activity that can be parameterized and tracked through metrics (scores, etc)> createActivity({ Represents an activity that can be parameterized and tracked through metrics (scores, etc) activityResource }) async {
+  Future<ActivityResource> createActivity({ ActivityResource activityResource }) async {
     Object postBody = activityResource;
 
     // verify required params are set
@@ -50,7 +50,7 @@ class ActivitiesApi {
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
     } else if(response.body != null) {
-      return apiClient.deserialize(response.body, 'Represents an activity that can be parameterized and tracked through metrics (scores, etc)') as Represents an activity that can be parameterized and tracked through metrics (scores, etc) ;
+      return apiClient.deserialize(response.body, 'ActivityResource') as ActivityResource ;
     } else {
       return null;
     }
@@ -58,7 +58,7 @@ class ActivitiesApi {
   /// Create a new activity occurrence. Ex: start a game
   ///
   /// Has to enforce extra rules if not used as an admin
-  Future<A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings> createActivityOccurrence({ bool test, A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings activityOccurrenceResource }) async {
+  Future<ActivityOccurrenceResource> createActivityOccurrence({ bool test, ActivityOccurrenceResource activityOccurrenceResource }) async {
     Object postBody = activityOccurrenceResource;
 
     // verify required params are set
@@ -101,7 +101,7 @@ class ActivitiesApi {
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
     } else if(response.body != null) {
-      return apiClient.deserialize(response.body, 'A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings') as A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings ;
+      return apiClient.deserialize(response.body, 'ActivityOccurrenceResource') as ActivityOccurrenceResource ;
     } else {
       return null;
     }
@@ -262,7 +262,7 @@ class ActivitiesApi {
   /// List activity definitions
   ///
   /// 
-  Future<PageResource«BareActivityResource»> getActivities({ bool filterTemplate, String filterName, Object filterId, int size, int page, String order }) async {
+  Future<PageResource«BareActivityResource»> getActivities({ bool filterTemplate, String filterName, String filterId, int size, int page, String order }) async {
     Object postBody = null;
 
     // verify required params are set
@@ -328,7 +328,7 @@ class ActivitiesApi {
   /// Get a single activity
   ///
   /// 
-  Future<Represents an activity that can be parameterized and tracked through metrics (scores, etc)> getActivity(int id) async {
+  Future<ActivityResource> getActivity(int id) async {
     Object postBody = null;
 
     // verify required params are set
@@ -371,7 +371,7 @@ class ActivitiesApi {
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
     } else if(response.body != null) {
-      return apiClient.deserialize(response.body, 'Represents an activity that can be parameterized and tracked through metrics (scores, etc)') as Represents an activity that can be parameterized and tracked through metrics (scores, etc) ;
+      return apiClient.deserialize(response.body, 'ActivityResource') as ActivityResource ;
     } else {
       return null;
     }
@@ -487,7 +487,7 @@ class ActivitiesApi {
   /// Sets the status of an activity occurrence to FINISHED and logs metrics
   ///
   /// 
-  Future<ActivityOccurrenceResults> setActivityOccurrenceResults(int activityOccurrenceId, { ActivityOccurrenceResults activityOccurrenceResults }) async {
+  Future<ActivityOccurrenceResults> setActivityOccurrenceResults(int activityOccurrenceId, { ActivityOccurrenceResultsResource activityOccurrenceResults }) async {
     Object postBody = activityOccurrenceResults;
 
     // verify required params are set
@@ -496,7 +496,7 @@ class ActivitiesApi {
     }
 
     // create path and map variables
-    String path = "/activity-occurrences/{activity_occurrence_id}/results".replaceAll("{format}","json").replaceAll("{" + "activityOccurrenceId" + "}", activityOccurrenceId.toString());
+    String path = "/activity-occurrences/{activity_occurrence_id}/results".replaceAll("{format}","json").replaceAll("{" + "activity_occurrence_id" + "}", activityOccurrenceId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -538,7 +538,7 @@ class ActivitiesApi {
   /// Update an activity
   ///
   /// 
-  Future<Represents an activity that can be parameterized and tracked through metrics (scores, etc)> updateActivity(int id, { Represents an activity that can be parameterized and tracked through metrics (scores, etc) activityResource }) async {
+  Future<ActivityResource> updateActivity(int id, { ActivityResource activityResource }) async {
     Object postBody = activityResource;
 
     // verify required params are set
@@ -581,7 +581,7 @@ class ActivitiesApi {
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
     } else if(response.body != null) {
-      return apiClient.deserialize(response.body, 'Represents an activity that can be parameterized and tracked through metrics (scores, etc)') as Represents an activity that can be parameterized and tracked through metrics (scores, etc) ;
+      return apiClient.deserialize(response.body, 'ActivityResource') as ActivityResource ;
     } else {
       return null;
     }
@@ -598,7 +598,7 @@ class ActivitiesApi {
     }
 
     // create path and map variables
-    String path = "/activity-occurrences/{activity_occurrence_id}/status".replaceAll("{format}","json").replaceAll("{" + "activityOccurrenceId" + "}", activityOccurrenceId.toString());
+    String path = "/activity-occurrences/{activity_occurrence_id}/status".replaceAll("{format}","json").replaceAll("{" + "activity_occurrence_id" + "}", activityOccurrenceId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

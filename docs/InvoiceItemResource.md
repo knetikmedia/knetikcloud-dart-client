@@ -8,7 +8,6 @@ import 'package:swagger/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**affiliateId** | **int** |  | [optional] [default to null]
 **bundleSku** | **String** |  | [optional] [default to null]
 **currentFulfillmentStatus** | **String** |  | [optional] [default to null]
 **id** | **int** |  | [optional] [default to null]

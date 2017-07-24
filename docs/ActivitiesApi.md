@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **createActivity**
-> Represents an activity that can be parameterized and tracked through metrics (scores, etc) createActivity(activityResource)
+> ActivityResource createActivity(activityResource)
 
 Create an activity
 
@@ -36,7 +36,7 @@ import 'package:swagger/api.dart';
 //swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ActivitiesApi();
-var activityResource = new Represents an activity that can be parameterized and tracked through metrics (scores, etc)(); // Represents an activity that can be parameterized and tracked through metrics (scores, etc) | The activity resource object
+var activityResource = new ActivityResource(); // ActivityResource | The activity resource object
 
 try { 
     var result = api_instance.createActivity(activityResource);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activityResource** | [**Represents an activity that can be parameterized and tracked through metrics (scores, etc)**](Represents an activity that can be parameterized and tracked through metrics (scores, etc).md)| The activity resource object | [optional] 
+ **activityResource** | [**ActivityResource**](ActivityResource.md)| The activity resource object | [optional] 
 
 ### Return type
 
-[**Represents an activity that can be parameterized and tracked through metrics (scores, etc)**](Represents an activity that can be parameterized and tracked through metrics (scores, etc).md)
+[**ActivityResource**](ActivityResource.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createActivityOccurrence**
-> A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings createActivityOccurrence(test, activityOccurrenceResource)
+> ActivityOccurrenceResource createActivityOccurrence(test, activityOccurrenceResource)
 
 Create a new activity occurrence. Ex: start a game
 
@@ -82,7 +82,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new ActivitiesApi();
 var test = true; // bool | if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings
-var activityOccurrenceResource = new A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings(); // A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings | The activity occurrence object
+var activityOccurrenceResource = new ActivityOccurrenceResource(); // ActivityOccurrenceResource | The activity occurrence object
 
 try { 
     var result = api_instance.createActivityOccurrence(test, activityOccurrenceResource);
@@ -97,11 +97,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **test** | **bool**| if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings | [optional] [default to false]
- **activityOccurrenceResource** | [**A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings**](A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings.md)| The activity occurrence object | [optional] 
+ **activityOccurrenceResource** | [**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)| The activity occurrence object | [optional] 
 
 ### Return type
 
-[**A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings**](A occurrence of an activity (the actual game for example) Used to track scores, participants, and provide settings.md)
+[**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ import 'package:swagger/api.dart';
 var api_instance = new ActivitiesApi();
 var filterTemplate = true; // bool | Filter for activities that are templates, or specifically not if false
 var filterName = filterName_example; // String | Filter for activities that have a name starting with specified string
-var filterId = ; // Object | Filter for activities with an id in the given comma separated list of ids
+var filterId = filterId_example; // String | Filter for activities with an id in the given comma separated list of ids
 var size = 56; // int | The number of objects returned per page
 var page = 56; // int | The number of the page returned, starting with 1
 var order = order_example; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterTemplate** | **bool**| Filter for activities that are templates, or specifically not if false | [optional] 
  **filterName** | **String**| Filter for activities that have a name starting with specified string | [optional] 
- **filterId** | [**Object**](.md)| Filter for activities with an id in the given comma separated list of ids | [optional] 
+ **filterId** | **String**| Filter for activities with an id in the given comma separated list of ids | [optional] 
  **size** | **int**| The number of objects returned per page | [optional] [default to 25]
  **page** | **int**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]
@@ -299,7 +299,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getActivity**
-> Represents an activity that can be parameterized and tracked through metrics (scores, etc) getActivity(id)
+> ActivityResource getActivity(id)
 
 Get a single activity
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Represents an activity that can be parameterized and tracked through metrics (scores, etc)**](Represents an activity that can be parameterized and tracked through metrics (scores, etc).md)
+[**ActivityResource**](ActivityResource.md)
 
 ### Authorization
 
@@ -442,7 +442,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new ActivitiesApi();
 var activityOccurrenceId = 789; // int | The id of the activity occurrence
-var activityOccurrenceResults = new ActivityOccurrenceResults(); // ActivityOccurrenceResults | The activity occurrence object
+var activityOccurrenceResults = new ActivityOccurrenceResultsResource(); // ActivityOccurrenceResultsResource | The activity occurrence object
 
 try { 
     var result = api_instance.setActivityOccurrenceResults(activityOccurrenceId, activityOccurrenceResults);
@@ -457,7 +457,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activityOccurrenceId** | **int**| The id of the activity occurrence | 
- **activityOccurrenceResults** | [**ActivityOccurrenceResults**](ActivityOccurrenceResults.md)| The activity occurrence object | [optional] 
+ **activityOccurrenceResults** | [**ActivityOccurrenceResultsResource**](ActivityOccurrenceResultsResource.md)| The activity occurrence object | [optional] 
 
 ### Return type
 
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateActivity**
-> Represents an activity that can be parameterized and tracked through metrics (scores, etc) updateActivity(id, activityResource)
+> ActivityResource updateActivity(id, activityResource)
 
 Update an activity
 
@@ -487,7 +487,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new ActivitiesApi();
 var id = 789; // int | The id of the activity
-var activityResource = new Represents an activity that can be parameterized and tracked through metrics (scores, etc)(); // Represents an activity that can be parameterized and tracked through metrics (scores, etc) | The activity resource object
+var activityResource = new ActivityResource(); // ActivityResource | The activity resource object
 
 try { 
     var result = api_instance.updateActivity(id, activityResource);
@@ -502,11 +502,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The id of the activity | 
- **activityResource** | [**Represents an activity that can be parameterized and tracked through metrics (scores, etc)**](Represents an activity that can be parameterized and tracked through metrics (scores, etc).md)| The activity resource object | [optional] 
+ **activityResource** | [**ActivityResource**](ActivityResource.md)| The activity resource object | [optional] 
 
 ### Return type
 
-[**Represents an activity that can be parameterized and tracked through metrics (scores, etc)**](Represents an activity that can be parameterized and tracked through metrics (scores, etc).md)
+[**ActivityResource**](ActivityResource.md)
 
 ### Authorization
 

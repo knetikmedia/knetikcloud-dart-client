@@ -22,7 +22,7 @@ class UsersApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/tags".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/tags".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -226,7 +226,7 @@ class UsersApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/tags".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/tags".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -574,7 +574,7 @@ class UsersApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/tags/{tag}".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString()).replaceAll("{" + "tag" + "}", tag.toString());
+    String path = "/users/{user_id}/tags/{tag}".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString()).replaceAll("{" + "tag" + "}", tag.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -718,7 +718,7 @@ class UsersApi {
   /// Reset a user&#39;s password without user id
   ///
   /// A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number
-  Future submitPasswordReset({ A request to reset a user's password by using a known user property passwordReset }) async {
+  Future submitPasswordReset({ PasswordResetRequest passwordReset }) async {
     Object postBody = passwordReset;
 
     // verify required params are set

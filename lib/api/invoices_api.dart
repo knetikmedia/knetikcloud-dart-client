@@ -214,7 +214,7 @@ class InvoicesApi {
   /// Retrieve invoices
   ///
   /// Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices.
-  Future<PageResource«InvoiceResource»> getInvoices({ int filterUser, String filterEmail, String filterFulfillmentStatus, String filterPaymentStatus, String filterItemName, String filterExternalRef, String filterCreatedDate, Object filterVendorIds, String filterCurrency, String filterShippingStateName, String filterShippingCountryName, String filterShipping, String filterVendorName, String filterSku, int size, int page, String order }) async {
+  Future<PageResource«InvoiceResource»> getInvoices({ int filterUser, String filterEmail, String filterFulfillmentStatus, String filterPaymentStatus, String filterItemName, String filterExternalRef, String filterCreatedDate, String filterVendorIds, String filterCurrency, String filterShippingStateName, String filterShippingCountryName, String filterShipping, String filterVendorName, String filterSku, int size, int page, String order }) async {
     Object postBody = null;
 
     // verify required params are set
@@ -394,6 +394,66 @@ class InvoicesApi {
 
     var response = await apiClient.invokeAPI(path,
                                              'POST',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return ;
+    } else {
+      return ;
+    }
+  }
+  /// Set the fulfillment status of a bundled invoice item
+  ///
+  /// This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+  Future setBundledInvoiceItemFulfillmentStatus(int id, String bundleSku, String sku, String status) async {
+    Object postBody = status;
+
+    // verify required params are set
+    if(id == null) {
+     throw new ApiException(400, "Missing required param: id");
+    }
+    if(bundleSku == null) {
+     throw new ApiException(400, "Missing required param: bundleSku");
+    }
+    if(sku == null) {
+     throw new ApiException(400, "Missing required param: sku");
+    }
+    if(status == null) {
+     throw new ApiException(400, "Missing required param: status");
+    }
+
+    // create path and map variables
+    String path = "/invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString()).replaceAll("{" + "bundleSku" + "}", bundleSku.toString()).replaceAll("{" + "sku" + "}", sku.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    
+    List<String> contentTypes = ["application/json"];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["OAuth2"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,

@@ -4,10 +4,6 @@ part of swagger.api;
 @Entity()
 class InvoiceItemResource {
   
-  @Property(name: 'affiliate_id')
-  int affiliateId = null;
-  
-
   @Property(name: 'bundle_sku')
   String bundleSku = null;
   
@@ -75,7 +71,7 @@ class InvoiceItemResource {
 
   @override
   String toString()  {
-    return 'InvoiceItemResource[affiliateId=$affiliateId, bundleSku=$bundleSku, currentFulfillmentStatus=$currentFulfillmentStatus, id=$id, invoiceId=$invoiceId, itemId=$itemId, itemName=$itemName, originalTotalPrice=$originalTotalPrice, originalUnitPrice=$originalUnitPrice, qty=$qty, saleName=$saleName, sku=$sku, skuDescription=$skuDescription, systemPrice=$systemPrice, totalPrice=$totalPrice, typeHint=$typeHint, unitPrice=$unitPrice, ]';
+    return 'InvoiceItemResource[bundleSku=$bundleSku, currentFulfillmentStatus=$currentFulfillmentStatus, id=$id, invoiceId=$invoiceId, itemId=$itemId, itemName=$itemName, originalTotalPrice=$originalTotalPrice, originalUnitPrice=$originalUnitPrice, qty=$qty, saleName=$saleName, sku=$sku, skuDescription=$skuDescription, systemPrice=$systemPrice, totalPrice=$totalPrice, typeHint=$typeHint, unitPrice=$unitPrice, ]';
   }
 
 }

@@ -22,7 +22,7 @@ class UsersGroupsApi {
     }
 
     // create path and map variables
-    String path = "/users/groups/{unique_name}/members".replaceAll("{format}","json").replaceAll("{" + "uniqueName" + "}", uniqueName.toString());
+    String path = "/users/groups/{unique_name}/members".replaceAll("{format}","json").replaceAll("{" + "unique_name" + "}", uniqueName.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -76,7 +76,7 @@ class UsersGroupsApi {
     }
 
     // create path and map variables
-    String path = "/users/groups/{unique_name}/members/batch-add".replaceAll("{format}","json").replaceAll("{" + "uniqueName" + "}", uniqueName.toString());
+    String path = "/users/groups/{unique_name}/members/batch-add".replaceAll("{format}","json").replaceAll("{" + "unique_name" + "}", uniqueName.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -223,7 +223,7 @@ class UsersGroupsApi {
     }
 
     // create path and map variables
-    String path = "/users/groups/{unique_name}".replaceAll("{format}","json").replaceAll("{" + "uniqueName" + "}", uniqueName.toString());
+    String path = "/users/groups/{unique_name}".replaceAll("{format}","json").replaceAll("{" + "unique_name" + "}", uniqueName.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -328,7 +328,7 @@ class UsersGroupsApi {
     }
 
     // create path and map variables
-    String path = "/users/groups/{unique_name}".replaceAll("{format}","json").replaceAll("{" + "uniqueName" + "}", uniqueName.toString());
+    String path = "/users/groups/{unique_name}".replaceAll("{format}","json").replaceAll("{" + "unique_name" + "}", uniqueName.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -382,7 +382,7 @@ class UsersGroupsApi {
     }
 
     // create path and map variables
-    String path = "/users/groups/{unique_name}/members/{user_id}".replaceAll("{format}","json").replaceAll("{" + "uniqueName" + "}", uniqueName.toString()).replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/groups/{unique_name}/members/{user_id}".replaceAll("{format}","json").replaceAll("{" + "unique_name" + "}", uniqueName.toString()).replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -433,7 +433,7 @@ class UsersGroupsApi {
     }
 
     // create path and map variables
-    String path = "/users/groups/{unique_name}/members".replaceAll("{format}","json").replaceAll("{" + "uniqueName" + "}", uniqueName.toString());
+    String path = "/users/groups/{unique_name}/members".replaceAll("{format}","json").replaceAll("{" + "unique_name" + "}", uniqueName.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -601,7 +601,7 @@ class UsersGroupsApi {
     }
 
     // create path and map variables
-    String path = "/users/{user_id}/groups".replaceAll("{format}","json").replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/{user_id}/groups".replaceAll("{format}","json").replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -655,7 +655,7 @@ class UsersGroupsApi {
     }
 
     // create path and map variables
-    String path = "/users/groups/{unique_name}/members/{user_id}".replaceAll("{format}","json").replaceAll("{" + "uniqueName" + "}", uniqueName.toString()).replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/groups/{unique_name}/members/{user_id}".replaceAll("{format}","json").replaceAll("{" + "unique_name" + "}", uniqueName.toString()).replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -706,7 +706,7 @@ class UsersGroupsApi {
     }
 
     // create path and map variables
-    String path = "/users/groups/{unique_name}".replaceAll("{format}","json").replaceAll("{" + "uniqueName" + "}", uniqueName.toString());
+    String path = "/users/groups/{unique_name}".replaceAll("{format}","json").replaceAll("{" + "unique_name" + "}", uniqueName.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -763,7 +763,7 @@ class UsersGroupsApi {
     }
 
     // create path and map variables
-    String path = "/users/groups/{unique_name}/members/{user_id}/status".replaceAll("{format}","json").replaceAll("{" + "uniqueName" + "}", uniqueName.toString()).replaceAll("{" + "userId" + "}", userId.toString());
+    String path = "/users/groups/{unique_name}/members/{user_id}/status".replaceAll("{format}","json").replaceAll("{" + "unique_name" + "}", uniqueName.toString()).replaceAll("{" + "user_id" + "}", userId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

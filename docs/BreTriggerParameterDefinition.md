@@ -9,6 +9,7 @@ import 'package:swagger/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | The name of the parameter. This is used as the unique identifier of this parameter | [default to null]
+**optional** | **bool** | Whether this parameter can be left off when firing the event. Default false | [optional] [default to null]
 **type** | **String** | The variable type of this parameter. See Bre Variables endpoint for list | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

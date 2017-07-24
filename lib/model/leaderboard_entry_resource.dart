@@ -11,6 +11,10 @@ class LeaderboardEntryResource {
   @Property(name: 'score')
   int score = null;
   
+/* The date this score was recorded or updated. Unix timestamp in seconds */
+  @Property(name: 'updated_date')
+  int updatedDate = null;
+  
 /* The player for this entry */
   @Property(name: 'user')
   SimpleUserResource user = null;
@@ -19,7 +23,7 @@ class LeaderboardEntryResource {
 
   @override
   String toString()  {
-    return 'LeaderboardEntryResource[rank=$rank, score=$score, user=$user, ]';
+    return 'LeaderboardEntryResource[rank=$rank, score=$score, updatedDate=$updatedDate, user=$user, ]';
   }
 
 }
