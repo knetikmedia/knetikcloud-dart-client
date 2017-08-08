@@ -787,7 +787,7 @@ class GamificationAchievementsApi {
   /// Increment an achievement progress record for a user
   ///
   /// If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
-  Future<UserAchievementGroupResource> incrementAchievementProgress(int userId, String achievementName, { int progress }) async {
+  Future<UserAchievementGroupResource> incrementAchievementProgress(int userId, String achievementName, { IntWrapper progress }) async {
     Object postBody = progress;
 
     // verify required params are set
@@ -841,7 +841,7 @@ class GamificationAchievementsApi {
   /// Set an achievement progress record for a user
   ///
   /// If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
-  Future<UserAchievementGroupResource> setAchievementProgress(int userId, String achievementName, { int progress }) async {
+  Future<UserAchievementGroupResource> setAchievementProgress(int userId, String achievementName, { IntWrapper progress }) async {
     Object postBody = progress;
 
     // verify required params are set

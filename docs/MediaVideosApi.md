@@ -50,7 +50,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new MediaVideosApi();
 var id = 789; // int | The video id
-var userId = new int(); // int | The user id
+var userId = new IntWrapper(); // IntWrapper | The user id
 
 try { 
     api_instance.addUserToVideoWhitelist(id, userId);
@@ -64,7 +64,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The video id | 
- **userId** | **int**| The user id | [optional] 
+ **userId** | [**IntWrapper**](IntWrapper.md)| The user id | [optional] 
 
 ### Return type
 
@@ -226,7 +226,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new MediaVideosApi();
 var videoId = 789; // int | The video id
-var reason = new String(); // String | The flag reason
+var reason = new StringWrapper(); // StringWrapper | The flag reason
 
 try { 
     var result = api_instance.addVideoFlag(videoId, reason);
@@ -241,7 +241,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **int**| The video id | 
- **reason** | **String**| The flag reason | [optional] 
+ **reason** | [**StringWrapper**](StringWrapper.md)| The flag reason | [optional] 
 
 ### Return type
 
@@ -1006,7 +1006,7 @@ import 'package:swagger/api.dart';
 var api_instance = new MediaVideosApi();
 var videoId = 789; // int | The video id
 var id = 789; // int | The comment id
-var content = new String(); // String | The comment content
+var content = new StringWrapper(); // StringWrapper | The comment content
 
 try { 
     api_instance.updateVideoComment(videoId, id, content);
@@ -1021,7 +1021,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **int**| The video id | 
  **id** | **int**| The comment id | 
- **content** | **String**| The comment content | [optional] 
+ **content** | [**StringWrapper**](StringWrapper.md)| The comment content | [optional] 
 
 ### Return type
 
@@ -1052,7 +1052,7 @@ import 'package:swagger/api.dart';
 var api_instance = new MediaVideosApi();
 var videoId = 789; // int | The video id
 var relationshipId = 789; // int | The relationship id
-var details = new String(); // String | The video relationship details
+var details = new StringWrapper(); // StringWrapper | The video relationship details
 
 try { 
     api_instance.updateVideoRelationship(videoId, relationshipId, details);
@@ -1067,7 +1067,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **int**| The video id | 
  **relationshipId** | **int**| The relationship id | 
- **details** | **String**| The video relationship details | [optional] 
+ **details** | [**StringWrapper**](StringWrapper.md)| The video relationship details | [optional] 
 
 ### Return type
 

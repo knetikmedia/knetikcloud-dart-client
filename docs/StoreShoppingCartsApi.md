@@ -444,7 +444,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new StoreShoppingCartsApi();
 var id = id_example; // String | The id of the cart
-var currencyCode = new String(); // String | The code of the currency
+var currencyCode = new StringWrapper(); // StringWrapper | The code of the currency
 
 try { 
     api_instance.setCartCurrency(id, currencyCode);
@@ -458,7 +458,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the cart | 
- **currencyCode** | **String**| The code of the currency | [optional] 
+ **currencyCode** | [**StringWrapper**](StringWrapper.md)| The code of the currency | [optional] 
 
 ### Return type
 
@@ -488,7 +488,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new StoreShoppingCartsApi();
 var id = id_example; // String | The id of the cart
-var userId = new int(); // int | The id of the user
+var userId = new IntWrapper(); // IntWrapper | The id of the user
 
 try { 
     api_instance.setCartOwner(id, userId);
@@ -502,7 +502,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the cart | 
- **userId** | **int**| The id of the user | [optional] 
+ **userId** | [**IntWrapper**](IntWrapper.md)| The id of the user | [optional] 
 
 ### Return type
 

@@ -707,7 +707,7 @@ import 'package:swagger/api.dart';
 var api_instance = new GamificationAchievementsApi();
 var userId = 56; // int | The user's id
 var achievementName = achievementName_example; // String | The achievement's name
-var progress = new int(); // int | The amount to add to the progress value
+var progress = new IntWrapper(); // IntWrapper | The amount to add to the progress value
 
 try { 
     var result = api_instance.incrementAchievementProgress(userId, achievementName, progress);
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int**| The user&#39;s id | 
  **achievementName** | **String**| The achievement&#39;s name | 
- **progress** | **int**| The amount to add to the progress value | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The amount to add to the progress value | [optional] 
 
 ### Return type
 
@@ -756,7 +756,7 @@ import 'package:swagger/api.dart';
 var api_instance = new GamificationAchievementsApi();
 var userId = 56; // int | The user's id
 var achievementName = achievementName_example; // String | The achievement's name
-var progress = new int(); // int | The new progress value
+var progress = new IntWrapper(); // IntWrapper | The new progress value
 
 try { 
     var result = api_instance.setAchievementProgress(userId, achievementName, progress);
@@ -772,7 +772,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int**| The user&#39;s id | 
  **achievementName** | **String**| The achievement&#39;s name | 
- **progress** | **int**| The new progress value | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The new progress value | [optional] 
 
 ### Return type
 

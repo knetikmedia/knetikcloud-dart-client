@@ -10,7 +10,7 @@ class UsersApi {
   /// Add a tag to a user
   ///
   /// 
-  Future addUserTag(int userId, String tag) async {
+  Future addUserTag(int userId, StringWrapper tag) async {
     Object postBody = tag;
 
     // verify required params are set
@@ -616,7 +616,7 @@ class UsersApi {
   /// Set a user&#39;s password
   ///
   /// Password should be in plain text and will be encrypted on receipt. Use SSL for security.
-  Future setPassword(int id, { String password }) async {
+  Future setPassword(int id, { StringWrapper password }) async {
     Object postBody = password;
 
     // verify required params are set

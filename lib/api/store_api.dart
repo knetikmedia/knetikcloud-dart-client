@@ -580,6 +580,54 @@ class StoreApi {
       return null;
     }
   }
+  /// One-step purchase and pay for a single SKU item from a user&#39;s wallet
+  ///
+  /// Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+  Future<InvoiceResource> quickBuy({ QuickBuyRequest quickBuyRequest }) async {
+    Object postBody = quickBuyRequest;
+
+    // verify required params are set
+
+    // create path and map variables
+    String path = "/store/quick-buy".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    
+    List<String> contentTypes = ["application/json"];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["OAuth2"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'POST',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return apiClient.deserialize(response.body, 'InvoiceResource') as InvoiceResource ;
+    } else {
+      return null;
+    }
+  }
   /// Update an item template
   ///
   /// 

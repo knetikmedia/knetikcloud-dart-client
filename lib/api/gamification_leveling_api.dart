@@ -385,7 +385,7 @@ class GamificationLevelingApi {
   /// Update or create a leveling progress record for a user
   ///
   /// If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
-  Future incrementProgress(int userId, String name, { int progress }) async {
+  Future incrementProgress(int userId, String name, { IntWrapper progress }) async {
     Object postBody = progress;
 
     // verify required params are set
@@ -439,7 +439,7 @@ class GamificationLevelingApi {
   /// Set leveling progress for a user
   ///
   /// If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
-  Future setProgress(int userId, String name, { int progress }) async {
+  Future setProgress(int userId, String name, { IntWrapper progress }) async {
     Object postBody = progress;
 
     // verify required params are set

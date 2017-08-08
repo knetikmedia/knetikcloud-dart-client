@@ -10,7 +10,7 @@ class ContentPollsApi {
   /// Add your vote to a poll
   ///
   /// 
-  Future<PollResponseResource> answerPoll(String id, { String answerKey }) async {
+  Future<PollResponseResource> answerPoll(String id, { StringWrapper answerKey }) async {
     Object postBody = answerKey;
 
     // verify required params are set

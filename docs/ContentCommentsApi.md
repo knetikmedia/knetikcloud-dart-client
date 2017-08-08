@@ -250,7 +250,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new ContentCommentsApi();
 var id = 789; // int | The comment id
-var content = new String(); // String | The comment content
+var content = new StringWrapper(); // StringWrapper | The comment content
 
 try { 
     api_instance.updateComment(id, content);
@@ -264,7 +264,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The comment id | 
- **content** | **String**| The comment content | [optional] 
+ **content** | [**StringWrapper**](StringWrapper.md)| The comment content | [optional] 
 
 ### Return type
 

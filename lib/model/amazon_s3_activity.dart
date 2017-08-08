@@ -7,6 +7,10 @@ class AmazonS3Activity {
   @Property(name: 'action')
   String action = null;
   
+/* URL for accessing the resource via CDN if configured (will default to the main url if not) */
+  @Property(name: 'cdn_url')
+  String cdnUrl = null;
+  
 /* Date the resource was created in S3 */
   @Property(name: 'created_date')
   int createdDate = null;
@@ -23,7 +27,7 @@ class AmazonS3Activity {
   @Property(name: 'object_key')
   String objectKey = null;
   
-/* URL for accessing the S3 resource */
+/* URL for posting and later accessing the S3 resource */
   @Property(name: 'url')
   String url = null;
   
@@ -35,7 +39,7 @@ class AmazonS3Activity {
 
   @override
   String toString()  {
-    return 'AmazonS3Activity[action=$action, createdDate=$createdDate, filename=$filename, id=$id, objectKey=$objectKey, url=$url, userId=$userId, ]';
+    return 'AmazonS3Activity[action=$action, cdnUrl=$cdnUrl, createdDate=$createdDate, filename=$filename, id=$id, objectKey=$objectKey, url=$url, userId=$userId, ]';
   }
 
 }

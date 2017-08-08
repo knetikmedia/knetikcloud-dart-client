@@ -36,7 +36,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new ContentPollsApi();
 var id = id_example; // String | The poll id
-var answerKey = new String(); // String | The answer key
+var answerKey = new StringWrapper(); // StringWrapper | The answer key
 
 try { 
     var result = api_instance.answerPoll(id, answerKey);
@@ -51,7 +51,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The poll id | 
- **answerKey** | **String**| The answer key | [optional] 
+ **answerKey** | [**StringWrapper**](StringWrapper.md)| The answer key | [optional] 
 
 ### Return type
 

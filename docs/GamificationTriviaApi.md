@@ -99,7 +99,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new GamificationTriviaApi();
 var id = id_example; // String | The id of the question
-var tag = new String(); // String | The new tag
+var tag = new StringWrapper(); // StringWrapper | The new tag
 
 try { 
     api_instance.addQuestionTag(id, tag);
@@ -113,7 +113,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the question | 
- **tag** | **String**| The new tag | [optional] 
+ **tag** | [**StringWrapper**](StringWrapper.md)| The new tag | [optional] 
 
 ### Return type
 
@@ -144,7 +144,7 @@ import 'package:swagger/api.dart';
 //swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new GamificationTriviaApi();
-var tag = new String(); // String | The tag to add
+var tag = new StringWrapper(); // StringWrapper | The tag to add
 var filterSearch = filterSearch_example; // String | Filter for documents whose question, answers or tags contains provided string
 var filterIdset = filterIdset_example; // String | Filter for documents whose id is in the comma separated list provided
 var filterCategory = filterCategory_example; // String | Filter for questions with specified category, by id
@@ -166,7 +166,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag** | **String**| The tag to add | [optional] 
+ **tag** | [**StringWrapper**](StringWrapper.md)| The tag to add | [optional] 
  **filterSearch** | **String**| Filter for documents whose question, answers or tags contains provided string | [optional] 
  **filterIdset** | **String**| Filter for documents whose id is in the comma separated list provided | [optional] 
  **filterCategory** | **String**| Filter for questions with specified category, by id | [optional] 

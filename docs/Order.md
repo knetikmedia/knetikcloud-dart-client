@@ -9,6 +9,7 @@ import 'package:swagger/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ascending** | **bool** |  | [optional] [default to null]
+**descending** | **bool** |  | [optional] [default to null]
 **direction** | **String** |  | [optional] [default to null]
 **ignoreCase** | **bool** |  | [optional] [default to null]
 **nullHandling** | **String** |  | [optional] [default to null]

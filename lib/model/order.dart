@@ -8,6 +8,10 @@ class Order {
   bool ascending = null;
   
 
+  @Property(name: 'descending')
+  bool descending = null;
+  
+
   @Property(name: 'direction')
   String direction = null;
   //enum directionEnum {  ASC,  DESC,  };
@@ -27,7 +31,7 @@ class Order {
 
   @override
   String toString()  {
-    return 'Order[ascending=$ascending, direction=$direction, ignoreCase=$ignoreCase, nullHandling=$nullHandling, property=$property, ]';
+    return 'Order[ascending=$ascending, descending=$descending, direction=$direction, ignoreCase=$ignoreCase, nullHandling=$nullHandling, property=$property, ]';
   }
 
 }

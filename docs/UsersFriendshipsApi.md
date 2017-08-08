@@ -219,7 +219,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new UsersFriendshipsApi();
 var userId = userId_example; // String | The id of the user or 'me' if logged in
-var token = new String(); // String | The invite token
+var token = new StringWrapper(); // StringWrapper | The invite token
 
 try { 
     api_instance.redeemFriendshipToken(userId, token);
@@ -233,7 +233,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| The id of the user or &#39;me&#39; if logged in | 
- **token** | **String**| The invite token | [optional] 
+ **token** | [**StringWrapper**](StringWrapper.md)| The invite token | [optional] 
 
 ### Return type
 

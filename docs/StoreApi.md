@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**getStore**](StoreApi.md#getStore) | **GET** /store | Get a listing of store items
 [**getStoreItem**](StoreApi.md#getStoreItem) | **GET** /store/items/{id} | Get a single store item
 [**getStoreItems**](StoreApi.md#getStoreItems) | **GET** /store/items | List and search store items
+[**quickBuy**](StoreApi.md#quickBuy) | **POST** /store/quick-buy | One-step purchase and pay for a single SKU item from a user&#39;s wallet
 [**updateItemTemplate**](StoreApi.md#updateItemTemplate) | **PUT** /store/items/templates/{id} | Update an item template
 [**updateStoreItem**](StoreApi.md#updateStoreItem) | **PUT** /store/items/{id} | Update a store item
 
@@ -489,6 +490,51 @@ Name | Type | Description  | Notes
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **quickBuy**
+> InvoiceResource quickBuy(quickBuyRequest)
+
+One-step purchase and pay for a single SKU item from a user's wallet
+
+Used to create and automatically pay an invoice for a single unit of a single SKU from a user's wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new StoreApi();
+var quickBuyRequest = new QuickBuyRequest(); // QuickBuyRequest | Quick buy details
+
+try { 
+    var result = api_instance.quickBuy(quickBuyRequest);
+    print(result);
+} catch (e) {
+    print("Exception when calling StoreApi->quickBuy: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **quickBuyRequest** | [**QuickBuyRequest**](QuickBuyRequest.md)| Quick buy details | [optional] 
+
+### Return type
+
+[**InvoiceResource**](InvoiceResource.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

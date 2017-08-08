@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**getInvoiceLogs**](InvoicesApi.md#getInvoiceLogs) | **GET** /invoices/{id}/logs | List invoice logs
 [**getInvoices**](InvoicesApi.md#getInvoices) | **GET** /invoices | Retrieve invoices
 [**getPaymentStatuses**](InvoicesApi.md#getPaymentStatuses) | **GET** /invoices/payment-statuses | Lists available payment statuses
-[**payInvoice**](InvoicesApi.md#payInvoice) | **POST** /invoices/{id}/payments | Trigger payment of an invoice
+[**payInvoice**](InvoicesApi.md#payInvoice) | **POST** /invoices/{id}/payments | Pay an invoice using a saved payment method
 [**setBundledInvoiceItemFulfillmentStatus**](InvoicesApi.md#setBundledInvoiceItemFulfillmentStatus) | **PUT** /invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status | Set the fulfillment status of a bundled invoice item
 [**setExternalRef**](InvoicesApi.md#setExternalRef) | **PUT** /invoices/{id}/external-ref | Set the external reference of an invoice
 [**setInvoiceItemFulfillmentStatus**](InvoicesApi.md#setInvoiceItemFulfillmentStatus) | **PUT** /invoices/{id}/items/{sku}/fulfillment-status | Set the fulfillment status of an invoice item
@@ -313,7 +313,7 @@ No authorization required
 # **payInvoice**
 > payInvoice(id, request)
 
-Trigger payment of an invoice
+Pay an invoice using a saved payment method
 
 ### Example 
 ```dart
@@ -323,7 +323,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new InvoicesApi();
 var id = 56; // int | The id of the invoice
-var request = new PayBySavedMethodRequest(); // PayBySavedMethodRequest | Payment info
+var request = new PayBySavedMethodRequest(); // PayBySavedMethodRequest | The payment method details. Will default to the appropriate user's wallet in the invoice currency if ommited.
 
 try { 
     api_instance.payInvoice(id, request);
@@ -337,7 +337,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The id of the invoice | 
- **request** | [**PayBySavedMethodRequest**](PayBySavedMethodRequest.md)| Payment info | [optional] 
+ **request** | [**PayBySavedMethodRequest**](PayBySavedMethodRequest.md)| The payment method details. Will default to the appropriate user&#39;s wallet in the invoice currency if ommited. | [optional] 
 
 ### Return type
 
@@ -371,7 +371,7 @@ var api_instance = new InvoicesApi();
 var id = 56; // int | The id of the invoice
 var bundleSku = bundleSku_example; // String | The sku of the bundle in the invoice that contains the given target
 var sku = sku_example; // String | The sku of an item in the bundle in the invoice
-var status = new String(); // String | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
+var status = new StringWrapper(); // StringWrapper | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
 
 try { 
     api_instance.setBundledInvoiceItemFulfillmentStatus(id, bundleSku, sku, status);
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
  **id** | **int**| The id of the invoice | 
  **bundleSku** | **String**| The sku of the bundle in the invoice that contains the given target | 
  **sku** | **String**| The sku of an item in the bundle in the invoice | 
- **status** | **String**| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
+ **status** | [**StringWrapper**](StringWrapper.md)| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
 
 ### Return type
 
@@ -417,7 +417,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new InvoicesApi();
 var id = 56; // int | The id of the invoice
-var externalRef = new String(); // String | External reference info
+var externalRef = new StringWrapper(); // StringWrapper | External reference info
 
 try { 
     api_instance.setExternalRef(id, externalRef);
@@ -431,7 +431,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The id of the invoice | 
- **externalRef** | **String**| External reference info | [optional] 
+ **externalRef** | [**StringWrapper**](StringWrapper.md)| External reference info | [optional] 
 
 ### Return type
 
@@ -464,7 +464,7 @@ import 'package:swagger/api.dart';
 var api_instance = new InvoicesApi();
 var id = 56; // int | The id of the invoice
 var sku = sku_example; // String | The sku of an item in the invoice
-var status = new String(); // String | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
+var status = new StringWrapper(); // StringWrapper | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
 
 try { 
     api_instance.setInvoiceItemFulfillmentStatus(id, sku, status);
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The id of the invoice | 
  **sku** | **String**| The sku of an item in the invoice | 
- **status** | **String**| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
+ **status** | [**StringWrapper**](StringWrapper.md)| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
 
 ### Return type
 
@@ -509,7 +509,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new InvoicesApi();
 var id = 56; // int | The id of the invoice
-var orderNotes = new String(); // String | Payment status info
+var orderNotes = new StringWrapper(); // StringWrapper | Payment status info
 
 try { 
     api_instance.setOrderNotes(id, orderNotes);
@@ -523,7 +523,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The id of the invoice | 
- **orderNotes** | **String**| Payment status info | [optional] 
+ **orderNotes** | [**StringWrapper**](StringWrapper.md)| Payment status info | [optional] 
 
 ### Return type
 

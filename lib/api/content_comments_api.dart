@@ -276,7 +276,7 @@ class ContentCommentsApi {
   /// Update a comment
   ///
   /// 
-  Future updateComment(int id, { String content }) async {
+  Future updateComment(int id, { StringWrapper content }) async {
     Object postBody = content;
 
     // verify required params are set

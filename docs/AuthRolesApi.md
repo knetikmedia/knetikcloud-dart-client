@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getRoles**
-> PageResource«RoleResource» getRoles(size, page, order)
+> PageResource«RoleResource» getRoles(filterName, filterRole, size, page, order)
 
 List and search roles
 
@@ -206,12 +206,14 @@ import 'package:swagger/api.dart';
 //swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new AuthRolesApi();
+var filterName = filterName_example; // String | Filter for roles that have a name starting with specified string
+var filterRole = filterRole_example; // String | Filter for roles that have a role starting with specified string
 var size = 56; // int | The number of objects returned per page
 var page = 56; // int | The number of the page returned, starting with 1
 var order = order_example; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 
 try { 
-    var result = api_instance.getRoles(size, page, order);
+    var result = api_instance.getRoles(filterName, filterRole, size, page, order);
     print(result);
 } catch (e) {
     print("Exception when calling AuthRolesApi->getRoles: $e\n");
@@ -222,6 +224,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filterName** | **String**| Filter for roles that have a name starting with specified string | [optional] 
+ **filterRole** | **String**| Filter for roles that have a role starting with specified string | [optional] 
  **size** | **int**| The number of objects returned per page | [optional] [default to 25]
  **page** | **int**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 

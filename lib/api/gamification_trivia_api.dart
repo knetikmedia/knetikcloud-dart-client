@@ -61,7 +61,7 @@ class GamificationTriviaApi {
   /// Add a tag to a question
   ///
   /// 
-  Future addQuestionTag(String id, { String tag }) async {
+  Future addQuestionTag(String id, { StringWrapper tag }) async {
     Object postBody = tag;
 
     // verify required params are set
@@ -112,7 +112,7 @@ class GamificationTriviaApi {
   /// Add a tag to a batch of questions
   ///
   /// All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated.
-  Future<int> addTagToQuestionsBatch({ String tag, String filterSearch, String filterIdset, String filterCategory, String filterTag, String filterTagset, String filterType, bool filterPublished, int filterImportId }) async {
+  Future<int> addTagToQuestionsBatch({ StringWrapper tag, String filterSearch, String filterIdset, String filterCategory, String filterTag, String filterTagset, String filterType, bool filterPublished, int filterImportId }) async {
     Object postBody = tag;
 
     // verify required params are set

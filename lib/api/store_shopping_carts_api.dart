@@ -484,7 +484,7 @@ class StoreShoppingCartsApi {
   /// Sets the currency to use for the cart
   ///
   /// May be disallowed by site settings.
-  Future setCartCurrency(String id, { String currencyCode }) async {
+  Future setCartCurrency(String id, { StringWrapper currencyCode }) async {
     Object postBody = currencyCode;
 
     // verify required params are set
@@ -535,7 +535,7 @@ class StoreShoppingCartsApi {
   /// Sets the owner of a cart if none is set already
   ///
   /// 
-  Future setCartOwner(String id, { int userId }) async {
+  Future setCartOwner(String id, { IntWrapper userId }) async {
     Object postBody = userId;
 
     // verify required params are set

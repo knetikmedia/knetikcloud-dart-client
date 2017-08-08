@@ -226,7 +226,7 @@ class UsersSubscriptionsApi {
   /// Set the payment method to use for a subscription
   ///
   /// May send null to use floating default
-  Future setSubscriptionPaymentMethod(int userId, int inventoryId, { int paymentMethodId }) async {
+  Future setSubscriptionPaymentMethod(int userId, int inventoryId, { IntWrapper paymentMethodId }) async {
     Object postBody = paymentMethodId;
 
     // verify required params are set
@@ -279,8 +279,8 @@ class UsersSubscriptionsApi {
   }
   /// Set the status of a subscription
   ///
-  /// The body is a json string (put in quotes) that should match a desired invoice status type. Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
-  Future setSubscriptionStatus(int userId, int inventoryId, String status) async {
+  /// Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
+  Future setSubscriptionStatus(int userId, int inventoryId, StringWrapper status) async {
     Object postBody = status;
 
     // verify required params are set
@@ -337,7 +337,7 @@ class UsersSubscriptionsApi {
   /// Set a new subscription plan for a user
   ///
   /// 
-  Future setUserSubscriptionPlan(int userId, int inventoryId, { String planId }) async {
+  Future setUserSubscriptionPlan(int userId, int inventoryId, { StringWrapper planId }) async {
     Object postBody = planId;
 
     // verify required params are set

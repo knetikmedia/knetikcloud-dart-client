@@ -353,7 +353,7 @@ import 'package:swagger/api.dart';
 var api_instance = new GamificationLevelingApi();
 var userId = 56; // int | The id of the user
 var name = name_example; // String | The level schema name
-var progress = new int(); // int | The amount of progress to add
+var progress = new IntWrapper(); // IntWrapper | The amount of progress to add
 
 try { 
     api_instance.incrementProgress(userId, name, progress);
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int**| The id of the user | 
  **name** | **String**| The level schema name | 
- **progress** | **int**| The amount of progress to add | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The amount of progress to add | [optional] 
 
 ### Return type
 
@@ -401,7 +401,7 @@ import 'package:swagger/api.dart';
 var api_instance = new GamificationLevelingApi();
 var userId = 56; // int | The id of the user
 var name = name_example; // String | The level schema name
-var progress = new int(); // int | The new progress amount
+var progress = new IntWrapper(); // IntWrapper | The new progress amount
 
 try { 
     api_instance.setProgress(userId, name, progress);
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int**| The id of the user | 
  **name** | **String**| The level schema name | 
- **progress** | **int**| The new progress amount | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The new progress amount | [optional] 
 
 ### Return type
 

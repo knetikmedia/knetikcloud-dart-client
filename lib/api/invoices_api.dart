@@ -358,7 +358,7 @@ class InvoicesApi {
       return null;
     }
   }
-  /// Trigger payment of an invoice
+  /// Pay an invoice using a saved payment method
   ///
   /// 
   Future payInvoice(int id, { PayBySavedMethodRequest request }) async {
@@ -412,7 +412,7 @@ class InvoicesApi {
   /// Set the fulfillment status of a bundled invoice item
   ///
   /// This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
-  Future setBundledInvoiceItemFulfillmentStatus(int id, String bundleSku, String sku, String status) async {
+  Future setBundledInvoiceItemFulfillmentStatus(int id, String bundleSku, String sku, StringWrapper status) async {
     Object postBody = status;
 
     // verify required params are set
@@ -472,7 +472,7 @@ class InvoicesApi {
   /// Set the external reference of an invoice
   ///
   /// 
-  Future setExternalRef(int id, { String externalRef }) async {
+  Future setExternalRef(int id, { StringWrapper externalRef }) async {
     Object postBody = externalRef;
 
     // verify required params are set
@@ -523,7 +523,7 @@ class InvoicesApi {
   /// Set the fulfillment status of an invoice item
   ///
   /// This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
-  Future setInvoiceItemFulfillmentStatus(int id, String sku, String status) async {
+  Future setInvoiceItemFulfillmentStatus(int id, String sku, StringWrapper status) async {
     Object postBody = status;
 
     // verify required params are set
@@ -580,7 +580,7 @@ class InvoicesApi {
   /// Set the order notes of an invoice
   ///
   /// 
-  Future setOrderNotes(int id, { String orderNotes }) async {
+  Future setOrderNotes(int id, { StringWrapper orderNotes }) async {
     Object postBody = orderNotes;
 
     // verify required params are set

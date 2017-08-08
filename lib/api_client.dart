@@ -213,6 +213,10 @@ class ApiClient {
           return dson.map(value, new Expression«object»());
         case 'FacebookToken':
           return dson.map(value, new FacebookToken());
+        case 'FattMerchantPaymentMethod':
+          return dson.map(value, new FattMerchantPaymentMethod());
+        case 'FattMerchantPaymentMethodRequest':
+          return dson.map(value, new FattMerchantPaymentMethodRequest());
         case 'FinalizeBillingAgreementRequest':
           return dson.map(value, new FinalizeBillingAgreementRequest());
         case 'FinalizePayPalPaymentRequest':
@@ -245,6 +249,8 @@ class ApiClient {
           return dson.map(value, new ImportJobOutputResource());
         case 'ImportJobResource':
           return dson.map(value, new ImportJobResource());
+        case 'IntWrapper':
+          return dson.map(value, new IntWrapper());
         case 'IntegerOperationResource':
           return dson.map(value, new IntegerOperationResource());
         case 'InventorySubscriptionResource':
@@ -463,6 +469,8 @@ class ApiClient {
           return dson.map(value, new PayBySavedMethodRequest());
         case 'PaymentAuthorizationResource':
           return dson.map(value, new PaymentAuthorizationResource());
+        case 'PaymentMethodDetails':
+          return dson.map(value, new PaymentMethodDetails());
         case 'PaymentMethodResource':
           return dson.map(value, new PaymentMethodResource());
         case 'PaymentMethodTypeResource':
@@ -491,6 +499,8 @@ class ApiClient {
           return dson.map(value, new QuestionResource());
         case 'QuestionTemplateResource':
           return dson.map(value, new QuestionTemplateResource());
+        case 'QuickBuyRequest':
+          return dson.map(value, new QuickBuyRequest());
         case 'RawEmailResource':
           return dson.map(value, new RawEmailResource());
         case 'RawSMSResource':
@@ -557,6 +567,8 @@ class ApiClient {
           return dson.map(value, new StoreItemTemplateResource());
         case 'StringOperationResource':
           return dson.map(value, new StringOperationResource());
+        case 'StringWrapper':
+          return dson.map(value, new StringWrapper());
         case 'StripeCreatePaymentMethod':
           return dson.map(value, new StripeCreatePaymentMethod());
         case 'StripePaymentRequest':
@@ -683,6 +695,8 @@ class ApiClient {
           return dson.map(value, new IntegerPropertyDefinitionResource());
         case 'LimitedGettable':
           return dson.map(value, new LimitedGettable());
+        case 'LogLevelEvent':
+          return dson.map(value, new LogLevelEvent());
         case 'LongProperty':
           return dson.map(value, new LongProperty());
         case 'LongPropertyDefinitionResource':

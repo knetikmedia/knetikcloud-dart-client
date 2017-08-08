@@ -40,7 +40,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new UsersApi();
 var userId = 56; // int | The id of the user
-var tag = new String(); // String | tag
+var tag = new StringWrapper(); // StringWrapper | tag
 
 try { 
     api_instance.addUserTag(userId, tag);
@@ -54,7 +54,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int**| The id of the user | 
- **tag** | **String**| tag | 
+ **tag** | [**StringWrapper**](StringWrapper.md)| tag | 
 
 ### Return type
 
@@ -555,7 +555,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new UsersApi();
 var id = 56; // int | The id of the user
-var password = new String(); // String | The new plain text password
+var password = new StringWrapper(); // StringWrapper | The new plain text password
 
 try { 
     api_instance.setPassword(id, password);
@@ -569,7 +569,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The id of the user | 
- **password** | **String**| The new plain text password | [optional] 
+ **password** | [**StringWrapper**](StringWrapper.md)| The new plain text password | [optional] 
 
 ### Return type
 

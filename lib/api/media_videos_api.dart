@@ -10,7 +10,7 @@ class MediaVideosApi {
   /// Adds a user to a video&#39;s whitelist
   ///
   /// Whitelisted users can view video regardless of privacy setting.
-  Future addUserToVideoWhitelist(int id, { int userId }) async {
+  Future addUserToVideoWhitelist(int id, { IntWrapper userId }) async {
     Object postBody = userId;
 
     // verify required params are set
@@ -211,7 +211,7 @@ class MediaVideosApi {
   /// Add a new flag
   ///
   /// 
-  Future<FlagResource> addVideoFlag(int videoId, { String reason }) async {
+  Future<FlagResource> addVideoFlag(int videoId, { StringWrapper reason }) async {
     Object postBody = reason;
 
     // verify required params are set
@@ -1159,7 +1159,7 @@ class MediaVideosApi {
   /// Update a video comment
   ///
   /// 
-  Future updateVideoComment(int videoId, int id, { String content }) async {
+  Future updateVideoComment(int videoId, int id, { StringWrapper content }) async {
     Object postBody = content;
 
     // verify required params are set
@@ -1213,7 +1213,7 @@ class MediaVideosApi {
   /// Update a video&#39;s relationship details
   ///
   /// 
-  Future updateVideoRelationship(int videoId, int relationshipId, { String details }) async {
+  Future updateVideoRelationship(int videoId, int relationshipId, { StringWrapper details }) async {
     Object postBody = details;
 
     // verify required params are set

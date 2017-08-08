@@ -214,7 +214,7 @@ class AuthRolesApi {
   /// List and search roles
   ///
   /// 
-  Future<PageResource«RoleResource»> getRoles({ int size, int page, String order }) async {
+  Future<PageResource«RoleResource»> getRoles({ String filterName, String filterRole, int size, int page, String order }) async {
     Object postBody = null;
 
     // verify required params are set
@@ -226,6 +226,12 @@ class AuthRolesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
+    if(filterName != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filter_name", filterName));
+    }
+    if(filterRole != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filter_role", filterRole));
+    }
     if(size != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "size", size));
     }

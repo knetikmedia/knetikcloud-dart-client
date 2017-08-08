@@ -229,7 +229,7 @@ class UsersFriendshipsApi {
   /// Redeem friendship token
   ///
   /// Immediately connects the requested user with the user mapped by the provided invite token
-  Future redeemFriendshipToken(String userId, { String token }) async {
+  Future redeemFriendshipToken(String userId, { StringWrapper token }) async {
     Object postBody = token;
 
     // verify required params are set
