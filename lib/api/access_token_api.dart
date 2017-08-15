@@ -10,7 +10,7 @@ class AccessTokenApi {
   /// Get access token
   ///
   /// 
-  Future<OAuth2Resource> getOAuthToken(String grantType, String clientId, { String clientSecret, String username, String password }) async {
+  Future<OAuth2Resource> getOAuthToken(String grantType, String clientId, { String clientSecret, String username, String password, String token, String refreshToken }) async {
     Object postBody = null;
 
     // verify required params are set
@@ -63,6 +63,16 @@ class AccessTokenApi {
         mp.fields['password'] = apiClient.parameterToString(password);
       }
       
+      if (token != null) {
+        hasFields = true;
+        mp.fields['token'] = apiClient.parameterToString(token);
+      }
+      
+      if (refreshToken != null) {
+        hasFields = true;
+        mp.fields['refresh_token'] = apiClient.parameterToString(refreshToken);
+      }
+      
       if(hasFields)
         postBody = mp;
     }
@@ -77,6 +87,10 @@ if (username != null)
         formParams['username'] = apiClient.parameterToString(username);
 if (password != null)
         formParams['password'] = apiClient.parameterToString(password);
+if (token != null)
+        formParams['token'] = apiClient.parameterToString(token);
+if (refreshToken != null)
+        formParams['refresh_token'] = apiClient.parameterToString(refreshToken);
     }
 
     var response = await apiClient.invokeAPI(path,
