@@ -20,8 +20,6 @@ Get a list of available subscription reports in most recent first order
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ReportingSubscriptionsApi();
 var size = 56; // int | The number of objects returned per page
@@ -48,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

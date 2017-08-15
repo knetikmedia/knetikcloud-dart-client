@@ -20,8 +20,6 @@ Retrieve invoice counts aggregated by time ranges
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ReportingOrdersApi();
 var currencyCode = currencyCode_example; // String | The code for a currency to get sales data for
@@ -60,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

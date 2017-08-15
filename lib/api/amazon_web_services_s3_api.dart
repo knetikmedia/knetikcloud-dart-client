@@ -7,9 +7,66 @@ class AmazonWebServicesS3Api {
 
   AmazonWebServicesS3Api([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// Get a signed S3 URL
+  /// Get a temporary signed S3 URL for download
   ///
-  /// Requires the file name and file content type (i.e., &#39;video/mpeg&#39;)
+  /// To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+  Future<String> getDownloadURL({ String bucket, String path, int expiration }) async {
+    Object postBody = null;
+
+    // verify required params are set
+
+    // create path and map variables
+    String path = "/amazon/s3/downloadurl".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    if(bucket != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "bucket", bucket));
+    }
+    if(path != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "path", path));
+    }
+    if(expiration != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "expiration", expiration));
+    }
+    
+    List<String> contentTypes = ["application/json"];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return apiClient.deserialize(response.body, 'String') as String ;
+    } else {
+      return null;
+    }
+  }
+  /// Get a signed S3 URL for upload
+  ///
+  /// Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
   Future<AmazonS3Activity> getSignedS3URL({ String filename, String contentType }) async {
     Object postBody = null;
 
@@ -32,7 +89,7 @@ class AmazonWebServicesS3Api {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["OAuth2"];
+    List<String> authNames = [];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;

@@ -30,8 +30,6 @@ Create a country tax
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new TaxesApi();
 var taxResource = new CountryTaxResource(); // CountryTaxResource | The tax object
@@ -56,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -73,8 +71,6 @@ Create a state tax
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new TaxesApi();
 var countryCodeIso3 = countryCodeIso3_example; // String | The iso3 code of the country
@@ -101,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -118,8 +114,6 @@ Delete an existing tax
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new TaxesApi();
 var countryCodeIso3 = countryCodeIso3_example; // String | The iso3 code of the country
@@ -143,7 +137,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -160,8 +154,6 @@ Delete an existing state tax
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new TaxesApi();
 var countryCodeIso3 = countryCodeIso3_example; // String | The iso3 code of the country
@@ -187,7 +179,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -431,8 +423,6 @@ Create or update a tax
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new TaxesApi();
 var countryCodeIso3 = countryCodeIso3_example; // String | The iso3 code of the country
@@ -459,7 +449,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -476,8 +466,6 @@ Create or update a state tax
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new TaxesApi();
 var countryCodeIso3 = countryCodeIso3_example; // String | The iso3 code of the country
@@ -506,7 +494,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

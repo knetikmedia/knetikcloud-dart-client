@@ -26,8 +26,6 @@ Once created you can then use in a custom rule. Note that global definitions can
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new BRERuleEngineGlobalsApi();
 var breGlobalResource = new BreGlobalResource(); // BreGlobalResource | The BRE global resource object
@@ -52,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -71,8 +69,6 @@ May fail if there are existing rules against it. Cannot delete core globals
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new BRERuleEngineGlobalsApi();
 var id = id_example; // String | The id of the global definition
@@ -96,7 +92,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -113,8 +109,6 @@ Get a single global definition
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new BRERuleEngineGlobalsApi();
 var id = id_example; // String | The id of the global definition
@@ -139,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -156,8 +150,6 @@ List global definitions
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new BRERuleEngineGlobalsApi();
 var filterSystem = true; // bool | Filter for globals that are system globals when true, or not when false. Leave off for both mixed
@@ -186,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -205,8 +197,6 @@ May fail if new parameters mismatch requirements of existing rules. Cannot updat
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new BRERuleEngineGlobalsApi();
 var id = id_example; // String | The id of the global definition
@@ -233,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

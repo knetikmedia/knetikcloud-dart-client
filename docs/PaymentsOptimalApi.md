@@ -22,8 +22,6 @@ Will return the url for a hosted payment endpoint to post to. See Optimal docume
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new PaymentsOptimalApi();
 var request = new OptimalPaymentRequest(); // OptimalPaymentRequest | The payment request to initiate
@@ -48,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

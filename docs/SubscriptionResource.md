@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additionalProperties** | [**Map&lt;String, Property&gt;**](Property.md) | A map of item additional properties, keyed on the property name. Must match the names and types defined in the template for this item type. | [optional] [default to {}]
 **availability** | **String** | Who can purchase this subscription | [optional] [default to null]
+**behaviors** | [**List&lt;Behavior&gt;**](Behavior.md) | The behaviors linked to the item, describing various options and interactions. May not be included in item lists | [optional] [default to []]
 **category** | **String** | A category for filtering items | [optional] [default to null]
 **consolidationDayOfMonth** | **int** | The day of the month 1..31 this subscription will renew | [optional] [default to null]
 **createdDate** | **int** | The date the item was created, unix timestamp in seconds | [optional] [default to null]

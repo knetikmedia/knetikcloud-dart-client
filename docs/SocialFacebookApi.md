@@ -22,8 +22,6 @@ Links the current user account to a facebook account, using the acccess token fr
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new SocialFacebookApi();
 var facebookToken = new FacebookToken(); // FacebookToken | The token from facebook
@@ -47,7 +45,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

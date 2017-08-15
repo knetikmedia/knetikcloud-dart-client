@@ -75,8 +75,6 @@ The context type identifies the type of entity (i.e., 'activity') being tracked 
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new GamificationLeaderboardsApi();
 var contextType = contextType_example; // String | The context type for the leaderboard
@@ -105,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

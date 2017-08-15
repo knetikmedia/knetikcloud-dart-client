@@ -26,7 +26,7 @@ class ContentCommentsApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["OAuth2"];
+    List<String> authNames = [];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -77,7 +77,7 @@ class ContentCommentsApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["OAuth2"];
+    List<String> authNames = [];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -295,7 +295,7 @@ class ContentCommentsApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["OAuth2"];
+    List<String> authNames = [];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;

@@ -26,7 +26,7 @@ class ContentArticlesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["OAuth2"];
+    List<String> authNames = [];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -74,7 +74,7 @@ class ContentArticlesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["OAuth2"];
+    List<String> authNames = [];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -125,7 +125,7 @@ class ContentArticlesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["OAuth2"];
+    List<String> authNames = [];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -179,7 +179,7 @@ class ContentArticlesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["OAuth2"];
+    List<String> authNames = [];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -281,7 +281,7 @@ class ContentArticlesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["OAuth2"];
+    List<String> authNames = [];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -338,7 +338,7 @@ class ContentArticlesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["OAuth2"];
+    List<String> authNames = [];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -370,7 +370,7 @@ class ContentArticlesApi {
   /// List and search articles
   ///
   /// Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
-  Future<PageResource«ArticleResource»> getArticles({ String filterCategory, String filterTagset, String filterTagIntersection, String filterTagExclusion, String filterTitle, int size, int page, String order }) async {
+  Future<PageResource«ArticleResource»> getArticles({ bool filterActiveOnly, String filterCategory, String filterTagset, String filterTagIntersection, String filterTagExclusion, String filterTitle, int size, int page, String order }) async {
     Object postBody = null;
 
     // verify required params are set
@@ -382,6 +382,9 @@ class ContentArticlesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
+    if(filterActiveOnly != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filter_active_only", filterActiveOnly));
+    }
     if(filterCategory != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_category", filterCategory));
     }
@@ -461,7 +464,7 @@ class ContentArticlesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["OAuth2"];
+    List<String> authNames = [];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -512,7 +515,7 @@ class ContentArticlesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = ["OAuth2"];
+    List<String> authNames = [];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;

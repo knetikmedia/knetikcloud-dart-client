@@ -23,8 +23,6 @@ Lists all leaderboard entries with additional user details
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ReportingChallengesApi();
 var filterEvent = 789; // int | A sepecific challenge event id
@@ -55,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -74,8 +72,6 @@ Lists all user submitted scores sorted by value, including those that do not ape
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ReportingChallengesApi();
 var filterEvent = 789; // int | A sepecific challenge event id
@@ -106,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

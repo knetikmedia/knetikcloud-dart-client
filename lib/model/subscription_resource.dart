@@ -11,6 +11,10 @@ class SubscriptionResource {
   @Property(name: 'availability')
   String availability = null;
   //enum availabilityEnum {  all,  new_subscribers,  };
+/* The behaviors linked to the item, describing various options and interactions. May not be included in item lists */
+  @Property(name: 'behaviors')
+  List<Behavior> behaviors = [];
+  
 /* A category for filtering items */
   @Property(name: 'category')
   String category = null;
@@ -87,7 +91,7 @@ class SubscriptionResource {
 
   @override
   String toString()  {
-    return 'SubscriptionResource[additionalProperties=$additionalProperties, availability=$availability, category=$category, consolidationDayOfMonth=$consolidationDayOfMonth, createdDate=$createdDate, geoCountryList=$geoCountryList, geoPolicyType=$geoPolicyType, id=$id, longDescription=$longDescription, name=$name, plans=$plans, shortDescription=$shortDescription, sort=$sort, storeEnd=$storeEnd, storeStart=$storeStart, tags=$tags, template=$template, uniqueKey=$uniqueKey, updatedDate=$updatedDate, vendorId=$vendorId, ]';
+    return 'SubscriptionResource[additionalProperties=$additionalProperties, availability=$availability, behaviors=$behaviors, category=$category, consolidationDayOfMonth=$consolidationDayOfMonth, createdDate=$createdDate, geoCountryList=$geoCountryList, geoPolicyType=$geoPolicyType, id=$id, longDescription=$longDescription, name=$name, plans=$plans, shortDescription=$shortDescription, sort=$sort, storeEnd=$storeEnd, storeStart=$storeStart, tags=$tags, template=$template, uniqueKey=$uniqueKey, updatedDate=$updatedDate, vendorId=$vendorId, ]';
   }
 
 }

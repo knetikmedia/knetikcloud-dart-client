@@ -23,7 +23,8 @@ class ApiClient {
 
   ApiClient({this.basePath: "https://sandbox.knetikcloud.com"}) {
     // Setup authentications (key: authentication name, value: authentication).
-    _authentications['OAuth2'] = new OAuth();
+    _authentications['oauth2_client_credentials_grant'] = new OAuth();
+    _authentications['oauth2_password_grant'] = new OAuth();
   }
 
   void addDefaultHeader(String key, String value) {

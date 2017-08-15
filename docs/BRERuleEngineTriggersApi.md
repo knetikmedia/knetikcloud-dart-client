@@ -26,8 +26,6 @@ Customer added triggers will not be fired automatically or have rules associated
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new BRERuleEngineTriggersApi();
 var breTriggerResource = new BreTriggerResource(); // BreTriggerResource | The BRE trigger resource object
@@ -52,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -71,8 +69,6 @@ May fail if there are existing rules against it. Cannot delete core triggers
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new BRERuleEngineTriggersApi();
 var eventName = eventName_example; // String | The trigger event name
@@ -96,7 +92,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -113,8 +109,6 @@ Get a single trigger
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new BRERuleEngineTriggersApi();
 var eventName = eventName_example; // String | The trigger event name
@@ -139,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -156,8 +150,6 @@ List triggers
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new BRERuleEngineTriggersApi();
 var filterSystem = true; // bool | Filter for triggers that are system triggers when true, or not when false. Leave off for both mixed
@@ -194,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -213,8 +205,6 @@ May fail if new parameters mismatch requirements of existing rules. Cannot updat
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new BRERuleEngineTriggersApi();
 var eventName = eventName_example; // String | The trigger event name
@@ -241,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

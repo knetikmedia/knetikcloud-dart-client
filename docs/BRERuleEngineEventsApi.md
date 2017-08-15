@@ -22,8 +22,6 @@ Parameters within the event must match names and types from the trigger. Actual 
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new BRERuleEngineEventsApi();
 var breEvent = new BreEvent(); // BreEvent | The BRE event object
@@ -48,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

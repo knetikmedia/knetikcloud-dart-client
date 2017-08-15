@@ -25,8 +25,6 @@ Returns aggregated endpoint usage information by day
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ReportingUsageApi();
 var startDate = 789; // int | The beginning of the range being requested, unix timestamp in seconds
@@ -63,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -80,8 +78,6 @@ Returns aggregated endpoint usage information by hour
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ReportingUsageApi();
 var startDate = 789; // int | The beginning of the range being requested, unix timestamp in seconds
@@ -118,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -135,8 +131,6 @@ Returns aggregated endpoint usage information by minute
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ReportingUsageApi();
 var startDate = 789; // int | The beginning of the range being requested, unix timestamp in seconds
@@ -173,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -190,8 +184,6 @@ Returns aggregated endpoint usage information by month
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ReportingUsageApi();
 var startDate = 789; // int | The beginning of the range being requested, unix timestamp in seconds
@@ -228,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -245,8 +237,6 @@ Returns aggregated endpoint usage information by year
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ReportingUsageApi();
 var startDate = 789; // int | The beginning of the range being requested, unix timestamp in seconds
@@ -283,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -300,8 +290,6 @@ Returns list of endpoints called (method and url)
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ReportingUsageApi();
 var startDate = 789; // int | The beginning of the range being requested, unix timestamp in seconds
@@ -328,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

@@ -22,8 +22,6 @@ Links the current user account to a google account, using the acccess token from
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new SocialGoogleApi();
 var googleToken = new GoogleToken(); // GoogleToken | The token from google
@@ -47,7 +45,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

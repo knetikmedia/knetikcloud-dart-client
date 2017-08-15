@@ -31,8 +31,6 @@ Articles are blobs of text with titles, a category and assets. Formatting and di
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ContentArticlesApi();
 var articleResource = new ArticleResource(); // ArticleResource | The new article
@@ -57,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -76,8 +74,6 @@ Article Templates define a type of article and the properties they have
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ContentArticlesApi();
 var articleTemplateResource = new TemplateResource(); // TemplateResource | The article template resource object
@@ -102,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -119,8 +115,6 @@ Delete an existing article
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ContentArticlesApi();
 var id = id_example; // String | The article id
@@ -144,7 +138,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -163,8 +157,6 @@ If cascade = 'detach', it will force delete the template even if it's attached t
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ContentArticlesApi();
 var id = id_example; // String | The id of the template
@@ -190,7 +182,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -248,8 +240,6 @@ Get a single article template
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ContentArticlesApi();
 var id = id_example; // String | The id of the template
@@ -274,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -291,8 +281,6 @@ List and search article templates
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ContentArticlesApi();
 var size = 56; // int | The number of objects returned per page
@@ -321,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -331,7 +319,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getArticles**
-> PageResource«ArticleResource» getArticles(filterCategory, filterTagset, filterTagIntersection, filterTagExclusion, filterTitle, size, page, order)
+> PageResource«ArticleResource» getArticles(filterActiveOnly, filterCategory, filterTagset, filterTagIntersection, filterTagExclusion, filterTitle, size, page, order)
 
 List and search articles
 
@@ -342,6 +330,7 @@ Get a list of articles with optional filtering. Assets will not be filled in on 
 import 'package:swagger/api.dart';
 
 var api_instance = new ContentArticlesApi();
+var filterActiveOnly = true; // bool | Filter for articles that are active (true) or inactive (false)
 var filterCategory = filterCategory_example; // String | Filter for articles from a specific category by id
 var filterTagset = filterTagset_example; // String | Filter for articles with at least one of a specified set of tags (separated by comma)
 var filterTagIntersection = filterTagIntersection_example; // String | Filter for articles with all of a specified set of tags (separated by comma)
@@ -352,7 +341,7 @@ var page = 56; // int | The number of the page returned, starting with 1
 var order = order_example; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 
 try { 
-    var result = api_instance.getArticles(filterCategory, filterTagset, filterTagIntersection, filterTagExclusion, filterTitle, size, page, order);
+    var result = api_instance.getArticles(filterActiveOnly, filterCategory, filterTagset, filterTagIntersection, filterTagExclusion, filterTitle, size, page, order);
     print(result);
 } catch (e) {
     print("Exception when calling ContentArticlesApi->getArticles: $e\n");
@@ -363,6 +352,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filterActiveOnly** | **bool**| Filter for articles that are active (true) or inactive (false) | [optional] 
  **filterCategory** | **String**| Filter for articles from a specific category by id | [optional] 
  **filterTagset** | **String**| Filter for articles with at least one of a specified set of tags (separated by comma) | [optional] 
  **filterTagIntersection** | **String**| Filter for articles with all of a specified set of tags (separated by comma) | [optional] 
@@ -395,8 +385,6 @@ Update an existing article
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ContentArticlesApi();
 var id = id_example; // String | The article id
@@ -423,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -440,8 +428,6 @@ Update an article template
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new ContentArticlesApi();
 var id = id_example; // String | The id of the template
@@ -468,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
