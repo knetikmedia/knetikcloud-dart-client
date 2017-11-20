@@ -212,6 +212,10 @@ Get a single tax
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new TaxesApi();
 var countryCodeIso3 = countryCodeIso3_example; // String | The iso3 code of the country
@@ -236,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -255,6 +259,10 @@ Get a list of taxes
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new TaxesApi();
 var size = 56; // int | The number of objects returned per page
@@ -283,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -300,6 +308,10 @@ Get a single state tax
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new TaxesApi();
 var countryCodeIso3 = countryCodeIso3_example; // String | The iso3 code of the country
@@ -326,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -345,6 +357,10 @@ Get a list of taxes
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new TaxesApi();
 var size = 56; // int | The number of objects returned per page
@@ -373,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -392,6 +408,10 @@ Get a list of taxes
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new TaxesApi();
 var countryCodeIso3 = countryCodeIso3_example; // String | The iso3 code of the country
@@ -422,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 

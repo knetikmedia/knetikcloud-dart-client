@@ -113,6 +113,10 @@ List and search currencies
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new CurrenciesApi();
 var filterEnabledCurrencies = true; // bool | Filter for alternate currencies setup explicitely in system config
@@ -145,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -162,6 +166,10 @@ Get a single currency
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new CurrenciesApi();
 var code = code_example; // String | The currency code
@@ -186,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 

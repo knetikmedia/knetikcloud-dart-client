@@ -178,6 +178,10 @@ Additional private info is included as USERS_ADMIN
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new UsersApi();
 var id = id_example; // String | The id of the user or 'me'
@@ -202,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -360,6 +364,10 @@ Additional private info is included as USERS_ADMIN
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new UsersApi();
 var filterDisplayname = filterDisplayname_example; // String | Filter for users whose display name starts with provided string.
@@ -412,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -431,6 +439,10 @@ Finish resetting a user's password using the secret provided from the password-r
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new UsersApi();
 var id = 56; // int | The id of the user
@@ -456,7 +468,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -475,6 +487,10 @@ Password should be in plain text and will be encrypted on receipt. Use SSL for s
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new UsersApi();
 var userResource = new UserResource(); // UserResource | The user resource object
@@ -499,7 +515,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -612,6 +628,10 @@ A reset code will be generated and a 'forgot_password' BRE event will be fired w
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new UsersApi();
 var id = 56; // int | The id of the user
@@ -635,7 +655,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -654,6 +674,10 @@ A reset code will be generated and a 'forgot_password' BRE event will be fired w
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new UsersApi();
 var passwordReset = new PasswordResetRequest(); // PasswordResetRequest | An object containing one of three methods to look up a user
@@ -677,7 +701,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 

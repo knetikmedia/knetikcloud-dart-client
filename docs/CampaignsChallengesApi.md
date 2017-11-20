@@ -464,6 +464,10 @@ Retrieve a challenge
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new CampaignsChallengesApi();
 var id = 789; // int | The challenge id
@@ -488,7 +492,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -505,6 +509,10 @@ List and search challenge activities
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new CampaignsChallengesApi();
 var challengeId = 789; // int | The challenge id
@@ -535,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -554,6 +562,10 @@ A challenge can have multiple instances of the same activity and thus the id use
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new CampaignsChallengesApi();
 var id = 789; // int | The challenge_activity id
@@ -580,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -691,6 +703,10 @@ Retrieve a single challenge event details
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new CampaignsChallengesApi();
 var id = 789; // int | The challenge event id
@@ -715,7 +731,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -732,6 +748,10 @@ Retrieve a list of challenge events
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new CampaignsChallengesApi();
 var filterStartDate = filterStartDate_example; // String | A comma separated string without spaces.  First value is the operator to search on, second value is the event start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -768,7 +788,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -879,6 +899,10 @@ Retrieve a list of challenges
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new CampaignsChallengesApi();
 var filterActiveCampaign = true; // bool | Filter for challenges that are tied to active campaigns
@@ -913,7 +937,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -972,7 +996,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateChallengeActivity**
-> ChallengeActivityResource updateChallengeActivity(id, challengeId, challengeActivityResource)
+> ChallengeActivityResource updateChallengeActivity(id, challengeId, challengeActivityResource, validateSettings)
 
 Update a challenge activity
 
@@ -990,9 +1014,10 @@ var api_instance = new CampaignsChallengesApi();
 var id = 789; // int | The challenge_activity id
 var challengeId = 789; // int | The challenge id
 var challengeActivityResource = new ChallengeActivityResource(); // ChallengeActivityResource | The challenge activity resource object
+var validateSettings = true; // bool | Whether to validate the settings being sent against the available settings on the base activity.
 
 try { 
-    var result = api_instance.updateChallengeActivity(id, challengeId, challengeActivityResource);
+    var result = api_instance.updateChallengeActivity(id, challengeId, challengeActivityResource, validateSettings);
     print(result);
 } catch (e) {
     print("Exception when calling CampaignsChallengesApi->updateChallengeActivity: $e\n");
@@ -1006,6 +1031,7 @@ Name | Type | Description  | Notes
  **id** | **int**| The challenge_activity id | 
  **challengeId** | **int**| The challenge id | 
  **challengeActivityResource** | [**ChallengeActivityResource**](ChallengeActivityResource.md)| The challenge activity resource object | [optional] 
+ **validateSettings** | **bool**| Whether to validate the settings being sent against the available settings on the base activity. | [optional] [default to false]
 
 ### Return type
 

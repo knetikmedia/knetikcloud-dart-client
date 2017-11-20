@@ -128,7 +128,7 @@ class CampaignsRewardsApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = [];
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -185,7 +185,7 @@ class CampaignsRewardsApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = [];
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;

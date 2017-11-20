@@ -74,7 +74,7 @@ class CampaignsChallengesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if(validateSettings != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "validateSettings", validateSettings));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "validate_settings", validateSettings));
     }
     
     List<String> contentTypes = ["application/json"];
@@ -491,7 +491,7 @@ class CampaignsChallengesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = [];
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -551,7 +551,7 @@ class CampaignsChallengesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = [];
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -605,7 +605,7 @@ class CampaignsChallengesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = [];
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -764,7 +764,7 @@ class CampaignsChallengesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = [];
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -833,7 +833,7 @@ class CampaignsChallengesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = [];
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -1007,7 +1007,7 @@ class CampaignsChallengesApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-    List<String> authNames = [];
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -1090,7 +1090,7 @@ class CampaignsChallengesApi {
   /// Update a challenge activity
   ///
   /// A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
-  Future<ChallengeActivityResource> updateChallengeActivity(int id, int challengeId, { ChallengeActivityResource challengeActivityResource }) async {
+  Future<ChallengeActivityResource> updateChallengeActivity(int id, int challengeId, { ChallengeActivityResource challengeActivityResource, bool validateSettings }) async {
     Object postBody = challengeActivityResource;
 
     // verify required params are set
@@ -1108,6 +1108,9 @@ class CampaignsChallengesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
+    if(validateSettings != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "validateSettings", validateSettings));
+    }
     
     List<String> contentTypes = ["application/json"];
 
