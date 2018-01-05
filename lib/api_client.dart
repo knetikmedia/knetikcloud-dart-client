@@ -21,7 +21,7 @@ class ApiClient {
   final _RegList = new RegExp(r'^List<(.*)>$');
   final _RegMap = new RegExp(r'^Map<String,(.*)>$');
 
-  ApiClient({this.basePath: "https://sandbox.knetikcloud.com"}) {
+  ApiClient({this.basePath: "https://devsandbox.knetikcloud.com"}) {
     // Setup authentications (key: authentication name, value: authentication).
     _authentications['oauth2_client_credentials_grant'] = new OAuth();
     _authentications['oauth2_password_grant'] = new OAuth();
@@ -296,8 +296,6 @@ class ApiClient {
           return dson.map(value, new Maintenance());
         case 'MapResource':
           return dson.map(value, new MapResource());
-        case 'Map«string,object»':
-          return dson.map(value, new Map«string,object»());
         case 'MetricResource':
           return dson.map(value, new MetricResource());
         case 'ModelOperator':
@@ -404,8 +402,6 @@ class ApiClient {
           return dson.map(value, new PageResource«LevelingResource»());
         case 'PageResource«LocationLogResource»':
           return dson.map(value, new PageResource«LocationLogResource»());
-        case 'PageResource«Map«string,object»»':
-          return dson.map(value, new PageResource«Map«string,object»»());
         case 'PageResource«OauthAccessTokenResource»':
           return dson.map(value, new PageResource«OauthAccessTokenResource»());
         case 'PageResource«ObjectResource»':

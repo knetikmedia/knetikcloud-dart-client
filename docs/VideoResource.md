@@ -9,6 +9,7 @@ import 'package:swagger/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** | Whether the video is available, based on various factors | [optional] [default to null]
+**additionalProperties** | [**Map&lt;String, Property&gt;**](Property.md) | A map of additional properties, keyed on the property name.  Must match the names and types defined in the template for this item type | [optional] [default to {}]
 **author** | [**SimpleReferenceResource«long»**](SimpleReferenceResource«long».md) | The original artist of the media | [optional] [default to null]
 **authored** | **int** | The date the media was created as a unix timestamp in seconds | [optional] [default to null]
 **banned** | **bool** | Whether the video has been banned or not | [optional] [default to null]
@@ -31,6 +32,7 @@ Name | Type | Description | Notes
 **shortDescription** | **String** | The user friendly name of that resource. Defaults to blank string | [optional] [default to null]
 **size** | **int** | The size of the media. Minimum 0 if supplied | [optional] [default to null]
 **tags** | **List&lt;String&gt;** | The tags for the video | [optional] [default to []]
+**template** | **String** | A video template this video is validated against (private). May be null and no validation of additional_properties will be done | [optional] [default to null]
 **thumbnail** | **String** | The country of a thumbnail version. Typically a url | [optional] [default to null]
 **updatedDate** | **int** | The date/time this resource was last updated in seconds since unix epoch | [optional] [default to null]
 **uploader** | [**SimpleUserResource**](SimpleUserResource.md) | The user the media was uploaded by. May be null for system uploaded media. May only be set to a user other than the current caller if VIDEOS_ADMIN permission. Null will mean the caller is the uploader unless the caller has VIDEOS_ADMIN permission, in which case it will be set to null | [optional] [default to null]

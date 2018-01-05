@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**deleteComment**](ContentCommentsApi.md#deleteComment) | **DELETE** /comments/{id} | Delete a comment
 [**getComment**](ContentCommentsApi.md#getComment) | **GET** /comments/{id} | Return a comment
 [**getComments**](ContentCommentsApi.md#getComments) | **GET** /comments | Returns a page of comments
-[**searchComments**](ContentCommentsApi.md#searchComments) | **POST** /comments/search | Search the comment index
 [**updateComment**](ContentCommentsApi.md#updateComment) | **PUT** /comments/{id}/content | Update a comment
 
 
@@ -184,57 +183,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **context** | **String**| Get comments by context type | 
  **contextId** | **int**| Get comments by context id | 
- **size** | **int**| The number of objects returned per page | [optional] [default to 25]
- **page** | **int**| The number of the page returned, starting with 1 | [optional] [default to 1]
-
-### Return type
-
-[**PageResource«CommentResource»**](PageResource«CommentResource».md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **searchComments**
-> PageResource«CommentResource» searchComments(query, size, page)
-
-Search the comment index
-
-The body is an ElasticSearch query json. Please see their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html'>documentation</a> for details on the format and search options
-
-### Example 
-```dart
-import 'package:swagger/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
-//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
-
-var api_instance = new ContentCommentsApi();
-var query = new Object(); // Object | The search query
-var size = 56; // int | The number of objects returned per page
-var page = 56; // int | The number of the page returned, starting with 1
-
-try { 
-    var result = api_instance.searchComments(query, size, page);
-    print(result);
-} catch (e) {
-    print("Exception when calling ContentCommentsApi->searchComments: $e\n");
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | [**Object**](Object.md)| The search query | [optional] 
  **size** | **int**| The number of objects returned per page | [optional] [default to 25]
  **page** | **int**| The number of the page returned, starting with 1 | [optional] [default to 1]
 

@@ -7,6 +7,10 @@ class VideoResource {
   @Property(name: 'active')
   bool active = null;
   
+/* A map of additional properties, keyed on the property name.  Must match the names and types defined in the template for this item type */
+  @Property(name: 'additional_properties')
+  Map<String, Property> additionalProperties = {};
+  
 /* The original artist of the media */
   @Property(name: 'author')
   SimpleReferenceResource«long» author = null;
@@ -95,6 +99,10 @@ class VideoResource {
   @Property(name: 'tags')
   List<String> tags = [];
   
+/* A video template this video is validated against (private). May be null and no validation of additional_properties will be done */
+  @Property(name: 'template')
+  String template = null;
+  
 /* The country of a thumbnail version. Typically a url */
   @Property(name: 'thumbnail')
   String thumbnail = null;
@@ -119,7 +127,7 @@ class VideoResource {
 
   @override
   String toString()  {
-    return 'VideoResource[active=$active, author=$author, authored=$authored, banned=$banned, category=$category, comments=$comments, contributors=$contributors, createdDate=$createdDate, embed=$embed, extension=$extension, height=$height, id=$id, length=$length, location=$location, longDescription=$longDescription, mimeType=$mimeType, name=$name, priority=$priority, privacy=$privacy, published=$published, shortDescription=$shortDescription, size=$size, tags=$tags, thumbnail=$thumbnail, updatedDate=$updatedDate, uploader=$uploader, views=$views, width=$width, ]';
+    return 'VideoResource[active=$active, additionalProperties=$additionalProperties, author=$author, authored=$authored, banned=$banned, category=$category, comments=$comments, contributors=$contributors, createdDate=$createdDate, embed=$embed, extension=$extension, height=$height, id=$id, length=$length, location=$location, longDescription=$longDescription, mimeType=$mimeType, name=$name, priority=$priority, privacy=$privacy, published=$published, shortDescription=$shortDescription, size=$size, tags=$tags, template=$template, thumbnail=$thumbnail, updatedDate=$updatedDate, uploader=$uploader, views=$views, width=$width, ]';
   }
 
 }

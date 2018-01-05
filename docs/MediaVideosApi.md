@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,22 +16,27 @@ Method | HTTP request | Description
 [**addVideoFlag**](MediaVideosApi.md#addVideoFlag) | **POST** /media/videos/{video_id}/moderation | Add a new flag
 [**addVideoRelationships**](MediaVideosApi.md#addVideoRelationships) | **POST** /media/videos/{video_id}/related | Adds one or more existing videos as related to this one
 [**createVideoDisposition**](MediaVideosApi.md#createVideoDisposition) | **POST** /media/videos/{video_id}/dispositions | Create a video disposition
+[**createVideoTemplate**](MediaVideosApi.md#createVideoTemplate) | **POST** /media/videos/templates | Create a video template
 [**deleteVideo**](MediaVideosApi.md#deleteVideo) | **DELETE** /media/videos/{id} | Deletes a video from the system if no resources are attached to it
 [**deleteVideoComment**](MediaVideosApi.md#deleteVideoComment) | **DELETE** /media/videos/{video_id}/comments/{id} | Delete a video comment
 [**deleteVideoDisposition**](MediaVideosApi.md#deleteVideoDisposition) | **DELETE** /media/videos/{video_id}/dispositions/{disposition_id} | Delete a video disposition
 [**deleteVideoFlag**](MediaVideosApi.md#deleteVideoFlag) | **DELETE** /media/videos/{video_id}/moderation | Delete a flag
 [**deleteVideoRelationship**](MediaVideosApi.md#deleteVideoRelationship) | **DELETE** /media/videos/{video_id}/related/{id} | Delete a video&#39;s relationship
+[**deleteVideoTemplate**](MediaVideosApi.md#deleteVideoTemplate) | **DELETE** /media/videos/templates/{id} | Delete a video template
 [**getUserVideos**](MediaVideosApi.md#getUserVideos) | **GET** /users/{user_id}/videos | Get user videos
 [**getVideo**](MediaVideosApi.md#getVideo) | **GET** /media/videos/{id} | Loads a specific video details
 [**getVideoComments**](MediaVideosApi.md#getVideoComments) | **GET** /media/videos/{video_id}/comments | Returns a page of comments for a video
 [**getVideoDispositions**](MediaVideosApi.md#getVideoDispositions) | **GET** /media/videos/{video_id}/dispositions | Returns a page of dispositions for a video
 [**getVideoRelationships**](MediaVideosApi.md#getVideoRelationships) | **GET** /media/videos/{video_id}/related | Returns a page of video relationships
+[**getVideoTemplate**](MediaVideosApi.md#getVideoTemplate) | **GET** /media/videos/templates/{id} | Get a single video template
+[**getVideoTemplates**](MediaVideosApi.md#getVideoTemplates) | **GET** /media/videos/templates | List and search video templates
 [**getVideos**](MediaVideosApi.md#getVideos) | **GET** /media/videos | Search videos using the documented filters
 [**removeUserFromVideoWhitelist**](MediaVideosApi.md#removeUserFromVideoWhitelist) | **DELETE** /media/videos/{video_id}/whitelist/{id} | Removes a user from a video&#39;s whitelist
 [**removeVideoContributor**](MediaVideosApi.md#removeVideoContributor) | **DELETE** /media/videos/{video_id}/contributors/{id} | Removes a contributor from a video
 [**updateVideo**](MediaVideosApi.md#updateVideo) | **PUT** /media/videos/{id} | Modifies a video&#39;s details
 [**updateVideoComment**](MediaVideosApi.md#updateVideoComment) | **PUT** /media/videos/{video_id}/comments/{id}/content | Update a video comment
 [**updateVideoRelationship**](MediaVideosApi.md#updateVideoRelationship) | **PUT** /media/videos/{video_id}/related/{id}/relationship_details | Update a video&#39;s relationship details
+[**updateVideoTemplate**](MediaVideosApi.md#updateVideoTemplate) | **PUT** /media/videos/templates/{id} | Update a video template
 [**viewVideo**](MediaVideosApi.md#viewVideo) | **POST** /media/videos/{id}/views | Increment a video&#39;s view count
 
 
@@ -362,6 +367,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **createVideoTemplate**
+> TemplateResource createVideoTemplate(videoTemplateResource)
+
+Create a video template
+
+Video Templates define a type of video and the properties they have
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new MediaVideosApi();
+var videoTemplateResource = new TemplateResource(); // TemplateResource | The video template resource object
+
+try { 
+    var result = api_instance.createVideoTemplate(videoTemplateResource);
+    print(result);
+} catch (e) {
+    print("Exception when calling MediaVideosApi->createVideoTemplate: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **videoTemplateResource** | [**TemplateResource**](TemplateResource.md)| The video template resource object | [optional] 
+
+### Return type
+
+[**TemplateResource**](TemplateResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **deleteVideo**
 > deleteVideo(id)
 
@@ -570,6 +622,54 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **int**| The video id | 
  **id** | **int**| The relationship id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteVideoTemplate**
+> deleteVideoTemplate(id, cascade)
+
+Delete a video template
+
+If cascade = 'detach', it will force delete the template even if it's attached to other objects
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new MediaVideosApi();
+var id = id_example; // String | The id of the template
+var cascade = cascade_example; // String | The value needed to delete used templates
+
+try { 
+    api_instance.deleteVideoTemplate(id, cascade);
+} catch (e) {
+    print("Exception when calling MediaVideosApi->deleteVideoTemplate: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The id of the template | 
+ **cascade** | **String**| The value needed to delete used templates | [optional] 
 
 ### Return type
 
@@ -817,6 +917,100 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PageResource«VideoRelationshipResource»**](PageResource«VideoRelationshipResource».md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getVideoTemplate**
+> TemplateResource getVideoTemplate(id)
+
+Get a single video template
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new MediaVideosApi();
+var id = id_example; // String | The id of the template
+
+try { 
+    var result = api_instance.getVideoTemplate(id);
+    print(result);
+} catch (e) {
+    print("Exception when calling MediaVideosApi->getVideoTemplate: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The id of the template | 
+
+### Return type
+
+[**TemplateResource**](TemplateResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getVideoTemplates**
+> PageResource«TemplateResource» getVideoTemplates(size, page, order)
+
+List and search video templates
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new MediaVideosApi();
+var size = 56; // int | The number of objects returned per page
+var page = 56; // int | The number of the page returned, starting with 1
+var order = order_example; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+
+try { 
+    var result = api_instance.getVideoTemplates(size, page, order);
+    print(result);
+} catch (e) {
+    print("Exception when calling MediaVideosApi->getVideoTemplates: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **size** | **int**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **int**| The number of the page returned, starting with 1 | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]
+
+### Return type
+
+[**PageResource«TemplateResource»**](PageResource«TemplateResource».md)
 
 ### Authorization
 
@@ -1126,6 +1320,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateVideoTemplate**
+> TemplateResource updateVideoTemplate(id, videoTemplateResource)
+
+Update a video template
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new MediaVideosApi();
+var id = id_example; // String | The id of the template
+var videoTemplateResource = new TemplateResource(); // TemplateResource | The video template resource object
+
+try { 
+    var result = api_instance.updateVideoTemplate(id, videoTemplateResource);
+    print(result);
+} catch (e) {
+    print("Exception when calling MediaVideosApi->updateVideoTemplate: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The id of the template | 
+ **videoTemplateResource** | [**TemplateResource**](TemplateResource.md)| The video template resource object | [optional] 
+
+### Return type
+
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 

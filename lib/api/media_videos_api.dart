@@ -361,6 +361,54 @@ class MediaVideosApi {
       return null;
     }
   }
+  /// Create a video template
+  ///
+  /// Video Templates define a type of video and the properties they have
+  Future<TemplateResource> createVideoTemplate({ TemplateResource videoTemplateResource }) async {
+    Object postBody = videoTemplateResource;
+
+    // verify required params are set
+
+    // create path and map variables
+    String path = "/media/videos/templates".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    
+    List<String> contentTypes = ["application/json"];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'POST',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return apiClient.deserialize(response.body, 'TemplateResource') as TemplateResource ;
+    } else {
+      return null;
+    }
+  }
   /// Deletes a video from the system if no resources are attached to it
   ///
   /// 
@@ -589,6 +637,60 @@ class MediaVideosApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
+    
+    List<String> contentTypes = ["application/json"];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'DELETE',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return ;
+    } else {
+      return ;
+    }
+  }
+  /// Delete a video template
+  ///
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  Future deleteVideoTemplate(String id, { String cascade }) async {
+    Object postBody = null;
+
+    // verify required params are set
+    if(id == null) {
+     throw new ApiException(400, "Missing required param: id");
+    }
+
+    // create path and map variables
+    String path = "/media/videos/templates/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    if(cascade != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
+    }
     
     List<String> contentTypes = ["application/json"];
 
@@ -900,6 +1002,114 @@ class MediaVideosApi {
       throw new ApiException(response.statusCode, response.body);
     } else if(response.body != null) {
       return apiClient.deserialize(response.body, 'PageResource«VideoRelationshipResource»') as PageResource«VideoRelationshipResource» ;
+    } else {
+      return null;
+    }
+  }
+  /// Get a single video template
+  ///
+  /// 
+  Future<TemplateResource> getVideoTemplate(String id) async {
+    Object postBody = null;
+
+    // verify required params are set
+    if(id == null) {
+     throw new ApiException(400, "Missing required param: id");
+    }
+
+    // create path and map variables
+    String path = "/media/videos/templates/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    
+    List<String> contentTypes = ["application/json"];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return apiClient.deserialize(response.body, 'TemplateResource') as TemplateResource ;
+    } else {
+      return null;
+    }
+  }
+  /// List and search video templates
+  ///
+  /// 
+  Future<PageResource«TemplateResource»> getVideoTemplates({ int size, int page, String order }) async {
+    Object postBody = null;
+
+    // verify required params are set
+
+    // create path and map variables
+    String path = "/media/videos/templates".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    if(size != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "size", size));
+    }
+    if(page != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
+    }
+    if(order != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
+    }
+    
+    List<String> contentTypes = ["application/json"];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return apiClient.deserialize(response.body, 'PageResource«TemplateResource»') as PageResource«TemplateResource» ;
     } else {
       return null;
     }
@@ -1262,6 +1472,57 @@ class MediaVideosApi {
       return ;
     } else {
       return ;
+    }
+  }
+  /// Update a video template
+  ///
+  /// 
+  Future<TemplateResource> updateVideoTemplate(String id, { TemplateResource videoTemplateResource }) async {
+    Object postBody = videoTemplateResource;
+
+    // verify required params are set
+    if(id == null) {
+     throw new ApiException(400, "Missing required param: id");
+    }
+
+    // create path and map variables
+    String path = "/media/videos/templates/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    
+    List<String> contentTypes = ["application/json"];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'PUT',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return apiClient.deserialize(response.body, 'TemplateResource') as TemplateResource ;
+    } else {
+      return null;
     }
   }
   /// Increment a video&#39;s view count
