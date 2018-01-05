@@ -27,6 +27,10 @@ class BreRule {
   @Property(name: 'end_date')
   int endDate = null;
   
+/* How many times the rule has been evaluated (it's conditions checked, whether it then runs or not) */
+  @Property(name: 'evaluation_count')
+  int evaluationCount = null;
+  
 /* The event name of the trigger this rule runs for. Affects which parameters are available */
   @Property(name: 'event_name')
   String eventName = null;
@@ -38,6 +42,10 @@ class BreRule {
 /* The human readable name of the rule */
   @Property(name: 'name')
   String name = null;
+  
+/* How many times the rule has run */
+  @Property(name: 'run_count')
+  int runCount = null;
   
 /* Used to sort rules to control the order they run in. Larger numbered sort values run first.  Default 500 */
   @Property(name: 'sort')
@@ -55,7 +63,7 @@ class BreRule {
 
   @override
   String toString()  {
-    return 'BreRule[actions=$actions, condition=$condition, conditionText=$conditionText, description=$description, enabled=$enabled, endDate=$endDate, eventName=$eventName, id=$id, name=$name, sort=$sort, startDate=$startDate, systemRule=$systemRule, ]';
+    return 'BreRule[actions=$actions, condition=$condition, conditionText=$conditionText, description=$description, enabled=$enabled, endDate=$endDate, evaluationCount=$evaluationCount, eventName=$eventName, id=$id, name=$name, runCount=$runCount, sort=$sort, startDate=$startDate, systemRule=$systemRule, ]';
   }
 
 }

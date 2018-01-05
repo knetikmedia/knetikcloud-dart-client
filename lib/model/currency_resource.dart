@@ -15,7 +15,11 @@ class CurrencyResource {
   @Property(name: 'created_date')
   int createdDate = null;
   
-/* The decimal to multiply the system base currency (from config 'currency') to localize to this one. Should be 1 for the base currency itself. */
+/* Whether this is the default currency. All real money wallets will be in this currency, and the 'factor' on each currency is in relation to the default. There must be one default currency and the current will be changed if you set another as the default. Cannot be combined with virtual currency. Take extreme caution when changing */
+  @Property(name: 'default_currency')
+  bool defaultCurrency = null;
+  
+/* The decimal to multiply the default currency to localize to this one. Should be 1 for the default currency itself. */
   @Property(name: 'factor')
   num factor = null;
   
@@ -39,7 +43,7 @@ class CurrencyResource {
 
   @override
   String toString()  {
-    return 'CurrencyResource[active=$active, code=$code, createdDate=$createdDate, factor=$factor, icon=$icon, name=$name, type=$type, updatedDate=$updatedDate, ]';
+    return 'CurrencyResource[active=$active, code=$code, createdDate=$createdDate, defaultCurrency=$defaultCurrency, factor=$factor, icon=$icon, name=$name, type=$type, updatedDate=$updatedDate, ]';
   }
 
 }

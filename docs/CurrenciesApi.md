@@ -106,7 +106,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCurrencies**
-> PageResource«CurrencyResource» getCurrencies(filterEnabledCurrencies, filterType, size, page, order)
+> PageResource«CurrencyResource» getCurrencies(filterDefault, filterEnabledCurrencies, filterType, size, page, order)
 
 List and search currencies
 
@@ -119,6 +119,7 @@ import 'package:swagger/api.dart';
 //swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new CurrenciesApi();
+var filterDefault = true; // bool | Filter for the one currency that is set as default (true), or all that are not (false)
 var filterEnabledCurrencies = true; // bool | Filter for alternate currencies setup explicitely in system config
 var filterType = filterType_example; // String | Filter currencies by type.  Allowable values: ('virtual', 'real')
 var size = 56; // int | The number of objects returned per page
@@ -126,7 +127,7 @@ var page = 56; // int | The number of the page returned, starting with 1
 var order = order_example; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 
 try { 
-    var result = api_instance.getCurrencies(filterEnabledCurrencies, filterType, size, page, order);
+    var result = api_instance.getCurrencies(filterDefault, filterEnabledCurrencies, filterType, size, page, order);
     print(result);
 } catch (e) {
     print("Exception when calling CurrenciesApi->getCurrencies: $e\n");
@@ -137,6 +138,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filterDefault** | **bool**| Filter for the one currency that is set as default (true), or all that are not (false) | [optional] 
  **filterEnabledCurrencies** | **bool**| Filter for alternate currencies setup explicitely in system config | [optional] 
  **filterType** | **String**| Filter currencies by type.  Allowable values: (&#39;virtual&#39;, &#39;real&#39;) | [optional] 
  **size** | **int**| The number of objects returned per page | [optional] [default to 25]

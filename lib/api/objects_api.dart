@@ -442,19 +442,19 @@ class ObjectsApi {
   /// Update an object
   ///
   /// 
-  Future updateObjectItem(String templateId, int entitlementId, { bool cascade, EntitlementItem objectItem }) async {
+  Future updateObjectItem(String templateId, int objectId, { bool cascade, ObjectResource objectItem }) async {
     Object postBody = objectItem;
 
     // verify required params are set
     if(templateId == null) {
      throw new ApiException(400, "Missing required param: templateId");
     }
-    if(entitlementId == null) {
-     throw new ApiException(400, "Missing required param: entitlementId");
+    if(objectId == null) {
+     throw new ApiException(400, "Missing required param: objectId");
     }
 
     // create path and map variables
-    String path = "/objects/{template_id}/{object_id}".replaceAll("{format}","json").replaceAll("{" + "template_id" + "}", templateId.toString()).replaceAll("{" + "entitlement_id" + "}", entitlementId.toString());
+    String path = "/objects/{template_id}/{object_id}".replaceAll("{format}","json").replaceAll("{" + "template_id" + "}", templateId.toString()).replaceAll("{" + "object_id" + "}", objectId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

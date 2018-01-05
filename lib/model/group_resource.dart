@@ -35,11 +35,15 @@ class GroupResource {
   @Property(name: 'sub_member_count')
   int subMemberCount = null;
   
+/* Tags for search */
+  @Property(name: 'tags')
+  List<String> tags = [];
+  
 /* A group template this group is validated against. May be null and no validation of additional_properties will be done */
   @Property(name: 'template')
   String template = null;
   
-/* Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created */
+/* Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID */
   @Property(name: 'unique_name')
   String uniqueName = null;
   
@@ -47,7 +51,7 @@ class GroupResource {
 
   @override
   String toString()  {
-    return 'GroupResource[additionalProperties=$additionalProperties, description=$description, memberCount=$memberCount, messageOfTheDay=$messageOfTheDay, name=$name, parent=$parent, status=$status, subMemberCount=$subMemberCount, template=$template, uniqueName=$uniqueName, ]';
+    return 'GroupResource[additionalProperties=$additionalProperties, description=$description, memberCount=$memberCount, messageOfTheDay=$messageOfTheDay, name=$name, parent=$parent, status=$status, subMemberCount=$subMemberCount, tags=$tags, template=$template, uniqueName=$uniqueName, ]';
   }
 
 }

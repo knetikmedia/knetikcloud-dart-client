@@ -469,7 +469,8 @@ Class | Method | HTTP request | Description
 *ReportingUsageApi* | [**getUsageByYear**](docs//ReportingUsageApi.md#getusagebyyear) | **GET** /reporting/usage/year | Returns aggregated endpoint usage information by year
 *ReportingUsageApi* | [**getUsageEndpoints**](docs//ReportingUsageApi.md#getusageendpoints) | **GET** /reporting/usage/endpoints | Returns list of endpoints called (method and url)
 *ReportingUsersApi* | [**getUserRegistrations**](docs//ReportingUsersApi.md#getuserregistrations) | **GET** /reporting/users/registrations | Get user registration info
-*SearchApi* | [**searchIndex**](docs//SearchApi.md#searchindex) | **POST** /search/index/{type} | Search an index
+*SearchApi* | [**searchIndex**](docs//SearchApi.md#searchindex) | **POST** /search/index/{type} | Search an index with no template
+*SearchApi* | [**searchIndexWithTemplate**](docs//SearchApi.md#searchindexwithtemplate) | **POST** /search/index/{type}/{template} | Search an index with a template
 *SocialFacebookApi* | [**linkAccounts**](docs//SocialFacebookApi.md#linkaccounts) | **POST** /social/facebook/users | Link facebook account
 *SocialGoogleApi* | [**linkAccounts1**](docs//SocialGoogleApi.md#linkaccounts1) | **POST** /social/google/users | Link google account
 *StoreApi* | [**createItemTemplate**](docs//StoreApi.md#createitemtemplate) | **POST** /store/items/templates | Create an item template
@@ -596,10 +597,11 @@ Class | Method | HTTP request | Description
 *UsersGroupsApi* | [**createGroup**](docs//UsersGroupsApi.md#creategroup) | **POST** /users/groups | Create a group
 *UsersGroupsApi* | [**createGroupMemberTemplate**](docs//UsersGroupsApi.md#creategroupmembertemplate) | **POST** /users/groups/members/templates | Create an group member template
 *UsersGroupsApi* | [**createGroupTemplate**](docs//UsersGroupsApi.md#creategrouptemplate) | **POST** /users/groups/templates | Create a group template
-*UsersGroupsApi* | [**deleteGroup**](docs//UsersGroupsApi.md#deletegroup) | **DELETE** /users/groups/{unique_name} | Removes a group from the system IF no resources are attached to it
+*UsersGroupsApi* | [**deleteGroup**](docs//UsersGroupsApi.md#deletegroup) | **DELETE** /users/groups/{unique_name} | Removes a group from the system
 *UsersGroupsApi* | [**deleteGroupMemberTemplate**](docs//UsersGroupsApi.md#deletegroupmembertemplate) | **DELETE** /users/groups/members/templates/{id} | Delete an group member template
 *UsersGroupsApi* | [**deleteGroupTemplate**](docs//UsersGroupsApi.md#deletegrouptemplate) | **DELETE** /users/groups/templates/{id} | Delete a group template
 *UsersGroupsApi* | [**getGroup**](docs//UsersGroupsApi.md#getgroup) | **GET** /users/groups/{unique_name} | Loads a specific group&#39;s details
+*UsersGroupsApi* | [**getGroupAncestors**](docs//UsersGroupsApi.md#getgroupancestors) | **GET** /users/groups/{unique_name}/ancestors | Get group ancestors
 *UsersGroupsApi* | [**getGroupMember**](docs//UsersGroupsApi.md#getgroupmember) | **GET** /users/groups/{unique_name}/members/{user_id} | Get a user from a group
 *UsersGroupsApi* | [**getGroupMemberTemplate**](docs//UsersGroupsApi.md#getgroupmembertemplate) | **GET** /users/groups/members/templates/{id} | Get a single group member template
 *UsersGroupsApi* | [**getGroupMemberTemplates**](docs//UsersGroupsApi.md#getgroupmembertemplates) | **GET** /users/groups/members/templates | List and search group member templates
@@ -922,6 +924,7 @@ Class | Method | HTTP request | Description
  - [SelectedSettingRequest](docs//SelectedSettingRequest.md)
  - [SelectedSettingResource](docs//SelectedSettingResource.md)
  - [SettingOption](docs//SettingOption.md)
+ - [SimpleGroupResource](docs//SimpleGroupResource.md)
  - [SimpleReferenceResource«int»](docs//SimpleReferenceResource«int».md)
  - [SimpleReferenceResource«long»](docs//SimpleReferenceResource«long».md)
  - [SimpleReferenceResource«object»](docs//SimpleReferenceResource«object».md)

@@ -7,17 +7,17 @@ class GroupMemberResource {
   @Property(name: 'additional_properties')
   Map<String, Property> additionalProperties = {};
   
-/* The url of the user's avatar image */
-  @Property(name: 'avatar_url')
-  String avatarUrl = null;
+/* The group. Id is the unique name */
+  @Property(name: 'group')
+  SimpleGroupResource group = null;
   
-/* The public username of the user */
-  @Property(name: 'display_name')
-  String displayName = null;
+/* Whether this membership is explicit (the user was added directly to the group) or implicit (the user was added only to one or more child groups) */
+  @Property(name: 'implicit')
+  bool implicit = null;
   
-/* The id of the user */
-  @Property(name: 'id')
-  int id = null;
+/* The id of the membership entry */
+  @Property(name: 'membership_id')
+  int membershipId = null;
   
 /* The position of the member in the group if applicable. Read notes for details */
   @Property(name: 'order')
@@ -31,15 +31,15 @@ class GroupMemberResource {
   @Property(name: 'template')
   String template = null;
   
-/* The username of the user */
-  @Property(name: 'username')
-  String username = null;
+/* The user */
+  @Property(name: 'user')
+  SimpleUserResource user = null;
   
   GroupMemberResource();
 
   @override
   String toString()  {
-    return 'GroupMemberResource[additionalProperties=$additionalProperties, avatarUrl=$avatarUrl, displayName=$displayName, id=$id, order=$order, status=$status, template=$template, username=$username, ]';
+    return 'GroupMemberResource[additionalProperties=$additionalProperties, group=$group, implicit=$implicit, membershipId=$membershipId, order=$order, status=$status, template=$template, user=$user, ]';
   }
 
 }

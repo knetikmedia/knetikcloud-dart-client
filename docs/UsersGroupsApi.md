@@ -14,10 +14,11 @@ Method | HTTP request | Description
 [**createGroup**](UsersGroupsApi.md#createGroup) | **POST** /users/groups | Create a group
 [**createGroupMemberTemplate**](UsersGroupsApi.md#createGroupMemberTemplate) | **POST** /users/groups/members/templates | Create an group member template
 [**createGroupTemplate**](UsersGroupsApi.md#createGroupTemplate) | **POST** /users/groups/templates | Create a group template
-[**deleteGroup**](UsersGroupsApi.md#deleteGroup) | **DELETE** /users/groups/{unique_name} | Removes a group from the system IF no resources are attached to it
+[**deleteGroup**](UsersGroupsApi.md#deleteGroup) | **DELETE** /users/groups/{unique_name} | Removes a group from the system
 [**deleteGroupMemberTemplate**](UsersGroupsApi.md#deleteGroupMemberTemplate) | **DELETE** /users/groups/members/templates/{id} | Delete an group member template
 [**deleteGroupTemplate**](UsersGroupsApi.md#deleteGroupTemplate) | **DELETE** /users/groups/templates/{id} | Delete a group template
 [**getGroup**](UsersGroupsApi.md#getGroup) | **GET** /users/groups/{unique_name} | Loads a specific group&#39;s details
+[**getGroupAncestors**](UsersGroupsApi.md#getGroupAncestors) | **GET** /users/groups/{unique_name}/ancestors | Get group ancestors
 [**getGroupMember**](UsersGroupsApi.md#getGroupMember) | **GET** /users/groups/{unique_name}/members/{user_id} | Get a user from a group
 [**getGroupMemberTemplate**](UsersGroupsApi.md#getGroupMemberTemplate) | **GET** /users/groups/members/templates/{id} | Get a single group member template
 [**getGroupMemberTemplates**](UsersGroupsApi.md#getGroupMemberTemplates) | **GET** /users/groups/members/templates | List and search group member templates
@@ -271,7 +272,9 @@ Name | Type | Description  | Notes
 # **deleteGroup**
 > deleteGroup(uniqueName)
 
-Removes a group from the system IF no resources are attached to it
+Removes a group from the system
+
+All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group's parent if they were not added to it directly as well.
 
 ### Example 
 ```dart
@@ -445,6 +448,49 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getGroupAncestors**
+> List<GroupResource> getGroupAncestors(uniqueName)
+
+Get group ancestors
+
+Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+
+var api_instance = new UsersGroupsApi();
+var uniqueName = uniqueName_example; // String | The group unique name
+
+try { 
+    var result = api_instance.getGroupAncestors(uniqueName);
+    print(result);
+} catch (e) {
+    print("Exception when calling UsersGroupsApi->getGroupAncestors: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uniqueName** | **String**| The group unique name | 
+
+### Return type
+
+[**List<GroupResource>**](GroupResource.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -897,6 +943,8 @@ void (empty response body)
 > updateGroup(uniqueName, groupResource)
 
 Update a group
+
+If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
 
 ### Example 
 ```dart

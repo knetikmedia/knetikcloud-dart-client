@@ -109,7 +109,7 @@ class CurrenciesApi {
   /// List and search currencies
   ///
   /// 
-  Future<PageResource«CurrencyResource»> getCurrencies({ bool filterEnabledCurrencies, String filterType, int size, int page, String order }) async {
+  Future<PageResource«CurrencyResource»> getCurrencies({ bool filterDefault, bool filterEnabledCurrencies, String filterType, int size, int page, String order }) async {
     Object postBody = null;
 
     // verify required params are set
@@ -121,6 +121,9 @@ class CurrenciesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
+    if(filterDefault != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filter_default", filterDefault));
+    }
     if(filterEnabledCurrencies != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_enabled_currencies", filterEnabledCurrencies));
     }

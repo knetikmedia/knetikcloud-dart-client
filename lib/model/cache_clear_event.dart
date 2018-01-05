@@ -40,18 +40,14 @@ class CacheClearEvent {
   String type = null;
   
 
-  @Property(name: 'customer_setup')
-  bool customerSetup = null;
-  
-
-  @Property(name: 'customer_teardown')
-  bool customerTeardown = null;
+  @Property(name: 'teardown')
+  bool teardown = null;
   
   CacheClearEvent();
 
   @override
   String toString()  {
-    return 'CacheClearEvent[client=$client, customer=$customer, doNotBroadcast=$doNotBroadcast, section=$section, source=$source, specifics=$specifics, synchronous=$synchronous, timestamp=$timestamp, type=$type, customerSetup=$customerSetup, customerTeardown=$customerTeardown, ]';
+    return 'CacheClearEvent[client=$client, customer=$customer, doNotBroadcast=$doNotBroadcast, section=$section, source=$source, specifics=$specifics, synchronous=$synchronous, timestamp=$timestamp, type=$type, teardown=$teardown, ]';
   }
 
 }

@@ -259,9 +259,9 @@ class UsersGroupsApi {
       return null;
     }
   }
-  /// Removes a group from the system IF no resources are attached to it
+  /// Removes a group from the system
   ///
-  /// 
+  /// All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well.
   Future deleteGroup(String uniqueName) async {
     Object postBody = null;
 
@@ -465,6 +465,57 @@ class UsersGroupsApi {
       throw new ApiException(response.statusCode, response.body);
     } else if(response.body != null) {
       return apiClient.deserialize(response.body, 'GroupResource') as GroupResource ;
+    } else {
+      return null;
+    }
+  }
+  /// Get group ancestors
+  ///
+  /// Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+  Future<List<GroupResource>> getGroupAncestors(String uniqueName) async {
+    Object postBody = null;
+
+    // verify required params are set
+    if(uniqueName == null) {
+     throw new ApiException(400, "Missing required param: uniqueName");
+    }
+
+    // create path and map variables
+    String path = "/users/groups/{unique_name}/ancestors".replaceAll("{format}","json").replaceAll("{" + "unique_name" + "}", uniqueName.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    
+    List<String> contentTypes = ["application/json"];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return apiClient.deserialize(response.body, 'List<GroupResource>') as List<GroupResource> ;
     } else {
       return null;
     }
@@ -984,7 +1035,7 @@ class UsersGroupsApi {
   }
   /// Update a group
   ///
-  /// 
+  /// If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
   Future updateGroup(String uniqueName, { GroupResource groupResource }) async {
     Object postBody = groupResource;
 

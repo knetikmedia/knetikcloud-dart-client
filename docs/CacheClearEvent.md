@@ -17,8 +17,7 @@ Name | Type | Description | Notes
 **synchronous** | **bool** |  | [optional] [default to null]
 **timestamp** | **int** |  | [optional] [default to null]
 **type** | **String** | The type of the event. Used for polymorphic type recognition and thus must match an expected type | [default to null]
-**customerSetup** | **bool** |  | [optional] [default to null]
-**customerTeardown** | **bool** |  | [optional] [default to null]
+**teardown** | **bool** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

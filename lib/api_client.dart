@@ -560,6 +560,8 @@ class ApiClient {
           return dson.map(value, new SelectedSettingResource());
         case 'SettingOption':
           return dson.map(value, new SettingOption());
+        case 'SimpleGroupResource':
+          return dson.map(value, new SimpleGroupResource());
         case 'SimpleReferenceResource«int»':
           return dson.map(value, new SimpleReferenceResource«int»());
         case 'SimpleReferenceResource«long»':

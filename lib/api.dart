@@ -356,6 +356,7 @@ part 'model/schedule.dart';
 part 'model/selected_setting_request.dart';
 part 'model/selected_setting_resource.dart';
 part 'model/setting_option.dart';
+part 'model/simple_group_resource.dart';
 part 'model/simple_reference_resource«int».dart';
 part 'model/simple_reference_resource«long».dart';
 part 'model/simple_reference_resource«object».dart';
