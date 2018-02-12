@@ -9,7 +9,7 @@ class AuthClientsApi {
 
   /// Create a new client
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   Future<ClientResource> createClient({ ClientResource clientResource }) async {
     Object postBody = clientResource;
 
@@ -57,7 +57,7 @@ class AuthClientsApi {
   }
   /// Delete a client
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   Future deleteClient(String clientKey) async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class AuthClientsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -108,7 +108,7 @@ class AuthClientsApi {
   }
   /// Get a single client
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   Future<ClientResource> getClient(String clientKey) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class AuthClientsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class AuthClientsApi {
   }
   /// List available client grant types
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   Future<List<GrantTypeResource>> getClientGrantTypes() async {
     Object postBody = null;
 
@@ -173,7 +173,7 @@ class AuthClientsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -207,7 +207,7 @@ class AuthClientsApi {
   }
   /// List and search clients
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   Future<PageResource«ClientResource»> getClients({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -230,7 +230,7 @@ class AuthClientsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -264,7 +264,7 @@ class AuthClientsApi {
   }
   /// Set grant types for a client
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   Future setClientGrantTypes(String clientKey, { List<String> grantList }) async {
     Object postBody = grantList;
 
@@ -315,7 +315,7 @@ class AuthClientsApi {
   }
   /// Set redirect uris for a client
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   Future setClientRedirectUris(String clientKey, { List<String> redirectList }) async {
     Object postBody = redirectList;
 
@@ -366,7 +366,7 @@ class AuthClientsApi {
   }
   /// Update a client
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   Future<ClientResource> updateClient(String clientKey, { ClientResource clientResource }) async {
     Object postBody = clientResource;
 

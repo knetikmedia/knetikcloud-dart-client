@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Create a PayPal Classic billing agreement for the user
 
-Returns the token that should be used to forward the user to PayPal so they can accept the agreement.
+Returns the token that should be used to forward the user to PayPal so they can accept the agreement. <br><br><b>Permissions Needed:</b> PAYPAL_CLASSIC_ADMIN or owner
 
 ### Example 
 ```dart
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 Create a payment token for PayPal express checkout
 
-Returns the token that should be used to forward the user to PayPal so they can complete the checkout.
+Returns the token that should be used to forward the user to PayPal so they can complete the checkout. <br><br><b>Permissions Needed:</b> PAYPAL_CLASSIC_ADMIN or owner
 
 ### Example 
 ```dart
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 Finalizes a billing agreement after the user has accepted through PayPal
 
-Returns the ID of the new payment method created for the user for the billing agreement.
+Returns the ID of the new payment method created for the user for the billing agreement. <br><br><b>Permissions Needed:</b> PAYPAL_CLASSIC_ADMIN or owner
 
 ### Example 
 ```dart
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 Finalizes a payment after the user has completed checkout with PayPal
 
-The invoice will be marked paid/failed by asynchronous IPN callback.
+The invoice will be marked paid/failed by asynchronous IPN callback. <br><br><b>Permissions Needed:</b> PAYPAL_CLASSIC_ADMIN or owner
 
 ### Example 
 ```dart

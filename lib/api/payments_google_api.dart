@@ -9,7 +9,7 @@ class PaymentsGoogleApi {
 
   /// Mark an invoice paid with Google
   ///
-  /// Mark an invoice paid with Google. Verifies signature from Google and treats the developerPayload field inside the json payload as the id of the invoice to pay. Returns the transaction ID if successful.
+  /// Mark an invoice paid with Google. Verifies signature from Google and treats the developerPayload field inside the json payload as the id of the invoice to pay. Returns the transaction ID if successful. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<int> handleGooglePayment({ GooglePaymentRequest request }) async {
     Object postBody = request;
 

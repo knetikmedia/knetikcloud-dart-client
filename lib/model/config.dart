@@ -3,7 +3,7 @@ part of swagger.api;
 
 @Entity()
 class Config {
-  /* The description of the config.  Max 140 characters */
+  /* The description of the config.  Max 255 characters */
   @Property(name: 'description')
   String description = null;
   

@@ -9,7 +9,7 @@ class AuthRolesApi {
 
   /// Create a new role
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   Future<RoleResource> createRole({ RoleResource roleResource }) async {
     Object postBody = roleResource;
 
@@ -57,7 +57,7 @@ class AuthRolesApi {
   }
   /// Delete a role
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   Future deleteRole(String role, { bool force }) async {
     Object postBody = null;
 
@@ -77,7 +77,7 @@ class AuthRolesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "force", force));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -111,7 +111,7 @@ class AuthRolesApi {
   }
   /// Get roles for a client
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   Future<List<RoleResource>> getClientRoles(String clientKey) async {
     Object postBody = null;
 
@@ -128,7 +128,7 @@ class AuthRolesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -162,7 +162,7 @@ class AuthRolesApi {
   }
   /// Get a single role
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   Future<RoleResource> getRole(String role) async {
     Object postBody = null;
 
@@ -179,7 +179,7 @@ class AuthRolesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -213,7 +213,7 @@ class AuthRolesApi {
   }
   /// List and search roles
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   Future<PageResource«RoleResource»> getRoles({ String filterName, String filterRole, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -242,7 +242,7 @@ class AuthRolesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -276,7 +276,7 @@ class AuthRolesApi {
   }
   /// Get roles for a user
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   Future<List<RoleResource>> getUserRoles(int userId) async {
     Object postBody = null;
 
@@ -293,7 +293,7 @@ class AuthRolesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -327,7 +327,7 @@ class AuthRolesApi {
   }
   /// Set roles for a client
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   Future<ClientResource> setClientRoles(String clientKey, { List<String> rolesList }) async {
     Object postBody = rolesList;
 
@@ -378,7 +378,7 @@ class AuthRolesApi {
   }
   /// Set permissions for a role
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   Future<RoleResource> setPermissionsForRole(String role, { List<String> permissionsList }) async {
     Object postBody = permissionsList;
 
@@ -429,7 +429,7 @@ class AuthRolesApi {
   }
   /// Set roles for a user
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   Future<UserResource> setUserRoles(int userId, { List<String> rolesList }) async {
     Object postBody = rolesList;
 
@@ -480,7 +480,7 @@ class AuthRolesApi {
   }
   /// Update a role
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   Future<RoleResource> updateRole(String role, { RoleResource roleResource }) async {
     Object postBody = roleResource;
 

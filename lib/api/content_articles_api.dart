@@ -9,7 +9,7 @@ class ContentArticlesApi {
 
   /// Create a new article
   ///
-  /// Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+  /// Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; ARTICLES_ADMIN
   Future<ArticleResource> createArticle({ ArticleResource articleResource }) async {
     Object postBody = articleResource;
 
@@ -57,7 +57,7 @@ class ContentArticlesApi {
   }
   /// Create an article template
   ///
-  /// Article Templates define a type of article and the properties they have
+  /// Article Templates define a type of article and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> createArticleTemplate({ TemplateResource articleTemplateResource }) async {
     Object postBody = articleTemplateResource;
 
@@ -105,7 +105,7 @@ class ContentArticlesApi {
   }
   /// Delete an existing article
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
   Future deleteArticle(String id) async {
     Object postBody = null;
 
@@ -122,7 +122,7 @@ class ContentArticlesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -156,7 +156,7 @@ class ContentArticlesApi {
   }
   /// Delete an article template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteArticleTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -176,7 +176,7 @@ class ContentArticlesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -210,7 +210,7 @@ class ContentArticlesApi {
   }
   /// Get a single article
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<ArticleResource> getArticle(String id) async {
     Object postBody = null;
 
@@ -227,7 +227,7 @@ class ContentArticlesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -261,7 +261,7 @@ class ContentArticlesApi {
   }
   /// Get a single article template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
   Future<TemplateResource> getArticleTemplate(String id) async {
     Object postBody = null;
 
@@ -278,7 +278,7 @@ class ContentArticlesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -312,7 +312,7 @@ class ContentArticlesApi {
   }
   /// List and search article templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
   Future<PageResource«TemplateResource»> getArticleTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -335,7 +335,7 @@ class ContentArticlesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -369,7 +369,7 @@ class ContentArticlesApi {
   }
   /// List and search articles
   ///
-  /// Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
+  /// Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«ArticleResource»> getArticles({ bool filterActiveOnly, String filterCategory, String filterTagset, String filterTagIntersection, String filterTagExclusion, String filterTitle, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -410,7 +410,7 @@ class ContentArticlesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -444,7 +444,7 @@ class ContentArticlesApi {
   }
   /// Update an existing article
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
   Future<ArticleResource> updateArticle(String id, { ArticleResource articleResource }) async {
     Object postBody = articleResource;
 
@@ -495,7 +495,7 @@ class ContentArticlesApi {
   }
   /// Update an article template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> updateArticleTemplate(String id, { TemplateResource articleTemplateResource }) async {
     Object postBody = articleTemplateResource;
 

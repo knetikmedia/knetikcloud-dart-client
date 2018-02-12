@@ -15,11 +15,11 @@ class MobileDeviceResource {
   @Property(name: 'description')
   String description = null;
   
-/* The type of device. Use mobile to specifically register mobile devices. This particular type will be used to send and receive notifications */
+/* The type of device. Use mobile_device to specifically register mobile devices. This particular type will be used to send and receive notifications */
   @Property(name: 'device_type')
   String deviceType = null;
   
-/* The unique ID for this device */
+/* The unique ID for this device. Cannot be changed after creation. Default: random */
   @Property(name: 'id')
   String id = null;
   

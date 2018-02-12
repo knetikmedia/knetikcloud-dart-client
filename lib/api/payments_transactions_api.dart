@@ -9,7 +9,7 @@ class PaymentsTransactionsApi {
 
   /// Get the details for a single transaction
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
   Future<TransactionResource> getTransaction(int id) async {
     Object postBody = null;
 
@@ -26,7 +26,7 @@ class PaymentsTransactionsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -60,7 +60,7 @@ class PaymentsTransactionsApi {
   }
   /// List and search transactions
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
   Future<PageResource«TransactionResource»> getTransactions({ int filterInvoice, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -86,7 +86,7 @@ class PaymentsTransactionsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -120,7 +120,7 @@ class PaymentsTransactionsApi {
   }
   /// Refund a payment transaction, in full or in part
   ///
-  /// Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds.
+  /// Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
   Future<RefundResource> refundTransaction(int id, { RefundRequest request }) async {
     Object postBody = request;
 

@@ -12,10 +12,6 @@ class CustomerConfig {
   DatabaseConfig database = null;
   
 
-  @Property(name: 'io')
-  IOConfig io = null;
-  
-
   @Property(name: 'name')
   String name = null;
   
@@ -27,7 +23,7 @@ class CustomerConfig {
 
   @override
   String toString()  {
-    return 'CustomerConfig[aliases=$aliases, database=$database, io=$io, name=$name, s3Config=$s3Config, ]';
+    return 'CustomerConfig[aliases=$aliases, database=$database, name=$name, s3Config=$s3Config, ]';
   }
 
 }

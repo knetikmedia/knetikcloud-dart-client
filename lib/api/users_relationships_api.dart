@@ -9,7 +9,7 @@ class UsersRelationshipsApi {
 
   /// Create a user relationship
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
   Future<UserRelationshipResource> createUserRelationship({ UserRelationshipResource relationship }) async {
     Object postBody = relationship;
 
@@ -57,7 +57,7 @@ class UsersRelationshipsApi {
   }
   /// Delete a user relationship
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
   Future deleteUserRelationship(int id) async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class UsersRelationshipsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -108,7 +108,7 @@ class UsersRelationshipsApi {
   }
   /// Get a user relationship
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
   Future<UserRelationshipResource> getUserRelationship(int id) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class UsersRelationshipsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class UsersRelationshipsApi {
   }
   /// Get a list of user relationships
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
   Future<PageResource«UserRelationshipResource»> getUserRelationships({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -182,7 +182,7 @@ class UsersRelationshipsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -216,7 +216,7 @@ class UsersRelationshipsApi {
   }
   /// Update a user relationship
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
   Future<UserRelationshipResource> updateUserRelationship(int id, { UserRelationshipResource relationship }) async {
     Object postBody = relationship;
 

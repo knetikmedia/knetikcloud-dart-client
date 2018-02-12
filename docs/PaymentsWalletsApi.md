@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,6 +22,8 @@ Method | HTTP request | Description
 > SimpleWallet getUserWallet(userId, currencyCode)
 
 Returns the user's wallet for the given currency code
+
+<b>Permissions Needed:</b> WALLETS_ADMIN or owner
 
 ### Example 
 ```dart
@@ -60,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -69,6 +71,8 @@ Name | Type | Description  | Notes
 > PageResource«WalletTransactionResource» getUserWalletTransactions(userId, currencyCode, filterType, filterMaxDate, filterMinDate, filterSign, size, page, order)
 
 Retrieve a user's wallet transactions
+
+<b>Permissions Needed:</b> WALLETS_ADMIN or owner
 
 ### Example 
 ```dart
@@ -121,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -130,6 +134,8 @@ Name | Type | Description  | Notes
 > List<SimpleWallet> getUserWallets(userId)
 
 List all of a user's wallets
+
+<b>Permissions Needed:</b> WALLETS_ADMIN or owner
 
 ### Example 
 ```dart
@@ -166,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -175,6 +181,8 @@ Name | Type | Description  | Notes
 > PageResource«WalletTotalResponse» getWalletBalances()
 
 Retrieves a summation of wallet balances by currency code
+
+<b>Permissions Needed:</b> WALLETS_ADMIN
 
 ### Example 
 ```dart
@@ -207,7 +215,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -216,6 +224,8 @@ This endpoint does not need any parameter.
 > PageResource«WalletTransactionResource» getWalletTransactions(filterInvoice, filterType, filterDate, filterSign, filterUserId, filterUsername, filterDetails, filterCurrencyCode, size, page, order)
 
 Retrieve wallet transactions across the system
+
+<b>Permissions Needed:</b> WALLETS_ADMIN
 
 ### Example 
 ```dart
@@ -272,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -281,6 +291,8 @@ Name | Type | Description  | Notes
 > PageResource«SimpleWallet» getWallets(size, page, order)
 
 Retrieve a list of wallets across the system
+
+<b>Permissions Needed:</b> WALLETS_ADMIN
 
 ### Example 
 ```dart
@@ -321,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -330,6 +342,8 @@ Name | Type | Description  | Notes
 > WalletTransactionResource updateWalletBalance(userId, currencyCode, request)
 
 Updates the balance for a user's wallet
+
+<b>Permissions Needed:</b> WALLETS_ADMIN
 
 ### Example 
 ```dart

@@ -9,7 +9,7 @@ class UsersAddressesApi {
 
   /// Create a new address
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
   Future<SavedAddressResource> createAddress(String userId, { SavedAddressResource savedAddressResource }) async {
     Object postBody = savedAddressResource;
 
@@ -60,7 +60,7 @@ class UsersAddressesApi {
   }
   /// Delete an address
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
   Future deleteAddress(String userId, int id) async {
     Object postBody = null;
 
@@ -80,7 +80,7 @@ class UsersAddressesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -114,7 +114,7 @@ class UsersAddressesApi {
   }
   /// Get a single address
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
   Future<SavedAddressResource> getAddress(String userId, int id) async {
     Object postBody = null;
 
@@ -134,7 +134,7 @@ class UsersAddressesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -168,7 +168,7 @@ class UsersAddressesApi {
   }
   /// List and search addresses
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
   Future<PageResource«SavedAddressResource»> getAddresses(String userId, { int size, int page, String order }) async {
     Object postBody = null;
 
@@ -194,7 +194,7 @@ class UsersAddressesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -228,7 +228,7 @@ class UsersAddressesApi {
   }
   /// Update an address
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
   Future<SavedAddressResource> updateAddress(String userId, int id, { SavedAddressResource savedAddressResource }) async {
     Object postBody = savedAddressResource;
 

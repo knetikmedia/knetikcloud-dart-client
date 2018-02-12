@@ -9,7 +9,7 @@ class DevicesApi {
 
   /// Add device users
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
   Future<DeviceResource> addDeviceUsers(List<SimpleUserResource> userResources, String id) async {
     Object postBody = userResources;
 
@@ -63,7 +63,7 @@ class DevicesApi {
   }
   /// Create a device
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<DeviceResource> createDevice(DeviceResource device) async {
     Object postBody = device;
 
@@ -114,7 +114,7 @@ class DevicesApi {
   }
   /// Create a device template
   ///
-  /// Device Templates define a type of device and the properties they have
+  /// Device Templates define a type of device and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> createDeviceTemplate({ TemplateResource deviceTemplateResource }) async {
     Object postBody = deviceTemplateResource;
 
@@ -162,7 +162,7 @@ class DevicesApi {
   }
   /// Delete a device
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
   Future deleteDevice(String id) async {
     Object postBody = null;
 
@@ -179,7 +179,7 @@ class DevicesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -213,7 +213,7 @@ class DevicesApi {
   }
   /// Delete an device template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteDeviceTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -233,7 +233,7 @@ class DevicesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -267,7 +267,7 @@ class DevicesApi {
   }
   /// Delete a device user
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
   Future deleteDeviceUser(String id, int userId) async {
     Object postBody = null;
 
@@ -287,7 +287,7 @@ class DevicesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -321,7 +321,7 @@ class DevicesApi {
   }
   /// Delete all device users
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
   Future deleteDeviceUsers(String id, { String filterId }) async {
     Object postBody = null;
 
@@ -341,7 +341,7 @@ class DevicesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_id", filterId));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -375,7 +375,7 @@ class DevicesApi {
   }
   /// Get a single device
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
   Future<DeviceResource> getDevice(String id) async {
     Object postBody = null;
 
@@ -392,7 +392,7 @@ class DevicesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -426,7 +426,7 @@ class DevicesApi {
   }
   /// Get a single device template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; description
   Future<TemplateResource> getDeviceTemplate(String id) async {
     Object postBody = null;
 
@@ -443,7 +443,7 @@ class DevicesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -477,7 +477,7 @@ class DevicesApi {
   }
   /// List and search device templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or DEVICES_ADMIN
   Future<PageResource«TemplateResource»> getDeviceTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -500,7 +500,7 @@ class DevicesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -534,7 +534,7 @@ class DevicesApi {
   }
   /// List and search devices
   ///
-  /// Get a list of devices with optional filtering
+  /// Get a list of devices with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or user
   Future<PageResource«DeviceResource»> getDevices({ String filterMake, String filterModel, String filterOs, String filterSerial, String filterType, String filterTag, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -575,7 +575,7 @@ class DevicesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -609,7 +609,7 @@ class DevicesApi {
   }
   /// Update a device
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CUSTOMERS_ADMIN
   Future<DeviceResource> updateDevice(DeviceResource device, String id) async {
     Object postBody = device;
 
@@ -663,7 +663,7 @@ class DevicesApi {
   }
   /// Update an device template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> updateDeviceTemplate(String id, { TemplateResource deviceTemplateResource }) async {
     Object postBody = deviceTemplateResource;
 

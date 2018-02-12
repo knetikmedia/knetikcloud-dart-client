@@ -9,7 +9,7 @@ class PaymentsAppleApi {
 
   /// Pay invoice with Apple receipt
   ///
-  /// Mark an invoice paid using Apple payment receipt. A receipt will only be accepted once and the details of the transaction must match the invoice, including the product_id matching the sku text of the item in the invoice. Returns the transaction ID if successful.
+  /// Mark an invoice paid using Apple payment receipt. A receipt will only be accepted once and the details of the transaction must match the invoice, including the product_id matching the sku text of the item in the invoice. Returns the transaction ID if successful. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<String> verifyAppleReceipt({ ApplyPaymentRequest request }) async {
     Object postBody = request;
 

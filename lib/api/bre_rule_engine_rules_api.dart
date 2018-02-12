@@ -9,7 +9,7 @@ class BRERuleEngineRulesApi {
 
   /// Create a rule
   ///
-  /// Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/
+  /// Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
   Future<BreRule> createBRERule({ BreRule breRule }) async {
     Object postBody = breRule;
 
@@ -57,7 +57,7 @@ class BRERuleEngineRulesApi {
   }
   /// Delete a rule
   ///
-  /// May fail if there are existing rules against it. Cannot delete core rules
+  /// May fail if there are existing rules against it. Cannot delete core rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
   Future deleteBRERule(String id) async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class BRERuleEngineRulesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -108,7 +108,7 @@ class BRERuleEngineRulesApi {
   }
   /// Returns a string representation of the provided expression
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
   Future<String> getBREExpressionAsString({ Expression«object» expression }) async {
     Object postBody = expression;
 
@@ -156,7 +156,7 @@ class BRERuleEngineRulesApi {
   }
   /// Get a single rule
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
   Future<BreRule> getBRERule(String id) async {
     Object postBody = null;
 
@@ -173,7 +173,7 @@ class BRERuleEngineRulesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -207,7 +207,7 @@ class BRERuleEngineRulesApi {
   }
   /// List rules
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
   Future<PageResource«BreRule»> getBRERules({ String filterName, bool filterEnabled, bool filterSystem, String filterTrigger, String filterAction, String filterCondition, int size, int page }) async {
     Object postBody = null;
 
@@ -245,7 +245,7 @@ class BRERuleEngineRulesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -279,7 +279,7 @@ class BRERuleEngineRulesApi {
   }
   /// Enable or disable a rule
   ///
-  /// This is helpful for turning off systems rules which cannot be deleted or modified otherwise
+  /// This is helpful for turning off systems rules which cannot be deleted or modified otherwise. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
   Future setBRERule(String id, { BooleanResource enabled }) async {
     Object postBody = enabled;
 
@@ -330,7 +330,7 @@ class BRERuleEngineRulesApi {
   }
   /// Update a rule
   ///
-  /// Cannot update system rules
+  /// Cannot update system rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
   Future<BreRule> updateBRERule(String id, { BreRule breRule }) async {
     Object postBody = breRule;
 

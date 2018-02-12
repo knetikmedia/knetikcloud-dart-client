@@ -9,7 +9,7 @@ class ReportingSubscriptionsApi {
 
   /// Get a list of available subscription reports in most recent first order
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
   Future<PageResource«BillingReport»> getSubscriptionReports({ int size, int page }) async {
     Object postBody = null;
 
@@ -29,7 +29,7 @@ class ReportingSubscriptionsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

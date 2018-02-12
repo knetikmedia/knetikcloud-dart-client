@@ -9,7 +9,7 @@ class CampaignsChallengesApi {
 
   /// Create a challenge
   ///
-  /// Challenges do not run on their own.  They must be added to a campaign before events will spawn.
+  /// Challenges do not run on their own.  They must be added to a campaign before events will spawn. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   Future<ChallengeResource> createChallenge({ ChallengeResource challengeResource }) async {
     Object postBody = challengeResource;
 
@@ -57,7 +57,7 @@ class CampaignsChallengesApi {
   }
   /// Create a challenge activity
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   Future<ChallengeActivityResource> createChallengeActivity(int challengeId, { ChallengeActivityResource challengeActivityResource, bool validateSettings }) async {
     Object postBody = challengeActivityResource;
 
@@ -111,7 +111,7 @@ class CampaignsChallengesApi {
   }
   /// Create a challenge activity template
   ///
-  /// Challenge Activity Templates define a type of challenge activity and the properties they have
+  /// Challenge Activity Templates define a type of challenge activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> createChallengeActivityTemplate({ TemplateResource challengeActivityTemplateResource }) async {
     Object postBody = challengeActivityTemplateResource;
 
@@ -159,7 +159,7 @@ class CampaignsChallengesApi {
   }
   /// Create a challenge template
   ///
-  /// Challenge Templates define a type of challenge and the properties they have
+  /// Challenge Templates define a type of challenge and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> createChallengeTemplate({ TemplateResource challengeTemplateResource }) async {
     Object postBody = challengeTemplateResource;
 
@@ -207,7 +207,7 @@ class CampaignsChallengesApi {
   }
   /// Delete a challenge
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   Future deleteChallenge(int id) async {
     Object postBody = null;
 
@@ -224,7 +224,7 @@ class CampaignsChallengesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -258,7 +258,7 @@ class CampaignsChallengesApi {
   }
   /// Delete a challenge activity
   ///
-  /// A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+  /// A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   Future deleteChallengeActivity(int id, int challengeId) async {
     Object postBody = null;
 
@@ -278,7 +278,7 @@ class CampaignsChallengesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -312,7 +312,7 @@ class CampaignsChallengesApi {
   }
   /// Delete a challenge activity template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteChallengeActivityTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -332,7 +332,7 @@ class CampaignsChallengesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -366,7 +366,7 @@ class CampaignsChallengesApi {
   }
   /// Delete a challenge event
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   Future deleteChallengeEvent(int id) async {
     Object postBody = null;
 
@@ -383,7 +383,7 @@ class CampaignsChallengesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -417,7 +417,7 @@ class CampaignsChallengesApi {
   }
   /// Delete a challenge template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteChallengeTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -437,7 +437,7 @@ class CampaignsChallengesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -471,7 +471,7 @@ class CampaignsChallengesApi {
   }
   /// Retrieve a challenge
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<ChallengeResource> getChallenge(int id) async {
     Object postBody = null;
 
@@ -488,7 +488,7 @@ class CampaignsChallengesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -522,7 +522,7 @@ class CampaignsChallengesApi {
   }
   /// List and search challenge activities
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«BareChallengeActivityResource»> getChallengeActivities(int challengeId, { int size, int page, String order }) async {
     Object postBody = null;
 
@@ -548,7 +548,7 @@ class CampaignsChallengesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -582,7 +582,7 @@ class CampaignsChallengesApi {
   }
   /// Get a single challenge activity
   ///
-  /// A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+  /// A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<ChallengeActivityResource> getChallengeActivity(int id, int challengeId) async {
     Object postBody = null;
 
@@ -602,7 +602,7 @@ class CampaignsChallengesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -636,7 +636,7 @@ class CampaignsChallengesApi {
   }
   /// Get a single challenge activity template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
   Future<TemplateResource> getChallengeActivityTemplate(String id) async {
     Object postBody = null;
 
@@ -653,7 +653,7 @@ class CampaignsChallengesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -687,7 +687,7 @@ class CampaignsChallengesApi {
   }
   /// List and search challenge activity templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
   Future<PageResource«TemplateResource»> getChallengeActivityTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -710,7 +710,7 @@ class CampaignsChallengesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -744,7 +744,7 @@ class CampaignsChallengesApi {
   }
   /// Retrieve a single challenge event details
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<ChallengeEventResource> getChallengeEvent(int id) async {
     Object postBody = null;
 
@@ -761,7 +761,7 @@ class CampaignsChallengesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -795,7 +795,7 @@ class CampaignsChallengesApi {
   }
   /// Retrieve a list of challenge events
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«ChallengeEventResource»> getChallengeEvents({ String filterStartDate, String filterEndDate, bool filterCampaigns, int filterChallenge, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -830,7 +830,7 @@ class CampaignsChallengesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -864,7 +864,7 @@ class CampaignsChallengesApi {
   }
   /// Get a single challenge template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
   Future<TemplateResource> getChallengeTemplate(String id) async {
     Object postBody = null;
 
@@ -881,7 +881,7 @@ class CampaignsChallengesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -915,7 +915,7 @@ class CampaignsChallengesApi {
   }
   /// List and search challenge templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
   Future<PageResource«TemplateResource»> getChallengeTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -938,7 +938,7 @@ class CampaignsChallengesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -972,7 +972,7 @@ class CampaignsChallengesApi {
   }
   /// Retrieve a list of challenges
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«ChallengeResource»> getChallenges({ bool filterActiveCampaign, String filterStartDate, String filterEndDate, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -1004,7 +1004,7 @@ class CampaignsChallengesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1038,7 +1038,7 @@ class CampaignsChallengesApi {
   }
   /// Update a challenge
   ///
-  /// If the challenge is a copy, changes will propagate to all the related challenges
+  /// If the challenge is a copy, changes will propagate to all the related challenges. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   Future<ChallengeResource> updateChallenge(int id, { ChallengeResource challengeResource }) async {
     Object postBody = challengeResource;
 
@@ -1089,7 +1089,7 @@ class CampaignsChallengesApi {
   }
   /// Update a challenge activity
   ///
-  /// A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+  /// A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
   Future<ChallengeActivityResource> updateChallengeActivity(int id, int challengeId, { ChallengeActivityResource challengeActivityResource, bool validateSettings }) async {
     Object postBody = challengeActivityResource;
 
@@ -1146,7 +1146,7 @@ class CampaignsChallengesApi {
   }
   /// Update an challenge activity template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> updateChallengeActivityTemplate(String id, { TemplateResource challengeActivityTemplateResource }) async {
     Object postBody = challengeActivityTemplateResource;
 
@@ -1197,7 +1197,7 @@ class CampaignsChallengesApi {
   }
   /// Update a challenge template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> updateChallengeTemplate(String id, { TemplateResource challengeTemplateResource }) async {
     Object postBody = challengeTemplateResource;
 

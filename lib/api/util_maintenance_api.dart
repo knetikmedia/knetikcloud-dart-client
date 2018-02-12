@@ -9,7 +9,7 @@ class UtilMaintenanceApi {
 
   /// Delete maintenance info
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
   Future deleteMaintenance() async {
     Object postBody = null;
 
@@ -23,7 +23,7 @@ class UtilMaintenanceApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -57,7 +57,7 @@ class UtilMaintenanceApi {
   }
   /// Get current maintenance info
   ///
-  /// Get current maintenance info. 404 if no maintenance.
+  /// Get current maintenance info. 404 if no maintenance. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<Maintenance> getMaintenance() async {
     Object postBody = null;
 
@@ -71,7 +71,7 @@ class UtilMaintenanceApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -105,7 +105,7 @@ class UtilMaintenanceApi {
   }
   /// Set current maintenance info
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
   Future setMaintenance({ Maintenance maintenance }) async {
     Object postBody = maintenance;
 
@@ -153,7 +153,7 @@ class UtilMaintenanceApi {
   }
   /// Update current maintenance info
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
   Future updateMaintenance({ Maintenance maintenance }) async {
     Object postBody = maintenance;
 

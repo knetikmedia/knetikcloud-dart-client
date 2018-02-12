@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **name** | **String** | The user friendly name of that resource | [default to null]
 **shortDescription** | **String** | The user friendly name of that resource. Defaults to blank string | [optional] [default to null]
 **template** | **bool** | Whether this activity is a template for other activities. Default: false | [optional] [default to null]
-**type** | **String** | The type of the activity | [default to null]
+**type** | **String** | The type of the activity | [optional] [default to null]
 **uniqueKey** | **String** | The unique key (for static reference in code) of the activity | [optional] [default to null]
 **updatedDate** | **int** | The date/time this resource was last updated in seconds since unix epoch | [optional] [default to null]
 

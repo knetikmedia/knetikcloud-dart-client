@@ -9,7 +9,7 @@ class BRERuleEngineActionsApi {
 
   /// Get a list of available actions
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_ACTIONS_USER
   Future<List<ActionResource>> getBREActions({ String filterCategory, String filterName, String filterTags, String filterSearch }) async {
     Object postBody = null;
 
@@ -35,7 +35,7 @@ class BRERuleEngineActionsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_search", filterSearch));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

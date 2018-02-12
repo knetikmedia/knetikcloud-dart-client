@@ -9,7 +9,7 @@ class StoreSubscriptionsApi {
 
   /// Creates a subscription item and associated plans
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
   Future<SubscriptionResource> createSubscription({ SubscriptionResource subscriptionResource }) async {
     Object postBody = subscriptionResource;
 
@@ -57,7 +57,7 @@ class StoreSubscriptionsApi {
   }
   /// Create a subscription template
   ///
-  /// Subscription Templates define a type of subscription and the properties they have.
+  /// Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<SubscriptionTemplateResource> createSubscriptionTemplate({ SubscriptionTemplateResource subscriptionTemplateResource }) async {
     Object postBody = subscriptionTemplateResource;
 
@@ -105,7 +105,7 @@ class StoreSubscriptionsApi {
   }
   /// Delete a subscription plan
   ///
-  /// Must not be locked or a migration target
+  /// Must not be locked or a migration target. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
   Future deleteSubscription(int id, String planId) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class StoreSubscriptionsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class StoreSubscriptionsApi {
   }
   /// Delete a subscription template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteSubscriptionTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -179,7 +179,7 @@ class StoreSubscriptionsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -213,7 +213,7 @@ class StoreSubscriptionsApi {
   }
   /// Retrieve a single subscription item and associated plans
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<SubscriptionResource> getSubscription(int id) async {
     Object postBody = null;
 
@@ -230,7 +230,7 @@ class StoreSubscriptionsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -264,7 +264,7 @@ class StoreSubscriptionsApi {
   }
   /// Get a single subscription template
   ///
-  /// Subscription Templates define a type of subscription and the properties they have.
+  /// Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<SubscriptionTemplateResource> getSubscriptionTemplate(String id) async {
     Object postBody = null;
 
@@ -281,7 +281,7 @@ class StoreSubscriptionsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -315,7 +315,7 @@ class StoreSubscriptionsApi {
   }
   /// List and search subscription templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
   Future<PageResource«SubscriptionTemplateResource»> getSubscriptionTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -338,7 +338,7 @@ class StoreSubscriptionsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -372,7 +372,7 @@ class StoreSubscriptionsApi {
   }
   /// List available subscription items and associated plans
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«SubscriptionResource»> getSubscriptions({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -395,7 +395,7 @@ class StoreSubscriptionsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -429,7 +429,7 @@ class StoreSubscriptionsApi {
   }
   /// Processes subscriptions and charge dues
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
   Future processSubscriptions() async {
     Object postBody = null;
 
@@ -477,7 +477,7 @@ class StoreSubscriptionsApi {
   }
   /// Updates a subscription item and associated plans
   ///
-  /// Will not remove plans left out
+  /// Will not remove plans left out. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
   Future updateSubscription(int id, { SubscriptionResource subscriptionResource }) async {
     Object postBody = subscriptionResource;
 
@@ -528,7 +528,7 @@ class StoreSubscriptionsApi {
   }
   /// Update a subscription template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<SubscriptionTemplateResource> updateSubscriptionTemplate(String id, { SubscriptionTemplateResource subscriptionTemplateResource }) async {
     Object postBody = subscriptionTemplateResource;
 

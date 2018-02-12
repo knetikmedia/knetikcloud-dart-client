@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,6 +20,8 @@ Method | HTTP request | Description
 > DispositionResource addDisposition(disposition)
 
 Add a new disposition
+
+<b>Permissions Needed:</b> DISPOSITIONS_USER and user, or DISPOSITIONS_ADMIN
 
 ### Example 
 ```dart
@@ -66,6 +68,8 @@ Name | Type | Description  | Notes
 
 Delete a disposition
 
+<b>Permissions Needed:</b> DISPOSITIONS_USER and owner, or DISPOSITIONS_ADMIN
+
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
@@ -100,7 +104,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -109,6 +113,8 @@ void (empty response body)
 > DispositionResource getDisposition(id)
 
 Returns a disposition
+
+<b>Permissions Needed:</b> ANY
 
 ### Example 
 ```dart
@@ -145,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -154,6 +160,8 @@ Name | Type | Description  | Notes
 > List<DispositionCount> getDispositionCounts(filterContext, filterOwner)
 
 Returns a list of disposition counts
+
+<b>Permissions Needed:</b> ANY
 
 ### Example 
 ```dart
@@ -192,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -201,6 +209,8 @@ Name | Type | Description  | Notes
 > PageResource«DispositionResource» getDispositions(filterContext, filterOwner, size, page, order)
 
 Returns a page of dispositions
+
+<b>Permissions Needed:</b> ANY
 
 ### Example 
 ```dart
@@ -245,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

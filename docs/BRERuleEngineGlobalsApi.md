@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 Create a global definition
 
-Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
+Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_ADMIN
 
 ### Example 
 ```dart
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 Delete a global
 
-May fail if there are existing rules against it. Cannot delete core globals
+May fail if there are existing rules against it. Cannot delete core globals. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_ADMIN
 
 ### Example 
 ```dart
@@ -104,7 +104,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -113,6 +113,8 @@ void (empty response body)
 > BreGlobalResource getBREGlobal(id)
 
 Get a single global definition
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_USER
 
 ### Example 
 ```dart
@@ -149,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -158,6 +160,8 @@ Name | Type | Description  | Notes
 > PageResource«BreGlobalResource» getBREGlobals(filterSystem, size, page)
 
 List global definitions
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_USER
 
 ### Example 
 ```dart
@@ -198,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -208,7 +212,7 @@ Name | Type | Description  | Notes
 
 Update a global definition
 
-May fail if new parameters mismatch requirements of existing rules. Cannot update core globals
+May fail if new parameters mismatch requirements of existing rules. Cannot update core globals. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_GLOBALS_ADMIN
 
 ### Example 
 ```dart

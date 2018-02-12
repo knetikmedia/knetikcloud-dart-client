@@ -9,7 +9,7 @@ class StoreSalesApi {
 
   /// Create a sale
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
   Future<CatalogSale> createCatalogSale({ CatalogSale catalogSale }) async {
     Object postBody = catalogSale;
 
@@ -57,7 +57,7 @@ class StoreSalesApi {
   }
   /// Delete a sale
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
   Future deleteCatalogSale(int id) async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class StoreSalesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -108,7 +108,7 @@ class StoreSalesApi {
   }
   /// Get a single sale
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_USER or SALES_ADMIN
   Future<CatalogSale> getCatalogSale(int id) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class StoreSalesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class StoreSalesApi {
   }
   /// List and search sales
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_USER or SALES_ADMIN
   Future<PageResource«CatalogSale»> getCatalogSales({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -182,7 +182,7 @@ class StoreSalesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -216,7 +216,7 @@ class StoreSalesApi {
   }
   /// Update a sale
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
   Future<CatalogSale> updateCatalogSale(int id, { CatalogSale catalogSale }) async {
     Object postBody = catalogSale;
 

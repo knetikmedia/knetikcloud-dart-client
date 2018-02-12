@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,6 +23,8 @@ Method | HTTP request | Description
 > ClientResource createClient(clientResource)
 
 Create a new client
+
+<b>Permissions Needed:</b> CLIENTS_ADMIN
 
 ### Example 
 ```dart
@@ -69,6 +71,8 @@ Name | Type | Description  | Notes
 
 Delete a client
 
+<b>Permissions Needed:</b> CLIENTS_ADMIN
+
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
@@ -103,7 +107,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -112,6 +116,8 @@ void (empty response body)
 > ClientResource getClient(clientKey)
 
 Get a single client
+
+<b>Permissions Needed:</b> CLIENTS_ADMIN
 
 ### Example 
 ```dart
@@ -148,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -157,6 +163,8 @@ Name | Type | Description  | Notes
 > List<GrantTypeResource> getClientGrantTypes()
 
 List available client grant types
+
+<b>Permissions Needed:</b> CLIENTS_ADMIN
 
 ### Example 
 ```dart
@@ -189,7 +197,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -198,6 +206,8 @@ This endpoint does not need any parameter.
 > PageResource«ClientResource» getClients(size, page, order)
 
 List and search clients
+
+<b>Permissions Needed:</b> CLIENTS_ADMIN
 
 ### Example 
 ```dart
@@ -238,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -247,6 +257,8 @@ Name | Type | Description  | Notes
 > setClientGrantTypes(clientKey, grantList)
 
 Set grant types for a client
+
+<b>Permissions Needed:</b> CLIENTS_ADMIN
 
 ### Example 
 ```dart
@@ -294,6 +306,8 @@ void (empty response body)
 
 Set redirect uris for a client
 
+<b>Permissions Needed:</b> CLIENTS_ADMIN
+
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
@@ -339,6 +353,8 @@ void (empty response body)
 > ClientResource updateClient(clientKey, clientResource)
 
 Update a client
+
+<b>Permissions Needed:</b> CLIENTS_ADMIN
 
 ### Example 
 ```dart

@@ -9,7 +9,7 @@ class TemplatesPropertiesApi {
 
   /// Get details for a template property type
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PropertyFieldListResource> getTemplatePropertyType(String type) async {
     Object postBody = null;
 
@@ -26,7 +26,7 @@ class TemplatesPropertiesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -60,7 +60,7 @@ class TemplatesPropertiesApi {
   }
   /// List template property types
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<List<PropertyFieldListResource>> getTemplatePropertyTypes() async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class TemplatesPropertiesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

@@ -9,7 +9,7 @@ class UsersFriendshipsApi {
 
   /// Add a friend
   ///
-  /// As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship.
+  /// As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
   Future addFriend(String userId, int id) async {
     Object postBody = null;
 
@@ -63,7 +63,7 @@ class UsersFriendshipsApi {
   }
   /// Get friends list
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
   Future<PageResource«SimpleUserResource»> getFriends(String userId, { String filterUsername, int filterUserId, int size, int page }) async {
     Object postBody = null;
 
@@ -92,7 +92,7 @@ class UsersFriendshipsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -126,7 +126,7 @@ class UsersFriendshipsApi {
   }
   /// Returns the invite token
   ///
-  /// This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required
+  /// This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)flow instead if confirmation is required
   Future<String> getInviteToken(String userId) async {
     Object postBody = null;
 
@@ -143,7 +143,7 @@ class UsersFriendshipsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -177,7 +177,7 @@ class UsersFriendshipsApi {
   }
   /// Get pending invites
   ///
-  /// Invites that the specified user received
+  /// Invites that the specified user received. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
   Future<PageResource«SimpleUserResource»> getInvites(String userId, { int size, int page }) async {
     Object postBody = null;
 
@@ -200,7 +200,7 @@ class UsersFriendshipsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -234,7 +234,7 @@ class UsersFriendshipsApi {
   }
   /// Redeem friendship token
   ///
-  /// Immediately connects the requested user with the user mapped by the provided invite token
+  /// Immediately connects the requested user with the user mapped by the provided invite token. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
   Future redeemFriendshipToken(String userId, { StringWrapper token }) async {
     Object postBody = token;
 
@@ -285,7 +285,7 @@ class UsersFriendshipsApi {
   }
   /// Remove or decline a friend
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
   Future removeOrDeclineFriend(String userId, int id) async {
     Object postBody = null;
 
@@ -305,7 +305,7 @@ class UsersFriendshipsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

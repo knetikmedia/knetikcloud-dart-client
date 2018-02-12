@@ -9,7 +9,7 @@ class InvoicesApi {
 
   /// Create an invoice
   ///
-  /// Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor.
+  /// Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER or INVOICES_ADMIN
   Future<List<InvoiceResource>> createInvoice({ InvoiceCreateRequest req }) async {
     Object postBody = req;
 
@@ -57,7 +57,7 @@ class InvoicesApi {
   }
   /// Lists available fulfillment statuses
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<List<String>> getFulFillmentStatuses() async {
     Object postBody = null;
 
@@ -71,7 +71,7 @@ class InvoicesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -105,7 +105,7 @@ class InvoicesApi {
   }
   /// Retrieve an invoice
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
   Future<InvoiceResource> getInvoice(int id) async {
     Object postBody = null;
 
@@ -122,7 +122,7 @@ class InvoicesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -156,7 +156,7 @@ class InvoicesApi {
   }
   /// List invoice logs
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
   Future<PageResource«InvoiceLogEntry»> getInvoiceLogs(int id, { int size, int page }) async {
     Object postBody = null;
 
@@ -179,7 +179,7 @@ class InvoicesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -213,7 +213,7 @@ class InvoicesApi {
   }
   /// Retrieve invoices
   ///
-  /// Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices.
+  /// Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
   Future<PageResource«InvoiceResource»> getInvoices({ int filterUser, String filterEmail, String filterFulfillmentStatus, String filterPaymentStatus, String filterItemName, String filterExternalRef, String filterCreatedDate, String filterVendorIds, String filterCurrency, String filterShippingStateName, String filterShippingCountryName, String filterShipping, String filterVendorName, String filterSku, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -278,7 +278,7 @@ class InvoicesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -312,7 +312,7 @@ class InvoicesApi {
   }
   /// Lists available payment statuses
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<List<String>> getPaymentStatuses() async {
     Object postBody = null;
 
@@ -326,7 +326,7 @@ class InvoicesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -360,7 +360,7 @@ class InvoicesApi {
   }
   /// Pay an invoice using a saved payment method
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
   Future payInvoice(int id, { PayBySavedMethodRequest request }) async {
     Object postBody = request;
 
@@ -411,7 +411,7 @@ class InvoicesApi {
   }
   /// Set the fulfillment status of a bundled invoice item
   ///
-  /// This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+  /// This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
   Future setBundledInvoiceItemFulfillmentStatus(int id, String bundleSku, String sku, StringWrapper status) async {
     Object postBody = status;
 
@@ -471,7 +471,7 @@ class InvoicesApi {
   }
   /// Set the external reference of an invoice
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
   Future setExternalRef(int id, { StringWrapper externalRef }) async {
     Object postBody = externalRef;
 
@@ -522,7 +522,7 @@ class InvoicesApi {
   }
   /// Set the fulfillment status of an invoice item
   ///
-  /// This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+  /// This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
   Future setInvoiceItemFulfillmentStatus(int id, String sku, StringWrapper status) async {
     Object postBody = status;
 
@@ -579,7 +579,7 @@ class InvoicesApi {
   }
   /// Set the order notes of an invoice
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
   Future setOrderNotes(int id, { StringWrapper orderNotes }) async {
     Object postBody = orderNotes;
 
@@ -630,7 +630,7 @@ class InvoicesApi {
   }
   /// Set the payment status of an invoice
   ///
-  /// This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which.
+  /// This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
   Future setPaymentStatus(int id, { InvoicePaymentStatusRequest request }) async {
     Object postBody = request;
 
@@ -681,7 +681,7 @@ class InvoicesApi {
   }
   /// Set or update billing info
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
   Future updateBillingInfo(int id, { AddressResource billingInfoRequest }) async {
     Object postBody = billingInfoRequest;
 

@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,6 +25,8 @@ Method | HTTP request | Description
 > RoleResource createRole(roleResource)
 
 Create a new role
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example 
 ```dart
@@ -71,6 +73,8 @@ Name | Type | Description  | Notes
 
 Delete a role
 
+<b>Permissions Needed:</b> ROLES_ADMIN
+
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
@@ -107,7 +111,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -116,6 +120,8 @@ void (empty response body)
 > List<RoleResource> getClientRoles(clientKey)
 
 Get roles for a client
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example 
 ```dart
@@ -152,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -161,6 +167,8 @@ Name | Type | Description  | Notes
 > RoleResource getRole(role)
 
 Get a single role
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example 
 ```dart
@@ -197,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -206,6 +214,8 @@ Name | Type | Description  | Notes
 > PageResource«RoleResource» getRoles(filterName, filterRole, size, page, order)
 
 List and search roles
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example 
 ```dart
@@ -250,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -259,6 +269,8 @@ Name | Type | Description  | Notes
 > List<RoleResource> getUserRoles(userId)
 
 Get roles for a user
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example 
 ```dart
@@ -295,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -304,6 +316,8 @@ Name | Type | Description  | Notes
 > ClientResource setClientRoles(clientKey, rolesList)
 
 Set roles for a client
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example 
 ```dart
@@ -352,6 +366,8 @@ Name | Type | Description  | Notes
 
 Set permissions for a role
 
+<b>Permissions Needed:</b> ROLES_ADMIN
+
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
@@ -399,6 +415,8 @@ Name | Type | Description  | Notes
 
 Set roles for a user
 
+<b>Permissions Needed:</b> ROLES_ADMIN
+
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
@@ -445,6 +463,8 @@ Name | Type | Description  | Notes
 > RoleResource updateRole(role, roleResource)
 
 Update a role
+
+<b>Permissions Needed:</b> ROLES_ADMIN
 
 ### Example 
 ```dart

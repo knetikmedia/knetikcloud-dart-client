@@ -9,7 +9,7 @@ class StoreShippingApi {
 
   /// Create a shipping item
   ///
-  /// A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store.
+  /// A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
   Future<ShippingItem> createShippingItem({ bool cascade, ShippingItem shippingItem }) async {
     Object postBody = shippingItem;
 
@@ -108,7 +108,7 @@ class StoreShippingApi {
   }
   /// Delete a shipping item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
   Future deleteShippingItem(int id) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class StoreShippingApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class StoreShippingApi {
   }
   /// Delete a shipping template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteShippingTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -179,7 +179,7 @@ class StoreShippingApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -213,7 +213,7 @@ class StoreShippingApi {
   }
   /// Get a single shipping item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<ShippingItem> getShippingItem(int id) async {
     Object postBody = null;
 
@@ -230,7 +230,7 @@ class StoreShippingApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -264,7 +264,7 @@ class StoreShippingApi {
   }
   /// Get a single shipping template
   ///
-  /// Shipping Templates define a type of shipping and the properties they have.
+  /// Shipping Templates define a type of shipping and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
   Future<ItemTemplateResource> getShippingTemplate(String id) async {
     Object postBody = null;
 
@@ -281,7 +281,7 @@ class StoreShippingApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -315,7 +315,7 @@ class StoreShippingApi {
   }
   /// List and search shipping templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
   Future<PageResource«ItemTemplateResource»> getShippingTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -338,7 +338,7 @@ class StoreShippingApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -372,7 +372,7 @@ class StoreShippingApi {
   }
   /// Update a shipping item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
   Future<ShippingItem> updateShippingItem(int id, { bool cascade, ShippingItem shippingItem }) async {
     Object postBody = shippingItem;
 
@@ -426,7 +426,7 @@ class StoreShippingApi {
   }
   /// Update a shipping template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<ItemTemplateResource> updateShippingTemplate(String id, { ItemTemplateResource shippingTemplateResource }) async {
     Object postBody = shippingTemplateResource;
 

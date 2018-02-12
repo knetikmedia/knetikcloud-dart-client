@@ -9,7 +9,7 @@ class ReportingRevenueApi {
 
   /// Get item revenue info
   ///
-  /// Get basic info about revenue from sales of items and bundles (not subscriptions, shipping, etc), summed up within a time range
+  /// Get basic info about revenue from sales of items and bundles (not subscriptions, shipping, etc), summed up within a time range. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_REVENUE_ADMIN
   Future<RevenueReportResource> getItemRevenue(String currencyCode, { int startDate, int endDate }) async {
     Object postBody = null;
 
@@ -32,7 +32,7 @@ class ReportingRevenueApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "end_date", endDate));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -66,7 +66,7 @@ class ReportingRevenueApi {
   }
   /// Get refund revenue info
   ///
-  /// Get basic info about revenue loss from refunds (for all item types), summed up within a time range.
+  /// Get basic info about revenue loss from refunds (for all item types), summed up within a time range. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_REVENUE_ADMIN
   Future<RevenueReportResource> getRefundRevenue(String currencyCode, { int startDate, int endDate }) async {
     Object postBody = null;
 
@@ -89,7 +89,7 @@ class ReportingRevenueApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "end_date", endDate));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -123,7 +123,7 @@ class ReportingRevenueApi {
   }
   /// Get revenue info by country
   ///
-  /// Get basic info about revenue from sales of all types, summed up within a time range and split out by country. Sorted for largest revenue at the top
+  /// Get basic info about revenue from sales of all types, summed up within a time range and split out by country. Sorted for largest revenue at the top. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_REVENUE_ADMIN
   Future<PageResource«RevenueCountryReportResource»> getRevenueByCountry(String currencyCode, { int startDate, int endDate, int size, int page }) async {
     Object postBody = null;
 
@@ -152,7 +152,7 @@ class ReportingRevenueApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -186,7 +186,7 @@ class ReportingRevenueApi {
   }
   /// Get revenue info by item
   ///
-  /// Get basic info about revenue from sales of all types, summed up within a time range and split out by specific item. Sorted for largest revenue at the top
+  /// Get basic info about revenue from sales of all types, summed up within a time range and split out by specific item. Sorted for largest revenue at the top. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_REVENUE_ADMIN
   Future<PageResource«RevenueProductReportResource»> getRevenueByItem(String currencyCode, { int startDate, int endDate, int size, int page }) async {
     Object postBody = null;
 
@@ -215,7 +215,7 @@ class ReportingRevenueApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -249,7 +249,7 @@ class ReportingRevenueApi {
   }
   /// Get subscription revenue info
   ///
-  /// Get basic info about revenue from sales of new subscriptions as well as recurring payemnts, summed up within a time range
+  /// Get basic info about revenue from sales of new subscriptions as well as recurring payemnts, summed up within a time range. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_REVENUE_ADMIN
   Future<RevenueReportResource> getSubscriptionRevenue(String currencyCode, { int startDate, int endDate }) async {
     Object postBody = null;
 
@@ -272,7 +272,7 @@ class ReportingRevenueApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "end_date", endDate));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

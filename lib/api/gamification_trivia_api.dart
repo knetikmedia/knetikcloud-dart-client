@@ -9,7 +9,7 @@ class GamificationTriviaApi {
 
   /// Add an answer to a question
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<AnswerResource> addQuestionAnswers(String questionId, { AnswerResource answer }) async {
     Object postBody = answer;
 
@@ -60,7 +60,7 @@ class GamificationTriviaApi {
   }
   /// Add a tag to a question
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future addQuestionTag(String id, { StringWrapper tag }) async {
     Object postBody = tag;
 
@@ -111,7 +111,7 @@ class GamificationTriviaApi {
   }
   /// Add a tag to a batch of questions
   ///
-  /// All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated.
+  /// All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<int> addTagToQuestionsBatch({ StringWrapper tag, String filterSearch, String filterIdset, String filterCategory, String filterTag, String filterTagset, String filterType, bool filterPublished, int filterImportId }) async {
     Object postBody = tag;
 
@@ -183,7 +183,7 @@ class GamificationTriviaApi {
   }
   /// Create an import job
   ///
-  /// Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
+  /// Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<ImportJobResource> createImportJob({ ImportJobResource request }) async {
     Object postBody = request;
 
@@ -231,7 +231,7 @@ class GamificationTriviaApi {
   }
   /// Create a question
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<QuestionResource> createQuestion({ QuestionResource question }) async {
     Object postBody = question;
 
@@ -279,7 +279,7 @@ class GamificationTriviaApi {
   }
   /// Create a question template
   ///
-  /// Question templates define a type of question and the properties they have
+  /// Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<QuestionTemplateResource> createQuestionTemplate({ QuestionTemplateResource questionTemplateResource }) async {
     Object postBody = questionTemplateResource;
 
@@ -327,7 +327,7 @@ class GamificationTriviaApi {
   }
   /// Delete an import job
   ///
-  /// Also deletes all questions that were imported by it
+  /// Also deletes all questions that were imported by it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future deleteImportJob(int id) async {
     Object postBody = null;
 
@@ -344,7 +344,7 @@ class GamificationTriviaApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -378,7 +378,7 @@ class GamificationTriviaApi {
   }
   /// Delete a question
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future deleteQuestion(String id) async {
     Object postBody = null;
 
@@ -395,7 +395,7 @@ class GamificationTriviaApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -429,7 +429,7 @@ class GamificationTriviaApi {
   }
   /// Remove an answer from a question
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future deleteQuestionAnswers(String questionId, String id) async {
     Object postBody = null;
 
@@ -449,7 +449,7 @@ class GamificationTriviaApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -483,7 +483,7 @@ class GamificationTriviaApi {
   }
   /// Delete a question template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteQuestionTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -503,7 +503,7 @@ class GamificationTriviaApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -537,7 +537,7 @@ class GamificationTriviaApi {
   }
   /// Get an import job
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<ImportJobResource> getImportJob(int id) async {
     Object postBody = null;
 
@@ -554,7 +554,7 @@ class GamificationTriviaApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -588,7 +588,7 @@ class GamificationTriviaApi {
   }
   /// Get a list of import job
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<PageResource«ImportJobResource»> getImportJobs({ String filterVendor, String filterCategory, String filterName, String filterStatus, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -623,7 +623,7 @@ class GamificationTriviaApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -657,7 +657,7 @@ class GamificationTriviaApi {
   }
   /// Get a single question
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<QuestionResource> getQuestion(String id) async {
     Object postBody = null;
 
@@ -674,7 +674,7 @@ class GamificationTriviaApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -708,7 +708,7 @@ class GamificationTriviaApi {
   }
   /// Get an answer for a question
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<AnswerResource> getQuestionAnswer(String questionId, String id) async {
     Object postBody = null;
 
@@ -728,7 +728,7 @@ class GamificationTriviaApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -762,7 +762,7 @@ class GamificationTriviaApi {
   }
   /// List the answers available for a question
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<List<AnswerResource>> getQuestionAnswers(String questionId) async {
     Object postBody = null;
 
@@ -779,7 +779,7 @@ class GamificationTriviaApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -813,7 +813,7 @@ class GamificationTriviaApi {
   }
   /// List question deltas in ascending order of updated date
   ///
-  /// The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps
+  /// The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<List<DeltaResource>> getQuestionDeltas({ int since }) async {
     Object postBody = null;
 
@@ -830,7 +830,7 @@ class GamificationTriviaApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "since", since));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -864,7 +864,7 @@ class GamificationTriviaApi {
   }
   /// List the tags for a question
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<List<String>> getQuestionTags(String id) async {
     Object postBody = null;
 
@@ -881,7 +881,7 @@ class GamificationTriviaApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -915,7 +915,7 @@ class GamificationTriviaApi {
   }
   /// Get a single question template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
   Future<QuestionTemplateResource> getQuestionTemplate(String id) async {
     Object postBody = null;
 
@@ -932,7 +932,7 @@ class GamificationTriviaApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -966,7 +966,7 @@ class GamificationTriviaApi {
   }
   /// List and search question templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
   Future<PageResource«QuestionTemplateResource»> getQuestionTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -989,7 +989,7 @@ class GamificationTriviaApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1023,7 +1023,7 @@ class GamificationTriviaApi {
   }
   /// List and search questions
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<PageResource«QuestionResource»> getQuestions({ int size, int page, String order, String filterSearch, String filterIdset, String filterCategory, String filterTagset, String filterTag, String filterType, bool filterPublished, int filterImportId }) async {
     Object postBody = null;
 
@@ -1070,7 +1070,7 @@ class GamificationTriviaApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_import_id", filterImportId));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1104,7 +1104,7 @@ class GamificationTriviaApi {
   }
   /// Count questions based on filters
   ///
-  /// This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes
+  /// This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<int> getQuestionsCount({ String filterSearch, String filterIdset, String filterCategory, String filterTag, String filterTagset, String filterType, bool filterPublished }) async {
     Object postBody = null;
 
@@ -1139,7 +1139,7 @@ class GamificationTriviaApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_published", filterPublished));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1173,7 +1173,7 @@ class GamificationTriviaApi {
   }
   /// Start processing an import job
   ///
-  /// Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;.
+  /// Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<ImportJobResource> processImportJob(int id, bool publishNow) async {
     Object postBody = null;
 
@@ -1228,7 +1228,7 @@ class GamificationTriviaApi {
   }
   /// Remove a tag from a question
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future removeQuestionTag(String id, String tag) async {
     Object postBody = null;
 
@@ -1248,7 +1248,7 @@ class GamificationTriviaApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1282,7 +1282,7 @@ class GamificationTriviaApi {
   }
   /// Remove a tag from a batch of questions
   ///
-  /// ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated.
+  /// ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<int> removeTagToQuestionsBatch(String tag, { String filterSearch, String filterIdset, String filterCategory, String filterTag, String filterTagset, String filterType, bool filterPublished, int filterImportId }) async {
     Object postBody = null;
 
@@ -1323,7 +1323,7 @@ class GamificationTriviaApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_import_id", filterImportId));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1357,7 +1357,7 @@ class GamificationTriviaApi {
   }
   /// List and search tags by the beginning of the string
   ///
-  /// For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead.
+  /// For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<List<String>> searchQuestionTags({ String filterSearch, String filterCategory, int filterImportId }) async {
     Object postBody = null;
 
@@ -1380,7 +1380,7 @@ class GamificationTriviaApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_import_id", filterImportId));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1414,7 +1414,7 @@ class GamificationTriviaApi {
   }
   /// Update an import job
   ///
-  /// Changes should be made before process is started for there to be any effect.
+  /// Changes should be made before process is started for there to be any effect. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<ImportJobResource> updateImportJob(int id, { ImportJobResource request }) async {
     Object postBody = request;
 
@@ -1465,7 +1465,7 @@ class GamificationTriviaApi {
   }
   /// Update a question
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<QuestionResource> updateQuestion(String id, { QuestionResource question }) async {
     Object postBody = question;
 
@@ -1516,7 +1516,7 @@ class GamificationTriviaApi {
   }
   /// Update an answer for a question
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future updateQuestionAnswer(String questionId, String id, { AnswerResource answer }) async {
     Object postBody = answer;
 
@@ -1570,7 +1570,7 @@ class GamificationTriviaApi {
   }
   /// Update a question template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<QuestionTemplateResource> updateQuestionTemplate(String id, { QuestionTemplateResource questionTemplateResource }) async {
     Object postBody = questionTemplateResource;
 
@@ -1621,7 +1621,7 @@ class GamificationTriviaApi {
   }
   /// Bulk update questions
   ///
-  /// Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated.
+  /// Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   Future<int> updateQuestionsInBulk({ QuestionResource question, String filterSearch, String filterIdset, String filterCategory, String filterTagset, String filterType, bool filterPublished, int filterImportId }) async {
     Object postBody = question;
 

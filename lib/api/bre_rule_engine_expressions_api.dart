@@ -9,7 +9,7 @@ class BRERuleEngineExpressionsApi {
 
   /// Lookup a specific expression
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
   Future<ExpressionResource> getBREExpression(String type) async {
     Object postBody = null;
 
@@ -26,7 +26,7 @@ class BRERuleEngineExpressionsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -58,9 +58,9 @@ class BRERuleEngineExpressionsApi {
       return null;
     }
   }
-  /// Get a list of supported expressions to use in conditions or actions.
+  /// Get a list of supported expressions to use in conditions or actions
   ///
-  /// Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule.
+  /// Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
   Future<List<ExpressionResource>> getBREExpressions({ String filterTypeGroup }) async {
     Object postBody = null;
 
@@ -77,7 +77,7 @@ class BRERuleEngineExpressionsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_type_group", filterTypeGroup));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -111,7 +111,7 @@ class BRERuleEngineExpressionsApi {
   }
   /// Returns the textual representation of an expression
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
   Future<StringWrapper> getExpressionAsText({ ExpressionResource expression }) async {
     Object postBody = expression;
 

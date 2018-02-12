@@ -5,12 +5,12 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getBREExpression**](BRERuleEngineExpressionsApi.md#getBREExpression) | **GET** /bre/expressions/{type} | Lookup a specific expression
-[**getBREExpressions**](BRERuleEngineExpressionsApi.md#getBREExpressions) | **GET** /bre/expressions | Get a list of supported expressions to use in conditions or actions.
+[**getBREExpressions**](BRERuleEngineExpressionsApi.md#getBREExpressions) | **GET** /bre/expressions | Get a list of supported expressions to use in conditions or actions
 [**getExpressionAsText**](BRERuleEngineExpressionsApi.md#getExpressionAsText) | **POST** /bre/expressions | Returns the textual representation of an expression
 
 
@@ -18,6 +18,8 @@ Method | HTTP request | Description
 > ExpressionResource getBREExpression(type)
 
 Lookup a specific expression
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_EXPRESSIONS_USER
 
 ### Example 
 ```dart
@@ -54,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -62,9 +64,9 @@ Name | Type | Description  | Notes
 # **getBREExpressions**
 > List<ExpressionResource> getBREExpressions(filterTypeGroup)
 
-Get a list of supported expressions to use in conditions or actions.
+Get a list of supported expressions to use in conditions or actions
 
-Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule.
+Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_EXPRESSIONS_USER
 
 ### Example 
 ```dart
@@ -101,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -110,6 +112,8 @@ Name | Type | Description  | Notes
 > StringWrapper getExpressionAsText(expression)
 
 Returns the textual representation of an expression
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_EXPRESSIONS_USER
 
 ### Example 
 ```dart

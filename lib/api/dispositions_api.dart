@@ -9,7 +9,7 @@ class DispositionsApi {
 
   /// Add a new disposition
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and user, or DISPOSITIONS_ADMIN
   Future<DispositionResource> addDisposition({ DispositionResource disposition }) async {
     Object postBody = disposition;
 
@@ -57,7 +57,7 @@ class DispositionsApi {
   }
   /// Delete a disposition
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and owner, or DISPOSITIONS_ADMIN
   Future deleteDisposition(int id) async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class DispositionsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -108,7 +108,7 @@ class DispositionsApi {
   }
   /// Returns a disposition
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<DispositionResource> getDisposition(int id) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class DispositionsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class DispositionsApi {
   }
   /// Returns a list of disposition counts
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<List<DispositionCount>> getDispositionCounts({ String filterContext, String filterOwner }) async {
     Object postBody = null;
 
@@ -179,7 +179,7 @@ class DispositionsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_owner", filterOwner));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -213,7 +213,7 @@ class DispositionsApi {
   }
   /// Returns a page of dispositions
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«DispositionResource»> getDispositions({ String filterContext, String filterOwner, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -242,7 +242,7 @@ class DispositionsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

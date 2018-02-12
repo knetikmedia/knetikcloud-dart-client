@@ -9,7 +9,7 @@ class StoreVendorsApi {
 
   /// Create a vendor
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
   Future<VendorResource> createVendor({ VendorResource vendor }) async {
     Object postBody = vendor;
 
@@ -57,7 +57,7 @@ class StoreVendorsApi {
   }
   /// Create a vendor template
   ///
-  /// Vendor Templates define a type of vendor and the properties they have.
+  /// Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<ItemTemplateResource> createVendorTemplate({ ItemTemplateResource vendorTemplateResource }) async {
     Object postBody = vendorTemplateResource;
 
@@ -105,7 +105,7 @@ class StoreVendorsApi {
   }
   /// Delete a vendor
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
   Future deleteVendor(int id) async {
     Object postBody = null;
 
@@ -122,7 +122,7 @@ class StoreVendorsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -156,7 +156,7 @@ class StoreVendorsApi {
   }
   /// Delete a vendor template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteVendorTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -176,7 +176,7 @@ class StoreVendorsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -210,7 +210,7 @@ class StoreVendorsApi {
   }
   /// Get a single vendor
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<VendorResource> getVendor(int id) async {
     Object postBody = null;
 
@@ -227,7 +227,7 @@ class StoreVendorsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -261,7 +261,7 @@ class StoreVendorsApi {
   }
   /// Get a single vendor template
   ///
-  /// Vendor Templates define a type of vendor and the properties they have.
+  /// Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<ItemTemplateResource> getVendorTemplate(String id) async {
     Object postBody = null;
 
@@ -278,7 +278,7 @@ class StoreVendorsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -312,7 +312,7 @@ class StoreVendorsApi {
   }
   /// List and search vendor templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<PageResource«ItemTemplateResource»> getVendorTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -335,7 +335,7 @@ class StoreVendorsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -369,7 +369,7 @@ class StoreVendorsApi {
   }
   /// List and search vendors
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«VendorResource»> getVendors({ String filterName, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -395,7 +395,7 @@ class StoreVendorsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -429,7 +429,7 @@ class StoreVendorsApi {
   }
   /// Update a vendor
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
   Future<VendorResource> updateVendor(int id, { VendorResource vendor }) async {
     Object postBody = vendor;
 
@@ -480,7 +480,7 @@ class StoreVendorsApi {
   }
   /// Update a vendor template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<ItemTemplateResource> updateVendorTemplate(String id, { ItemTemplateResource vendorTemplateResource }) async {
     Object postBody = vendorTemplateResource;
 

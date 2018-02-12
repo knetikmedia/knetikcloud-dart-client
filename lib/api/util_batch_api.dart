@@ -9,7 +9,7 @@ class UtilBatchApi {
 
   /// Get batch result with token
   ///
-  /// Tokens expire in 24 hours
+  /// Tokens expire in 24 hours. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<List<BatchReturn>> getBatch(String token) async {
     Object postBody = null;
 
@@ -26,7 +26,7 @@ class UtilBatchApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -60,7 +60,7 @@ class UtilBatchApi {
   }
   /// Request to run API call given the method, content type, path url, and body of request
   ///
-  /// Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service
+  /// Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<List<BatchReturn>> sendBatch({ Batch batch }) async {
     Object postBody = batch;
 

@@ -9,7 +9,7 @@ import 'package:swagger/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additionalProperties** | [**Map&lt;String, Property&gt;**](Property.md) | A map of additional properties, keyed on the property name.  Must match the names and types defined in the template for this item type | [optional] [default to {}]
-**description** | **String** | A description of the group. Max 250 characters | [optional] [default to null]
+**description** | **String** | A description of the group | [optional] [default to null]
 **memberCount** | **int** | The number of users in the group | [optional] [default to null]
 **messageOfTheDay** | **String** | A message of the day for members of the group | [optional] [default to null]
 **name** | **String** | The name of the group. Max 50 characters | [default to null]

@@ -9,7 +9,7 @@ class CurrenciesApi {
 
   /// Create a currency
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CURRENCIES_ADMIN
   Future<CurrencyResource> createCurrency({ CurrencyResource currency }) async {
     Object postBody = currency;
 
@@ -57,7 +57,7 @@ class CurrenciesApi {
   }
   /// Delete a currency
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CURRENCIES_ADMIN
   Future deleteCurrency(String code) async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class CurrenciesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -108,7 +108,7 @@ class CurrenciesApi {
   }
   /// List and search currencies
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«CurrencyResource»> getCurrencies({ bool filterDefault, bool filterEnabledCurrencies, String filterType, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -140,7 +140,7 @@ class CurrenciesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -174,7 +174,7 @@ class CurrenciesApi {
   }
   /// Get a single currency
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<CurrencyResource> getCurrency(String code) async {
     Object postBody = null;
 
@@ -191,7 +191,7 @@ class CurrenciesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -225,7 +225,7 @@ class CurrenciesApi {
   }
   /// Update a currency
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CURRENCIES_ADMIN
   Future updateCurrency(String code, { CurrencyResource currency }) async {
     Object postBody = currency;
 

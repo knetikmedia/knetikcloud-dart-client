@@ -3,7 +3,11 @@ part of swagger.api;
 
 @Entity()
 class BreRuleLog {
-  /* Whether the rule ran */
+  /* The actions of the BRE rule */
+  @Property(name: 'actions')
+  List<BreActionLog> actions = [];
+  
+/* Whether the rule ran */
   @Property(name: 'ran')
   bool ran = null;
   
@@ -31,7 +35,7 @@ class BreRuleLog {
 
   @override
   String toString()  {
-    return 'BreRuleLog[ran=$ran, reason=$reason, ruleEndDate=$ruleEndDate, ruleId=$ruleId, ruleName=$ruleName, ruleStartDate=$ruleStartDate, ]';
+    return 'BreRuleLog[actions=$actions, ran=$ran, reason=$reason, ruleEndDate=$ruleEndDate, ruleId=$ruleId, ruleName=$ruleName, ruleStartDate=$ruleStartDate, ]';
   }
 
 }

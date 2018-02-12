@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,6 +25,8 @@ Method | HTTP request | Description
 > ObjectResource createObjectItem(templateId, cascade, objectItem)
 
 Create an object
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN
 
 ### Example 
 ```dart
@@ -75,7 +77,7 @@ Name | Type | Description  | Notes
 
 Create an object template
 
-Object templates define a type of entitlement and the properties they have
+Object templates define a type of entitlement and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example 
 ```dart
@@ -122,6 +124,8 @@ Name | Type | Description  | Notes
 
 Delete an object
 
+<b>Permissions Needed:</b> INVENTORY_ADMIN
+
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
@@ -158,7 +162,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -168,7 +172,7 @@ void (empty response body)
 
 Delete an entitlement template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example 
 ```dart
@@ -206,7 +210,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -215,6 +219,8 @@ void (empty response body)
 > ObjectResource getObjectItem(templateId, objectId)
 
 Get a single object
+
+<b>Permissions Needed:</b> ANY
 
 ### Example 
 ```dart
@@ -253,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -262,6 +268,8 @@ Name | Type | Description  | Notes
 > PageResource«ObjectResource» getObjectItems(templateId, size, page, order)
 
 List and search objects
+
+<b>Permissions Needed:</b> ANY
 
 ### Example 
 ```dart
@@ -304,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -313,6 +321,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource getObjectTemplate(id)
 
 Get a single entitlement template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
 
 ### Example 
 ```dart
@@ -349,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -358,6 +368,8 @@ Name | Type | Description  | Notes
 > PageResource«ItemTemplateResource» getObjectTemplates(size, page, order)
 
 List and search entitlement templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
 
 ### Example 
 ```dart
@@ -398,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -407,6 +419,8 @@ Name | Type | Description  | Notes
 > updateObjectItem(templateId, objectId, cascade, objectItem)
 
 Update an object
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN
 
 ### Example 
 ```dart
@@ -457,6 +471,8 @@ void (empty response body)
 > ItemTemplateResource updateObjectTemplate(id, template)
 
 Update an entitlement template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example 
 ```dart

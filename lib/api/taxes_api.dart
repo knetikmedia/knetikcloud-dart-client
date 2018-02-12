@@ -9,7 +9,7 @@ class TaxesApi {
 
   /// Create a country tax
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   Future<CountryTaxResource> createCountryTax({ CountryTaxResource taxResource }) async {
     Object postBody = taxResource;
 
@@ -57,7 +57,7 @@ class TaxesApi {
   }
   /// Create a state tax
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   Future<StateTaxResource> createStateTax(String countryCodeIso3, { StateTaxResource taxResource }) async {
     Object postBody = taxResource;
 
@@ -108,7 +108,7 @@ class TaxesApi {
   }
   /// Delete an existing tax
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   Future deleteCountryTax(String countryCodeIso3) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class TaxesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class TaxesApi {
   }
   /// Delete an existing state tax
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   Future deleteStateTax(String countryCodeIso3, String stateCode) async {
     Object postBody = null;
 
@@ -179,7 +179,7 @@ class TaxesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -213,7 +213,7 @@ class TaxesApi {
   }
   /// Get a single tax
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<CountryTaxResource> getCountryTax(String countryCodeIso3) async {
     Object postBody = null;
 
@@ -230,7 +230,7 @@ class TaxesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -264,7 +264,7 @@ class TaxesApi {
   }
   /// List and search taxes
   ///
-  /// Get a list of taxes
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   Future<PageResource«CountryTaxResource»> getCountryTaxes({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -287,7 +287,7 @@ class TaxesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -321,7 +321,7 @@ class TaxesApi {
   }
   /// Get a single state tax
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<StateTaxResource> getStateTax(String countryCodeIso3, String stateCode) async {
     Object postBody = null;
 
@@ -341,7 +341,7 @@ class TaxesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -375,7 +375,7 @@ class TaxesApi {
   }
   /// List and search taxes across all countries
   ///
-  /// Get a list of taxes
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«StateTaxResource»> getStateTaxesForCountries({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -398,7 +398,7 @@ class TaxesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -432,7 +432,7 @@ class TaxesApi {
   }
   /// List and search taxes within a country
   ///
-  /// Get a list of taxes
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«StateTaxResource»> getStateTaxesForCountry(String countryCodeIso3, { int size, int page, String order }) async {
     Object postBody = null;
 
@@ -458,7 +458,7 @@ class TaxesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -492,7 +492,7 @@ class TaxesApi {
   }
   /// Create or update a tax
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   Future<CountryTaxResource> updateCountryTax(String countryCodeIso3, { CountryTaxResource taxResource }) async {
     Object postBody = taxResource;
 
@@ -543,7 +543,7 @@ class TaxesApi {
   }
   /// Create or update a state tax
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
   Future<StateTaxResource> updateStateTax(String countryCodeIso3, String stateCode, { StateTaxResource taxResource }) async {
     Object postBody = taxResource;
 

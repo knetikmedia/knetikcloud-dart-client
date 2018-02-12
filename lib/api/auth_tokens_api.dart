@@ -9,7 +9,7 @@ class AuthTokensApi {
 
   /// Delete tokens by username, client id, or both
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
   Future deleteTokens({ String username, String clientId }) async {
     Object postBody = null;
 
@@ -29,7 +29,7 @@ class AuthTokensApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "client_id", clientId));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -63,7 +63,7 @@ class AuthTokensApi {
   }
   /// Get a single token by username and client id
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
   Future<OauthAccessTokenResource> getToken(String username, String clientId) async {
     Object postBody = null;
 
@@ -83,7 +83,7 @@ class AuthTokensApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -117,7 +117,7 @@ class AuthTokensApi {
   }
   /// List usernames and client ids
   ///
-  /// Token value not shown
+  /// Token value not shown. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
   Future<PageResource«OauthAccessTokenResource»> getTokens({ String filterClientId, String filterUsername, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -146,7 +146,7 @@ class AuthTokensApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

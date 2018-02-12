@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aliases** | **String** |  | [optional] [default to null]
 **database** | [**DatabaseConfig**](DatabaseConfig.md) |  | [optional] [default to null]
-**io** | [**IOConfig**](IOConfig.md) |  | [optional] [default to null]
 **name** | **String** |  | [optional] [default to null]
 **s3Config** | [**S3Config**](S3Config.md) |  | [optional] [default to null]
 

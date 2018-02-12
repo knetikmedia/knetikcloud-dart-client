@@ -9,7 +9,7 @@ class UsersSubscriptionsApi {
 
   /// Get details about a user&#39;s subscription
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
   Future<InventorySubscriptionResource> getUserSubscriptionDetails(int userId, int inventoryId) async {
     Object postBody = null;
 
@@ -29,7 +29,7 @@ class UsersSubscriptionsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -63,7 +63,7 @@ class UsersSubscriptionsApi {
   }
   /// Get details about a user&#39;s subscriptions
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
   Future<List<InventorySubscriptionResource>> getUsersSubscriptionDetails(int userId) async {
     Object postBody = null;
 
@@ -80,7 +80,7 @@ class UsersSubscriptionsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -114,7 +114,7 @@ class UsersSubscriptionsApi {
   }
   /// Reactivate a subscription and charge fee
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
   Future<InvoiceResource> reactivateUserSubscription(int userId, int inventoryId, { ReactivateSubscriptionRequest reactivateSubscriptionRequest }) async {
     Object postBody = reactivateSubscriptionRequest;
 
@@ -168,7 +168,7 @@ class UsersSubscriptionsApi {
   }
   /// Set a new date to bill a subscription on
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
   Future setSubscriptionBillDate(int userId, int inventoryId, int billDate) async {
     Object postBody = billDate;
 
@@ -225,7 +225,7 @@ class UsersSubscriptionsApi {
   }
   /// Set the payment method to use for a subscription
   ///
-  /// May send null to use floating default
+  /// May send null to use floating default. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
   Future setSubscriptionPaymentMethod(int userId, int inventoryId, { IntWrapper paymentMethodId }) async {
     Object postBody = paymentMethodId;
 
@@ -279,7 +279,7 @@ class UsersSubscriptionsApi {
   }
   /// Set the status of a subscription
   ///
-  /// Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
+  /// Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
   Future setSubscriptionStatus(int userId, int inventoryId, StringWrapper status) async {
     Object postBody = status;
 
@@ -336,7 +336,7 @@ class UsersSubscriptionsApi {
   }
   /// Set a new subscription plan for a user
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
   Future setUserSubscriptionPlan(int userId, int inventoryId, { StringWrapper planId }) async {
     Object postBody = planId;
 
@@ -390,7 +390,7 @@ class UsersSubscriptionsApi {
   }
   /// Set a new subscription price for a user
   ///
-  /// This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+  /// This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
   Future setUserSubscriptionPrice(int userId, int inventoryId, { SubscriptionPriceOverrideRequest the override details }) async {
     Object postBody = the override details;
 

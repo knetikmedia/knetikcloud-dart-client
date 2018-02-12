@@ -9,7 +9,7 @@ class ConfigsApi {
 
   /// Create a new config
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
   Future<Config> createConfig({ Config config }) async {
     Object postBody = config;
 
@@ -57,7 +57,7 @@ class ConfigsApi {
   }
   /// Delete an existing config
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
   Future deleteConfig(String name) async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class ConfigsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -108,7 +108,7 @@ class ConfigsApi {
   }
   /// Get a single config
   ///
-  /// Only configs that are public readable will be shown without admin access
+  /// Only configs that are public readable will be shown without admin access. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<Config> getConfig(String name) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class ConfigsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class ConfigsApi {
   }
   /// List and search configs
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«Config»> getConfigs({ String filterSearch, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -185,7 +185,7 @@ class ConfigsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -219,7 +219,7 @@ class ConfigsApi {
   }
   /// Update an existing config
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
   Future updateConfig(String name, { Config config }) async {
     Object postBody = config;
 

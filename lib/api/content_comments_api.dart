@@ -9,7 +9,7 @@ class ContentCommentsApi {
 
   /// Add a new comment
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
   Future<CommentResource> addComment({ CommentResource commentResource }) async {
     Object postBody = commentResource;
 
@@ -57,7 +57,7 @@ class ContentCommentsApi {
   }
   /// Delete a comment
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
   Future deleteComment(int id) async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class ContentCommentsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -108,7 +108,7 @@ class ContentCommentsApi {
   }
   /// Return a comment
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<CommentResource> getComment(int id) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class ContentCommentsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class ContentCommentsApi {
   }
   /// Returns a page of comments
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«CommentResource»> getComments(String context, int contextId, { int size, int page }) async {
     Object postBody = null;
 
@@ -187,7 +187,7 @@ class ContentCommentsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -221,7 +221,7 @@ class ContentCommentsApi {
   }
   /// Update a comment
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
   Future updateComment(int id, { StringWrapper content }) async {
     Object postBody = content;
 

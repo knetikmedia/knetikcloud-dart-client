@@ -9,7 +9,7 @@ class FulfillmentApi {
 
   /// Create a fulfillment type
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
   Future<FulfillmentType> createFulfillmentType({ FulfillmentType type }) async {
     Object postBody = type;
 
@@ -57,7 +57,7 @@ class FulfillmentApi {
   }
   /// Delete a fulfillment type
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
   Future deleteFulfillmentType(int id) async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class FulfillmentApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -108,7 +108,7 @@ class FulfillmentApi {
   }
   /// Get a single fulfillment type
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<FulfillmentType> getFulfillmentType(int id) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class FulfillmentApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class FulfillmentApi {
   }
   /// List and search fulfillment types
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«FulfillmentType»> getFulfillmentTypes({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -182,7 +182,7 @@ class FulfillmentApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -216,7 +216,7 @@ class FulfillmentApi {
   }
   /// Update a fulfillment type
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
   Future updateFulfillmentType(int id, { FulfillmentType fulfillmentType }) async {
     Object postBody = fulfillmentType;
 

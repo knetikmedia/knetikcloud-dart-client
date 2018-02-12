@@ -8,7 +8,7 @@ import 'package:swagger/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **String** | The description of the config.  Max 140 characters | [optional] [default to null]
+**description** | **String** | The description of the config.  Max 255 characters | [optional] [default to null]
 **name** | **String** | The name of the config | [default to null]
 **publicRead** | **bool** | Whether the config is public for viewing. True means that it can be publicly viewed by all. Default: false | [optional] [default to null]
 **value** | **String** | The value of the config | [optional] [default to null]

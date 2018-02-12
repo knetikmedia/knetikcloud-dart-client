@@ -9,7 +9,7 @@ class ObjectsApi {
 
   /// Create an object
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   Future<ObjectResource> createObjectItem(String templateId, { bool cascade, ObjectResource objectItem }) async {
     Object postBody = objectItem;
 
@@ -63,7 +63,7 @@ class ObjectsApi {
   }
   /// Create an object template
   ///
-  /// Object templates define a type of entitlement and the properties they have
+  /// Object templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<ItemTemplateResource> createObjectTemplate({ ItemTemplateResource template }) async {
     Object postBody = template;
 
@@ -111,7 +111,7 @@ class ObjectsApi {
   }
   /// Delete an object
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   Future deleteObjectItem(String templateId, int objectId) async {
     Object postBody = null;
 
@@ -131,7 +131,7 @@ class ObjectsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -165,7 +165,7 @@ class ObjectsApi {
   }
   /// Delete an entitlement template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteObjectTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -185,7 +185,7 @@ class ObjectsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -219,7 +219,7 @@ class ObjectsApi {
   }
   /// Get a single object
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<ObjectResource> getObjectItem(String templateId, int objectId) async {
     Object postBody = null;
 
@@ -239,7 +239,7 @@ class ObjectsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -273,7 +273,7 @@ class ObjectsApi {
   }
   /// List and search objects
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«ObjectResource»> getObjectItems(String templateId, { int size, int page, String order }) async {
     Object postBody = null;
 
@@ -299,7 +299,7 @@ class ObjectsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -333,7 +333,7 @@ class ObjectsApi {
   }
   /// Get a single entitlement template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
   Future<ItemTemplateResource> getObjectTemplate(String id) async {
     Object postBody = null;
 
@@ -350,7 +350,7 @@ class ObjectsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -384,7 +384,7 @@ class ObjectsApi {
   }
   /// List and search entitlement templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
   Future<PageResource«ItemTemplateResource»> getObjectTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -407,7 +407,7 @@ class ObjectsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -441,7 +441,7 @@ class ObjectsApi {
   }
   /// Update an object
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   Future updateObjectItem(String templateId, int objectId, { bool cascade, ObjectResource objectItem }) async {
     Object postBody = objectItem;
 
@@ -498,7 +498,7 @@ class ObjectsApi {
   }
   /// Update an entitlement template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<ItemTemplateResource> updateObjectTemplate(String id, { ItemTemplateResource template }) async {
     Object postBody = template;
 

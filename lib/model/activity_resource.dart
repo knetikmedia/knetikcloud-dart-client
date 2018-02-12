@@ -7,6 +7,10 @@ class ActivityResource {
   @Property(name: 'additional_properties')
   Map<String, Property> additionalProperties = {};
   
+/* Defines core settings about the activity that affect how it can be created/played by users. */
+  @Property(name: 'core_settings')
+  CoreActivitySettings coreSettings = null;
+  
 /* The date/time this resource was created in seconds since unix epoch */
   @Property(name: 'created_date')
   int createdDate = null;
@@ -71,7 +75,7 @@ class ActivityResource {
 
   @override
   String toString()  {
-    return 'ActivityResource[additionalProperties=$additionalProperties, createdDate=$createdDate, entitlements=$entitlements, id=$id, launch=$launch, leaderboardStrategy=$leaderboardStrategy, longDescription=$longDescription, name=$name, rewardSet=$rewardSet, settings=$settings, shortDescription=$shortDescription, template=$template, templateId=$templateId, type=$type, uniqueKey=$uniqueKey, updatedDate=$updatedDate, ]';
+    return 'ActivityResource[additionalProperties=$additionalProperties, coreSettings=$coreSettings, createdDate=$createdDate, entitlements=$entitlements, id=$id, launch=$launch, leaderboardStrategy=$leaderboardStrategy, longDescription=$longDescription, name=$name, rewardSet=$rewardSet, settings=$settings, shortDescription=$shortDescription, template=$template, templateId=$templateId, type=$type, uniqueKey=$uniqueKey, updatedDate=$updatedDate, ]';
   }
 
 }

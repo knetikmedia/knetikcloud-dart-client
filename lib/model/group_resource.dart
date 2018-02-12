@@ -7,7 +7,7 @@ class GroupResource {
   @Property(name: 'additional_properties')
   Map<String, Property> additionalProperties = {};
   
-/* A description of the group. Max 250 characters */
+/* A description of the group */
   @Property(name: 'description')
   String description = null;
   

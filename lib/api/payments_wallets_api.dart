@@ -9,7 +9,7 @@ class PaymentsWalletsApi {
 
   /// Returns the user&#39;s wallet for the given currency code
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
   Future<SimpleWallet> getUserWallet(int userId, String currencyCode) async {
     Object postBody = null;
 
@@ -29,7 +29,7 @@ class PaymentsWalletsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -63,7 +63,7 @@ class PaymentsWalletsApi {
   }
   /// Retrieve a user&#39;s wallet transactions
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
   Future<PageResource«WalletTransactionResource»> getUserWalletTransactions(int userId, String currencyCode, { String filterType, int filterMaxDate, int filterMinDate, String filterSign, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -104,7 +104,7 @@ class PaymentsWalletsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -138,7 +138,7 @@ class PaymentsWalletsApi {
   }
   /// List all of a user&#39;s wallets
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
   Future<List<SimpleWallet>> getUserWallets(int userId) async {
     Object postBody = null;
 
@@ -155,7 +155,7 @@ class PaymentsWalletsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -189,7 +189,7 @@ class PaymentsWalletsApi {
   }
   /// Retrieves a summation of wallet balances by currency code
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
   Future<PageResource«WalletTotalResponse»> getWalletBalances() async {
     Object postBody = null;
 
@@ -203,7 +203,7 @@ class PaymentsWalletsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -237,7 +237,7 @@ class PaymentsWalletsApi {
   }
   /// Retrieve wallet transactions across the system
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
   Future<PageResource«WalletTransactionResource»> getWalletTransactions({ int filterInvoice, String filterType, String filterDate, String filterSign, int filterUserId, String filterUsername, String filterDetails, String filterCurrencyCode, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -284,7 +284,7 @@ class PaymentsWalletsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -318,7 +318,7 @@ class PaymentsWalletsApi {
   }
   /// Retrieve a list of wallets across the system
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
   Future<PageResource«SimpleWallet»> getWallets({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -341,7 +341,7 @@ class PaymentsWalletsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -375,7 +375,7 @@ class PaymentsWalletsApi {
   }
   /// Updates the balance for a user&#39;s wallet
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
   Future<WalletTransactionResource> updateWalletBalance(int userId, String currencyCode, { WalletAlterRequest request }) async {
     Object postBody = request;
 

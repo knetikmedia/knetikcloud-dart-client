@@ -9,7 +9,7 @@ class ReportingChallengesApi {
 
   /// Retrieve a challenge event leaderboard details
   ///
-  /// Lists all leaderboard entries with additional user details
+  /// Lists all leaderboard entries with additional user details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_CHALLENGES_ADMIN
   Future<PageResource«ChallengeEventParticipantResource»> getChallengeEventLeaderboard({ int filterEvent, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -35,7 +35,7 @@ class ReportingChallengesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -69,7 +69,7 @@ class ReportingChallengesApi {
   }
   /// Retrieve a challenge event participant details
   ///
-  /// Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation
+  /// Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_CHALLENGES_ADMIN
   Future<PageResource«ChallengeEventParticipantResource»> getChallengeEventParticipants({ int filterEvent, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -95,7 +95,7 @@ class ReportingChallengesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

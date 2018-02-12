@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,8 @@ Method | HTTP request | Description
 > PageResource«UsageInfo» getUsageByDay(startDate, endDate, combineEndpoints, method, url, size, page)
 
 Returns aggregated endpoint usage information by day
+
+<b>Permissions Needed:</b> USAGE_ADMIN
 
 ### Example 
 ```dart
@@ -69,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -78,6 +80,8 @@ Name | Type | Description  | Notes
 > PageResource«UsageInfo» getUsageByHour(startDate, endDate, combineEndpoints, method, url, size, page)
 
 Returns aggregated endpoint usage information by hour
+
+<b>Permissions Needed:</b> USAGE_ADMIN
 
 ### Example 
 ```dart
@@ -126,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -135,6 +139,8 @@ Name | Type | Description  | Notes
 > PageResource«UsageInfo» getUsageByMinute(startDate, endDate, combineEndpoints, method, url, size, page)
 
 Returns aggregated endpoint usage information by minute
+
+<b>Permissions Needed:</b> USAGE_ADMIN
 
 ### Example 
 ```dart
@@ -183,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -192,6 +198,8 @@ Name | Type | Description  | Notes
 > PageResource«UsageInfo» getUsageByMonth(startDate, endDate, combineEndpoints, method, url, size, page)
 
 Returns aggregated endpoint usage information by month
+
+<b>Permissions Needed:</b> USAGE_ADMIN
 
 ### Example 
 ```dart
@@ -240,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -249,6 +257,8 @@ Name | Type | Description  | Notes
 > PageResource«UsageInfo» getUsageByYear(startDate, endDate, combineEndpoints, method, url, size, page)
 
 Returns aggregated endpoint usage information by year
+
+<b>Permissions Needed:</b> USAGE_ADMIN
 
 ### Example 
 ```dart
@@ -297,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -306,6 +316,8 @@ Name | Type | Description  | Notes
 > List<String> getUsageEndpoints(startDate, endDate)
 
 Returns list of endpoints called (method and url)
+
+<b>Permissions Needed:</b> USAGE_ADMIN
 
 ### Example 
 ```dart
@@ -344,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

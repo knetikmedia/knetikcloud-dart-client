@@ -9,7 +9,7 @@ class UtilVersionApi {
 
   /// Get current version info
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<Version> getVersion() async {
     Object postBody = null;
 
@@ -23,7 +23,7 @@ class UtilVersionApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

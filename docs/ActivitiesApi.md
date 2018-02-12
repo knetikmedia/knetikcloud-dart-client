@@ -5,10 +5,11 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addUser**](ActivitiesApi.md#addUser) | **POST** /activity-occurrences/{activity_occurrence_id}/users | Add a user to an occurrence
 [**createActivity**](ActivitiesApi.md#createActivity) | **POST** /activities | Create an activity
 [**createActivityOccurrence**](ActivitiesApi.md#createActivityOccurrence) | **POST** /activity-occurrences | Create a new activity occurrence. Ex: start a game
 [**createActivityTemplate**](ActivitiesApi.md#createActivityTemplate) | **POST** /activities/templates | Create a activity template
@@ -20,16 +21,74 @@ Method | HTTP request | Description
 [**getActivityTemplate**](ActivitiesApi.md#getActivityTemplate) | **GET** /activities/templates/{id} | Get a single activity template
 [**getActivityTemplates**](ActivitiesApi.md#getActivityTemplates) | **GET** /activities/templates | List and search activity templates
 [**listActivityOccurrences**](ActivitiesApi.md#listActivityOccurrences) | **GET** /activity-occurrences | List activity occurrences
+[**removeUser**](ActivitiesApi.md#removeUser) | **DELETE** /activity-occurrences/{activity_occurrence_id}/users/{user_id} | Remove a user from an occurrence
 [**setActivityOccurrenceResults**](ActivitiesApi.md#setActivityOccurrenceResults) | **POST** /activity-occurrences/{activity_occurrence_id}/results | Sets the status of an activity occurrence to FINISHED and logs metrics
+[**setActivityOccurrenceSettings**](ActivitiesApi.md#setActivityOccurrenceSettings) | **PUT** /activity-occurrences/{activity_occurrence_id}/settings | Sets the settings of an activity occurrence
+[**setUserStatus**](ActivitiesApi.md#setUserStatus) | **PUT** /activity-occurrences/{activity_occurrence_id}/users/{user_id}/status | Set a user&#39;s status within an occurrence
 [**updateActivity**](ActivitiesApi.md#updateActivity) | **PUT** /activities/{id} | Update an activity
-[**updateActivityOccurrence**](ActivitiesApi.md#updateActivityOccurrence) | **PUT** /activity-occurrences/{activity_occurrence_id}/status | Updated the status of an activity occurrence
+[**updateActivityOccurrenceStatus**](ActivitiesApi.md#updateActivityOccurrenceStatus) | **PUT** /activity-occurrences/{activity_occurrence_id}/status | Update the status of an activity occurrence
 [**updateActivityTemplate**](ActivitiesApi.md#updateActivityTemplate) | **PUT** /activities/templates/{id} | Update an activity template
 
+
+# **addUser**
+> ActivityOccurrenceResource addUser(activityOccurrenceId, test, bypassRestrictions, userId)
+
+Add a user to an occurrence
+
+If called with no body, defaults to the user making the call.
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new ActivitiesApi();
+var activityOccurrenceId = 789; // int | The id of the activity occurrence
+var test = true; // bool | if true, indicates that the user should NOT be added. This can be used to test for eligibility
+var bypassRestrictions = true; // bool | if true, indicates that restrictions such as max player count should be ignored. Can only be used with ACTIVITIES_ADMIN
+var userId = new IntWrapper(); // IntWrapper | The id of the user, or null for 'caller'
+
+try { 
+    var result = api_instance.addUser(activityOccurrenceId, test, bypassRestrictions, userId);
+    print(result);
+} catch (e) {
+    print("Exception when calling ActivitiesApi->addUser: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activityOccurrenceId** | **int**| The id of the activity occurrence | 
+ **test** | **bool**| if true, indicates that the user should NOT be added. This can be used to test for eligibility | [optional] [default to false]
+ **bypassRestrictions** | **bool**| if true, indicates that restrictions such as max player count should be ignored. Can only be used with ACTIVITIES_ADMIN | [optional] [default to false]
+ **userId** | [**IntWrapper**](IntWrapper.md)| The id of the user, or null for &#39;caller&#39; | [optional] 
+
+### Return type
+
+[**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createActivity**
 > ActivityResource createActivity(activityResource)
 
 Create an activity
+
+<b>Permissions Needed:</b> ACTIVITIES_ADMIN
 
 ### Example 
 ```dart
@@ -76,7 +135,7 @@ Name | Type | Description  | Notes
 
 Create a new activity occurrence. Ex: start a game
 
-Has to enforce extra rules if not used as an admin
+Has to enforce extra rules if not used as an admin. <br><br><b>Permissions Needed:</b> ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example 
 ```dart
@@ -125,7 +184,7 @@ Name | Type | Description  | Notes
 
 Create a activity template
 
-Activity Templates define a type of activity and the properties they have
+Activity Templates define a type of activity and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example 
 ```dart
@@ -172,6 +231,8 @@ Name | Type | Description  | Notes
 
 Delete an activity
 
+<b>Permissions Needed:</b> ACTIVITIES_ADMIN
+
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
@@ -206,7 +267,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -216,7 +277,7 @@ void (empty response body)
 
 Delete a activity template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example 
 ```dart
@@ -254,7 +315,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -263,6 +324,8 @@ void (empty response body)
 > PageResource«BareActivityResource» getActivities(filterTemplate, filterName, filterId, size, page, order)
 
 List activity definitions
+
+<b>Permissions Needed:</b> ANY
 
 ### Example 
 ```dart
@@ -309,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -318,6 +381,8 @@ Name | Type | Description  | Notes
 > ActivityResource getActivity(id)
 
 Get a single activity
+
+<b>Permissions Needed:</b> ANY
 
 ### Example 
 ```dart
@@ -354,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -363,6 +428,8 @@ Name | Type | Description  | Notes
 > ActivityOccurrenceResource getActivityOccurrenceDetails(activityOccurrenceId)
 
 Load a single activity occurrence details
+
+<b>Permissions Needed:</b> ACTIVITIES_ADMIN
 
 ### Example 
 ```dart
@@ -399,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -408,6 +475,8 @@ Name | Type | Description  | Notes
 > TemplateResource getActivityTemplate(id)
 
 Get a single activity template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ACTIVITIES_ADMIN
 
 ### Example 
 ```dart
@@ -444,7 +513,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -453,6 +522,8 @@ Name | Type | Description  | Notes
 > PageResource«TemplateResource» getActivityTemplates(size, page, order)
 
 List and search activity templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ACTIVITIES_ADMIN
 
 ### Example 
 ```dart
@@ -493,7 +564,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -502,6 +573,8 @@ Name | Type | Description  | Notes
 > PageResource«ActivityOccurrenceResource» listActivityOccurrences(filterActivity, filterStatus, filterEvent, filterChallenge, size, page, order)
 
 List activity occurrences
+
+<b>Permissions Needed:</b> ACTIVITIES_ADMIN
 
 ### Example 
 ```dart
@@ -513,7 +586,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new ActivitiesApi();
 var filterActivity = filterActivity_example; // String | Filter for occurrences of the given activity ID
-var filterStatus = filterStatus_example; // String | Filter for occurrences of the given activity ID
+var filterStatus = filterStatus_example; // String | Filter for occurrences in the given status
 var filterEvent = 56; // int | Filter for occurrences played during the given event
 var filterChallenge = 56; // int | Filter for occurrences played within the given challenge
 var size = 56; // int | The number of objects returned per page
@@ -533,7 +606,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterActivity** | **String**| Filter for occurrences of the given activity ID | [optional] 
- **filterStatus** | **String**| Filter for occurrences of the given activity ID | [optional] 
+ **filterStatus** | **String**| Filter for occurrences in the given status | [optional] 
  **filterEvent** | **int**| Filter for occurrences played during the given event | [optional] 
  **filterChallenge** | **int**| Filter for occurrences played within the given challenge | [optional] 
  **size** | **int**| The number of objects returned per page | [optional] [default to 25]
@@ -550,7 +623,57 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **removeUser**
+> removeUser(activityOccurrenceId, userId, ban, bypassRestrictions)
+
+Remove a user from an occurrence
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new ActivitiesApi();
+var activityOccurrenceId = 789; // int | The id of the activity occurrence
+var userId = userId_example; // String | The id of the user, or 'me'
+var ban = true; // bool | if true, indicates that the user should not be allowed to re-join. Can only be set by host or admin
+var bypassRestrictions = true; // bool | if true, indicates that restrictions such as current status should be ignored. Can only be used with ACTIVITIES_ADMIN
+
+try { 
+    api_instance.removeUser(activityOccurrenceId, userId, ban, bypassRestrictions);
+} catch (e) {
+    print("Exception when calling ActivitiesApi->removeUser: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activityOccurrenceId** | **int**| The id of the activity occurrence | 
+ **userId** | **String**| The id of the user, or &#39;me&#39; | 
+ **ban** | **bool**| if true, indicates that the user should not be allowed to re-join. Can only be set by host or admin | [optional] [default to false]
+ **bypassRestrictions** | **bool**| if true, indicates that restrictions such as current status should be ignored. Can only be used with ACTIVITIES_ADMIN | [optional] [default to false]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -559,6 +682,8 @@ Name | Type | Description  | Notes
 > ActivityOccurrenceResults setActivityOccurrenceResults(activityOccurrenceId, activityOccurrenceResults)
 
 Sets the status of an activity occurrence to FINISHED and logs metrics
+
+In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
 
 ### Example 
 ```dart
@@ -602,10 +727,108 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **setActivityOccurrenceSettings**
+> ActivityOccurrenceResource setActivityOccurrenceSettings(activityOccurrenceId, settings)
+
+Sets the settings of an activity occurrence
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new ActivitiesApi();
+var activityOccurrenceId = 789; // int | The id of the activity occurrence
+var settings = new ActivityOccurrenceSettingsResource(); // ActivityOccurrenceSettingsResource | The new settings
+
+try { 
+    var result = api_instance.setActivityOccurrenceSettings(activityOccurrenceId, settings);
+    print(result);
+} catch (e) {
+    print("Exception when calling ActivitiesApi->setActivityOccurrenceSettings: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activityOccurrenceId** | **int**| The id of the activity occurrence | 
+ **settings** | [**ActivityOccurrenceSettingsResource**](ActivityOccurrenceSettingsResource.md)| The new settings | [optional] 
+
+### Return type
+
+[**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **setUserStatus**
+> ActivityUserResource setUserStatus(activityOccurrenceId, userId, status)
+
+Set a user's status within an occurrence
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: oauth2_password_grant
+//swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
+
+var api_instance = new ActivitiesApi();
+var activityOccurrenceId = 789; // int | The id of the activity occurrence
+var userId = userId_example; // String | The id of the user
+var status = new String(); // String | The new status
+
+try { 
+    var result = api_instance.setUserStatus(activityOccurrenceId, userId, status);
+    print(result);
+} catch (e) {
+    print("Exception when calling ActivitiesApi->setUserStatus: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activityOccurrenceId** | **int**| The id of the activity occurrence | 
+ **userId** | **String**| The id of the user | 
+ **status** | **String**| The new status | [optional] 
+
+### Return type
+
+[**ActivityUserResource**](ActivityUserResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **updateActivity**
 > ActivityResource updateActivity(id, activityResource)
 
 Update an activity
+
+<b>Permissions Needed:</b> ACTIVITIES_ADMIN
 
 ### Example 
 ```dart
@@ -649,12 +872,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateActivityOccurrence**
-> updateActivityOccurrence(activityOccurrenceId, activityOccurrenceStatus)
+# **updateActivityOccurrenceStatus**
+> updateActivityOccurrenceStatus(activityOccurrenceId, activityOccurrenceStatus)
 
-Updated the status of an activity occurrence
+Update the status of an activity occurrence
 
-If setting to 'FINISHED' reward will be run based on current metrics that have been recorded already. Aternatively, see results endpoint to finish and record all metrics at once.
+If setting to 'FINISHED' reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
 
 ### Example 
 ```dart
@@ -666,12 +889,12 @@ import 'package:swagger/api.dart';
 
 var api_instance = new ActivitiesApi();
 var activityOccurrenceId = 789; // int | The id of the activity occurrence
-var activityOccurrenceStatus = new String(); // String | The activity occurrence status object
+var activityOccurrenceStatus = new ValueWrapper«string»(); // ValueWrapper«string» | The activity occurrence status object
 
 try { 
-    api_instance.updateActivityOccurrence(activityOccurrenceId, activityOccurrenceStatus);
+    api_instance.updateActivityOccurrenceStatus(activityOccurrenceId, activityOccurrenceStatus);
 } catch (e) {
-    print("Exception when calling ActivitiesApi->updateActivityOccurrence: $e\n");
+    print("Exception when calling ActivitiesApi->updateActivityOccurrenceStatus: $e\n");
 }
 ```
 
@@ -680,7 +903,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activityOccurrenceId** | **int**| The id of the activity occurrence | 
- **activityOccurrenceStatus** | **String**| The activity occurrence status object | [optional] 
+ **activityOccurrenceStatus** | [**ValueWrapper«string»**](ValueWrapper«string».md)| The activity occurrence status object | [optional] 
 
 ### Return type
 
@@ -701,6 +924,8 @@ void (empty response body)
 > TemplateResource updateActivityTemplate(id, activityTemplateResource)
 
 Update an activity template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example 
 ```dart

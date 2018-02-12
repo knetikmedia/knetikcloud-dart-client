@@ -9,7 +9,7 @@ class MediaArtistsApi {
 
   /// Adds a new artist in the system
   ///
-  /// Adds a new artist in the system. Use specific media contributions endpoint to add contributions
+  /// Adds a new artist in the system. Use specific media contributions endpoint to add contributions. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<ArtistResource> addArtist({ ArtistResource artistResource }) async {
     Object postBody = artistResource;
 
@@ -57,7 +57,7 @@ class MediaArtistsApi {
   }
   /// Create an artist template
   ///
-  /// Artist Templates define a type of artist and the properties they have
+  /// Artist Templates define a type of artist and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> createArtistTemplate({ TemplateResource artistTemplateResource }) async {
     Object postBody = artistTemplateResource;
 
@@ -105,7 +105,7 @@ class MediaArtistsApi {
   }
   /// Removes an artist from the system IF no resources are attached to it
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
   Future deleteArtist(int id) async {
     Object postBody = null;
 
@@ -122,7 +122,7 @@ class MediaArtistsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -156,7 +156,7 @@ class MediaArtistsApi {
   }
   /// Delete an artist template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteArtistTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -176,7 +176,7 @@ class MediaArtistsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -210,7 +210,7 @@ class MediaArtistsApi {
   }
   /// Loads a specific artist details
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<ArtistResource> getArtist(int id, { int showContributions }) async {
     Object postBody = null;
 
@@ -230,7 +230,7 @@ class MediaArtistsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "show_contributions", showContributions));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -264,7 +264,7 @@ class MediaArtistsApi {
   }
   /// Get a single artist template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
   Future<TemplateResource> getArtistTemplate(String id) async {
     Object postBody = null;
 
@@ -281,7 +281,7 @@ class MediaArtistsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -315,7 +315,7 @@ class MediaArtistsApi {
   }
   /// List and search artist templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
   Future<PageResource«TemplateResource»> getArtistTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -338,7 +338,7 @@ class MediaArtistsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -372,7 +372,7 @@ class MediaArtistsApi {
   }
   /// Search for artists
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«ArtistResource»> getArtists({ String filterArtistsByName, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -398,7 +398,7 @@ class MediaArtistsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -432,7 +432,7 @@ class MediaArtistsApi {
   }
   /// Modifies an artist details
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
   Future updateArtist(int id, { ArtistResource artistResource }) async {
     Object postBody = artistResource;
 
@@ -483,7 +483,7 @@ class MediaArtistsApi {
   }
   /// Update an artist template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> updateArtistTemplate(String id, { TemplateResource artistTemplateResource }) async {
     Object postBody = artistTemplateResource;
 

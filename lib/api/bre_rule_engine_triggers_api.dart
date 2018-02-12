@@ -9,7 +9,7 @@ class BRERuleEngineTriggersApi {
 
   /// Create a trigger
   ///
-  /// Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services
+  /// Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
   Future<BreTriggerResource> createBRETrigger({ BreTriggerResource breTriggerResource }) async {
     Object postBody = breTriggerResource;
 
@@ -57,7 +57,7 @@ class BRERuleEngineTriggersApi {
   }
   /// Delete a trigger
   ///
-  /// May fail if there are existing rules against it. Cannot delete core triggers
+  /// May fail if there are existing rules against it. Cannot delete core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
   Future deleteBRETrigger(String eventName) async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class BRERuleEngineTriggersApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -108,7 +108,7 @@ class BRERuleEngineTriggersApi {
   }
   /// Get a single trigger
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
   Future<BreTriggerResource> getBRETrigger(String eventName) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class BRERuleEngineTriggersApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class BRERuleEngineTriggersApi {
   }
   /// List triggers
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
   Future<PageResource«BreTriggerResource»> getBRETriggers({ bool filterSystem, String filterCategory, String filterTags, String filterName, String filterSearch, int size, int page }) async {
     Object postBody = null;
 
@@ -194,7 +194,7 @@ class BRERuleEngineTriggersApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -228,7 +228,7 @@ class BRERuleEngineTriggersApi {
   }
   /// Update a trigger
   ///
-  /// May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers
+  /// May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
   Future<BreTriggerResource> updateBRETrigger(String eventName, { BreTriggerResource breTriggerResource }) async {
     Object postBody = breTriggerResource;
 

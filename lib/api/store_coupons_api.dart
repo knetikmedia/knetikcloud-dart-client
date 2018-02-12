@@ -9,7 +9,7 @@ class StoreCouponsApi {
 
   /// Create a coupon item
   ///
-  /// SKUs have to be unique in the entire store.
+  /// SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
   Future<CouponItem> createCouponItem({ bool cascade, CouponItem couponItem }) async {
     Object postBody = couponItem;
 
@@ -60,7 +60,7 @@ class StoreCouponsApi {
   }
   /// Create a coupon template
   ///
-  /// Coupon Templates define a type of coupon and the properties they have.
+  /// Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<ItemTemplateResource> createCouponTemplate({ ItemTemplateResource couponTemplateResource }) async {
     Object postBody = couponTemplateResource;
 
@@ -108,7 +108,7 @@ class StoreCouponsApi {
   }
   /// Delete a coupon item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
   Future deleteCouponItem(int id) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class StoreCouponsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class StoreCouponsApi {
   }
   /// Delete a coupon template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteCouponTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -179,7 +179,7 @@ class StoreCouponsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -213,7 +213,7 @@ class StoreCouponsApi {
   }
   /// Get a single coupon item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
   Future<CouponItem> getCouponItem(int id) async {
     Object postBody = null;
 
@@ -230,7 +230,7 @@ class StoreCouponsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -264,7 +264,7 @@ class StoreCouponsApi {
   }
   /// Get a coupon by sku
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<CouponItem> getCouponItemBySku(String sku) async {
     Object postBody = null;
 
@@ -281,7 +281,7 @@ class StoreCouponsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -315,7 +315,7 @@ class StoreCouponsApi {
   }
   /// Get a single coupon template
   ///
-  /// Coupon Templates define a type of coupon and the properties they have.
+  /// Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
   Future<ItemTemplateResource> getCouponTemplate(String id) async {
     Object postBody = null;
 
@@ -332,7 +332,7 @@ class StoreCouponsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -366,7 +366,7 @@ class StoreCouponsApi {
   }
   /// List and search coupon templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
   Future<PageResource«ItemTemplateResource»> getCouponTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -389,7 +389,7 @@ class StoreCouponsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -423,7 +423,7 @@ class StoreCouponsApi {
   }
   /// Update a coupon item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
   Future<CouponItem> updateCouponItem(int id, { bool cascade, CouponItem couponItem }) async {
     Object postBody = couponItem;
 
@@ -477,7 +477,7 @@ class StoreCouponsApi {
   }
   /// Update a coupon template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<ItemTemplateResource> updateCouponTemplate(String id, { ItemTemplateResource couponTemplateResource }) async {
     Object postBody = couponTemplateResource;
 

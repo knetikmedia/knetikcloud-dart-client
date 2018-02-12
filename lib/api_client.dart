@@ -21,7 +21,7 @@ class ApiClient {
   final _RegList = new RegExp(r'^List<(.*)>$');
   final _RegMap = new RegExp(r'^Map<String,(.*)>$');
 
-  ApiClient({this.basePath: "https://devsandbox.knetikcloud.com"}) {
+  ApiClient({this.basePath: "https://sandbox.knetikcloud.com"}) {
     // Setup authentications (key: authentication name, value: authentication).
     _authentications['oauth2_client_credentials_grant'] = new OAuth();
     _authentications['oauth2_password_grant'] = new OAuth();
@@ -62,6 +62,8 @@ class ApiClient {
           return dson.map(value, new ActivityOccurrenceResults());
         case 'ActivityOccurrenceResultsResource':
           return dson.map(value, new ActivityOccurrenceResultsResource());
+        case 'ActivityOccurrenceSettingsResource':
+          return dson.map(value, new ActivityOccurrenceSettingsResource());
         case 'ActivityResource':
           return dson.map(value, new ActivityResource());
         case 'ActivityUserResource':
@@ -106,6 +108,8 @@ class ApiClient {
           return dson.map(value, new BillingReport());
         case 'BooleanResource':
           return dson.map(value, new BooleanResource());
+        case 'BreActionLog':
+          return dson.map(value, new BreActionLog());
         case 'BreCategoryResource':
           return dson.map(value, new BreCategoryResource());
         case 'BreEvent':
@@ -156,6 +160,16 @@ class ApiClient {
           return dson.map(value, new ChallengeEventResource());
         case 'ChallengeResource':
           return dson.map(value, new ChallengeResource());
+        case 'ChatBlacklistResource':
+          return dson.map(value, new ChatBlacklistResource());
+        case 'ChatMessageRequest':
+          return dson.map(value, new ChatMessageRequest());
+        case 'ChatMessageResource':
+          return dson.map(value, new ChatMessageResource());
+        case 'ChatThreadResource':
+          return dson.map(value, new ChatThreadResource());
+        case 'ChatUserThreadResource':
+          return dson.map(value, new ChatUserThreadResource());
         case 'ClientResource':
           return dson.map(value, new ClientResource());
         case 'CommentResource':
@@ -168,6 +182,12 @@ class ApiClient {
           return dson.map(value, new ConstantResource());
         case 'ContributionResource':
           return dson.map(value, new ContributionResource());
+        case 'CoreActivityOccurrenceSettings':
+          return dson.map(value, new CoreActivityOccurrenceSettings());
+        case 'CoreActivitySettings':
+          return dson.map(value, new CoreActivitySettings());
+        case 'CoreChallengeActivitySettings':
+          return dson.map(value, new CoreChallengeActivitySettings());
         case 'Country':
           return dson.map(value, new Country());
         case 'CountryResource':
@@ -246,8 +266,6 @@ class ApiClient {
           return dson.map(value, new GroupMemberResource());
         case 'GroupResource':
           return dson.map(value, new GroupResource());
-        case 'IOConfig':
-          return dson.map(value, new IOConfig());
         case 'IdRef':
           return dson.map(value, new IdRef());
         case 'ImportJobOutputResource':
@@ -296,6 +314,14 @@ class ApiClient {
           return dson.map(value, new Maintenance());
         case 'MapResource':
           return dson.map(value, new MapResource());
+        case 'MessageContentResource':
+          return dson.map(value, new MessageContentResource());
+        case 'MessageResource':
+          return dson.map(value, new MessageResource());
+        case 'MessageTemplateBulkRequest':
+          return dson.map(value, new MessageTemplateBulkRequest());
+        case 'MessageTemplateResource':
+          return dson.map(value, new MessageTemplateResource());
         case 'MetricResource':
           return dson.map(value, new MetricResource());
         case 'ModelOperator':
@@ -306,6 +332,12 @@ class ApiClient {
           return dson.map(value, new NestedCategory());
         case 'NewPasswordRequest':
           return dson.map(value, new NewPasswordRequest());
+        case 'NotificationResource':
+          return dson.map(value, new NotificationResource());
+        case 'NotificationTypeResource':
+          return dson.map(value, new NotificationTypeResource());
+        case 'NotificationUserTypeResource':
+          return dson.map(value, new NotificationUserTypeResource());
         case 'OAuth2Resource':
           return dson.map(value, new OAuth2Resource());
         case 'OauthAccessTokenResource':
@@ -362,6 +394,10 @@ class ApiClient {
           return dson.map(value, new PageResource«ChallengeEventResource»());
         case 'PageResource«ChallengeResource»':
           return dson.map(value, new PageResource«ChallengeResource»());
+        case 'PageResource«ChatMessageResource»':
+          return dson.map(value, new PageResource«ChatMessageResource»());
+        case 'PageResource«ChatUserThreadResource»':
+          return dson.map(value, new PageResource«ChatUserThreadResource»());
         case 'PageResource«ClientResource»':
           return dson.map(value, new PageResource«ClientResource»());
         case 'PageResource«CommentResource»':
@@ -402,6 +438,12 @@ class ApiClient {
           return dson.map(value, new PageResource«LevelingResource»());
         case 'PageResource«LocationLogResource»':
           return dson.map(value, new PageResource«LocationLogResource»());
+        case 'PageResource«MessageTemplateResource»':
+          return dson.map(value, new PageResource«MessageTemplateResource»());
+        case 'PageResource«NotificationTypeResource»':
+          return dson.map(value, new PageResource«NotificationTypeResource»());
+        case 'PageResource«NotificationUserTypeResource»':
+          return dson.map(value, new PageResource«NotificationUserTypeResource»());
         case 'PageResource«OauthAccessTokenResource»':
           return dson.map(value, new PageResource«OauthAccessTokenResource»());
         case 'PageResource«ObjectResource»':
@@ -444,6 +486,10 @@ class ApiClient {
           return dson.map(value, new PageResource«SubscriptionTemplateResource»());
         case 'PageResource«TemplateResource»':
           return dson.map(value, new PageResource«TemplateResource»());
+        case 'PageResource«TopicResource»':
+          return dson.map(value, new PageResource«TopicResource»());
+        case 'PageResource«TopicSubscriberResource»':
+          return dson.map(value, new PageResource«TopicSubscriberResource»());
         case 'PageResource«TransactionResource»':
           return dson.map(value, new PageResource«TransactionResource»());
         case 'PageResource«UsageInfo»':
@@ -460,6 +506,8 @@ class ApiClient {
           return dson.map(value, new PageResource«UserItemLogResource»());
         case 'PageResource«UserLevelingResource»':
           return dson.map(value, new PageResource«UserLevelingResource»());
+        case 'PageResource«UserNotificationResource»':
+          return dson.map(value, new PageResource«UserNotificationResource»());
         case 'PageResource«UserRelationshipResource»':
           return dson.map(value, new PageResource«UserRelationshipResource»());
         case 'PageResource«VendorResource»':
@@ -610,10 +658,20 @@ class ApiClient {
           return dson.map(value, new TemplateResource());
         case 'TemplateSMSResource':
           return dson.map(value, new TemplateSMSResource());
+        case 'TemplatedEmail':
+          return dson.map(value, new TemplatedEmail());
         case 'TierResource':
           return dson.map(value, new TierResource());
         case 'TokenDetailsResource':
           return dson.map(value, new TokenDetailsResource());
+        case 'Topic':
+          return dson.map(value, new Topic());
+        case 'TopicResource':
+          return dson.map(value, new TopicResource());
+        case 'TopicSubscriber':
+          return dson.map(value, new TopicSubscriber());
+        case 'TopicSubscriberResource':
+          return dson.map(value, new TopicSubscriberResource());
         case 'TransactionResource':
           return dson.map(value, new TransactionResource());
         case 'TypeHintLookupResource':
@@ -640,6 +698,8 @@ class ApiClient {
           return dson.map(value, new UserItemLogResource());
         case 'UserLevelingResource':
           return dson.map(value, new UserLevelingResource());
+        case 'UserNotificationResource':
+          return dson.map(value, new UserNotificationResource());
         case 'UserRelationshipReferenceResource':
           return dson.map(value, new UserRelationshipReferenceResource());
         case 'UserRelationshipResource':
@@ -648,6 +708,10 @@ class ApiClient {
           return dson.map(value, new UserResource());
         case 'UsernameLookupResource':
           return dson.map(value, new UsernameLookupResource());
+        case 'ValueWrapper«boolean»':
+          return dson.map(value, new ValueWrapper«boolean»());
+        case 'ValueWrapper«string»':
+          return dson.map(value, new ValueWrapper«string»());
         case 'VariableTypeResource':
           return dson.map(value, new VariableTypeResource());
         case 'VendorEmailLookupResource':
@@ -666,6 +730,8 @@ class ApiClient {
           return dson.map(value, new WalletTotalResponse());
         case 'WalletTransactionResource':
           return dson.map(value, new WalletTransactionResource());
+        case 'WebsocketMessageResource':
+          return dson.map(value, new WebsocketMessageResource());
         case 'XsollaPaymentRequest':
           return dson.map(value, new XsollaPaymentRequest());
         case 'AudioPropertyDefinitionResource':
@@ -752,6 +818,16 @@ class ApiClient {
           return dson.map(value, new TimePeriodUsable());
         case 'VideoPropertyDefinitionResource':
           return dson.map(value, new VideoPropertyDefinitionResource());
+        case 'WebsocketRemoveTopicEvent':
+          return dson.map(value, new WebsocketRemoveTopicEvent());
+        case 'WebsocketSendMessageEvent':
+          return dson.map(value, new WebsocketSendMessageEvent());
+        case 'WebsocketSendTopicMessageEvent':
+          return dson.map(value, new WebsocketSendTopicMessageEvent());
+        case 'WebsocketSubscribeEvent':
+          return dson.map(value, new WebsocketSubscribeEvent());
+        case 'WebsocketUnsubscribeEvent':
+          return dson.map(value, new WebsocketUnsubscribeEvent());
         case 'AudioGroupProperty':
           return dson.map(value, new AudioGroupProperty());
         case 'AudioGroupPropertyDefinitionResource':

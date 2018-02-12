@@ -9,6 +9,7 @@ import 'package:swagger/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additionalProperties** | [**Map&lt;String, Property&gt;**](Property.md) | A map of additional properties keyed on the property name. Used to further describe an activity. While settings will vary from one activity occurrence (a game) to another, additional properties are shared by all the occurrences of this activity. Ex: Activity Logo, Disclaimer, Greeting, etc. Validated against template if one exists for activities | [optional] [default to {}]
+**coreSettings** | [**CoreActivitySettings**](CoreActivitySettings.md) | Defines core settings about the activity that affect how it can be created/played by users. | [optional] [default to null]
 **createdDate** | **int** | The date/time this resource was created in seconds since unix epoch | [optional] [default to null]
 **entitlements** | [**List&lt;ActivityEntitlementResource&gt;**](ActivityEntitlementResource.md) | The list of items that can be used for entitlement (wager amounts/etc) | [optional] [default to []]
 **id** | **int** | The unique ID for that resource | [optional] [default to null]
@@ -21,7 +22,7 @@ Name | Type | Description | Notes
 **shortDescription** | **String** | The user friendly name of that resource. Defaults to blank string | [optional] [default to null]
 **template** | **bool** | Whether this activity is a template for other activities. Default: false | [optional] [default to null]
 **templateId** | **String** | An activity template this activity is validated against (private). May be null and no validation of additional_properties will be done | [optional] [default to null]
-**type** | **String** | The type of the activity | [default to null]
+**type** | **String** | The type of the activity | [optional] [default to null]
 **uniqueKey** | **String** | The unique key (for static reference in code) of the activity | [optional] [default to null]
 **updatedDate** | **int** | The date/time this resource was last updated in seconds since unix epoch | [optional] [default to null]
 

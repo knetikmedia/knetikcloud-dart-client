@@ -8,6 +8,7 @@ import 'package:swagger/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**actions** | [**List&lt;BreActionLog&gt;**](BreActionLog.md) | The actions of the BRE rule | [optional] [default to []]
 **ran** | **bool** | Whether the rule ran | [optional] [default to null]
 **reason** | **String** | The reason for the rule | [optional] [default to null]
 **ruleEndDate** | **int** | The end date of the rule in seconds | [optional] [default to null]

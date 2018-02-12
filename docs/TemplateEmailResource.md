@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **from** | **String** | Address to attribute the outgoing message to. Optional if the config email.out_address is set. | [optional] [default to null]
 **recipients** | **List&lt;int&gt;** | A list of user ids to send the message to. | [default to []]
+**subject** | **String** | The subject for email | [optional] [default to null]
 **templateKey** | **String** | The key for the template | [default to null]
 **templateVars** | [**List&lt;KeyValuePair«string,string»&gt;**](KeyValuePair«string,string».md) | A list of variables to fill in the template | [optional] [default to []]
 

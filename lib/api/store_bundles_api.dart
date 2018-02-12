@@ -9,7 +9,7 @@ class StoreBundlesApi {
 
   /// Create a bundle item
   ///
-  /// The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item.
+  /// The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
   Future<BundleItem> createBundleItem({ bool cascade, BundleItem bundleItem }) async {
     Object postBody = bundleItem;
 
@@ -60,7 +60,7 @@ class StoreBundlesApi {
   }
   /// Create a bundle template
   ///
-  /// Bundle Templates define a type of bundle and the properties they have.
+  /// Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
   Future<ItemTemplateResource> createBundleTemplate({ ItemTemplateResource bundleTemplateResource }) async {
     Object postBody = bundleTemplateResource;
 
@@ -108,7 +108,7 @@ class StoreBundlesApi {
   }
   /// Delete a bundle item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
   Future deleteBundleItem(int id) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class StoreBundlesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class StoreBundlesApi {
   }
   /// Delete a bundle template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
   Future deleteBundleTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -179,7 +179,7 @@ class StoreBundlesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -213,7 +213,7 @@ class StoreBundlesApi {
   }
   /// Get a single bundle item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<BundleItem> getBundleItem(int id) async {
     Object postBody = null;
 
@@ -230,7 +230,7 @@ class StoreBundlesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -264,7 +264,7 @@ class StoreBundlesApi {
   }
   /// Get a single bundle template
   ///
-  /// Bundle Templates define a type of bundle and the properties they have.
+  /// Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<ItemTemplateResource> getBundleTemplate(String id) async {
     Object postBody = null;
 
@@ -281,7 +281,7 @@ class StoreBundlesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -315,7 +315,7 @@ class StoreBundlesApi {
   }
   /// List and search bundle templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«ItemTemplateResource»> getBundleTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -338,7 +338,7 @@ class StoreBundlesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -372,7 +372,7 @@ class StoreBundlesApi {
   }
   /// Update a bundle item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
   Future<BundleItem> updateBundleItem(int id, { bool cascade, BundleItem bundleItem }) async {
     Object postBody = bundleItem;
 
@@ -426,7 +426,7 @@ class StoreBundlesApi {
   }
   /// Update a bundle template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
   Future<ItemTemplateResource> updateBundleTemplate(String id, { ItemTemplateResource bundleTemplateResource }) async {
     Object postBody = bundleTemplateResource;
 

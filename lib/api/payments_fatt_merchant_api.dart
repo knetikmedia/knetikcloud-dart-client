@@ -9,7 +9,7 @@ class PaymentsFattMerchantApi {
 
   /// Create or update a FattMerchant payment method for a user
   ///
-  /// Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints.
+  /// Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FATTMERCHANT_ADMIN or owner
   Future<PaymentMethodResource> createOrUpdateFattMerchantPaymentMethod({ FattMerchantPaymentMethodRequest request }) async {
     Object postBody = request;
 

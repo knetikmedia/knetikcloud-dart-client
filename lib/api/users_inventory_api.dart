@@ -9,7 +9,7 @@ class UsersInventoryApi {
 
   /// Adds an item to the user inventory
   ///
-  /// The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time
+  /// The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   Future<InvoiceResource> addItemToUserInventory(int id, { UserInventoryAddRequest userInventoryAddRequest }) async {
     Object postBody = userInventoryAddRequest;
 
@@ -60,7 +60,7 @@ class UsersInventoryApi {
   }
   /// Check for access to an item without consuming
   ///
-  /// Useful for pre-check and accounts for all various buisness rules
+  /// Useful for pre-check and accounts for all various buisness rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
   Future checkUserEntitlementItem(String userId, int itemId, { String sku }) async {
     Object postBody = null;
 
@@ -83,7 +83,7 @@ class UsersInventoryApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "sku", sku));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -117,7 +117,7 @@ class UsersInventoryApi {
   }
   /// Create an entitlement item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   Future<EntitlementItem> createEntitlementItem({ bool cascade, EntitlementItem entitlementItem }) async {
     Object postBody = entitlementItem;
 
@@ -168,7 +168,7 @@ class UsersInventoryApi {
   }
   /// Create an entitlement template
   ///
-  /// Entitlement templates define a type of entitlement and the properties they have
+  /// Entitlement templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<ItemTemplateResource> createEntitlementTemplate({ ItemTemplateResource template }) async {
     Object postBody = template;
 
@@ -216,7 +216,7 @@ class UsersInventoryApi {
   }
   /// Delete an entitlement item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   Future deleteEntitlementItem(int entitlementId) async {
     Object postBody = null;
 
@@ -233,7 +233,7 @@ class UsersInventoryApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -267,7 +267,7 @@ class UsersInventoryApi {
   }
   /// Delete an entitlement template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteEntitlementTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -287,7 +287,7 @@ class UsersInventoryApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -321,7 +321,7 @@ class UsersInventoryApi {
   }
   /// Get a single entitlement item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<EntitlementItem> getEntitlementItem(int entitlementId) async {
     Object postBody = null;
 
@@ -338,7 +338,7 @@ class UsersInventoryApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -372,7 +372,7 @@ class UsersInventoryApi {
   }
   /// List and search entitlement items
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«EntitlementItem»> getEntitlementItems({ String filterTemplate, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -398,7 +398,7 @@ class UsersInventoryApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -432,7 +432,7 @@ class UsersInventoryApi {
   }
   /// Get a single entitlement template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
   Future<ItemTemplateResource> getEntitlementTemplate(String id) async {
     Object postBody = null;
 
@@ -449,7 +449,7 @@ class UsersInventoryApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -483,7 +483,7 @@ class UsersInventoryApi {
   }
   /// List and search entitlement templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
   Future<PageResource«ItemTemplateResource»> getEntitlementTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -506,7 +506,7 @@ class UsersInventoryApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -540,7 +540,7 @@ class UsersInventoryApi {
   }
   /// List the user inventory entries for a given user
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
   Future<PageResource«UserInventoryResource»> getUserInventories(int id, { bool inactive, int size, int page, String filterItemName, int filterItemId, String filterUsername, String filterGroup, String filterDate }) async {
     Object postBody = null;
 
@@ -581,7 +581,7 @@ class UsersInventoryApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_date", filterDate));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -615,8 +615,8 @@ class UsersInventoryApi {
   }
   /// Get an inventory entry
   ///
-  /// 
-  Future<UserInventoryResource> getUserInventory(int userId, int id) async {
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
+  Future<UserInventoryResource> getUserInventory(String userId, int id) async {
     Object postBody = null;
 
     // verify required params are set
@@ -635,7 +635,7 @@ class UsersInventoryApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -669,7 +669,7 @@ class UsersInventoryApi {
   }
   /// List the log entries for this inventory entry
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
   Future<PageResource«UserItemLogResource»> getUserInventoryLog(String userId, int id, { int size, int page }) async {
     Object postBody = null;
 
@@ -695,7 +695,7 @@ class UsersInventoryApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -729,7 +729,7 @@ class UsersInventoryApi {
   }
   /// List the user inventory entries for all users
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   Future<PageResource«UserInventoryResource»> getUsersInventory({ bool inactive, int size, int page, String filterItemName, int filterItemId, String filterUsername, String filterGroup, String filterDate }) async {
     Object postBody = null;
 
@@ -767,7 +767,7 @@ class UsersInventoryApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_date", filterDate));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -801,7 +801,7 @@ class UsersInventoryApi {
   }
   /// Grant an entitlement
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   Future grantUserEntitlement(int userId, EntitlementGrantRequest grantRequest) async {
     Object postBody = grantRequest;
 
@@ -855,7 +855,7 @@ class UsersInventoryApi {
   }
   /// Update an entitlement item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   Future updateEntitlementItem(int entitlementId, { bool cascade, EntitlementItem entitlementItem }) async {
     Object postBody = entitlementItem;
 
@@ -909,7 +909,7 @@ class UsersInventoryApi {
   }
   /// Update an entitlement template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<ItemTemplateResource> updateEntitlementTemplate(String id, { ItemTemplateResource template }) async {
     Object postBody = template;
 
@@ -960,7 +960,7 @@ class UsersInventoryApi {
   }
   /// Set the behavior data for an inventory entry
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   Future updateUserInventoryBehaviorData(int userId, int id, { Object data }) async {
     Object postBody = data;
 
@@ -1014,7 +1014,7 @@ class UsersInventoryApi {
   }
   /// Set the expiration date
   ///
-  /// Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill)
+  /// Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   Future updateUserInventoryExpires(int userId, int id, { int timestamp }) async {
     Object postBody = timestamp;
 
@@ -1068,7 +1068,7 @@ class UsersInventoryApi {
   }
   /// Set the status for an inventory entry
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
   Future updateUserInventoryStatus(int userId, int id, { String inventoryStatus }) async {
     Object postBody = inventoryStatus;
 
@@ -1122,7 +1122,7 @@ class UsersInventoryApi {
   }
   /// Use an item
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
   Future useUserEntitlementItem(String userId, int itemId, { String sku, String info }) async {
     Object postBody = null;
 

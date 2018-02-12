@@ -9,7 +9,7 @@ class ReportingUsageApi {
 
   /// Returns aggregated endpoint usage information by day
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   Future<PageResource«UsageInfo»> getUsageByDay(int startDate, int endDate, { bool combineEndpoints, String method, String url, int size, int page }) async {
     Object postBody = null;
 
@@ -46,7 +46,7 @@ class ReportingUsageApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -80,7 +80,7 @@ class ReportingUsageApi {
   }
   /// Returns aggregated endpoint usage information by hour
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   Future<PageResource«UsageInfo»> getUsageByHour(int startDate, int endDate, { bool combineEndpoints, String method, String url, int size, int page }) async {
     Object postBody = null;
 
@@ -117,7 +117,7 @@ class ReportingUsageApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -151,7 +151,7 @@ class ReportingUsageApi {
   }
   /// Returns aggregated endpoint usage information by minute
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   Future<PageResource«UsageInfo»> getUsageByMinute(int startDate, int endDate, { bool combineEndpoints, String method, String url, int size, int page }) async {
     Object postBody = null;
 
@@ -188,7 +188,7 @@ class ReportingUsageApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -222,7 +222,7 @@ class ReportingUsageApi {
   }
   /// Returns aggregated endpoint usage information by month
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   Future<PageResource«UsageInfo»> getUsageByMonth(int startDate, int endDate, { bool combineEndpoints, String method, String url, int size, int page }) async {
     Object postBody = null;
 
@@ -259,7 +259,7 @@ class ReportingUsageApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -293,7 +293,7 @@ class ReportingUsageApi {
   }
   /// Returns aggregated endpoint usage information by year
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   Future<PageResource«UsageInfo»> getUsageByYear(int startDate, int endDate, { bool combineEndpoints, String method, String url, int size, int page }) async {
     Object postBody = null;
 
@@ -330,7 +330,7 @@ class ReportingUsageApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -364,7 +364,7 @@ class ReportingUsageApi {
   }
   /// Returns list of endpoints called (method and url)
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   Future<List<String>> getUsageEndpoints(int startDate, int endDate) async {
     Object postBody = null;
 
@@ -386,7 +386,7 @@ class ReportingUsageApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "start_date", startDate));
       queryParams.addAll(_convertParametersForCollectionFormat("", "end_date", endDate));
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

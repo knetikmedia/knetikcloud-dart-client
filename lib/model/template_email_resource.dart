@@ -11,6 +11,10 @@ class TemplateEmailResource {
   @Property(name: 'recipients')
   List<int> recipients = [];
   
+/* The subject for email */
+  @Property(name: 'subject')
+  String subject = null;
+  
 /* The key for the template */
   @Property(name: 'template_key')
   String templateKey = null;
@@ -23,7 +27,7 @@ class TemplateEmailResource {
 
   @override
   String toString()  {
-    return 'TemplateEmailResource[from=$from, recipients=$recipients, templateKey=$templateKey, templateVars=$templateVars, ]';
+    return 'TemplateEmailResource[from=$from, recipients=$recipients, subject=$subject, templateKey=$templateKey, templateVars=$templateVars, ]';
   }
 
 }

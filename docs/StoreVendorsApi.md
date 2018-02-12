@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,6 +25,8 @@ Method | HTTP request | Description
 > VendorResource createVendor(vendor)
 
 Create a vendor
+
+<b>Permissions Needed:</b> VENDORS_ADMIN
 
 ### Example 
 ```dart
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 
 Create a vendor template
 
-Vendor Templates define a type of vendor and the properties they have.
+Vendor Templates define a type of vendor and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example 
 ```dart
@@ -118,6 +120,8 @@ Name | Type | Description  | Notes
 
 Delete a vendor
 
+<b>Permissions Needed:</b> VENDORS_ADMIN
+
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
@@ -152,7 +156,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -161,6 +165,8 @@ void (empty response body)
 > deleteVendorTemplate(id, cascade)
 
 Delete a vendor template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example 
 ```dart
@@ -198,7 +204,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -207,6 +213,8 @@ void (empty response body)
 > VendorResource getVendor(id)
 
 Get a single vendor
+
+<b>Permissions Needed:</b> ANY
 
 ### Example 
 ```dart
@@ -243,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -253,7 +261,7 @@ Name | Type | Description  | Notes
 
 Get a single vendor template
 
-Vendor Templates define a type of vendor and the properties they have.
+Vendor Templates define a type of vendor and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example 
 ```dart
@@ -290,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -299,6 +307,8 @@ Name | Type | Description  | Notes
 > PageResource«ItemTemplateResource» getVendorTemplates(size, page, order)
 
 List and search vendor templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example 
 ```dart
@@ -327,7 +337,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **size** | **int**| The number of objects returned per page | [optional] [default to 25]
  **page** | **int**| The number of the page returned, starting with 1 | [optional] [default to 1]
- **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 
 
 ### Return type
 
@@ -339,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -348,6 +358,8 @@ Name | Type | Description  | Notes
 > PageResource«VendorResource» getVendors(filterName, size, page, order)
 
 List and search vendors
+
+<b>Permissions Needed:</b> ANY
 
 ### Example 
 ```dart
@@ -390,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -399,6 +411,8 @@ Name | Type | Description  | Notes
 > VendorResource updateVendor(id, vendor)
 
 Update a vendor
+
+<b>Permissions Needed:</b> VENDORS_ADMIN
 
 ### Example 
 ```dart
@@ -446,6 +460,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource updateVendorTemplate(id, vendorTemplateResource)
 
 Update a vendor template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example 
 ```dart

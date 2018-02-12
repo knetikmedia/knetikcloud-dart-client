@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 Create a trigger
 
-Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services
+Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_TRIGGERS_ADMIN
 
 ### Example 
 ```dart
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 Delete a trigger
 
-May fail if there are existing rules against it. Cannot delete core triggers
+May fail if there are existing rules against it. Cannot delete core triggers. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_TRIGGERS_ADMIN
 
 ### Example 
 ```dart
@@ -104,7 +104,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -113,6 +113,8 @@ void (empty response body)
 > BreTriggerResource getBRETrigger(eventName)
 
 Get a single trigger
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_TRIGGERS_USER
 
 ### Example 
 ```dart
@@ -149,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -158,6 +160,8 @@ Name | Type | Description  | Notes
 > PageResource«BreTriggerResource» getBRETriggers(filterSystem, filterCategory, filterTags, filterName, filterSearch, size, page)
 
 List triggers
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_TRIGGERS_USER
 
 ### Example 
 ```dart
@@ -206,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -216,7 +220,7 @@ Name | Type | Description  | Notes
 
 Update a trigger
 
-May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers
+May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_TRIGGERS_ADMIN
 
 ### Example 
 ```dart

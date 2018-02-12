@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,6 +20,8 @@ Method | HTTP request | Description
 > CatalogSale createCatalogSale(catalogSale)
 
 Create a sale
+
+<b>Permissions Needed:</b> SALES_ADMIN
 
 ### Example 
 ```dart
@@ -66,6 +68,8 @@ Name | Type | Description  | Notes
 
 Delete a sale
 
+<b>Permissions Needed:</b> SALES_ADMIN
+
 ### Example 
 ```dart
 import 'package:swagger/api.dart';
@@ -100,7 +104,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -109,6 +113,8 @@ void (empty response body)
 > CatalogSale getCatalogSale(id)
 
 Get a single sale
+
+<b>Permissions Needed:</b> SALES_USER or SALES_ADMIN
 
 ### Example 
 ```dart
@@ -145,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -154,6 +160,8 @@ Name | Type | Description  | Notes
 > PageResource«CatalogSale» getCatalogSales(size, page, order)
 
 List and search sales
+
+<b>Permissions Needed:</b> SALES_USER or SALES_ADMIN
 
 ### Example 
 ```dart
@@ -194,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -203,6 +211,8 @@ Name | Type | Description  | Notes
 > CatalogSale updateCatalogSale(id, catalogSale)
 
 Update a sale
+
+<b>Permissions Needed:</b> SALES_ADMIN
 
 ### Example 
 ```dart

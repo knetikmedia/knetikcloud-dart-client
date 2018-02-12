@@ -9,7 +9,7 @@ class UtilSecurityApi {
 
   /// Returns the authentication log for a user
   ///
-  /// A log entry is recorded everytime a user requests a new token. Standard pagination available
+  /// A log entry is recorded everytime a user requests a new token. Standard pagination available. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
   Future<PageResource«LocationLogResource»> getUserLocationLog({ int userId, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -35,7 +35,7 @@ class UtilSecurityApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -69,7 +69,7 @@ class UtilSecurityApi {
   }
   /// Returns the authentication token details. Use /users endpoint for detailed user&#39;s info
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
   Future<TokenDetailsResource> getUserTokenDetails() async {
     Object postBody = null;
 
@@ -83,7 +83,7 @@ class UtilSecurityApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

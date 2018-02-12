@@ -15,6 +15,10 @@ class ChallengeActivityResource {
   @Property(name: 'challenge_id')
   int challengeId = null;
   
+/* Defines core settings about the activity that affect how it can be created/played by users. Values may be left null to inherit from parent activity. */
+  @Property(name: 'core_settings')
+  CoreChallengeActivitySettings coreSettings = null;
+  
 /* The entitlement item needed to participate in the activity as part of this event. Null indicates free entry. When creating/updating only id is used. Item must be pre-existing */
   @Property(name: 'entitlement')
   ActivityEntitlementResource entitlement = null;
@@ -39,7 +43,7 @@ class ChallengeActivityResource {
 
   @override
   String toString()  {
-    return 'ChallengeActivityResource[activityId=$activityId, additionalProperties=$additionalProperties, challengeId=$challengeId, entitlement=$entitlement, id=$id, rewardSet=$rewardSet, settings=$settings, template=$template, ]';
+    return 'ChallengeActivityResource[activityId=$activityId, additionalProperties=$additionalProperties, challengeId=$challengeId, coreSettings=$coreSettings, entitlement=$entitlement, id=$id, rewardSet=$rewardSet, settings=$settings, template=$template, ]';
   }
 
 }

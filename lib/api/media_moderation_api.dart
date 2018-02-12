@@ -9,7 +9,7 @@ class MediaModerationApi {
 
   /// Add a flag
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<FlagResource> addFlag({ FlagResource flagResource }) async {
     Object postBody = flagResource;
 
@@ -57,7 +57,7 @@ class MediaModerationApi {
   }
   /// Delete a flag
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
   Future deleteFlag({ String contextName, String contextId, int userId }) async {
     Object postBody = null;
 
@@ -80,7 +80,7 @@ class MediaModerationApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "user_id", userId));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -114,7 +114,7 @@ class MediaModerationApi {
   }
   /// Returns a page of flags
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
   Future<PageResource«FlagResource»> getFlags({ String filterContext, String filterContextId, int filterUserId, int size, int page }) async {
     Object postBody = null;
 
@@ -143,7 +143,7 @@ class MediaModerationApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -177,7 +177,7 @@ class MediaModerationApi {
   }
   /// Get a flag report
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
   Future<FlagReportResource> getModerationReport(int id) async {
     Object postBody = null;
 
@@ -194,7 +194,7 @@ class MediaModerationApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -228,7 +228,7 @@ class MediaModerationApi {
   }
   /// Returns a page of flag reports
   ///
-  /// Context can be either a free-form string or a pre-defined context name
+  /// Context can be either a free-form string or a pre-defined context name. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
   Future<PageResource«FlagReportResource»> getModerationReports({ bool excludeResolved, String filterContext, String filterContextId, int size, int page }) async {
     Object postBody = null;
 
@@ -257,7 +257,7 @@ class MediaModerationApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -291,7 +291,7 @@ class MediaModerationApi {
   }
   /// Update a flag report
   ///
-  /// Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason.
+  /// Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
   Future updateModerationReport(int id, { FlagReportResource flagReportResource }) async {
     Object postBody = flagReportResource;
 

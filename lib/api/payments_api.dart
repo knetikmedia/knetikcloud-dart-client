@@ -9,7 +9,7 @@ class PaymentsApi {
 
   /// Create a new payment method for a user
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   Future<PaymentMethodResource> createPaymentMethod(int userId, { PaymentMethodResource paymentMethod }) async {
     Object postBody = paymentMethod;
 
@@ -60,7 +60,7 @@ class PaymentsApi {
   }
   /// Delete an existing payment method for a user
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   Future deletePaymentMethod(int userId, int id) async {
     Object postBody = null;
 
@@ -80,7 +80,7 @@ class PaymentsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -114,7 +114,7 @@ class PaymentsApi {
   }
   /// Get a single payment method for a user
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   Future<PaymentMethodResource> getPaymentMethod(int userId, int id) async {
     Object postBody = null;
 
@@ -134,7 +134,7 @@ class PaymentsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -168,7 +168,7 @@ class PaymentsApi {
   }
   /// Get a single payment method type
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PaymentMethodTypeResource> getPaymentMethodType(int id) async {
     Object postBody = null;
 
@@ -185,7 +185,7 @@ class PaymentsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -219,7 +219,7 @@ class PaymentsApi {
   }
   /// Get all payment method types
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«PaymentMethodTypeResource»> getPaymentMethodTypes({ String filterName, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -245,7 +245,7 @@ class PaymentsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -279,7 +279,7 @@ class PaymentsApi {
   }
   /// Get all payment methods for a user
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   Future<List<PaymentMethodResource>> getPaymentMethods(int userId, { String filterName, String filterPaymentType, int filterPaymentMethodTypeId, String filterPaymentMethodTypeName, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -317,7 +317,7 @@ class PaymentsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -351,7 +351,7 @@ class PaymentsApi {
   }
   /// Authorize payment of an invoice for later capture
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or PAYMENTS_USER
   Future<PaymentAuthorizationResource> paymentAuthorization({ PaymentAuthorizationResource request }) async {
     Object postBody = request;
 
@@ -399,7 +399,7 @@ class PaymentsApi {
   }
   /// Capture an existing invoice payment authorization
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
   Future paymentCapture(int id) async {
     Object postBody = null;
 
@@ -450,7 +450,7 @@ class PaymentsApi {
   }
   /// Update an existing payment method for a user
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   Future<PaymentMethodResource> updatePaymentMethod(int userId, int id, { PaymentMethodResource paymentMethod }) async {
     Object postBody = paymentMethod;
 

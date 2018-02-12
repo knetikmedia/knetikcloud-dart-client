@@ -9,7 +9,7 @@ class ContentPollsApi {
 
   /// Add your vote to a poll
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
   Future<PollResponseResource> answerPoll(String id, { StringWrapper answerKey }) async {
     Object postBody = answerKey;
 
@@ -60,7 +60,7 @@ class ContentPollsApi {
   }
   /// Create a new poll
   ///
-  /// Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+  /// Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
   Future<PollResource> createPoll({ PollResource pollResource }) async {
     Object postBody = pollResource;
 
@@ -108,7 +108,7 @@ class ContentPollsApi {
   }
   /// Create a poll template
   ///
-  /// Poll templates define a type of poll and the properties they have
+  /// Poll templates define a type of poll and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> createPollTemplate({ TemplateResource pollTemplateResource }) async {
     Object postBody = pollTemplateResource;
 
@@ -156,7 +156,7 @@ class ContentPollsApi {
   }
   /// Delete an existing poll
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
   Future deletePoll(String id) async {
     Object postBody = null;
 
@@ -173,7 +173,7 @@ class ContentPollsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -207,7 +207,7 @@ class ContentPollsApi {
   }
   /// Delete a poll template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deletePollTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -227,7 +227,7 @@ class ContentPollsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -261,7 +261,7 @@ class ContentPollsApi {
   }
   /// Get a single poll
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PollResource> getPoll(String id) async {
     Object postBody = null;
 
@@ -278,7 +278,7 @@ class ContentPollsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -312,7 +312,7 @@ class ContentPollsApi {
   }
   /// Get poll answer
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
   Future<PollResponseResource> getPollAnswer(String id) async {
     Object postBody = null;
 
@@ -329,7 +329,7 @@ class ContentPollsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -363,7 +363,7 @@ class ContentPollsApi {
   }
   /// Get a single poll template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
   Future<TemplateResource> getPollTemplate(String id) async {
     Object postBody = null;
 
@@ -380,7 +380,7 @@ class ContentPollsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -414,7 +414,7 @@ class ContentPollsApi {
   }
   /// List and search poll templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
   Future<PageResource«TemplateResource»> getPollTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -437,7 +437,7 @@ class ContentPollsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -471,7 +471,7 @@ class ContentPollsApi {
   }
   /// List and search polls
   ///
-  /// Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+  /// Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«PollResource»> getPolls({ String filterCategory, String filterTagset, String filterText, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -503,7 +503,7 @@ class ContentPollsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -537,7 +537,7 @@ class ContentPollsApi {
   }
   /// Update an existing poll
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
   Future<PollResource> updatePoll(String id, { PollResource pollResource }) async {
     Object postBody = pollResource;
 
@@ -588,7 +588,7 @@ class ContentPollsApi {
   }
   /// Update a poll template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> updatePollTemplate(String id, { TemplateResource pollTemplateResource }) async {
     Object postBody = pollTemplateResource;
 

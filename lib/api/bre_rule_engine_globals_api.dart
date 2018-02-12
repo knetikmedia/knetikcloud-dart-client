@@ -9,7 +9,7 @@ class BRERuleEngineGlobalsApi {
 
   /// Create a global definition
   ///
-  /// Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
+  /// Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
   Future<BreGlobalResource> createBREGlobal({ BreGlobalResource breGlobalResource }) async {
     Object postBody = breGlobalResource;
 
@@ -57,7 +57,7 @@ class BRERuleEngineGlobalsApi {
   }
   /// Delete a global
   ///
-  /// May fail if there are existing rules against it. Cannot delete core globals
+  /// May fail if there are existing rules against it. Cannot delete core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
   Future deleteBREGlobal(String id) async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class BRERuleEngineGlobalsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -108,7 +108,7 @@ class BRERuleEngineGlobalsApi {
   }
   /// Get a single global definition
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
   Future<BreGlobalResource> getBREGlobal(String id) async {
     Object postBody = null;
 
@@ -125,7 +125,7 @@ class BRERuleEngineGlobalsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -159,7 +159,7 @@ class BRERuleEngineGlobalsApi {
   }
   /// List global definitions
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
   Future<PageResource«BreGlobalResource»> getBREGlobals({ bool filterSystem, int size, int page }) async {
     Object postBody = null;
 
@@ -182,7 +182,7 @@ class BRERuleEngineGlobalsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -216,7 +216,7 @@ class BRERuleEngineGlobalsApi {
   }
   /// Update a global definition
   ///
-  /// May fail if new parameters mismatch requirements of existing rules. Cannot update core globals
+  /// May fail if new parameters mismatch requirements of existing rules. Cannot update core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
   Future<BreGlobalResource> updateBREGlobal(String id, { BreGlobalResource breGlobalResource }) async {
     Object postBody = breGlobalResource;
 

@@ -9,7 +9,7 @@ class StoreShoppingCartsApi {
 
   /// Adds a custom discount to the cart
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN
   Future addCustomDiscount(String id, { CouponDefinition customDiscount }) async {
     Object postBody = customDiscount;
 
@@ -60,7 +60,7 @@ class StoreShoppingCartsApi {
   }
   /// Adds a discount coupon to the cart
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
   Future addDiscountToCart(String id, { SkuRequest skuRequest }) async {
     Object postBody = skuRequest;
 
@@ -111,7 +111,7 @@ class StoreShoppingCartsApi {
   }
   /// Add an item to the cart
   ///
-  /// Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment
+  /// Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
   Future addItemToCart(String id, { CartItemRequest cartItemRequest }) async {
     Object postBody = cartItemRequest;
 
@@ -162,7 +162,7 @@ class StoreShoppingCartsApi {
   }
   /// Create a cart
   ///
-  /// You don&#39;t have to have a user to create a cart but the API requires authentication to checkout
+  /// You don&#39;t have to have a user to create a cart but the API requires authentication to checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<String> createCart({ int owner, String currencyCode }) async {
     Object postBody = null;
 
@@ -216,7 +216,7 @@ class StoreShoppingCartsApi {
   }
   /// Returns the cart with the given GUID
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
   Future<Cart> getCart(String id) async {
     Object postBody = null;
 
@@ -233,7 +233,7 @@ class StoreShoppingCartsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -267,7 +267,7 @@ class StoreShoppingCartsApi {
   }
   /// Get a list of carts
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
   Future<PageResource«CartSummary»> getCarts({ int filterOwnerId, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -293,7 +293,7 @@ class StoreShoppingCartsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -327,7 +327,7 @@ class StoreShoppingCartsApi {
   }
   /// Returns whether a cart requires shipping
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
   Future<CartShippableResponse> getShippable(String id) async {
     Object postBody = null;
 
@@ -344,7 +344,7 @@ class StoreShoppingCartsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -378,7 +378,7 @@ class StoreShoppingCartsApi {
   }
   /// Get the list of available shipping countries per vendor
   ///
-  /// Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable.
+  /// Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
   Future<SampleCountriesResponse> getShippingCountries(String id) async {
     Object postBody = null;
 
@@ -395,7 +395,7 @@ class StoreShoppingCartsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -429,7 +429,7 @@ class StoreShoppingCartsApi {
   }
   /// Removes a discount coupon from the cart
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
   Future removeDiscountFromCart(String id, String code) async {
     Object postBody = null;
 
@@ -449,7 +449,7 @@ class StoreShoppingCartsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -483,7 +483,7 @@ class StoreShoppingCartsApi {
   }
   /// Sets the currency to use for the cart
   ///
-  /// May be disallowed by site settings.
+  /// May be disallowed by site settings. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
   Future setCartCurrency(String id, { StringWrapper currencyCode }) async {
     Object postBody = currencyCode;
 
@@ -534,7 +534,7 @@ class StoreShoppingCartsApi {
   }
   /// Sets the owner of a cart if none is set already
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
   Future setCartOwner(String id, { IntWrapper userId }) async {
     Object postBody = userId;
 
@@ -585,7 +585,7 @@ class StoreShoppingCartsApi {
   }
   /// Changes the quantity of an item already in the cart
   ///
-  /// A quantity of zero will remove the item from the cart altogether.
+  /// A quantity of zero will remove the item from the cart altogether. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
   Future updateItemInCart(String id, { CartItemRequest cartItemRequest }) async {
     Object postBody = cartItemRequest;
 
@@ -636,7 +636,7 @@ class StoreShoppingCartsApi {
   }
   /// Modifies or sets the order shipping address
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
   Future updateShippingAddress(String id, { CartShippingAddressRequest cartShippingAddressRequest }) async {
     Object postBody = cartShippingAddressRequest;
 

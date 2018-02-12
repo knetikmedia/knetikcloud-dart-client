@@ -9,7 +9,7 @@ class LogsApi {
 
   /// Add a user log entry
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; owner
   Future addUserLog({ UserActionLog logEntry }) async {
     Object postBody = logEntry;
 
@@ -57,7 +57,7 @@ class LogsApi {
   }
   /// Get an existing BRE event log entry by id
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
   Future<BreEventLog> getBREEventLog(String id) async {
     Object postBody = null;
 
@@ -74,7 +74,7 @@ class LogsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -108,8 +108,8 @@ class LogsApi {
   }
   /// Returns a list of BRE event log entries
   ///
-  /// 
-  Future<PageResource«BreEventLog»> getBREEventLogs({ String filterStartDate, String filterEventName, String filterEventId, int size, int page, String order }) async {
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
+  Future<PageResource«BreEventLog»> getBREEventLogs({ String filterStartDate, String filterEventName, String filterEventId, int size, int page, String order, String filterRuleId }) async {
     Object postBody = null;
 
     // verify required params are set
@@ -139,8 +139,11 @@ class LogsApi {
     if(order != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
+    if(filterRuleId != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filter_rule_id", filterRuleId));
+    }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -174,7 +177,7 @@ class LogsApi {
   }
   /// Get an existing forward log entry by id
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
   Future<ForwardLog> getBREForwardLog(String id) async {
     Object postBody = null;
 
@@ -191,7 +194,7 @@ class LogsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -225,8 +228,8 @@ class LogsApi {
   }
   /// Returns a list of forward log entries
   ///
-  /// 
-  Future<PageResource«ForwardLog»> getBREForwardLogs({ String filterStartDate, String filterEndDate, int filterStatusCode, int size, int page, String order }) async {
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
+  Future<PageResource«ForwardLog»> getBREForwardLogs({ String filterStartDate, String filterEndDate, int filterStatusCode, int filterUrl, int size, int page, String order }) async {
     Object postBody = null;
 
     // verify required params are set
@@ -247,6 +250,9 @@ class LogsApi {
     if(filterStatusCode != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_status_code", filterStatusCode));
     }
+    if(filterUrl != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filter_url", filterUrl));
+    }
     if(size != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "size", size));
     }
@@ -257,7 +263,7 @@ class LogsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -291,7 +297,7 @@ class LogsApi {
   }
   /// Returns a user log entry by id
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
   Future<UserActionLog> getUserLog(String id) async {
     Object postBody = null;
 
@@ -308,7 +314,7 @@ class LogsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -342,7 +348,7 @@ class LogsApi {
   }
   /// Returns a page of user logs entries
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
   Future<PageResource«UserActionLog»> getUserLogs({ int filterUser, String filterActionName, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -371,7 +377,7 @@ class LogsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

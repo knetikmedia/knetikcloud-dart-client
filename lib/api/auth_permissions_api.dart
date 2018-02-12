@@ -9,7 +9,7 @@ class AuthPermissionsApi {
 
   /// Create a new permission
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   Future<PermissionResource> createPermission({ PermissionResource permissionResource }) async {
     Object postBody = permissionResource;
 
@@ -57,7 +57,7 @@ class AuthPermissionsApi {
   }
   /// Delete a permission
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   Future deletePermission(String permission, { bool force }) async {
     Object postBody = null;
 
@@ -77,7 +77,7 @@ class AuthPermissionsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "force", force));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -111,7 +111,7 @@ class AuthPermissionsApi {
   }
   /// Get a single permission
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   Future<PermissionResource> getPermission(String permission) async {
     Object postBody = null;
 
@@ -128,7 +128,7 @@ class AuthPermissionsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -162,7 +162,7 @@ class AuthPermissionsApi {
   }
   /// List and search permissions
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   Future<PageResource«PermissionResource»> getPermissions({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -185,7 +185,7 @@ class AuthPermissionsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -219,7 +219,7 @@ class AuthPermissionsApi {
   }
   /// Update a permission
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   Future<PermissionResource> updatePermission(String permission, { PermissionResource permissionResource }) async {
     Object postBody = permissionResource;
 

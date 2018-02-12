@@ -9,7 +9,7 @@ class CategoriesApi {
 
   /// Create a new category
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
   Future<CategoryResource> createCategory({ CategoryResource category }) async {
     Object postBody = category;
 
@@ -57,7 +57,7 @@ class CategoriesApi {
   }
   /// Create a category template
   ///
-  /// Templates define a type of category and the properties they have
+  /// Templates define a type of category and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> createCategoryTemplate({ TemplateResource template }) async {
     Object postBody = template;
 
@@ -105,7 +105,7 @@ class CategoriesApi {
   }
   /// Delete an existing category
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
   Future deleteCategory(String id) async {
     Object postBody = null;
 
@@ -122,7 +122,7 @@ class CategoriesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -156,7 +156,7 @@ class CategoriesApi {
   }
   /// Delete a category template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteCategoryTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -176,7 +176,7 @@ class CategoriesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -210,7 +210,7 @@ class CategoriesApi {
   }
   /// List and search categories with optional filters
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«CategoryResource»> getCategories({ String filterSearch, bool filterActive, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -239,7 +239,7 @@ class CategoriesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -273,7 +273,7 @@ class CategoriesApi {
   }
   /// Get a single category
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<CategoryResource> getCategory(String id) async {
     Object postBody = null;
 
@@ -290,7 +290,7 @@ class CategoriesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -324,7 +324,7 @@ class CategoriesApi {
   }
   /// Get a single category template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
   Future<TemplateResource> getCategoryTemplate(String id) async {
     Object postBody = null;
 
@@ -341,7 +341,7 @@ class CategoriesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -375,7 +375,7 @@ class CategoriesApi {
   }
   /// List and search category templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
   Future<PageResource«TemplateResource»> getCategoryTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -398,7 +398,7 @@ class CategoriesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -432,7 +432,7 @@ class CategoriesApi {
   }
   /// List all trivia tags in the system
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«string»> getTags({ int size, int page }) async {
     Object postBody = null;
 
@@ -452,7 +452,7 @@ class CategoriesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -486,7 +486,7 @@ class CategoriesApi {
   }
   /// Update an existing category
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
   Future<CategoryResource> updateCategory(String id, { CategoryResource category }) async {
     Object postBody = category;
 
@@ -537,7 +537,7 @@ class CategoriesApi {
   }
   /// Update a category template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> updateCategoryTemplate(String id, { TemplateResource template }) async {
     Object postBody = template;
 

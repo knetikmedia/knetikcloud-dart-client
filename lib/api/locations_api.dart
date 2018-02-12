@@ -9,7 +9,7 @@ class LocationsApi {
 
   /// Get a list of countries
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<List<CountryResource>> getCountries() async {
     Object postBody = null;
 
@@ -23,7 +23,7 @@ class LocationsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -57,7 +57,7 @@ class LocationsApi {
   }
   /// Get the iso3 code of your country
   ///
-  /// Determined by geo ip location
+  /// Determined by geo ip location. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<String> getCountryByGeoLocation() async {
     Object postBody = null;
 
@@ -71,7 +71,7 @@ class LocationsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -105,7 +105,7 @@ class LocationsApi {
   }
   /// Get a list of a country&#39;s states
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<List<StateResource>> getCountryStates(String countryCodeIso3) async {
     Object postBody = null;
 
@@ -122,7 +122,7 @@ class LocationsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -156,7 +156,7 @@ class LocationsApi {
   }
   /// Get the currency information of your country
   ///
-  /// Determined by geo ip location, currency to country mapping and a fallback setting
+  /// Determined by geo ip location, currency to country mapping and a fallback setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<CurrencyResource> getCurrencyByGeoLocation() async {
     Object postBody = null;
 
@@ -170,7 +170,7 @@ class LocationsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];

@@ -27,7 +27,7 @@ class BreGlobalResource {
   @Property(name: 'system_global')
   bool systemGlobal = null;
   
-/* The variable type the global stores. See the See Bre Variables enpoint for list */
+/* The variable type the global stores. See the BRE variables endpoint for list */
   @Property(name: 'type')
   String type = null;
   

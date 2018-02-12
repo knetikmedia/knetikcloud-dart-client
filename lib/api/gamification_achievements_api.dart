@@ -9,7 +9,7 @@ class GamificationAchievementsApi {
 
   /// Create a new achievement definition
   ///
-  /// If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user&#39;s achievement status must manually be updated via the API.
+  /// If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user&#39;s achievement status must manually be updated via the API. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
   Future<AchievementDefinitionResource> createAchievement({ AchievementDefinitionResource achievement }) async {
     Object postBody = achievement;
 
@@ -57,7 +57,7 @@ class GamificationAchievementsApi {
   }
   /// Create an achievement template
   ///
-  /// Achievement templates define a type of achievement and the properties they have
+  /// Achievement templates define a type of achievement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> createAchievementTemplate({ TemplateResource template }) async {
     Object postBody = template;
 
@@ -105,7 +105,7 @@ class GamificationAchievementsApi {
   }
   /// Delete an achievement definition
   ///
-  /// Will also disable the associated generated rule, if any.
+  /// Will also disable the associated generated rule, if any. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
   Future deleteAchievement(String name) async {
     Object postBody = null;
 
@@ -122,7 +122,7 @@ class GamificationAchievementsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -156,7 +156,7 @@ class GamificationAchievementsApi {
   }
   /// Delete an achievement template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteAchievementTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -176,7 +176,7 @@ class GamificationAchievementsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -210,7 +210,7 @@ class GamificationAchievementsApi {
   }
   /// Get a single achievement definition
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN or ACHIEVEMENTS_USER
   Future<AchievementDefinitionResource> getAchievement(String name) async {
     Object postBody = null;
 
@@ -227,7 +227,7 @@ class GamificationAchievementsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -261,7 +261,7 @@ class GamificationAchievementsApi {
   }
   /// Get a single achievement template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
   Future<TemplateResource> getAchievementTemplate(String id) async {
     Object postBody = null;
 
@@ -278,7 +278,7 @@ class GamificationAchievementsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -312,7 +312,7 @@ class GamificationAchievementsApi {
   }
   /// List and search achievement templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
   Future<PageResource«TemplateResource»> getAchievementTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -335,7 +335,7 @@ class GamificationAchievementsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -369,7 +369,7 @@ class GamificationAchievementsApi {
   }
   /// Get the list of triggers that can be used to trigger an achievement progress update
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
   Future<List<BreTriggerResource>> getAchievementTriggers() async {
     Object postBody = null;
 
@@ -383,7 +383,7 @@ class GamificationAchievementsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -417,7 +417,7 @@ class GamificationAchievementsApi {
   }
   /// Get all achievement definitions in the system
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN or ACHIEVEMENTS_USER
   Future<PageResource«AchievementDefinitionResource»> getAchievements({ String filterTagset, String filterName, bool filterHidden, int size, int page, String order, bool filterDerived }) async {
     Object postBody = null;
 
@@ -452,7 +452,7 @@ class GamificationAchievementsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filter_derived", filterDerived));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -486,7 +486,7 @@ class GamificationAchievementsApi {
   }
   /// Get a list of derived achievements
   ///
-  /// Used by other services that depend on achievements
+  /// Used by other services that depend on achievements.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
   Future<List<AchievementDefinitionResource>> getDerivedAchievements(String name) async {
     Object postBody = null;
 
@@ -503,7 +503,7 @@ class GamificationAchievementsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -537,7 +537,7 @@ class GamificationAchievementsApi {
   }
   /// Retrieve progress on a given achievement for a given user
   ///
-  /// Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+  /// Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
   Future<UserAchievementGroupResource> getUserAchievementProgress(int userId, String achievementName) async {
     Object postBody = null;
 
@@ -557,7 +557,7 @@ class GamificationAchievementsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -591,7 +591,7 @@ class GamificationAchievementsApi {
   }
   /// Retrieve progress on achievements for a given user
   ///
-  /// Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+  /// Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
   Future<PageResource«UserAchievementGroupResource»> getUserAchievementsProgress(int userId, { bool filterAchievementDerived, String filterAchievementTagset, String filterAchievementName, int size, int page }) async {
     Object postBody = null;
 
@@ -623,7 +623,7 @@ class GamificationAchievementsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -657,7 +657,7 @@ class GamificationAchievementsApi {
   }
   /// Retrieve progress on a given achievement for all users
   ///
-  /// Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed.
+  /// Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
   Future<PageResource«UserAchievementGroupResource»> getUsersAchievementProgress(String achievementName, { bool filterAchievementDerived, String filterAchievementTagset, String filterAchievementName, int size, int page }) async {
     Object postBody = null;
 
@@ -689,7 +689,7 @@ class GamificationAchievementsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -723,7 +723,7 @@ class GamificationAchievementsApi {
   }
   /// Retrieve progress on achievements for all users
   ///
-  /// Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed.
+  /// Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
   Future<PageResource«UserAchievementGroupResource»> getUsersAchievementsProgress({ bool filterAchievementDerived, String filterAchievementTagset, String filterAchievementName, int size, int page }) async {
     Object postBody = null;
 
@@ -752,7 +752,7 @@ class GamificationAchievementsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -786,7 +786,7 @@ class GamificationAchievementsApi {
   }
   /// Increment an achievement progress record for a user
   ///
-  /// If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+  /// If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
   Future<UserAchievementGroupResource> incrementAchievementProgress(int userId, String achievementName, { IntWrapper progress }) async {
     Object postBody = progress;
 
@@ -840,7 +840,7 @@ class GamificationAchievementsApi {
   }
   /// Set an achievement progress record for a user
   ///
-  /// If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+  /// If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
   Future<UserAchievementGroupResource> setAchievementProgress(int userId, String achievementName, { IntWrapper progress }) async {
     Object postBody = progress;
 
@@ -894,7 +894,7 @@ class GamificationAchievementsApi {
   }
   /// Update an achievement definition
   ///
-  /// The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version.
+  /// The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
   Future<AchievementDefinitionResource> updateAchievement(String name, { AchievementDefinitionResource achievement }) async {
     Object postBody = achievement;
 
@@ -945,7 +945,7 @@ class GamificationAchievementsApi {
   }
   /// Update an achievement template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> updateAchievementTemplate(String id, { TemplateResource template }) async {
     Object postBody = template;
 

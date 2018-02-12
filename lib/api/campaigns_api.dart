@@ -9,7 +9,7 @@ class CampaignsApi {
 
   /// Add a challenge to a campaign
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
   Future addChallengeToCampaign(int id, { int challengeId }) async {
     Object postBody = challengeId;
 
@@ -60,7 +60,7 @@ class CampaignsApi {
   }
   /// Create a campaign
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
   Future<CampaignResource> createCampaign({ CampaignResource campaignResource }) async {
     Object postBody = campaignResource;
 
@@ -108,7 +108,7 @@ class CampaignsApi {
   }
   /// Create a campaign template
   ///
-  /// Campaign Templates define a type of campaign and the properties they have
+  /// Campaign Templates define a type of campaign and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> createCampaignTemplate({ TemplateResource campaignTemplateResource }) async {
     Object postBody = campaignTemplateResource;
 
@@ -156,7 +156,7 @@ class CampaignsApi {
   }
   /// Delete a campaign
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
   Future deleteCampaign(int id) async {
     Object postBody = null;
 
@@ -173,7 +173,7 @@ class CampaignsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -207,7 +207,7 @@ class CampaignsApi {
   }
   /// Delete a campaign template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteCampaignTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -227,7 +227,7 @@ class CampaignsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -261,7 +261,7 @@ class CampaignsApi {
   }
   /// Returns a single campaign
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<CampaignResource> getCampaign(int id) async {
     Object postBody = null;
 
@@ -278,7 +278,7 @@ class CampaignsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -312,7 +312,7 @@ class CampaignsApi {
   }
   /// List the challenges associated with a campaign
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«ChallengeResource»> getCampaignChallenges(int id, { String filterStartDate, String filterEndDate, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -344,7 +344,7 @@ class CampaignsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -378,7 +378,7 @@ class CampaignsApi {
   }
   /// Get a single campaign template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
   Future<TemplateResource> getCampaignTemplate(String id) async {
     Object postBody = null;
 
@@ -395,7 +395,7 @@ class CampaignsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -429,7 +429,7 @@ class CampaignsApi {
   }
   /// List and search campaign templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
   Future<PageResource«TemplateResource»> getCampaignTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -452,7 +452,7 @@ class CampaignsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -486,7 +486,7 @@ class CampaignsApi {
   }
   /// List and search campaigns
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«CampaignResource»> getCampaigns({ bool filterActive, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -512,7 +512,7 @@ class CampaignsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -546,7 +546,7 @@ class CampaignsApi {
   }
   /// Remove a challenge from a campaign
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
   Future removeChallengeFromCampaign(int campaignId, int id) async {
     Object postBody = null;
 
@@ -566,7 +566,7 @@ class CampaignsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -600,7 +600,7 @@ class CampaignsApi {
   }
   /// Update a campaign
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
   Future<CampaignResource> updateCampaign(int id, { CampaignResource campaignResource }) async {
     Object postBody = campaignResource;
 
@@ -651,7 +651,7 @@ class CampaignsApi {
   }
   /// Update an campaign template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> updateCampaignTemplate(String id, { TemplateResource campaignTemplateResource }) async {
     Object postBody = campaignTemplateResource;
 

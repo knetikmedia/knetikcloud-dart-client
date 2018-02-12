@@ -9,7 +9,7 @@ class MediaVideosApi {
 
   /// Adds a user to a video&#39;s whitelist
   ///
-  /// Whitelisted users can view video regardless of privacy setting.
+  /// Whitelisted users can view video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future addUserToVideoWhitelist(int id, { IntWrapper userId }) async {
     Object postBody = userId;
 
@@ -60,7 +60,7 @@ class MediaVideosApi {
   }
   /// Adds a new video in the system
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future<VideoResource> addVideo({ VideoResource videoResource }) async {
     Object postBody = videoResource;
 
@@ -108,7 +108,7 @@ class MediaVideosApi {
   }
   /// Add a new video comment
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future<CommentResource> addVideoComment(int videoId, { CommentResource commentResource }) async {
     Object postBody = commentResource;
 
@@ -159,7 +159,7 @@ class MediaVideosApi {
   }
   /// Adds a contributor to a video
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future addVideoContributor(int videoId, { ContributionResource contributionResource }) async {
     Object postBody = contributionResource;
 
@@ -210,7 +210,7 @@ class MediaVideosApi {
   }
   /// Add a new flag
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future<FlagResource> addVideoFlag(int videoId, { StringWrapper reason }) async {
     Object postBody = reason;
 
@@ -261,7 +261,7 @@ class MediaVideosApi {
   }
   /// Adds one or more existing videos as related to this one
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future<VideoRelationshipResource> addVideoRelationships(int videoId, { VideoRelationshipResource videoRelationshipResource }) async {
     Object postBody = videoRelationshipResource;
 
@@ -312,7 +312,7 @@ class MediaVideosApi {
   }
   /// Create a video disposition
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future<DispositionResource> createVideoDisposition(int videoId, { DispositionResource dispositionResource }) async {
     Object postBody = dispositionResource;
 
@@ -363,7 +363,7 @@ class MediaVideosApi {
   }
   /// Create a video template
   ///
-  /// Video Templates define a type of video and the properties they have
+  /// Video Templates define a type of video and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> createVideoTemplate({ TemplateResource videoTemplateResource }) async {
     Object postBody = videoTemplateResource;
 
@@ -411,7 +411,7 @@ class MediaVideosApi {
   }
   /// Deletes a video from the system if no resources are attached to it
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future deleteVideo(int id) async {
     Object postBody = null;
 
@@ -428,7 +428,7 @@ class MediaVideosApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -462,7 +462,7 @@ class MediaVideosApi {
   }
   /// Delete a video comment
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future deleteVideoComment(int videoId, int id) async {
     Object postBody = null;
 
@@ -482,7 +482,7 @@ class MediaVideosApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -516,7 +516,7 @@ class MediaVideosApi {
   }
   /// Delete a video disposition
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future deleteVideoDisposition(int dispositionId) async {
     Object postBody = null;
 
@@ -533,7 +533,7 @@ class MediaVideosApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -567,7 +567,7 @@ class MediaVideosApi {
   }
   /// Delete a flag
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future deleteVideoFlag(int videoId) async {
     Object postBody = null;
 
@@ -584,7 +584,7 @@ class MediaVideosApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -618,7 +618,7 @@ class MediaVideosApi {
   }
   /// Delete a video&#39;s relationship
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future deleteVideoRelationship(int videoId, int id) async {
     Object postBody = null;
 
@@ -638,7 +638,7 @@ class MediaVideosApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -672,7 +672,7 @@ class MediaVideosApi {
   }
   /// Delete a video template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteVideoTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -692,7 +692,7 @@ class MediaVideosApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -726,7 +726,7 @@ class MediaVideosApi {
   }
   /// Get user videos
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future<PageResource«VideoResource»> getUserVideos(int userId, { bool excludeFlagged, int size, int page }) async {
     Object postBody = null;
 
@@ -752,7 +752,7 @@ class MediaVideosApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -786,7 +786,7 @@ class MediaVideosApi {
   }
   /// Loads a specific video details
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future<VideoResource> getVideo(int id) async {
     Object postBody = null;
 
@@ -803,7 +803,7 @@ class MediaVideosApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -837,7 +837,7 @@ class MediaVideosApi {
   }
   /// Returns a page of comments for a video
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«CommentResource»> getVideoComments(int videoId, { int size, int page }) async {
     Object postBody = null;
 
@@ -860,7 +860,7 @@ class MediaVideosApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -894,7 +894,7 @@ class MediaVideosApi {
   }
   /// Returns a page of dispositions for a video
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«DispositionResource»> getVideoDispositions(int videoId, { int size, int page }) async {
     Object postBody = null;
 
@@ -917,7 +917,7 @@ class MediaVideosApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -951,7 +951,7 @@ class MediaVideosApi {
   }
   /// Returns a page of video relationships
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«VideoRelationshipResource»> getVideoRelationships(int videoId, { int size, int page }) async {
     Object postBody = null;
 
@@ -974,7 +974,7 @@ class MediaVideosApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1008,7 +1008,7 @@ class MediaVideosApi {
   }
   /// Get a single video template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
   Future<TemplateResource> getVideoTemplate(String id) async {
     Object postBody = null;
 
@@ -1025,7 +1025,7 @@ class MediaVideosApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1059,7 +1059,7 @@ class MediaVideosApi {
   }
   /// List and search video templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
   Future<PageResource«TemplateResource»> getVideoTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -1082,7 +1082,7 @@ class MediaVideosApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1116,7 +1116,7 @@ class MediaVideosApi {
   }
   /// Search videos using the documented filters
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future<PageResource«VideoResource»> getVideos({ bool excludeFlagged, int filterVideosByUploader, String filterCategory, String filterTagset, String filterVideosByName, int filterVideosByContributor, int filterVideosByAuthor, bool filterHasAuthor, bool filterHasUploader, String filterRelatedTo, bool filterFriends, String filterDisposition, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -1175,7 +1175,7 @@ class MediaVideosApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1209,7 +1209,7 @@ class MediaVideosApi {
   }
   /// Removes a user from a video&#39;s whitelist
   ///
-  /// Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
+  /// Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future removeUserFromVideoWhitelist(int videoId, int id) async {
     Object postBody = null;
 
@@ -1229,7 +1229,7 @@ class MediaVideosApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1263,7 +1263,7 @@ class MediaVideosApi {
   }
   /// Removes a contributor from a video
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future removeVideoContributor(int videoId, int id) async {
     Object postBody = null;
 
@@ -1283,7 +1283,7 @@ class MediaVideosApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -1317,7 +1317,7 @@ class MediaVideosApi {
   }
   /// Modifies a video&#39;s details
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future updateVideo(int id, { VideoResource videoResource }) async {
     Object postBody = videoResource;
 
@@ -1368,7 +1368,7 @@ class MediaVideosApi {
   }
   /// Update a video comment
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future updateVideoComment(int videoId, int id, { StringWrapper content }) async {
     Object postBody = content;
 
@@ -1422,7 +1422,7 @@ class MediaVideosApi {
   }
   /// Update a video&#39;s relationship details
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   Future updateVideoRelationship(int videoId, int relationshipId, { StringWrapper details }) async {
     Object postBody = details;
 
@@ -1476,7 +1476,7 @@ class MediaVideosApi {
   }
   /// Update a video template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> updateVideoTemplate(String id, { TemplateResource videoTemplateResource }) async {
     Object postBody = videoTemplateResource;
 
@@ -1527,7 +1527,7 @@ class MediaVideosApi {
   }
   /// Increment a video&#39;s view count
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   Future viewVideo(int id) async {
     Object postBody = null;
 

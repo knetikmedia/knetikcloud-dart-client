@@ -9,7 +9,7 @@ class BRERuleEngineCategoriesApi {
 
   /// Create a BRE category template
   ///
-  /// Templates define a type of BRE category and the properties they have
+  /// Templates define a type of BRE category and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> createBRECategoryTemplate({ TemplateResource template }) async {
     Object postBody = template;
 
@@ -57,7 +57,7 @@ class BRERuleEngineCategoriesApi {
   }
   /// Delete a BRE category template
   ///
-  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  /// If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future deleteBRECategoryTemplate(String id, { String cascade }) async {
     Object postBody = null;
 
@@ -77,7 +77,7 @@ class BRERuleEngineCategoriesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "cascade", cascade));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -111,7 +111,7 @@ class BRERuleEngineCategoriesApi {
   }
   /// List categories
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_CATEGORIES_USER
   Future<PageResource«BreCategoryResource»> getBRECategories({ int size, int page }) async {
     Object postBody = null;
 
@@ -131,7 +131,7 @@ class BRERuleEngineCategoriesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -165,7 +165,7 @@ class BRERuleEngineCategoriesApi {
   }
   /// Get a single category
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_CATEGORIES_USER
   Future<BreCategoryResource> getBRECategory(String name) async {
     Object postBody = null;
 
@@ -182,7 +182,7 @@ class BRERuleEngineCategoriesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -216,7 +216,7 @@ class BRERuleEngineCategoriesApi {
   }
   /// Get a single BRE category template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or BRE_RULE_ENGINE_CATEGORIES_ADMIN
   Future<TemplateResource> getBRECategoryTemplate(String id) async {
     Object postBody = null;
 
@@ -233,7 +233,7 @@ class BRERuleEngineCategoriesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -267,7 +267,7 @@ class BRERuleEngineCategoriesApi {
   }
   /// List and search BRE category templates
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or BRE_RULE_ENGINE_CATEGORIES_ADMIN
   Future<PageResource«TemplateResource»> getBRECategoryTemplates({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -290,7 +290,7 @@ class BRERuleEngineCategoriesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
@@ -324,7 +324,7 @@ class BRERuleEngineCategoriesApi {
   }
   /// Update a category
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_CATEGORIES_ADMIN
   Future<BreCategoryResource> updateBRECategory(String name, { BreCategoryResource category }) async {
     Object postBody = category;
 
@@ -375,7 +375,7 @@ class BRERuleEngineCategoriesApi {
   }
   /// Update a BRE category template
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   Future<TemplateResource> updateBRECategoryTemplate(String id, { TemplateResource template }) async {
     Object postBody = template;
 

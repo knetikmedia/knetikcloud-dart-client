@@ -7,9 +7,17 @@ class ActivityOccurrenceResource {
   @Property(name: 'activity_id')
   int activityId = null;
   
+/* The ids of banned users that cannot join the occurrence. See occurrence-user delete endpoint */
+  @Property(name: 'bans')
+  List<int> bans = [];
+  
 /* The id of the challenge activity (as part of the event, required if eventId set) */
   @Property(name: 'challenge_activity_id')
   int challengeActivityId = null;
+  
+/* Defines core settings about the activity occurrence that affect how it behaves in the system. Validated against core settings in activity/challenge-activity. */
+  @Property(name: 'core_settings')
+  CoreActivityOccurrenceSettings coreSettings = null;
   
 /* The date this occurrence was created, unix timestamp in seconds */
   @Property(name: 'created_date')
@@ -22,6 +30,10 @@ class ActivityOccurrenceResource {
 /* The id of the event */
   @Property(name: 'event_id')
   int eventId = null;
+  
+/* The host of the occurrence, if not a participant (will be left out of users array). Must be the caller that creates the occurrence unless admin. Requires activity/challenge to allow host_option of 'non_player' if not admin as well */
+  @Property(name: 'host')
+  SimpleUserResource host = null;
   
 /* The id of the activity occurrence */
   @Property(name: 'id')
@@ -46,7 +58,7 @@ class ActivityOccurrenceResource {
 /* The current status of the occurrence (default: OPEN) */
   @Property(name: 'status')
   String status = null;
-  //enum statusEnum {  SETUP,  OPEN,  PLAYING,  FINISHED,  ABANDONED,  };
+  //enum statusEnum {  SETUP,  OPEN,  LAUNCHING,  PLAYING,  FINISHED,  ABANDONED,  };
 /* The date this occurrence was last updated, unix timestamp in seconds */
   @Property(name: 'updated_date')
   int updatedDate = null;
@@ -59,7 +71,7 @@ class ActivityOccurrenceResource {
 
   @override
   String toString()  {
-    return 'ActivityOccurrenceResource[activityId=$activityId, challengeActivityId=$challengeActivityId, createdDate=$createdDate, entitlement=$entitlement, eventId=$eventId, id=$id, rewardStatus=$rewardStatus, settings=$settings, simulated=$simulated, startDate=$startDate, status=$status, updatedDate=$updatedDate, users=$users, ]';
+    return 'ActivityOccurrenceResource[activityId=$activityId, bans=$bans, challengeActivityId=$challengeActivityId, coreSettings=$coreSettings, createdDate=$createdDate, entitlement=$entitlement, eventId=$eventId, host=$host, id=$id, rewardStatus=$rewardStatus, settings=$settings, simulated=$simulated, startDate=$startDate, status=$status, updatedDate=$updatedDate, users=$users, ]';
   }
 
 }

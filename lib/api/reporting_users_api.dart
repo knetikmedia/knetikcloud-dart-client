@@ -9,7 +9,7 @@ class ReportingUsersApi {
 
   /// Get user registration info
   ///
-  /// Get user registration counts grouped by time range
+  /// Get user registration counts grouped by time range. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_USER_ADMIN
   Future<PageResource«AggregateCountResource»> getUserRegistrations({ String granularity, int startDate, int endDate, int size, int page }) async {
     Object postBody = null;
 
@@ -38,7 +38,7 @@ class ReportingUsersApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     
-    List<String> contentTypes = ["application/json"];
+    List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["oauth2_client_credentials_grant", "oauth2_password_grant"];
