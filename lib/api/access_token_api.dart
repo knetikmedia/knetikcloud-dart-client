@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class AccessTokenApi {
+class Access_TokenApi {
   final ApiClient apiClient;
 
-  AccessTokenApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Access_TokenApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Get access token
   ///

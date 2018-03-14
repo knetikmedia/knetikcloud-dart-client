@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class UsersAddressesApi {
+class Users_AddressesApi {
   final ApiClient apiClient;
 
-  UsersAddressesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Users_AddressesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a new address
   ///

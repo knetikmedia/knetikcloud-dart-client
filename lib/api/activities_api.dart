@@ -435,7 +435,7 @@ class ActivitiesApi {
   }
   /// Load a single activity occurrence details
   ///
-  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
   Future<ActivityOccurrenceResource> getActivityOccurrenceDetails(int activityOccurrenceId) async {
     Object postBody = null;
 
@@ -594,7 +594,7 @@ class ActivitiesApi {
   }
   /// List activity occurrences
   ///
-  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
   Future<PageResource«ActivityOccurrenceResource»> listActivityOccurrences({ String filterActivity, String filterStatus, int filterEvent, int filterChallenge, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -723,7 +723,7 @@ class ActivitiesApi {
   }
   /// Sets the status of an activity occurrence to FINISHED and logs metrics
   ///
-  /// In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+  /// In addition to user permissions requirements there is security based on the core_settings.results_trust setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
   Future<ActivityOccurrenceResults> setActivityOccurrenceResults(int activityOccurrenceId, { ActivityOccurrenceResultsResource activityOccurrenceResults }) async {
     Object postBody = activityOccurrenceResults;
 
@@ -774,7 +774,7 @@ class ActivitiesApi {
   }
   /// Sets the settings of an activity occurrence
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
   Future<ActivityOccurrenceResource> setActivityOccurrenceSettings(int activityOccurrenceId, { ActivityOccurrenceSettingsResource settings }) async {
     Object postBody = settings;
 
@@ -826,7 +826,7 @@ class ActivitiesApi {
   /// Set a user&#39;s status within an occurrence
   ///
   /// 
-  Future<ActivityUserResource> setUserStatus(int activityOccurrenceId, String userId, { String status }) async {
+  Future<ActivityUserResource> setUserStatus(int activityOccurrenceId, String userId, { ActivityUserStatusWrapper status }) async {
     Object postBody = status;
 
     // verify required params are set
@@ -930,8 +930,8 @@ class ActivitiesApi {
   }
   /// Update the status of an activity occurrence
   ///
-  /// If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
-  Future updateActivityOccurrenceStatus(int activityOccurrenceId, { ValueWrapper«string» activityOccurrenceStatus }) async {
+  /// If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
+  Future updateActivityOccurrenceStatus(int activityOccurrenceId, { ActivityOccurrenceStatusWrapper activityOccurrenceStatus }) async {
     Object postBody = activityOccurrenceStatus;
 
     // verify required params are set

@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class ReportingUsageApi {
+class Reporting_UsageApi {
   final ApiClient apiClient;
 
-  ReportingUsageApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Reporting_UsageApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Returns aggregated endpoint usage information by day
   ///

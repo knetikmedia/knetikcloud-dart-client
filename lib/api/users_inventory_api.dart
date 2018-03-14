@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class UsersInventoryApi {
+class Users_InventoryApi {
   final ApiClient apiClient;
 
-  UsersInventoryApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Users_InventoryApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Adds an item to the user inventory
   ///
@@ -1069,7 +1069,7 @@ class UsersInventoryApi {
   /// Set the status for an inventory entry
   ///
   /// &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
-  Future updateUserInventoryStatus(int userId, int id, { String inventoryStatus }) async {
+  Future updateUserInventoryStatus(int userId, int id, { InventoryStatusWrapper inventoryStatus }) async {
     Object postBody = inventoryStatus;
 
     // verify required params are set

@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class UtilHealthApi {
+class Util_HealthApi {
   final ApiClient apiClient;
 
-  UtilHealthApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Util_HealthApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Get health info
   ///

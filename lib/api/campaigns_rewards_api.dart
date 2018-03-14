@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class CampaignsRewardsApi {
+class Campaigns_RewardsApi {
   final ApiClient apiClient;
 
-  CampaignsRewardsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Campaigns_RewardsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a reward set
   ///

@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class SocialFacebookApi {
+class Social_FacebookApi {
   final ApiClient apiClient;
 
-  SocialFacebookApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Social_FacebookApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Link facebook account
   ///

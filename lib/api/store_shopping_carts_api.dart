@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class StoreShoppingCartsApi {
+class Store_Shopping_CartsApi {
   final ApiClient apiClient;
 
-  StoreShoppingCartsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Store_Shopping_CartsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Adds a custom discount to the cart
   ///

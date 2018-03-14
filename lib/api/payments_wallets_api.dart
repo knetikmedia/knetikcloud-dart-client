@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class PaymentsWalletsApi {
+class Payments_WalletsApi {
   final ApiClient apiClient;
 
-  PaymentsWalletsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Payments_WalletsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Returns the user&#39;s wallet for the given currency code
   ///

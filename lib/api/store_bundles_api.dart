@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class StoreBundlesApi {
+class Store_BundlesApi {
   final ApiClient apiClient;
 
-  StoreBundlesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Store_BundlesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a bundle item
   ///

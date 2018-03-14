@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -429,7 +429,7 @@ Name | Type | Description  | Notes
 
 Load a single activity occurrence details
 
-<b>Permissions Needed:</b> ACTIVITIES_ADMIN
+<b>Permissions Needed:</b> ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example 
 ```dart
@@ -574,7 +574,7 @@ Name | Type | Description  | Notes
 
 List activity occurrences
 
-<b>Permissions Needed:</b> ACTIVITIES_ADMIN
+<b>Permissions Needed:</b> ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example 
 ```dart
@@ -683,7 +683,7 @@ void (empty response body)
 
 Sets the status of an activity occurrence to FINISHED and logs metrics
 
-In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+In addition to user permissions requirements there is security based on the core_settings.results_trust setting. <br><br><b>Permissions Needed:</b> ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example 
 ```dart
@@ -731,6 +731,8 @@ Name | Type | Description  | Notes
 > ActivityOccurrenceResource setActivityOccurrenceSettings(activityOccurrenceId, settings)
 
 Sets the settings of an activity occurrence
+
+<b>Permissions Needed:</b> ACTIVITIES_USER and host or ACTIVITIES_ADMIN
 
 ### Example 
 ```dart
@@ -790,7 +792,7 @@ import 'package:swagger/api.dart';
 var api_instance = new ActivitiesApi();
 var activityOccurrenceId = 789; // int | The id of the activity occurrence
 var userId = userId_example; // String | The id of the user
-var status = new String(); // String | The new status
+var status = new ActivityUserStatusWrapper(); // ActivityUserStatusWrapper | The new status
 
 try { 
     var result = api_instance.setUserStatus(activityOccurrenceId, userId, status);
@@ -806,7 +808,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activityOccurrenceId** | **int**| The id of the activity occurrence | 
  **userId** | **String**| The id of the user | 
- **status** | **String**| The new status | [optional] 
+ **status** | [**ActivityUserStatusWrapper**](ActivityUserStatusWrapper.md)| The new status | [optional] 
 
 ### Return type
 
@@ -877,7 +879,7 @@ Name | Type | Description  | Notes
 
 Update the status of an activity occurrence
 
-If setting to 'FINISHED' reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+If setting to 'FINISHED' reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. <br><br><b>Permissions Needed:</b> ACTIVITIES_USER and host or ACTIVITIES_ADMIN
 
 ### Example 
 ```dart
@@ -889,7 +891,7 @@ import 'package:swagger/api.dart';
 
 var api_instance = new ActivitiesApi();
 var activityOccurrenceId = 789; // int | The id of the activity occurrence
-var activityOccurrenceStatus = new ValueWrapper«string»(); // ValueWrapper«string» | The activity occurrence status object
+var activityOccurrenceStatus = new ActivityOccurrenceStatusWrapper(); // ActivityOccurrenceStatusWrapper | The activity occurrence status object
 
 try { 
     api_instance.updateActivityOccurrenceStatus(activityOccurrenceId, activityOccurrenceStatus);
@@ -903,7 +905,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activityOccurrenceId** | **int**| The id of the activity occurrence | 
- **activityOccurrenceStatus** | [**ValueWrapper«string»**](ValueWrapper«string».md)| The activity occurrence status object | [optional] 
+ **activityOccurrenceStatus** | [**ActivityOccurrenceStatusWrapper**](ActivityOccurrenceStatusWrapper.md)| The activity occurrence status object | [optional] 
 
 ### Return type
 

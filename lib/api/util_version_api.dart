@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class UtilVersionApi {
+class Util_VersionApi {
   final ApiClient apiClient;
 
-  UtilVersionApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Util_VersionApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Get current version info
   ///

@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class UtilMaintenanceApi {
+class Util_MaintenanceApi {
   final ApiClient apiClient;
 
-  UtilMaintenanceApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Util_MaintenanceApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Delete maintenance info
   ///

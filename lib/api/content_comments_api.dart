@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class ContentCommentsApi {
+class Content_CommentsApi {
   final ApiClient apiClient;
 
-  ContentCommentsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Content_CommentsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Add a new comment
   ///

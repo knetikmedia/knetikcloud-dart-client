@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 [**getThreadMessages**](ChatApi.md#getThreadMessages) | **GET** /chat/threads/{id}/messages | List messages in a thread
 [**getTopicMessages**](ChatApi.md#getTopicMessages) | **GET** /chat/topics/{id}/messages | List messages in a topic
 [**removeChatBlacklist**](ChatApi.md#removeChatBlacklist) | **DELETE** /chat/users/{id}/blacklist/{blacklisted_user_id} | Remove a user from a blacklist
-[**sendMessage**](ChatApi.md#sendMessage) | **POST** /chat/messages | Send a message
+[**sendChatMessage**](ChatApi.md#sendChatMessage) | **POST** /chat/messages | Send a message
 
 
 # **acknowledgeChatMessage**
@@ -565,8 +565,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sendMessage**
-> ChatMessageResource sendMessage(chatMessageResource)
+# **sendChatMessage**
+> ChatMessageResource sendChatMessage(chatMessageResource)
 
 Send a message
 
@@ -584,10 +584,10 @@ var api_instance = new ChatApi();
 var chatMessageResource = new ChatMessageResource(); // ChatMessageResource | The chat message resource
 
 try { 
-    var result = api_instance.sendMessage(chatMessageResource);
+    var result = api_instance.sendChatMessage(chatMessageResource);
     print(result);
 } catch (e) {
-    print("Exception when calling ChatApi->sendMessage: $e\n");
+    print("Exception when calling ChatApi->sendChatMessage: $e\n");
 }
 ```
 

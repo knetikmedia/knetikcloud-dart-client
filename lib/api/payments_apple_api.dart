@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class PaymentsAppleApi {
+class Payments_AppleApi {
   final ApiClient apiClient;
 
-  PaymentsAppleApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Payments_AppleApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Pay invoice with Apple receipt
   ///

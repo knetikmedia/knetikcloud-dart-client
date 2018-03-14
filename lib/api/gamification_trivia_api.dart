@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class GamificationTriviaApi {
+class Gamification_TriviaApi {
   final ApiClient apiClient;
 
-  GamificationTriviaApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Gamification_TriviaApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Add an answer to a question
   ///

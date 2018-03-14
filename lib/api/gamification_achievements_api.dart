@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class GamificationAchievementsApi {
+class Gamification_AchievementsApi {
   final ApiClient apiClient;
 
-  GamificationAchievementsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Gamification_AchievementsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a new achievement definition
   ///

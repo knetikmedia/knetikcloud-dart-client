@@ -11,6 +11,14 @@ class ForwardLog {
   @Property(name: 'error_msg')
   String errorMsg = null;
   
+
+  @Property(name: 'event_id')
+  String eventId = null;
+  
+
+  @Property(name: 'headers')
+  String headers = null;
+  
 /* The http status code the forward log entry */
   @Property(name: 'http_status_code')
   int httpStatusCode = null;
@@ -18,6 +26,10 @@ class ForwardLog {
 /* The id of the forward log entry */
   @Property(name: 'id')
   String id = null;
+  
+
+  @Property(name: 'method')
+  String method = null;
   
 /* The payload of the forward log entry */
   @Property(name: 'payload')
@@ -31,9 +43,21 @@ class ForwardLog {
   @Property(name: 'retry_count')
   int retryCount = null;
   
+
+  @Property(name: 'retryable')
+  bool retryable = null;
+  
+
+  @Property(name: 'rule_id')
+  String ruleId = null;
+  
 /* The start date of the forward log entry */
   @Property(name: 'start_date')
   int startDate = null;
+  
+
+  @Property(name: 'success')
+  bool success = null;
   
 /* The endpoint url of the forward log entry */
   @Property(name: 'url')
@@ -43,7 +67,7 @@ class ForwardLog {
 
   @override
   String toString()  {
-    return 'ForwardLog[endDate=$endDate, errorMsg=$errorMsg, httpStatusCode=$httpStatusCode, id=$id, payload=$payload, response=$response, retryCount=$retryCount, startDate=$startDate, url=$url, ]';
+    return 'ForwardLog[endDate=$endDate, errorMsg=$errorMsg, eventId=$eventId, headers=$headers, httpStatusCode=$httpStatusCode, id=$id, method=$method, payload=$payload, response=$response, retryCount=$retryCount, retryable=$retryable, ruleId=$ruleId, startDate=$startDate, success=$success, url=$url, ]';
   }
 
 }

@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class TemplatesPropertiesApi {
+class Templates_PropertiesApi {
   final ApiClient apiClient;
 
-  TemplatesPropertiesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Templates_PropertiesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Get details for a template property type
   ///

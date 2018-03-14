@@ -105,7 +105,7 @@ class MessagingApi {
   }
   /// Delete an existing message template
   ///
-  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   Future deleteMessageTemplate(String id) async {
     Object postBody = null;
 
@@ -156,7 +156,7 @@ class MessagingApi {
   }
   /// Get a single message template
   ///
-  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   Future<MessageTemplateResource> getMessageTemplate(String id) async {
     Object postBody = null;
 
@@ -207,7 +207,7 @@ class MessagingApi {
   }
   /// List and search message templates
   ///
-  /// Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+  /// Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   Future<PageResource«MessageTemplateResource»> getMessageTemplates({ String filterTagset, String filterTagIntersection, String filterTagExclusion, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -274,7 +274,7 @@ class MessagingApi {
   /// Send a message
   ///
   /// Sends a message with one or more formats to one or more users. Fill in any message formats desired (email, sms, websockets) and each user will recieve all valid formats. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
-  Future sendMessage1({ MessageResource messageResource }) async {
+  Future sendMessage({ MessageResource messageResource }) async {
     Object postBody = messageResource;
 
     // verify required params are set
@@ -657,7 +657,7 @@ class MessagingApi {
   }
   /// Update an existing message template
   ///
-  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   Future<MessageTemplateResource> updateMessageTemplate(String id, { MessageTemplateResource messageTemplateResource }) async {
     Object postBody = messageTemplateResource;
 

@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class UsersRelationshipsApi {
+class Users_RelationshipsApi {
   final ApiClient apiClient;
 
-  UsersRelationshipsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Users_RelationshipsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a user relationship
   ///

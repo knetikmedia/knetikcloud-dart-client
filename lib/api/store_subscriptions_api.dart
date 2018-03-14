@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class StoreSubscriptionsApi {
+class Store_SubscriptionsApi {
   final ApiClient apiClient;
 
-  StoreSubscriptionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Store_SubscriptionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Creates a subscription item and associated plans
   ///

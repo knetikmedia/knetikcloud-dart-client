@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class ReportingChallengesApi {
+class Reporting_ChallengesApi {
   final ApiClient apiClient;
 
-  ReportingChallengesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Reporting_ChallengesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Retrieve a challenge event leaderboard details
   ///

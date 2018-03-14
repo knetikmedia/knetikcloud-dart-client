@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class StoreVendorsApi {
+class Store_VendorsApi {
   final ApiClient apiClient;
 
-  StoreVendorsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Store_VendorsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a vendor
   ///

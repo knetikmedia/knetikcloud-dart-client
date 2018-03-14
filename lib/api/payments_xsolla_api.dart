@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class PaymentsXsollaApi {
+class Payments_XsollaApi {
   final ApiClient apiClient;
 
-  PaymentsXsollaApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Payments_XsollaApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a payment token that should be used to forward the user to Xsolla so they can complete payment
   ///

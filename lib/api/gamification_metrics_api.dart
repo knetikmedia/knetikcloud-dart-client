@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class GamificationMetricsApi {
+class Gamification_MetricsApi {
   final ApiClient apiClient;
 
-  GamificationMetricsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Gamification_MetricsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Add a metric
   ///

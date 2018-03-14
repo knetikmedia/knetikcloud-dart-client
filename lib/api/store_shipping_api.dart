@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class StoreShippingApi {
+class Store_ShippingApi {
   final ApiClient apiClient;
 
-  StoreShippingApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Store_ShippingApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a shipping item
   ///

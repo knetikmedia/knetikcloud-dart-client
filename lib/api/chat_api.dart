@@ -610,7 +610,7 @@ class ChatApi {
   /// Send a message
   ///
   /// &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-  Future<ChatMessageResource> sendMessage({ ChatMessageResource chatMessageResource }) async {
+  Future<ChatMessageResource> sendChatMessage({ ChatMessageResource chatMessageResource }) async {
     Object postBody = chatMessageResource;
 
     // verify required params are set

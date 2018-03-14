@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class ReportingRevenueApi {
+class Reporting_RevenueApi {
   final ApiClient apiClient;
 
-  ReportingRevenueApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Reporting_RevenueApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Get item revenue info
   ///

@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class MediaModerationApi {
+class Media_ModerationApi {
   final ApiClient apiClient;
 
-  MediaModerationApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Media_ModerationApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Add a flag
   ///
@@ -229,7 +229,7 @@ class MediaModerationApi {
   /// Returns a page of flag reports
   ///
   /// Context can be either a free-form string or a pre-defined context name. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
-  Future<PageResource«FlagReportResource»> getModerationReports({ bool excludeResolved, String filterContext, String filterContextId, int size, int page }) async {
+  Future<PageResource«FlagReportResource»> getModerationReports({ bool excludeResolved, String filterContext, String filterContextId, int size, int page, String order }) async {
     Object postBody = null;
 
     // verify required params are set
@@ -255,6 +255,9 @@ class MediaModerationApi {
     }
     if(page != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
+    }
+    if(order != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     
     List<String> contentTypes = [];

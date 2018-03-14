@@ -9,7 +9,7 @@ class NotificationsApi {
 
   /// Create a notification type
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   Future<NotificationTypeResource> createNotificationType({ NotificationTypeResource notificationType }) async {
     Object postBody = notificationType;
 
@@ -57,7 +57,7 @@ class NotificationsApi {
   }
   /// Delete a notification type
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   Future deleteNotificationType(String id) async {
     Object postBody = null;
 
@@ -108,7 +108,7 @@ class NotificationsApi {
   }
   /// Get a single notification type
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   Future<NotificationTypeResource> getNotificationType(String id) async {
     Object postBody = null;
 
@@ -159,7 +159,7 @@ class NotificationsApi {
   }
   /// List and search notification types
   ///
-  /// Get a list of notification type with optional filtering
+  /// Get a list of notification type with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   Future<PageResource«NotificationTypeResource»> getNotificationTypes({ int size, int page, String order }) async {
     Object postBody = null;
 
@@ -216,7 +216,7 @@ class NotificationsApi {
   }
   /// View a user&#39;s notification settings for a type
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   Future<NotificationUserTypeResource> getUserNotificationInfo(String typeId, String userId) async {
     Object postBody = null;
 
@@ -270,7 +270,7 @@ class NotificationsApi {
   }
   /// View a user&#39;s notification settings
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   Future<PageResource«NotificationUserTypeResource»> getUserNotificationInfoList(String userId, { int size, int page, String order }) async {
     Object postBody = null;
 
@@ -330,7 +330,7 @@ class NotificationsApi {
   }
   /// Get notifications
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   Future<PageResource«UserNotificationResource»> getUserNotifications(String id, { String filterStatus, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -393,7 +393,7 @@ class NotificationsApi {
   }
   /// Send a notification
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   Future<NotificationResource> sendNotification({ NotificationResource notification }) async {
     Object postBody = notification;
 
@@ -441,8 +441,8 @@ class NotificationsApi {
   }
   /// Set notification status
   ///
-  /// 
-  Future setUserNotificationStatus(String userId, String notificationId, { ValueWrapper«string» notification }) async {
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
+  Future setUserNotificationStatus(String userId, String notificationId, { UserNotificationStatusWrapper notification }) async {
     Object postBody = notification;
 
     // verify required params are set
@@ -495,7 +495,7 @@ class NotificationsApi {
   }
   /// Enable or disable direct notifications for a user
   ///
-  /// Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there.
+  /// Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   Future silenceDirectNotifications(String typeId, String userId, ValueWrapper«boolean» silenced) async {
     Object postBody = silenced;
 
@@ -552,7 +552,7 @@ class NotificationsApi {
   }
   /// Update a notificationType
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   Future<NotificationTypeResource> updateNotificationType(String id, { NotificationTypeResource notificationType }) async {
     Object postBody = notificationType;
 

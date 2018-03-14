@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class MediaArtistsApi {
+class Media_ArtistsApi {
   final ApiClient apiClient;
 
-  MediaArtistsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Media_ArtistsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Adds a new artist in the system
   ///

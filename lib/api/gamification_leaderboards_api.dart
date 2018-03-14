@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class GamificationLeaderboardsApi {
+class Gamification_LeaderboardsApi {
   final ApiClient apiClient;
 
-  GamificationLeaderboardsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Gamification_LeaderboardsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Retrieves leaderboard details and paginated entries
   ///

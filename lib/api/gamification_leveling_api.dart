@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class GamificationLevelingApi {
+class Gamification_LevelingApi {
   final ApiClient apiClient;
 
-  GamificationLevelingApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Gamification_LevelingApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a level schema
   ///
@@ -108,7 +108,7 @@ class GamificationLevelingApi {
   }
   /// Retrieve a level
   ///
-  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER
   Future<LevelingResource> getLevel(String name) async {
     Object postBody = null;
 
@@ -207,7 +207,7 @@ class GamificationLevelingApi {
   }
   /// List and search levels
   ///
-  /// Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
+  /// Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER
   Future<PageResource«LevelingResource»> getLevels({ String filterName, int size, int page, String order }) async {
     Object postBody = null;
 
@@ -267,7 +267,7 @@ class GamificationLevelingApi {
   }
   /// Get a user&#39;s progress for a given level schema
   ///
-  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER or self
   Future<UserLevelingResource> getUserLevel(String userId, String name) async {
     Object postBody = null;
 
@@ -321,7 +321,7 @@ class GamificationLevelingApi {
   }
   /// Get a user&#39;s progress for all level schemas
   ///
-  /// Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
+  /// Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER or self
   Future<PageResource«UserLevelingResource»> getUserLevels(String userId, { String filterName, int size, int page, String order }) async {
     Object postBody = null;
 

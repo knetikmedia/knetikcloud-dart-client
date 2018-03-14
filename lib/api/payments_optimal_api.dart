@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class PaymentsOptimalApi {
+class Payments_OptimalApi {
   final ApiClient apiClient;
 
-  PaymentsOptimalApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Payments_OptimalApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Initiate silent post with Optimal
   ///

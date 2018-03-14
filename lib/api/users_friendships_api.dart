@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class UsersFriendshipsApi {
+class Users_FriendshipsApi {
   final ApiClient apiClient;
 
-  UsersFriendshipsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Users_FriendshipsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Add a friend
   ///
@@ -126,7 +126,7 @@ class UsersFriendshipsApi {
   }
   /// Returns the invite token
   ///
-  /// This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)flow instead if confirmation is required
+  /// This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
   Future<String> getInviteToken(String userId) async {
     Object postBody = null;
 

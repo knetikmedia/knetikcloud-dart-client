@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class UtilBatchApi {
+class Util_BatchApi {
   final ApiClient apiClient;
 
-  UtilBatchApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Util_BatchApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Get batch result with token
   ///

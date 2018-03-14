@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class AuthRolesApi {
+class Auth_RolesApi {
   final ApiClient apiClient;
 
-  AuthRolesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Auth_RolesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a new role
   ///

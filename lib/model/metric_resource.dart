@@ -7,7 +7,7 @@ class MetricResource {
   @Property(name: 'activity_occurence_id')
   int activityOccurenceId = null;
   
-/* Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 5 tags and 50 characters each */
+/* Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 10 tags and 50 characters each */
   @Property(name: 'tags')
   List<String> tags = [];
   

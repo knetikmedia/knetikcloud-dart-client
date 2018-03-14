@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class AuthPermissionsApi {
+class Auth_PermissionsApi {
   final ApiClient apiClient;
 
-  AuthPermissionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Auth_PermissionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a new permission
   ///

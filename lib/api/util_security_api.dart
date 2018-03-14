@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class UtilSecurityApi {
+class Util_SecurityApi {
   final ApiClient apiClient;
 
-  UtilSecurityApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Util_SecurityApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Returns the authentication log for a user
   ///

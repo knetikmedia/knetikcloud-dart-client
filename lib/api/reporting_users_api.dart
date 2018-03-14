@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class ReportingUsersApi {
+class Reporting_UsersApi {
   final ApiClient apiClient;
 
-  ReportingUsersApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Reporting_UsersApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Get user registration info
   ///

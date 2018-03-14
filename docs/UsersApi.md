@@ -5,14 +5,14 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addUserTag**](UsersApi.md#addUserTag) | **POST** /users/{user_id}/tags | Add a tag to a user
 [**createUserTemplate**](UsersApi.md#createUserTemplate) | **POST** /users/templates | Create a user template
 [**deleteUserTemplate**](UsersApi.md#deleteUserTemplate) | **DELETE** /users/templates/{id} | Delete a user template
-[**getDirectMessages1**](UsersApi.md#getDirectMessages1) | **GET** /users/users/{recipient_id}/messages | Get a list of direct messages with this user
+[**getDirectMessages1**](UsersApi.md#getDirectMessages1) | **GET** /users/{recipient_id}/messages | Get a list of direct messages with this user
 [**getUser**](UsersApi.md#getUser) | **GET** /users/{id} | Get a single user
 [**getUserTags**](UsersApi.md#getUserTags) | **GET** /users/{user_id}/tags | List tags for a user
 [**getUserTemplate**](UsersApi.md#getUserTemplate) | **GET** /users/templates/{id} | Get a single user template

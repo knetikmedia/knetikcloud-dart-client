@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class PaymentsTransactionsApi {
+class Payments_TransactionsApi {
   final ApiClient apiClient;
 
-  PaymentsTransactionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Payments_TransactionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Get the details for a single transaction
   ///

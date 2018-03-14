@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class MediaVideosApi {
+class Media_VideosApi {
   final ApiClient apiClient;
 
-  MediaVideosApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Media_VideosApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Adds a user to a video&#39;s whitelist
   ///

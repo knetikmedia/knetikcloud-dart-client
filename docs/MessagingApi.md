@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**deleteMessageTemplate**](MessagingApi.md#deleteMessageTemplate) | **DELETE** /messaging/templates/{id} | Delete an existing message template
 [**getMessageTemplate**](MessagingApi.md#getMessageTemplate) | **GET** /messaging/templates/{id} | Get a single message template
 [**getMessageTemplates**](MessagingApi.md#getMessageTemplates) | **GET** /messaging/templates | List and search message templates
-[**sendMessage1**](MessagingApi.md#sendMessage1) | **POST** /messaging/message | Send a message
+[**sendMessage**](MessagingApi.md#sendMessage) | **POST** /messaging/message | Send a message
 [**sendRawEmail**](MessagingApi.md#sendRawEmail) | **POST** /messaging/raw-email | Send a raw email to one or more users
 [**sendRawPush**](MessagingApi.md#sendRawPush) | **POST** /messaging/raw-push | Send a raw push notification
 [**sendRawSMS**](MessagingApi.md#sendRawSMS) | **POST** /messaging/raw-sms | Send a raw SMS
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 Delete an existing message template
 
-<b>Permissions Needed:</b> ARTICLES_ADMIN
+<b>Permissions Needed:</b> MESSAGING_ADMIN
 
 ### Example 
 ```dart
@@ -170,7 +170,7 @@ void (empty response body)
 
 Get a single message template
 
-<b>Permissions Needed:</b> ARTICLES_ADMIN
+<b>Permissions Needed:</b> MESSAGING_ADMIN
 
 ### Example 
 ```dart
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 List and search message templates
 
-Get a list of message templates with optional filtering. <br><br><b>Permissions Needed:</b> ARTICLES_ADMIN
+Get a list of message templates with optional filtering. <br><br><b>Permissions Needed:</b> MESSAGING_ADMIN
 
 ### Example 
 ```dart
@@ -269,8 +269,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sendMessage1**
-> sendMessage1(messageResource)
+# **sendMessage**
+> sendMessage(messageResource)
 
 Send a message
 
@@ -288,9 +288,9 @@ var api_instance = new MessagingApi();
 var messageResource = new MessageResource(); // MessageResource | The message to be sent
 
 try { 
-    api_instance.sendMessage1(messageResource);
+    api_instance.sendMessage(messageResource);
 } catch (e) {
-    print("Exception when calling MessagingApi->sendMessage1: $e\n");
+    print("Exception when calling MessagingApi->sendMessage: $e\n");
 }
 ```
 
@@ -642,7 +642,7 @@ void (empty response body)
 
 Update an existing message template
 
-<b>Permissions Needed:</b> ARTICLES_ADMIN
+<b>Permissions Needed:</b> MESSAGING_ADMIN
 
 ### Example 
 ```dart

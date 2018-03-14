@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class AmazonWebServicesS3Api {
+class Amazon_Web_Services_S3Api {
   final ApiClient apiClient;
 
-  AmazonWebServicesS3Api([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Amazon_Web_Services_S3Api([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Get a temporary signed S3 URL for download
   ///

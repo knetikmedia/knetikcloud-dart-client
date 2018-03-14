@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class ReportingOrdersApi {
+class Reporting_OrdersApi {
   final ApiClient apiClient;
 
-  ReportingOrdersApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Reporting_OrdersApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Retrieve invoice counts aggregated by time ranges
   ///

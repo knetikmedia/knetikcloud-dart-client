@@ -175,7 +175,7 @@ class UsersApi {
     }
 
     // create path and map variables
-    String path = "/users/users/{recipient_id}/messages".replaceAll("{format}","json").replaceAll("{" + "recipient_id" + "}", recipientId.toString());
+    String path = "/users/{recipient_id}/messages".replaceAll("{format}","json").replaceAll("{" + "recipient_id" + "}", recipientId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

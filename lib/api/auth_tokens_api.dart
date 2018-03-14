@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class AuthTokensApi {
+class Auth_TokensApi {
   final ApiClient apiClient;
 
-  AuthTokensApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Auth_TokensApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Delete tokens by username, client id, or both
   ///

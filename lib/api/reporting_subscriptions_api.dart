@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class ReportingSubscriptionsApi {
+class Reporting_SubscriptionsApi {
   final ApiClient apiClient;
 
-  ReportingSubscriptionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Reporting_SubscriptionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Get a list of available subscription reports in most recent first order
   ///

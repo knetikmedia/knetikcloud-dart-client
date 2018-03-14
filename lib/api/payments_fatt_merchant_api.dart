@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class PaymentsFattMerchantApi {
+class Payments_FattMerchantApi {
   final ApiClient apiClient;
 
-  PaymentsFattMerchantApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Payments_FattMerchantApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create or update a FattMerchant payment method for a user
   ///

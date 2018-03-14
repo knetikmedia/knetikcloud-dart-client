@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class PaymentsPayPalClassicApi {
+class Payments_PayPalClassicApi {
   final ApiClient apiClient;
 
-  PaymentsPayPalClassicApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Payments_PayPalClassicApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a PayPal Classic billing agreement for the user
   ///

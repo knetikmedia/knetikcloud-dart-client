@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class SocialGoogleApi {
+class Social_GoogleApi {
   final ApiClient apiClient;
 
-  SocialGoogleApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Social_GoogleApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Link google account
   ///

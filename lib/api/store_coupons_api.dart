@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class StoreCouponsApi {
+class Store_CouponsApi {
   final ApiClient apiClient;
 
-  StoreCouponsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Store_CouponsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a coupon item
   ///

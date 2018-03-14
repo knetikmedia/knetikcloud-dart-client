@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class PaymentsStripeApi {
+class Payments_StripeApi {
   final ApiClient apiClient;
 
-  PaymentsStripeApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Payments_StripeApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a Stripe payment method for a user
   ///

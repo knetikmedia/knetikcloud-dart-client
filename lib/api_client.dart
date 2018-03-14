@@ -21,7 +21,7 @@ class ApiClient {
   final _RegList = new RegExp(r'^List<(.*)>$');
   final _RegMap = new RegExp(r'^Map<String,(.*)>$');
 
-  ApiClient({this.basePath: "https://sandbox.knetikcloud.com"}) {
+  ApiClient({this.basePath: "https://jsapi-integration.us-east-1.elasticbeanstalk.com"}) {
     // Setup authentications (key: authentication name, value: authentication).
     _authentications['oauth2_client_credentials_grant'] = new OAuth();
     _authentications['oauth2_password_grant'] = new OAuth();
@@ -64,10 +64,14 @@ class ApiClient {
           return dson.map(value, new ActivityOccurrenceResultsResource());
         case 'ActivityOccurrenceSettingsResource':
           return dson.map(value, new ActivityOccurrenceSettingsResource());
+        case 'ActivityOccurrenceStatusWrapper':
+          return dson.map(value, new ActivityOccurrenceStatusWrapper());
         case 'ActivityResource':
           return dson.map(value, new ActivityResource());
         case 'ActivityUserResource':
           return dson.map(value, new ActivityUserResource());
+        case 'ActivityUserStatusWrapper':
+          return dson.map(value, new ActivityUserStatusWrapper());
         case 'AddressResource':
           return dson.map(value, new AddressResource());
         case 'AggregateCountResource':
@@ -92,6 +96,8 @@ class ApiClient {
           return dson.map(value, new BareActivityResource());
         case 'BareChallengeActivityResource':
           return dson.map(value, new BareChallengeActivityResource());
+        case 'BasicTemplatedResource':
+          return dson.map(value, new BasicTemplatedResource());
         case 'Batch':
           return dson.map(value, new Batch());
         case 'BatchRequest':
@@ -110,8 +116,6 @@ class ApiClient {
           return dson.map(value, new BooleanResource());
         case 'BreActionLog':
           return dson.map(value, new BreActionLog());
-        case 'BreCategoryResource':
-          return dson.map(value, new BreCategoryResource());
         case 'BreEvent':
           return dson.map(value, new BreEvent());
         case 'BreEventLog':
@@ -256,14 +260,14 @@ class ApiClient {
           return dson.map(value, new GlobalCheckAndIncrementResource());
         case 'GlobalResource':
           return dson.map(value, new GlobalResource());
-        case 'GooglePaymentRequest':
-          return dson.map(value, new GooglePaymentRequest());
         case 'GoogleToken':
           return dson.map(value, new GoogleToken());
         case 'GrantTypeResource':
           return dson.map(value, new GrantTypeResource());
         case 'GroupMemberResource':
           return dson.map(value, new GroupMemberResource());
+        case 'GroupMemberStatusWrapper':
+          return dson.map(value, new GroupMemberStatusWrapper());
         case 'GroupResource':
           return dson.map(value, new GroupResource());
         case 'IdRef':
@@ -276,6 +280,8 @@ class ApiClient {
           return dson.map(value, new IntWrapper());
         case 'IntegerOperationResource':
           return dson.map(value, new IntegerOperationResource());
+        case 'InventoryStatusWrapper':
+          return dson.map(value, new InventoryStatusWrapper());
         case 'InventorySubscriptionResource':
           return dson.map(value, new InventorySubscriptionResource());
         case 'InvoiceCreateRequest':
@@ -370,8 +376,6 @@ class ApiClient {
           return dson.map(value, new PageResource«BareChallengeActivityResource»());
         case 'PageResource«BillingReport»':
           return dson.map(value, new PageResource«BillingReport»());
-        case 'PageResource«BreCategoryResource»':
-          return dson.map(value, new PageResource«BreCategoryResource»());
         case 'PageResource«BreEventLog»':
           return dson.map(value, new PageResource«BreEventLog»());
         case 'PageResource«BreGlobalResource»':
@@ -488,8 +492,6 @@ class ApiClient {
           return dson.map(value, new PageResource«TemplateResource»());
         case 'PageResource«TopicResource»':
           return dson.map(value, new PageResource«TopicResource»());
-        case 'PageResource«TopicSubscriberResource»':
-          return dson.map(value, new PageResource«TopicSubscriberResource»());
         case 'PageResource«TransactionResource»':
           return dson.map(value, new PageResource«TransactionResource»());
         case 'PageResource«UsageInfo»':
@@ -574,6 +576,8 @@ class ApiClient {
           return dson.map(value, new RefundRequest());
         case 'RefundResource':
           return dson.map(value, new RefundResource());
+        case 'ResourceTypeDescription':
+          return dson.map(value, new ResourceTypeDescription());
         case 'Result':
           return dson.map(value, new Result());
         case 'RevenueCountryReportResource':
@@ -648,6 +652,8 @@ class ApiClient {
           return dson.map(value, new SubscriptionPriceOverrideRequest());
         case 'SubscriptionResource':
           return dson.map(value, new SubscriptionResource());
+        case 'SubscriptionStatusWrapper':
+          return dson.map(value, new SubscriptionStatusWrapper());
         case 'SubscriptionTemplateResource':
           return dson.map(value, new SubscriptionTemplateResource());
         case 'TemplateEmailResource':
@@ -700,6 +706,8 @@ class ApiClient {
           return dson.map(value, new UserLevelingResource());
         case 'UserNotificationResource':
           return dson.map(value, new UserNotificationResource());
+        case 'UserNotificationStatusWrapper':
+          return dson.map(value, new UserNotificationStatusWrapper());
         case 'UserRelationshipReferenceResource':
           return dson.map(value, new UserRelationshipReferenceResource());
         case 'UserRelationshipResource':
@@ -710,8 +718,6 @@ class ApiClient {
           return dson.map(value, new UsernameLookupResource());
         case 'ValueWrapper«boolean»':
           return dson.map(value, new ValueWrapper«boolean»());
-        case 'ValueWrapper«string»':
-          return dson.map(value, new ValueWrapper«string»());
         case 'VariableTypeResource':
           return dson.map(value, new VariableTypeResource());
         case 'VendorEmailLookupResource':
@@ -804,6 +810,8 @@ class ApiClient {
           return dson.map(value, new PriceOverridable());
         case 'RemoveCustomerEvent':
           return dson.map(value, new RemoveCustomerEvent());
+        case 'ServiceDeployedEvent':
+          return dson.map(value, new ServiceDeployedEvent());
         case 'Spendable':
           return dson.map(value, new Spendable());
         case 'StoreItem':

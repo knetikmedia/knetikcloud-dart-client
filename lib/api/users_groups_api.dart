@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class UsersGroupsApi {
+class Users_GroupsApi {
   final ApiClient apiClient;
 
-  UsersGroupsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Users_GroupsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Adds a new member to the group
   ///
@@ -420,7 +420,7 @@ class UsersGroupsApi {
   }
   /// Enable or disable notification of group messages
   ///
-  /// 
+  /// &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN or self
   Future disableGroupNotification(String uniqueName, String userId, ValueWrapper«boolean» disabled) async {
     Object postBody = disabled;
 
@@ -1366,7 +1366,7 @@ class UsersGroupsApi {
   /// Change a user&#39;s status
   ///
   /// &lt;b&gt;Permissions Needed:&lt;/b&gt; GROUP_ADMIN
-  Future updateGroupMemberStatus(String uniqueName, int userId, String status) async {
+  Future updateGroupMemberStatus(String uniqueName, int userId, GroupMemberStatusWrapper status) async {
     Object postBody = status;
 
     // verify required params are set

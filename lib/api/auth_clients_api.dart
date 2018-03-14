@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class AuthClientsApi {
+class Auth_ClientsApi {
   final ApiClient apiClient;
 
-  AuthClientsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Auth_ClientsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a new client
   ///

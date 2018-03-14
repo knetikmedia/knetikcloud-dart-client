@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class CampaignsChallengesApi {
+class Campaigns_ChallengesApi {
   final ApiClient apiClient;
 
-  CampaignsChallengesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Campaigns_ChallengesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a challenge
   ///
@@ -1090,7 +1090,7 @@ class CampaignsChallengesApi {
   /// Update a challenge activity
   ///
   /// A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
-  Future<ChallengeActivityResource> updateChallengeActivity(int id, int challengeId, { ChallengeActivityResource challengeActivityResource, bool validateSettings }) async {
+  Future updateChallengeActivity(int id, int challengeId, { ChallengeActivityResource challengeActivityResource, bool validateSettings }) async {
     Object postBody = challengeActivityResource;
 
     // verify required params are set
@@ -1139,9 +1139,9 @@ class CampaignsChallengesApi {
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
     } else if(response.body != null) {
-      return apiClient.deserialize(response.body, 'ChallengeActivityResource') as ChallengeActivityResource ;
+      return ;
     } else {
-      return null;
+      return ;
     }
   }
   /// Update an challenge activity template

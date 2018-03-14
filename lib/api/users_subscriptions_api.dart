@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class UsersSubscriptionsApi {
+class Users_SubscriptionsApi {
   final ApiClient apiClient;
 
-  UsersSubscriptionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Users_SubscriptionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Get details about a user&#39;s subscription
   ///
@@ -280,7 +280,7 @@ class UsersSubscriptionsApi {
   /// Set the status of a subscription
   ///
   /// Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
-  Future setSubscriptionStatus(int userId, int inventoryId, StringWrapper status) async {
+  Future setSubscriptionStatus(int userId, int inventoryId, SubscriptionStatusWrapper status) async {
     Object postBody = status;
 
     // verify required params are set

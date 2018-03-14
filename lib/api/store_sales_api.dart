@@ -2,10 +2,10 @@ part of swagger.api;
 
 
 
-class StoreSalesApi {
+class Store_SalesApi {
   final ApiClient apiClient;
 
-  StoreSalesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  Store_SalesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create a sale
   ///
